@@ -18,6 +18,7 @@ export interface Props {
 
 const {
   title = await Astro.slots.render('title'),
+  title2 = await Astro.slots.render('title2'),
   subtitle = await Astro.slots.render('subtitle'),
   content = await Astro.slots.render('content'),
   callToAction = await Astro.slots.render('callToAction'),
@@ -37,6 +38,14 @@ const {
             <h1
               class="text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200"
               set:html={title}
+            />
+          )
+        }
+        {
+          title2 && (
+            <h1
+              class="text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200"
+              set:html={title2}
             />
           )
         }
