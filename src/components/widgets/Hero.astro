@@ -1,18 +1,10 @@
 ---
-import { Icon } from 'astro-icon';
-import { Picture } from '@astrojs/image/components';
-
-interface CallToAction {
-  text: string;
-  href: string;
-  icon?: string;
-}
+// import { Picture } from '@astrojs/image/components';
 
 export interface Props {
   title?: string;
   subtitle?: string;
-  callToAction?: string | CallToAction;
-  callToAction2?: string | CallToAction;
+  trdButton?: string;
   image?: string | any; // TODO: find HTMLElementProps
 }
 
@@ -21,9 +13,7 @@ const {
   title2 = await Astro.slots.render('title2'),
   subtitle = await Astro.slots.render('subtitle'),
   content = await Astro.slots.render('content'),
-  callToAction = await Astro.slots.render('callToAction'),
-  callToAction2 = await Astro.slots.render('callToAction2'),
-  image = await Astro.slots.render('image'),
+  trdButton = await Astro.slots.render('trdButton'),
 } = Astro.props;
 ---
 
@@ -31,95 +21,52 @@ const {
   <div class="absolute inset-0 pointer-events-none" aria-hidden="true"></div>
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
     <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
-    <div class="py-12 md:py-20">
+    <div class="py-9 md:py-9">
       <div class="text-center pb-10 md:pb-16 max-w-screen-lg mx-auto">
         {
           title && (
             <h1
-              class="text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200"
+              class="text-4xl md:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading text-textcolor"
               set:html={title}
             />
           )
         }
 
-        <!-- image -->
-        <div class="relative">
-          <h1 class="absolute inset-0 flex justify-center items-center z-10">Trade</h1>
-          {
-            image && (
-              <div class="relative m-auto max-w-5xl">
-                {typeof image === 'string' ? (
-                  <Fragment set:html={image} />
-                ) : (
-                  <Picture
-                    class="mx-auto rounded-md w-full z-50"
-                    widths={[400, 768, 1024, 2040]}
-                    sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
-                    aspectRatio={1 / 1}
-                    loading="eager"
-                    width={1024}
-                    height={576}
-                    {...image}
-                  />
-                )}
+        <!-- Trade Button -->
+        {
+          trdButton && (
+            <div class="relative flex justify-center align-middle m-7">
+              <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[340px] h-[340px] flex justify-center align-middle bg-gradient-to-r from-[#4040DC] via-[#7721D6] to-[#EA3382] rounded-full blur-2xl z-0 opacity-60 rotate-90"></div>
+              <div class="relative bg-[#070610] w-[280px] h-[280px] rounded-full z-10 rotate-12">
+                <div class="absolute bg-gradient-to-r from-[#070610] from-10% via-[#443EDC] via-15% to-[#070610] to-70% w-[140px] h-[280px] rounded-l-full z-20 blur-xl left-0"></div>
+                <div class="absolute bg-gradient-to-r from-[#070610] from-60% via-[#D9318F] via-80% to-[#070610] to-95% w-[140px] h-[280px] rounded-r-full z-20 blur-xl right-0"></div>
+                <div class="absolute w-[280px] h-[120px] bg-[#070610] rounded-b-full blur-md bottom-1 z-30"></div>
               </div>
-            )
-          }
-          
-        </div>
+              <div class="absolute bg-[#070610] w-[240px] h-[240px] rounded-full z-40 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 blur opacity-90"></div>
+              <h1
+                  class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading text-textcolor absolute z-40 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                  set:html={trdButton}
+                />
+            </div>
+          )
+        }
 
         {
           title2 && (
             <h1
-              class="text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200"
+              class="text-4xl md:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading text-textcolor"
               set:html={title2}
             />
           )
         }
+
         <div class="max-w-3xl mx-auto">
-          {subtitle && <p class="text-xl text-muted mb-6 dark:text-slate-300" set:html={subtitle} />}
+          {subtitle && <p class="text-xl text-muted mx-6 md:mx-12 my-7 text-textcolor" set:html={subtitle} />}
           <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4">
-            {
-              callToAction && (
-                <div class="flex w-full sm:w-auto">
-                  {typeof callToAction === 'string' ? (
-                    <Fragment set:html={callToAction} />
-                  ) : (
-                    <a class="btn btn-primary sm:mb-0 w-full" href={callToAction?.href} target="_blank" rel="noopener">
-                      {callToAction?.icon && (
-                        <>
-                          <Icon name={callToAction.icon} class="w-5 h-5 mr-1 -ml-1.5" />{' '}
-                        </>
-                      )}
-                      {callToAction?.text}
-                    </a>
-                  )}
-                </div>
-              )
-            }
-            {
-              callToAction2 && (
-                <div class="flex w-full sm:w-auto">
-                  {typeof callToAction2 === 'string' ? (
-                    <Fragment set:html={callToAction2} />
-                  ) : (
-                    <a class="btn w-full" href={callToAction2?.href}>
-                      {callToAction2?.icon && (
-                        <>
-                          <Icon name={callToAction2.icon} class="w-5 h-5 mr-1 -ml-1.5" />{' '}
-                        </>
-                      )}
-                      {callToAction2.text}
-                    </a>
-                  )}
-                </div>
-              )
-            }
           </div>
         </div>
         {content && <Fragment set:html={content} />}
       </div>
-      
     </div>
   </div>
 </section>

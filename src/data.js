@@ -1,64 +1,32 @@
-import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
+import { getPermalink, getAsset, getHomePermalink } from './utils/permalinks';
 
 export const headerData = {
   links: [
     {
-      text: 'Landing',
-      links: [
-        {
-          text: 'Sass',
-          href: getPermalink('/landing/saas'),
-        },
-        {
-          text: 'Startup',
-          href: getPermalink('/landing/startup'),
-        },
-        {
-          text: 'Mobile App',
-          href: getPermalink('/landing/mobile-app'),
-        },
-      ],
+      text: 'Home',
+      href: getHomePermalink(),
+      icon: '/src/assets/images/FinGenLogo.svg',
     },
     {
-      text: 'Pages',
-      links: [
-        {
-          text: 'Features',
-          href: '#',
-        },
-        {
-          text: 'Pricing',
-          href: '#',
-        },
-        {
-          text: 'About us',
-          href: '#',
-        },
-        {
-          text: 'Contact',
-          href: '#',
-        },
-        {
-          text: 'Terms',
-          href: getPermalink('/terms'),
-        },
-        {
-          text: 'Privacy policy',
-          href: getPermalink('/privacy'),
-        },
-      ],
-    },
-    {
-      text: 'Widgets',
+      text: 'About',
       href: '#',
+      icon: '/src/assets/images/FinGenLogo.svg',
     },
     {
-      text: 'Blog',
-      href: getBlogPermalink(),
+      text: 'Next',
+      href: '#',
+      icon: '/src/assets/images/FinGenLogo.svg',
     },
-  ],
-  actions: [
-    { type: 'button', text: 'Download', href: 'https://github.com/onwidget/astrowind' }
+    {
+      text: 'Trade',
+      href: '#',
+      icon: '/src/assets/images/FinGenLogo.svg',
+    },
+    {
+      text: 'Hive',
+      href: '#',
+      icon: '/src/assets/images/FinGenLogo.svg',
+    },
   ],
 };
   
