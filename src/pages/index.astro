@@ -2,7 +2,9 @@
 import { SITE } from '~/config.mjs';
 import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
-import WhatIsHive from '~/components/widgets/WhatIsHive.astro';
+import Features from '~/components/widgets/Features.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
 
 const meta = {
   title: SITE.title,
@@ -35,18 +37,147 @@ const meta = {
 
   <!-- Features Widget *************** -->
 
-  <WhatIsHive>
-    <Fragment slot="text">
-      Swarms of machine learning agents, collectively sharing intel to rapidly adapt to evolving markets, and predict their futures. <br> Machine Learning Agents (MLA) independently compute, analyze, and share agent learning with HIVE's collective learning, making all new and known knowledge available to every MLA and HIVE.
-    </Fragment>
+  <Features
+    title="What is HIVE?"
+    items={[
+      [
+        {
+          description:
+            'Swarms of machine learning agents, collectively sharing intel to rapidly adapt to evolving markets, and predict their futures.',
+          icon: 'Go',
+        },
+        {
+          description:
+            "Machine Learning Agents (MLA) independently compute, analyze, and share agent learning with HIVE's collective learning, making all new and known knowledge available to every MLA and HIVE.",
+          icon: 'Go',
+        },
+      ],
+      [
+        {
+          description:
+            'Winning trades should be predictably consistent in frequency and return. Including extreme highs and lows.',
+          icon: 'Grow',
+        },
+        {
+          description:
+            'Losing trades are inevitable. But losing small is critical to your account balance growth potential.',
+          icon: 'Stats',
+        },
+      ],
+    ]}
+  />
 
-    <Fragment slot="text">
-      Winning trades should be predictably consistent in frequency and return. Including extreme highs and lows.
-    </Fragment>
+  <Steps
+    title="Features"
+    subtitle="HIVE Runs All Trading"
+    items={[
+      {
+        title: 'Deep Reinforcement Learning',
+        description:
+          'The collective behavior of decentralized, self-organized systems, natural or artificial.',
+        icon: 'PurpleDot',
+      },
+      {
+        title: 'Robot Process Automation',
+        description:
+          'HIVE consumes market data Sunday at 5PM EST to Friday at 5PM EST.',
+        icon: 'PurpleDot',
+      },
+      {
+        title: 'Risk Reward Management',
+        description:
+          "Helping investors manage their risk of losing money on trades. Comparing profit to loss, every tick, in real-time, 24x7x252.<br><br>EDGE - Where WP is the asset's percentage of winning trades; LP is the asset's percentage of losing trades; WROl is the asset's average winning return on investment;<br><br>SORTINO - The Sortino Ratio is calculated as, where R is the asset or portfolio average realized return, T is the target or required rate of return for the investment strategy under consideration (originally called the minimum acceptable return MAR), and DD iS the target semi-deviation",
+        icon: 'PurpleDot',
+      },
+      {
+        title: 'Trade Size Management',
+        description:
+          "Trade position size is critical; more so than trading entry and exit. An optimal strategy will not remain solvent if trade size is too big or too small. Optimize for upside potential, and downside risk every trade.<br><br>KELLY CRITERION - Known as the scientific gambling method, is a formula for bet sizing that leads almost surely to higher wealth compared to any other strategy in the long run approaching the limit as the number of bets goes to infinity.",
+        icon: 'PurpleDot',
+      },
+    ]}
+  />
 
-    <Fragment slot="text">
-      Losing trades are inevitable. But losing small is critical to your account balance growth potential.
+  <Content
+    title="Benefits"
+    items={[
+      {
+        description:
+          'Know your likelihood of gain and loss. And how by how much, BEFORE you trade',
+      },
+      {
+        description:
+          'Click "Trade" and execute all pairs involved in a Portfolio Trade.',
+      },
+      {
+        description:
+          'OR click "Ignore" to ignore the signal',
+      },
+    ]}
+    image={{
+      src: import('~/assets/images/Vr.png'),
+      alt: 'Colorful Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">We've reduced human involvement to a One-Click Portfolio Trade</h3>
     </Fragment>
-  </WhatIsHive>
+  </Content>
+
+  <Content
+    isReversed
+    isAfterContent
+    items={[
+      {
+        description: 'We are electronically connected to numerous global banks to access the most accurate foreign exchange and CFD rates for our clients. Trade over 70 forex pairs.',
+      },
+    ]}
+    image={{
+      src: import('~/assets/images/vintage.jpg'),
+      alt: 'Vintage Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">Follow The Money</h3>
+    </Fragment>
+  </Content>
+
+  <Content
+    image={{
+      src: import('~/assets/images/Vr.png'),
+      alt: 'Colorful Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">Trade a portfolio of 70+ currencies in One-Click</h3>
+    </Fragment>
+  </Content>
+
+  <Content
+    isReversed
+    isAfterContent
+    items={[
+      {
+        description: 'Superior Decision Making',
+      },
+      {
+        description: 'Optimal Reward-Risk Ratios',
+      },
+      {
+        description: 'No Emotional Bias',
+      },
+      {
+        description: 'AI Precision',
+      },
+    ]}
+    image={{
+      src: import('~/assets/images/vintage.jpg'),
+      alt: 'Vintage Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">Our Stats</h3>
+    </Fragment>
+  </Content>
 
 </Layout>
