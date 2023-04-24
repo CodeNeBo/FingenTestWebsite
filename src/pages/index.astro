@@ -1,5 +1,7 @@
 ---
 import { SITE } from '~/config.mjs';
+import { Icon } from 'astro-icon';
+
 import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Features from '~/components/widgets/Features.astro';
@@ -15,7 +17,6 @@ const meta = {
 
 
 <Layout {meta}>
-  <!-- Hero Widget ******************* -->
 
   <Hero>
       <Fragment slot="title">
@@ -34,8 +35,6 @@ const meta = {
         We recognize machines are better at trade decision making than humans - there's no fear or greed.
       </Fragment>
   </Hero>
-
-  <!-- Features Widget *************** -->
 
   <Features
     title="What is HIVE?"
@@ -114,14 +113,13 @@ const meta = {
           'OR click "Ignore" to ignore the signal',
       },
     ]}
-    image={{
-      src: import('~/assets/images/Vr.png'),
-      alt: 'Colorful Image',
-    }}
   >
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">We've reduced human involvement to a One-Click Portfolio Trade</h3>
     </Fragment>
+
+    <img class="h-3/4" src="src/assets/images/Vr.png">
+
   </Content>
 
   <Content
@@ -132,30 +130,46 @@ const meta = {
         description: 'We are electronically connected to numerous global banks to access the most accurate foreign exchange and CFD rates for our clients. Trade over 70 forex pairs.',
       },
     ]}
-    image={{
-      src: import('~/assets/images/vintage.jpg'),
-      alt: 'Vintage Image',
-    }}
   >
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">Follow The Money</h3>
     </Fragment>
+
+    <div class="grid gap-2 grid-cols-3 w-[400px] h-[300px]">
+      <div class="block mt-auto">
+        <div class="relative mb-3">
+          <div class="block w-[6px] h-[105px] bg-textcolor mx-auto"></div>
+          <div class="block w-[24px] h-[57px] bg-[#4855E2] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+        </div>
+        <h3 class="text-3xl font-bold tracking-tight mb-1">$200B</h3>
+        <p class="text-xs font-normal tracking-widest mb-[-6px]">PER DAY</p>
+        <h4 class="text-base font-bold tracking-tight">Stock Market</h4>
+      </div>
+      
+      <div class="block my-auto">
+        <div class="relative mb-3">
+          <div class="block w-[6px] h-[105px] bg-textcolor mx-auto"></div>
+          <div class="block w-[24px] h-[57px] bg-[#EA3382] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+        </div>
+        <h3 class="text-3xl font-bold tracking-tight mb-1">$700B</h3>
+        <p class="text-xs font-normal tracking-widest mb-[-6px]">PER DAY</p>
+        <h4 class="text-base font-bold tracking-tight">Bond Market</h4>
+      </div>
+  
+      <div>
+        <div class="relative mb-3">
+          <div class="block w-[6px] h-[105px] bg-textcolor mx-auto"></div>
+          <div class="block w-[24px] h-[57px] bg-[#8335DA] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+        </div>
+        <h3 class="text-3xl font-bold tracking-tight mb-1">$6T</h3>
+        <p class="text-xs font-normal tracking-widest mb-[-6px]">PER DAY</p>
+        <h4 class="text-base font-bold tracking-tight">Forex Market</h4>
+      </div>
+    </div>
+
   </Content>
 
   <Content
-    image={{
-      src: import('~/assets/images/Vr.png'),
-      alt: 'Colorful Image',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">Trade a portfolio of 70+ currencies in One-Click</h3>
-    </Fragment>
-  </Content>
-
-  <Content
-    isReversed
-    isAfterContent
     items={[
       {
         description: 'Superior Decision Making',
@@ -170,14 +184,79 @@ const meta = {
         description: 'AI Precision',
       },
     ]}
-    image={{
-      src: import('~/assets/images/vintage.jpg'),
-      alt: 'Vintage Image',
-    }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">Our Stats</h3>
+      <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">Trade a portfolio of 70+ currencies in One-Click</h3>
     </Fragment>
-  </Content>
 
+    <div class="flex flex-col mx-auto items-center">
+
+      <div class="flex flex-wrap w-full md:w-4/6 gap-x-2 mb-4">
+        <div class="mb-2 border rounded py-1 px-2 bg-[#0B0B14] border-[#1C1C24] flex justify-center items-center grow">
+          <Icon name="Yen" class="w-5 h-5" />
+          <Icon name="Dollar" class="w-5 h-5 ml-[-6px]" />
+          <p class="text-sm">USD JPY</p>
+        </div>
+    
+        <div class="mb-2 border rounded py-1 px-2 bg-[#0B0B14] border-[#1C1C24] flex justify-center items-center grow">
+          <Icon name="Euro" class="w-5 h-5" />
+          <Icon name="Dollar" class="w-5 h-5 ml-[-6px]" />
+          <p class="text-sm">EUR USD</p>
+        </div>
+    
+        <div class="basis-full"></div>
+    
+        <div class="mb-2 border rounded py-1 px-2 bg-[#0B0B14] border-[#1C1C24] flex justify-center items-center grow">
+          <Icon name="CanadianDollar" class="w-5 h-5" />
+          <Icon name="Dollar" class="w-5 h-5 ml-[-6px]" />
+          <p class="text-sm">CAD USD</p>
+        </div>
+    
+        <div class="mb-2 border rounded py-1 px-2 bg-[#0B0B14] border-[#1C1C24] flex justify-center items-center grow">
+          <Icon name="CanadianDollar" class="w-5 h-5" />
+          <Icon name="Dollar" class="w-5 h-5 ml-[-6px]" />
+          <p class="text-sm">CAD USD</p>
+        </div>
+      </div>
+
+      <div class="p-7 bg-[#0B0B14] border-[#1C1C24] border rounded w-full md:w-4/6"> 
+        <div class="flex justify-between mb-3">
+          <p>Market EDGE Now</p>
+          <div>
+            <div class="bg-[#EC458D] relative inline-block py-1 px-2 rounded">
+              <p class="z-10">Live</p>
+            </div>
+          </div>
+          
+        </div>
+    
+        <div class="flex justify-between mb-2">
+          <p class="text-[#77777B]">EDGE</p>
+          <p>2109</p>
+        </div>
+    
+        <div class="flex justify-between mb-2">
+          <p class="text-[#77777B]">Avg Win %</p>
+          <p>37%</p>
+        </div>
+    
+        <div class="flex justify-between mb-2">
+          <p class="text-[#77777B]">Avg Loss %</p>
+          <p>27%</p>
+        </div>
+    
+        <div class="flex justify-between mb-2">
+          <p class="text-[#77777B]">Avg Win $</p>
+          <p>$553</p>
+        </div>
+    
+        <div class="flex justify-between">
+          <p class="text-[#77777B]">Avg Loss $</p>
+          <p>$153</p>
+        </div>
+      </div>
+  
+    </div>
+
+  </Content>
 </Layout>

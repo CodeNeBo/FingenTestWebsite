@@ -18,10 +18,9 @@ const {
 ---
 
 <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-6xl">
-  <div class="grid gap-6 row-gap-10 md:grid-cols-2">
-    <div class="md:py-4 md:pr-16 mb-4 md:mb-0">
-      {title && <h2 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading" set:html={title} />}
-      {subtitle && <h3 class="mb-4 text-2xl lg:text-3xl font-bold font-heading" set:html={subtitle} />}
+    <div class="md:py-4 mb-4 md:mb-0 flex flex-col">
+      {title && <h2 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading mx-auto" set:html={title} />}
+      {subtitle && <h3 class="mb-4 py-4 text-2xl lg:text-3xl font-bold font-heading" set:html={subtitle} />}
       {
         items &&
           items.length &&
@@ -49,5 +48,4 @@ const {
           ))
       }
     </div>
-  </div>
 </section>

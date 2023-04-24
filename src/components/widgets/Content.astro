@@ -1,6 +1,5 @@
 ---
 import { Icon } from 'astro-icon';
-import { Picture } from '@astrojs/image/components';
 interface Item {
   description?: string;
   icon?: string;
@@ -9,7 +8,7 @@ export interface Props {
   title?: string;
   content?: string;
   items?: Array<Item>;
-  image?: string | any; // TODO: find HTMLElementProps
+  image?: string | any;
   isReversed?: boolean;
   isAfterContent?: boolean;
 }
@@ -17,13 +16,12 @@ const {
   title = await Astro.slots.render('title'),
   content = await Astro.slots.render('content'),
   items = [],
-  image = await Astro.slots.render('image'),
   isReversed = false,
   isAfterContent = false,
 } = Astro.props;
 ---
 
-<section class:list={[{ 'pt-0 md:pt-0': isAfterContent }, 'py-16 md:py-20']}>
+<section class:list={[{ 'pt-0 md:pt-0': isAfterContent }, 'px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-6xl']}>
   <div class="max-w-xl sm:mx-auto lg:max-w-2xl">
     {
       (title) && (
@@ -39,7 +37,7 @@ const {
     }
   </div>
 
-  <div class="mx-auto max-w-7xl p-4 md:px-8">
+  <div class="mx-auto max-w-7xl ">
     <div class={`md:flex ${isReversed ? 'md:flex-row-reverse' : ''} md:gap-16`}>
       <div class="md:basis-1/2 self-center">
         {content && <div class="mb-12 text-lg" set:html={content} />}
@@ -63,26 +61,8 @@ const {
           )
         }
       </div>
-      <div aria-hidden="true" class="mt-10 md:mt-0 md:basis-1/2">
-        {
-          image && (
-            <div class="relative m-auto max-w-4xl">
-              {typeof image === 'string' ? (
-                <Fragment set:html={image} />
-              ) : (
-                <Picture
-                  class="mx-auto w-full"
-                  width={500}
-                  height={500}
-                  widths={[400, 768]}
-                  sizes="(max-width: 768px) 100vw, 432px"
-                  aspectRatio="500:500"
-                  {...image}
-                />
-              )}
-            </div>
-          )
-        }
+      <div aria-hidden="true" class="mt-10 md:mt-0 md:basis-1/2 flex justify-center items-center">
+        <slot />
       </div>
     </div>
   </div>

@@ -5,7 +5,7 @@ export const headerData = {
     {
       text: 'Home',
       href: getHomePermalink(),
-      icon: '/src/assets/images/FinGenLogo.svg',
+      icon: 'Home',
     },
     {
       text: 'About',
