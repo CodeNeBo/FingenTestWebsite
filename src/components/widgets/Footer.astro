@@ -8,23 +8,15 @@ interface Link {
   icon?: string;
 }
 
-interface Links {
-  title?: string;
-  links: Array<Link>;
-}
-
 export interface Props {
-  links: Array<Links>;
-  secondaryLinks: Array<Link>;
   socialLinks: Array<Link>;
-  footNote?: string;
   theme?: string;
 }
 
-const { socialLinks = [], theme = 'light' } = Astro.props;
+const { socialLinks = [] } = Astro.props;
 ---
 
-<footer class:list={[{ dark: theme === 'dark' }, 'relative']}>
+<footer class:list={['relative']}>
   <div class="relative w-full">
     <div class="overflow-hidden">
       <div class="w-[102%] md:w-[101%] h-20 md:h-28 rounded-tr-full bg-[#3644DF] border-[#2B2B3C] border-t-8 border-r-8 flex items-center">
