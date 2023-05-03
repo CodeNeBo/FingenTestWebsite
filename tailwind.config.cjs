@@ -15,6 +15,12 @@ module.exports = {
         serif: ['var(--aw-font-serif)', ...defaultTheme.fontFamily.serif],
         heading: ['var(--aw-font-heading)', ...defaultTheme.fontFamily.sans],
       },
+      gridTemplateRows: {
+        '7': 'repeat(7, minmax(0, 1fr))',
+      },
+      boxShadow: {
+        'purple': '0px 0px 28px 8px rgba(115, 70, 199, 0.3)',
+      }
     },
   },
   plugins: [require('@tailwindcss/typography')],

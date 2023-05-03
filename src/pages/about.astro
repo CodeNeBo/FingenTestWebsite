@@ -1,0 +1,95 @@
+---
+import { Image } from '@astrojs/image/components'
+
+import Layout from '~/layouts/PageLayout.astro';
+import Content from '~/components/widgets/Content.astro';
+
+const meta = {
+  title: "About",
+};
+---
+
+<Layout {meta}>
+    <Content
+    title="About"
+    items={[
+      {
+        description:
+          "FinGEN was founded in 2020 with a view to offer quant hedge fund technology and strategies to the every day investor/trader. Combining strengths in both Deep Learning and Ultra Low Latency Technology. <br><br>Quant trading is a style of automated trading characterized by microsecond execution speeds and portfolios with high turnover.",
+      },
+    ]}
+    >
+        <Image src={import('../assets/images/AboutHero.svg')} alt="Leopard silhouette" />
+    </Content>
+
+    <Image src={import('../assets/images/Hivegrid.svg')} alt="Hive grid" width={1920}/>
+
+    <Content
+    title="The Idea"
+    isReversed
+    isAfterContent
+    items={[
+      {
+        description: 'Do capital markets provide data that enable you to derive sentiment, risk-reward, intent or causality?',
+      },
+      {
+        description: 'Can it do so predictably?',
+      },
+      {
+        description: 'And under various market conditions?',
+      },
+      {
+        description: 'Can we do all of the above consistently?',
+      },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">It started with three questions.</h3>
+    </Fragment>
+    <Image src={import('../assets/images/Graph.svg')} alt="Graph"/>
+    </Content>
+
+    <Content
+    title="Capabilities"
+    items={[
+      {
+        description:
+          "Market direction, duration & magnitude",
+      },
+      {
+        description:
+          "Market structures",
+      },
+      {
+        description:
+          "Market structure transitions",
+      },
+      {
+        description:
+          "FX pair relationships",
+      },
+    ]}
+    >
+        <Fragment slot="content">
+            <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">HIVE <span class="text-[#EC458D]">Predicts & Learns</span></h3>
+        </Fragment>
+        <Content
+        items={[
+            {
+              description:
+                "Trade size optimized to your account.",
+            },
+            {
+              description:
+                "Trading all forex pairs available at our broker partners.",
+            },
+          ]}
+        >
+          <Fragment slot="content">
+            <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">HIVE signals.<span class="text-[#EC458D]"> Optimized reward-risk trades</span> in real-time. </h3>
+        </Fragment>
+        </Content>
+    </Content>
+
+</Layout>
+

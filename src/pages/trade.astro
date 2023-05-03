@@ -1,0 +1,175 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import { Icon } from 'astro-icon';
+
+const meta = {
+  title: "Trade",
+};
+---
+
+<Layout {meta}>
+  <Hero>
+      <Fragment slot="trdButton">
+        Trade
+      </Fragment>
+  </Hero>
+
+  <section class="sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-6xl pb-10">
+    <div class="w-[92%] max-w-xl sm:mx-auto lg:max-w-2xl bg-secondary rounded-lg p-4 flex flex-col mx-auto mb-4">
+      <div class="w-full flex flex-row justify-between pb-2">
+        <p class="text-primary text-sm uppercase tracking-widest">Edge</p>
+        <p class="text-primary text-sm uppercase tracking-widest">3.1</p>
+      </div>
+      <hr class="w-full border-[#1C1C24]">
+      <div class="w-full flex flex-row justify-between py-2">
+        <p class="text-primary text-sm uppercase tracking-widest">Avg Win %</p>
+        <p class="text-primary text-sm uppercase tracking-widest">2.5%</p>
+      </div>
+      <hr class="w-full border-[#1C1C24]">
+      <div class="w-full flex flex-row justify-between py-2">
+        <p class="text-primary text-sm uppercase tracking-widest">Avg Loss %</p>
+        <p class="text-primary text-sm uppercase tracking-widest">2.7%</p>
+      </div>
+      <hr class="w-full border-[#1C1C24]">
+      <div class="w-full flex flex-row justify-between py-2">
+        <p class="text-primary text-sm uppercase tracking-widest">Avg Win $</p>
+        <p class="text-primary text-sm uppercase tracking-widest">$200</p>
+      </div>
+      <hr class="w-full border-[#1C1C24]">
+      <div class="w-full flex flex-row justify-between pt-2">
+        <p class="text-primary text-sm uppercase tracking-widest">Avg Loss $</p>
+        <p class="text-primary text-sm uppercase tracking-widest">$102</p>
+      </div>
+    </div>
+
+    <div>
+      <div class="w-[92%] border rounded-lg py-3 bg-[#0B0B14] border-[#1C1C24] mx-auto mb-4 flex justify-between items-center grow px-4">
+        <div class="flex flex-row">
+          <Icon name="CanadianDollar" class="w-5 h-5" />
+          <Icon name="Dollar" class="w-5 h-5 ml-[-6px]" />
+          <p class="text-sm">CAD USD</p>
+        </div>
+        <h3>1.35740</h3>
+      </div>
+      <div class="w-[92%] border rounded-lg py-3 bg-[#0B0B14] border-[#1C1C24] mx-auto mb-4 flex justify-between items-center grow px-4">
+        <div class="flex flex-row">
+          <Icon name="CanadianDollar" class="w-5 h-5" />
+          <Icon name="Dollar" class="w-5 h-5 ml-[-6px]" />
+          <p class="text-sm">CAD USD</p>
+        </div>
+        <h3>1.35740</h3>
+      </div>
+
+      <button class="w-[92%] rounded-lg py-3 bg-[#1C1C24] mx-auto mb-4 flex justify-center items-center px-4 gap-2 text-xl hover:bg-[#31313d]">
+          <Icon name="Ignore" class="w-5 h-5" />
+          Ignore
+      </button>
+    </div>
+
+    <div class="flex flex-row px-7 border-2 border-[#4B4B63] rounded-lg py-3 w-[92%] items-center mx-auto">
+      <div class="flex flex-row items-center align-middle mr-4">
+          <Icon name="Euro" class="w-8 h-8" />
+          <div class="w-[1px] h-8 bg-textcolor mx-1"></div>
+          <Icon name="Yen" class="w-8 h-8" />
+      </div>
+      <div>
+          <h4 class="text-lg font-bold">EURO BREAKOUT AGAINST YEN <span class="bg-[#7346C7] px-3 rounded-full ml-2">TOTAL PIP RUN: 217</span></h4>
+          <p class="text-xs font-semibold pt-2">TOKYO MARKET HOURS <span class="text-[#4B4B63]">//</span> FAST MARKET <span class="text-[#4B4B63]">//</span> STABLE VOLATILITY <span class="text-[#4B4B63]">//</span> LOW VOLATILITY</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-6xl pb-10 mb-10">
+    <div class="w-[92%] py-3 mx-auto mb-4 flex justify-center items-center grow px-4 gap-2">
+      <Icon name="Clock" class="w-5 h-5" />
+      <p>Last Transaction 20 January 2022</p>
+    </div>
+    <div class="w-[92%] border rounded-lg py-3 bg-[#0B0B14] border-[#1C1C24] mx-auto mb-4 flex justify-between items-center grow px-4">
+      <div class="flex flex-row">
+        <Icon name="CanadianDollar" class="w-5 h-5" />
+        <Icon name="Dollar" class="w-5 h-5 ml-[-6px]" />
+        <p class="text-sm">CAD USD</p>
+      </div>
+      <h3 class="bg-[#1C1C24] border border-[#1C1C24] rounded-lg px-2">Jan 6th, 2023</h3>
+    </div>
+    <div class="w-[92%] border rounded-lg py-3 bg-[#0B0B14] border-[#1C1C24] mx-auto mb-4 flex justify-between items-center grow px-4">
+      <div class="flex flex-row">
+        <Icon name="CanadianDollar" class="w-5 h-5" />
+        <Icon name="Dollar" class="w-5 h-5 ml-[-6px]" />
+        <p class="text-sm">CAD USD</p>
+      </div>
+      <h3 class="bg-[#1C1C24] border border-[#1C1C24] rounded-lg px-2">Jan 6th, 2023</h3>
+    </div>
+    <div class="w-[92%] border rounded-lg py-3 bg-[#0B0B14] border-[#1C1C24] mx-auto mb-4 flex justify-between items-center grow px-4">
+      <div class="flex flex-row">
+        <Icon name="CanadianDollar" class="w-5 h-5" />
+        <Icon name="Dollar" class="w-5 h-5 ml-[-6px]" />
+        <p class="text-sm">CAD USD</p>
+      </div>
+      <h3 class="bg-[#1C1C24] border border-[#1C1C24] rounded-lg px-2">Jan 6th, 2023</h3>
+    </div>
+    <div class="w-[92%] border rounded-lg py-3 bg-[#0B0B14] border-[#1C1C24] mx-auto mb-4 flex justify-between items-center grow px-4">
+      <div class="flex flex-row">
+        <Icon name="CanadianDollar" class="w-5 h-5" />
+        <Icon name="Dollar" class="w-5 h-5 ml-[-6px]" />
+        <p class="text-sm">CAD USD</p>
+      </div>
+      <h3 class="bg-[#1C1C24] border border-[#1C1C24] rounded-lg px-2">Jan 6th, 2023</h3>
+    </div>
+    <div class="w-[92%] border rounded-lg py-3 bg-[#0B0B14] border-[#1C1C24] mx-auto mb-4 flex justify-between items-center grow px-4">
+      <div class="flex flex-row">
+        <Icon name="CanadianDollar" class="w-5 h-5" />
+        <Icon name="Dollar" class="w-5 h-5 ml-[-6px]" />
+        <p class="text-sm">CAD USD</p>
+      </div>
+      <h3 class="bg-[#1C1C24] border border-[#1C1C24] rounded-lg px-2">Jan 6th, 2023</h3>
+    </div>
+    <div class="w-[92%] border rounded-lg py-3 bg-[#0B0B14] border-[#1C1C24] mx-auto mb-4 flex justify-between items-center grow px-4">
+      <div class="flex flex-row">
+        <Icon name="CanadianDollar" class="w-5 h-5" />
+        <Icon name="Dollar" class="w-5 h-5 ml-[-6px]" />
+        <p class="text-sm">CAD USD</p>
+      </div>
+      <h3 class="bg-[#1C1C24] border border-[#1C1C24] rounded-lg px-2">Jan 6th, 2023</h3>
+    </div>
+    <div class="w-[92%] border rounded-lg py-3 bg-[#0B0B14] border-[#1C1C24] mx-auto mb-4 flex justify-between items-center grow px-4">
+      <div class="flex flex-row">
+        <Icon name="CanadianDollar" class="w-5 h-5" />
+        <Icon name="Dollar" class="w-5 h-5 ml-[-6px]" />
+        <p class="text-sm">CAD USD</p>
+      </div>
+      <h3 class="bg-[#1C1C24] border border-[#1C1C24] rounded-lg px-2">Jan 6th, 2023</h3>
+    </div>
+    <div class="w-[92%] border rounded-lg py-3 bg-[#0B0B14] border-[#1C1C24] mx-auto mb-4 flex justify-between items-center grow px-4">
+      <div class="flex flex-row">
+        <Icon name="CanadianDollar" class="w-5 h-5" />
+        <Icon name="Dollar" class="w-5 h-5 ml-[-6px]" />
+        <p class="text-sm">CAD USD</p>
+      </div>
+      <h3 class="bg-[#1C1C24] border border-[#1C1C24] rounded-lg px-2">Jan 6th, 2023</h3>
+    </div>
+    <div class="w-[92%] border rounded-lg py-3 bg-[#0B0B14] border-[#1C1C24] mx-auto mb-4 flex justify-between items-center grow px-4">
+      <div class="flex flex-row">
+        <Icon name="CanadianDollar" class="w-5 h-5" />
+        <Icon name="Dollar" class="w-5 h-5 ml-[-6px]" />
+        <p class="text-sm">CAD USD</p>
+      </div>
+      <h3 class="bg-[#1C1C24] border border-[#1C1C24] rounded-lg px-2">Jan 6th, 2023</h3>
+    </div>
+    
+
+    <div class="flex flex-row px-7 border-2 border-[#4B4B63] rounded-lg py-3 w-[92%] items-center mx-auto">
+      <div class="flex flex-row items-center align-middle mr-4">
+          <Icon name="Euro" class="w-8 h-8" />
+          <div class="w-[1px] h-8 bg-textcolor mx-1"></div>
+          <Icon name="Yen" class="w-8 h-8" />
+      </div>
+      <div>
+          <h4 class="text-lg font-bold">EURO BREAKOUT AGAINST YEN <span class="bg-[#7346C7] px-3 rounded-full ml-2">TOTAL PIP RUN: 217</span></h4>
+          <p class="text-xs font-semibold pt-2">TOKYO MARKET HOURS <span class="text-[#4B4B63]">//</span> FAST MARKET <span class="text-[#4B4B63]">//</span> STABLE VOLATILITY <span class="text-[#4B4B63]">//</span> LOW VOLATILITY</p>
+      </div>
+    </div>
+  </section>
+
+</Layout>

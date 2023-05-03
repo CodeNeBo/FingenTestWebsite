@@ -1,0 +1,97 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+
+import { Icon } from 'astro-icon';
+
+const meta = {
+  title: "Next",
+};
+---
+
+<Layout {meta}>
+    <Hero>
+        <Fragment slot="title">
+            What’s next
+        </Fragment>
+
+        <Fragment slot="trdButton">
+          Trade
+        </Fragment>
+    </Hero>
+
+    <Content
+    title="Q1 2023"
+    items={[
+      {
+        description:
+          'FREE subscriptions with Referrals',
+      },
+      {
+        description:
+          'Collaborate directly with our design team to build the best platform for you',
+      },
+      {
+        description:
+          'FREE streaming market intel blog',
+      },
+      {
+        description:
+          'Breaking Pips News feed',
+      },
+      {
+        description:
+          'CIA Factbook Country Macro Data & KPI',
+      },
+    ]}
+    >
+      <Fragment slot="content">
+        <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">Pre-Launch Referrals & Rewards program
+          and Early Access program</h3>
+      </Fragment>
+    </Content>
+
+    <Content
+    title="Q2 2023"
+    items={[
+      {
+        description:
+          'Early Access Auction',
+      },
+      {
+        description:
+          'Real-time Research & Currency Profiles',
+      },
+      {
+        description:
+          'Leaderboard, Rangebound, Laggards dashboards',
+      },
+      {
+        description:
+          'Auction winners get access to HIVE signals & One-Click portfolio trading',
+      },
+    ]}
+    >
+      <Fragment slot="content">
+        <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">Portfolio trading in One-Click Real-time Al forex signals Free macro and micro market research</h3>
+      </Fragment>
+    </Content>
+
+    <Content
+    title="What should we build for you next?"
+    >
+      <Fragment slot="content">
+        <div class="flex flex-row mb-2">
+          <Icon name="Wand" class="w-7 h-7" />
+          <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2 ml-2">Send Wishlist</h3>
+        </div>
+        <form action="">
+          <textarea class="w-full h-44 rounded-lg placeholder-shown:text-[#05050E] placeholder-shown:p-3 mb-4" placeholder="Message"></textarea>
+          <button class="block w-full h-12 rounded-lg bg-secondary text-primary font-bold" type="submit" name="SendWishlist" value="submitted_value">Send Wishlist</button>
+        </form>
+        
+      </Fragment>
+    </Content>
+
+</Layout>

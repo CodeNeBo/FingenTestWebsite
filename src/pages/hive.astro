@@ -1,0 +1,291 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import { Icon } from 'astro-icon';
+
+const meta = {
+  title: "Hive",
+};
+---
+
+<Layout {meta}>
+    <!-- grid-cols-3 grid-rows-3 -->
+    <section class="grid  auto-cols-auto grid-rows-auto gap-4 px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 ">
+
+        <div>
+            <!-- Leader board -->
+            <div class="bg-[#191931] rounded-xl w-full p-7 pb-5 flex flex-col items-center mb-4">
+                <h3 class="text-center text-xl font-bold tracking-tight sm:text-2xl pb-7">LEADER BOARD</h3>
+
+                <div class="flex flex-row gap-2">
+                    <h4 class="text-lg font-bold tracking-tight sm:text-2xl">1,304</h4>
+                    <div class="w-0 h-0 border-l-[6px] border-l-transparent border-b-[12px] border-b-[#3A63EF] border-r-[6px] border-r-transparent place-self-center ml-auto mr-2"></div>
+                    <p class="text-sm text-[#3A63EF]">2%</p>
+                </div>
+
+                <p class="text-sm text-[#6C6B80] pb-7">Compared to 1,130 last month</p>
+
+                <div class="flex flex-row self-end bg-[#7346C7] px-3 rounded-full gap-1 mb-7">
+                    <!-- image -->
+                    <p>EUR</p>
+                    <p>/</p>
+                    <!-- image -->
+                    <p>USD</p>
+                </div>
+
+                <div class="flex flex-row w-full justify-between pb-2">
+                    <h4 class="text-lg font-bold">EDGE <span class="text-xs font-normal">per $1000 trade</span></h4>
+                    <div class="w-0 h-0 border-l-[6px] border-l-transparent border-b-[12px] border-b-[#3A63EF] border-r-[6px] border-r-transparent place-self-center ml-auto mr-2"></div>
+                    <p class="text-lg">$62</p>
+                </div>
+
+                <div class="flex flex-row w-full justify-between pb-2">
+                    <h4 class="text-lg font-bold">AW%</h4>
+                    <div class="w-0 h-0 border-l-[6px] border-l-transparent border-b-[12px] border-b-[#3A63EF] border-r-[6px] border-r-transparent place-self-center ml-auto mr-2"></div>
+                    <p class="text-lg">51%</p>
+                </div>
+
+                <div class="flex flex-row w-full justify-between pb-2">
+                    <h4 class="text-lg font-bold">AL%</h4>
+                    <div class="w-0 h-0 border-l-[6px] border-l-transparent border-b-[12px] border-b-[#3A63EF] border-r-[6px] border-r-transparent place-self-center ml-auto mr-2"></div>
+                    <p class="text-lg">49%</p>
+                </div>
+
+                <div class="flex flex-row w-full justify-between pb-2">
+                    <h4 class="text-lg font-bold">ACC</h4>
+                    <div class="w-0 h-0 border-l-[6px] border-l-transparent border-b-[12px] border-b-[#3A63EF] border-r-[6px] border-r-transparent place-self-center ml-auto mr-2"></div>
+                    <p class="text-lg">80%</p>
+                </div>
+
+                <div class="flex flex-row w-full justify-between pb-2">
+                    <h4 class="text-lg font-bold">LIKELIHOOD</h4>
+                    <div class="w-0 h-0 border-l-[6px] border-l-transparent border-b-[12px] border-b-[#3A63EF] border-r-[6px] border-r-transparent place-self-center ml-auto mr-2"></div>
+                    <p class="text-lg">90%</p>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="bg-[#191931] rounded-xl w-full p-7 pb-5 flex flex-col items-center">
+                <div class="flex flex-row w-full justify-between pb-2">
+                    <h4 class="text-lg font-bold">SORTINO</h4>
+                    <div class="w-0 h-0 border-l-[6px] border-l-transparent border-b-[12px] border-b-[#3A63EF] border-r-[6px] border-r-transparent place-self-center ml-auto mr-2"></div>
+                    <p class="text-lg">90%</p>
+                </div>
+                <div class="flex flex-row w-full justify-between pb-2">
+                    <h4 class="text-lg font-bold">ALPHA</h4>
+                    <div class="w-0 h-0 border-l-[6px] border-l-transparent border-b-[12px] border-b-[#3A63EF] border-r-[6px] border-r-transparent place-self-center ml-auto mr-2"></div>
+                    <p class="text-lg">90%</p>
+                </div>
+                <div class="flex flex-row w-full justify-between pb-2">
+                    <h4 class="text-lg font-bold">BETA</h4>
+                    <div class="w-0 h-0 border-l-[6px] border-l-transparent border-b-[12px] border-b-[#3A63EF] border-r-[6px] border-r-transparent place-self-center ml-auto mr-2"></div>
+                    <p class="text-lg">90%</p>
+                </div>
+                <div class="flex flex-row w-full justify-between pb-2">
+                    <h4 class="text-lg font-bold">DRAW DOWN</h4>
+                    <div class="w-0 h-0 border-l-[6px] border-l-transparent border-b-[12px] border-b-[#3A63EF] border-r-[6px] border-r-transparent place-self-center ml-auto mr-2"></div>
+                    <p class="text-lg">90%</p>
+                </div>
+            </div>
+        </div>
+            
+        <div class="row-start-1 col-start-2 col-span-2">
+            <!-- Time range -->
+            <div class="flex flex-row gap-10 justify-center mb-4">
+                <p class="text-base">1W</p>
+                <p class="text-base">1M</p>
+                <p class="text-base">3M</p>
+                <p class="text-base">6M</p>
+                <p class="text-base">1Y</p>
+            </div>
+
+            <!-- Table head -->
+            <div class="grid grid-cols-6 border-2 border-[#7348BB] rounded-lg px-7 py-3 shadow-purple mb-4">
+                <h4 class="text-lg font-bold">PAIRS</h4>
+                <h4 class="text-lg font-bold">EDGE</h4>
+                <h4 class="text-lg font-bold">AW%</h4>
+                <h4 class="text-lg font-bold">AL%</h4>
+                <h4 class="text-lg font-bold">ACC</h4>
+                <h4 class="text-lg font-bold">LIKELIHOOD</h4>
+            </div>
+
+            <!-- Table -->
+            <div class="flex flex-col border-2 border-[#7348BB] rounded-lg py-3 shadow-purple overflow-scroll mb-4">
+                <div class="grid grid-cols-6 w-full h-10 even:bg-[#26273B] items-center px-7">
+                    <h4 class="text-lg font-bold">EUR/USD</h4>
+                    <h4 class="text-lg font-bold">$62</h4>
+                    <h4 class="text-lg font-bold">51%</h4>
+                    <h4 class="text-lg font-bold">49%</h4>
+                    <h4 class="text-lg font-bold">80%</h4>
+                    <h4 class="text-lg font-bold">90%</h4>
+                </div>
+                <div class="grid grid-cols-6 w-full h-10 even:bg-[#26273B] items-center px-7">
+                    <h4 class="text-lg font-bold">EUR/USD</h4>
+                    <h4 class="text-lg font-bold">$62</h4>
+                    <h4 class="text-lg font-bold">51%</h4>
+                    <h4 class="text-lg font-bold">49%</h4>
+                    <h4 class="text-lg font-bold">80%</h4>
+                    <h4 class="text-lg font-bold">90%</h4>
+                </div>
+                <div class="grid grid-cols-6 w-full h-10 even:bg-[#26273B] items-center px-7">
+                    <h4 class="text-lg font-bold">EUR/USD</h4>
+                    <h4 class="text-lg font-bold">$62</h4>
+                    <h4 class="text-lg font-bold">51%</h4>
+                    <h4 class="text-lg font-bold">49%</h4>
+                    <h4 class="text-lg font-bold">80%</h4>
+                    <h4 class="text-lg font-bold">90%</h4>
+                </div>
+                <div class="grid grid-cols-6 w-full h-10 even:bg-[#26273B] items-center px-7">
+                    <h4 class="text-lg font-bold">EUR/USD</h4>
+                    <h4 class="text-lg font-bold">$62</h4>
+                    <h4 class="text-lg font-bold">51%</h4>
+                    <h4 class="text-lg font-bold">49%</h4>
+                    <h4 class="text-lg font-bold">80%</h4>
+                    <h4 class="text-lg font-bold">90%</h4>
+                </div>
+                <div class="grid grid-cols-6 w-full h-10 even:bg-[#26273B] items-center px-7">
+                    <h4 class="text-lg font-bold">EUR/USD</h4>
+                    <h4 class="text-lg font-bold">$62</h4>
+                    <h4 class="text-lg font-bold">51%</h4>
+                    <h4 class="text-lg font-bold">49%</h4>
+                    <h4 class="text-lg font-bold">80%</h4>
+                    <h4 class="text-lg font-bold">90%</h4>
+                </div>
+                <div class="grid grid-cols-6 w-full h-10 even:bg-[#26273B] items-center px-7">
+                    <h4 class="text-lg font-bold">EUR/USD</h4>
+                    <h4 class="text-lg font-bold">$62</h4>
+                    <h4 class="text-lg font-bold">51%</h4>
+                    <h4 class="text-lg font-bold">49%</h4>
+                    <h4 class="text-lg font-bold">80%</h4>
+                    <h4 class="text-lg font-bold">90%</h4>
+                </div>
+                <div class="grid grid-cols-6 w-full h-10 even:bg-[#26273B] items-center px-7">
+                    <h4 class="text-lg font-bold">EUR/USD</h4>
+                    <h4 class="text-lg font-bold">$62</h4>
+                    <h4 class="text-lg font-bold">51%</h4>
+                    <h4 class="text-lg font-bold">49%</h4>
+                    <h4 class="text-lg font-bold">80%</h4>
+                    <h4 class="text-lg font-bold">90%</h4>
+                </div>
+                <div class="grid grid-cols-6 w-full h-10 even:bg-[#26273B] items-center px-7">
+                    <h4 class="text-lg font-bold">EUR/USD</h4>
+                    <h4 class="text-lg font-bold">$62</h4>
+                    <h4 class="text-lg font-bold">51%</h4>
+                    <h4 class="text-lg font-bold">49%</h4>
+                    <h4 class="text-lg font-bold">80%</h4>
+                    <h4 class="text-lg font-bold">90%</h4>
+                </div>
+                <div class="grid grid-cols-6 w-full h-10 even:bg-[#26273B] items-center px-7">
+                    <h4 class="text-lg font-bold">EUR/USD</h4>
+                    <h4 class="text-lg font-bold">$62</h4>
+                    <h4 class="text-lg font-bold">51%</h4>
+                    <h4 class="text-lg font-bold">49%</h4>
+                    <h4 class="text-lg font-bold">80%</h4>
+                    <h4 class="text-lg font-bold">90%</h4>
+                </div>
+            </div>
+
+            <div class="flex flex-row gap-4 mb-4">
+                <!-- Live -->
+                <div class="block px-7 border-2 border-[#4B4B63] rounded-lg py-3 w-1/4 justify-around">
+                    <h4 class="text-base font-extralight tracking-widest text-center">HIVE <span class="text-base font-bold tracking-normal">WAGER INTEL</span></h4> 
+                    <p class="bg-[#ED374D] rounded-full text-center px-3 mx-8 mt-1">LIVE</p>
+                </div>
+
+                <!-- VS -->
+                <div class="flex flex-row px-7 border-2 border-[#4B4B63] rounded-lg py-3 w-3/4 items-center">
+                    <div class="flex flex-row items-center align-middle mr-4">
+                        <Icon name="Euro" class="w-8 h-8" />
+                        <div class="w-[1px] h-8 bg-textcolor mx-1"></div>
+                        <Icon name="Yen" class="w-8 h-8" />
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold">EURO BREAKOUT AGAINST YEN <span class="bg-[#7346C7] px-3 rounded-full ml-2">TOTAL PIP RUN: 217</span></h4>
+                        <p class="text-xs font-semibold">TOKYO MARKET HOURS <span class="text-[#4B4B63]">//</span> FAST MARKET <span class="text-[#4B4B63]">//</span> STABLE VOLATILITY <span class="text-[#4B4B63]">//</span> LOW VOLATILITY</p>
+                    </div>
+                </div>
+            </div>
+               
+        </div>
+
+        <!-- Ods to win -->
+        <div class="row-start-2 col-start-1 col-span-3 flex flex-row w-full bg-[#191931] rounded-xl items-center mb-4 justify-around p-7 h-fit">
+            <div class="flex flex-col justify-center items-center pr-4">
+                <h4 class="text-base font-bold tracking-normal pb-1">ODDS TO WIN</h4> 
+                <p class="bg-[#ED374D] rounded-full text-center px-3 mx-8 mt-1">LIVE</p>
+            </div>
+            <div class="w-[1px] h-8 bg-textcolor mx-1"></div>
+            <div class="flex flex-col px-4">
+                <p class="text-xs font-semibold">AUD/USD, 22-1</p>
+                <p class="text-xs font-semibold">CAD/USD, 1-13</p>
+            </div>
+            <div class="w-[1px] h-8 bg-textcolor mx-1"></div>
+            <div class="flex flex-col px-4">
+                <p class="text-xs font-semibold">AUD/USD, 22-1</p>
+                <p class="text-xs font-semibold">CAD/USD, 1-13</p>
+            </div>
+            <div class="w-[1px] h-8 bg-textcolor mx-1"></div>
+            <div class="flex flex-col px-4">
+                <p class="text-xs font-semibold">AUD/USD, 22-1</p>
+                <p class="text-xs font-semibold">CAD/USD, 1-13</p>
+            </div>
+            <div class="w-[1px] h-8 bg-textcolor mx-1"></div>
+            <div class="flex flex-col px-4">
+                <p class="text-xs font-semibold">AUD/USD, 22-1</p>
+                <p class="text-xs font-semibold">CAD/USD, 1-13</p>
+            </div>
+            <div class="w-[1px] h-8 bg-textcolor mx-1"></div>
+            <div class="flex flex-col px-4">
+                <p class="text-xs font-semibold">AUD/USD, 22-1</p>
+                <p class="text-xs font-semibold">CAD/USD, 1-13</p>
+            </div>
+            <div class="w-[1px] h-8 bg-textcolor mx-1"></div>
+            <div class="flex flex-col px-4">
+                <p class="text-xs font-semibold">AUD/USD, 22-1</p>
+                <p class="text-xs font-semibold">CAD/USD, 1-13</p>
+            </div>
+            <div class="w-[1px] h-8 bg-textcolor mx-1"></div>
+            <div class="flex flex-col pl-4">
+                <p class="text-xs font-semibold">AUD/USD, 22-1</p>
+                <p class="text-xs font-semibold">CAD/USD, 1-13</p>
+            </div>
+        </div>
+
+        <!-- Hive prefomance -->
+        <div class="row-start-3 col-start-1 col-span-3 h-fit flex flex-row gap-4">
+            <div class="flex flex-row w-1/6 justify-center items-center">
+                <Icon name="Hive" class="h-16"/>
+                <h2 class="text-3xl font-bold ml-4 tracking-widest">HIVE</h2>
+            </div>
+            <div class="w-4/6 flex flex-row justify-between border-[#4B4B63] rounded-lg px-7 border-2 py-3">
+                <div class="flex flex-col justify-center items-center pr-4">
+                    <h4 class="text-base font-bold tracking-normal pb-1">PERFORMANCE</h4> 
+                    <p class="bg-[#ED374D] rounded-full text-center px-3 mx-8 mt-1">LIVE</p>
+                </div>
+                <div class="flex flex-col justify-center items-center">
+                    <p class="text-[#787985] font-bold">PIPS GAIN</p>
+                    <h4 class="text-2xl font-bold">2109</h4>
+                </div>
+                <div class="flex flex-col justify-center items-center">
+                    <p class="text-[#787985] font-bold">ROR GAIN</p>
+                    <h4 class="text-2xl font-bold">37%</h4>
+                </div>
+                <div class="flex flex-col justify-center items-center">
+                    <p class="text-[#787985] font-bold">SUSD GAIN</p>
+                    <h4 class="text-2xl font-bold">$5624</h4>
+                </div>
+                <div class="flex flex-col justify-center items-center">
+                    <p class="text-[#787985] font-bold">SORTINO</p>
+                    <h4 class="text-2xl font-bold">2.57</h4>
+                </div>
+                <div class="flex flex-col justify-center items-center">
+                    <p class="text-[#787985] font-bold">EDGE</p>
+                    <h4 class="text-2xl font-bold">$553</h4>
+                </div>
+            </div>
+            <div class="w-1/6 flex flex-row border-[#7348BB] rounded-lg shadow-purple px-7 border-2 py-3">
+                <button class="tracking-normal text-2xl font-semibold">JOIN <span class="tracking-widest">HIVE</span></button>
+            </div>
+        </div>
+    </section>
+
+</Layout>

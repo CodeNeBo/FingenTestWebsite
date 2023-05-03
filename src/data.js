@@ -1,4 +1,4 @@
-import { getHomePermalink } from './utils/permalinks';
+import { getHomePermalink, getPermalink } from './utils/permalinks';
 
 export const headerData = {
   links: [
@@ -9,22 +9,22 @@ export const headerData = {
     },
     {
       text: 'About',
-      href: '#',
+      href: getPermalink('/about'),
       icon: 'About',
     },
     {
       text: 'Next',
-      href: '#',
+      href: getPermalink('/next'),
       icon: 'Next',
     },
     {
       text: 'Trade',
-      href: '#',
+      href: getPermalink('/trade'),
       icon: 'Trade',
     },
     {
       text: 'Hive',
-      href: '#',
+      href: getPermalink('/hive'),
       icon: 'Hive',
     },
   ],

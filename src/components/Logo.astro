@@ -1,4 +1,5 @@
 ---
+import { Image } from '@astrojs/image/components'
 ---
 
-<img class="w-110 mx-auto" src="../src/assets/images/FinGenLogo.svg" alt="">
+<Image src={import('../assets/images/FinGenLogo.svg')} height={65} alt="FinGen logo" />
