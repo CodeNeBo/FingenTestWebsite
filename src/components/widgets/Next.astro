@@ -1,0 +1,116 @@
+---
+import { Icon } from 'astro-icon';
+interface Item {
+  description?: string;
+  description2?: string;
+  description3?: string;
+  icon?: string;
+}
+
+export interface Props {
+  title?: string;
+  subtitle?:string;
+  title2?: string;
+  subtitle2?:string;
+  title3?: string;
+  content?: string;
+  content2?: string;
+  items?: Array<Item>;
+  items2?: Array<Item>;
+  items3?: Array<Item>;
+  image?: string | any;
+}
+
+const {
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  title2 = await Astro.slots.render('title2'),
+  subtitle2 = await Astro.slots.render('subtitle2'),
+  title3 = await Astro.slots.render('title3'),
+  items = [],
+  items2 = [],
+  items3 = [],
+} = Astro.props;
+---
+
+<section class:list={['px-4 pb-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-6xl']}>
+  <div class="mx-auto max-w-7xl">
+    <div class={`md:flex md:gap-16`}>
+
+      <div class="mb-10 md:basis-1/3">
+        {title && <h2 class="text-3xl font-bold leading-tighter tracking-tighter mb-2 font-heading mx-auto" set:html={title} />}
+        {subtitle && <h3 class="mb-2 py-2 text-base font-medium" set:html={subtitle} />}
+        {
+          items && (
+            <div class="space-y-6">
+              {items.map(({ description, icon }) => (
+                <div class="flex">
+                  <div class="flex-shrink-0">
+                    <div class="flex h-6 w-6 items-center justify-center bg-[#EC458D] rounded-full mt-2">
+                      <Icon name={icon ? icon : 'tabler:check'} class="w-5 h-5" />
+                    </div>
+                  </div>
+                  <div class="ml-4">
+                    {description && <p class="mt-2 text-base font-medium" set:html={description} />}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )
+        }
+      </div>
+
+      <div class="mb-10 md:basis-1/3">
+        {title2 && <h2 class="text-3xl font-bold leading-tighter tracking-tighter mb-2 font-heading mx-auto" set:html={title2} />}
+        {subtitle2 && <h3 class="mb-2 py-2 text-base font-medium" set:html={subtitle2} />}
+        {
+          items2 && (
+            <div class="space-y-6">
+              {items2.map(({ description2, icon }) => (
+                <div class="flex">
+                  <div class="flex-shrink-0">
+                    <div class="flex h-6 w-6 items-center justify-center bg-[#EC458D] rounded-full mt-2">
+                      <Icon name={icon ? icon : 'tabler:check'} class="w-5 h-5" />
+                    </div>
+                  </div>
+                  <div class="ml-4">
+                    {description2 && <p class="mt-2 text-base font-medium" set:html={description2} />}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )
+        }
+      </div>
+
+      <div class="mb-10 shrink-0 md:basis-1/3">
+        {title3 && <h2 class="text-3xl  font-bold leading-tighter tracking-tighter mb-2 font-heading mx-auto" set:html={title3} />}
+
+        {
+            items3 && (
+              <div class="space-y-8 mb-4">
+                {items3.map(({ description3, icon }) => (
+                  <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                      <div class="flex h-7 w-7 items-center justify-center rounded-full bg-primary">
+                        {icon && <Icon name={icon} class="w-6 h-6 text-white icon-light" />}
+                      </div>
+                    </div>
+                    <div class="ml-4">
+                      {description3 && <p class="mt-2 text-lg font-bold" set:html={description3} />}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )
+        }
+
+        <form action="">
+            <textarea class="w-full h-44 rounded-lg placeholder-shown:text-[#05050E] placeholder-shown:p-3 mb-4" placeholder="Message"></textarea>
+            <button class="block w-full h-12 rounded-lg bg-secondary text-primary font-bold" type="submit" name="SendWishlist" value="submitted_value">Send Wishlist</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
