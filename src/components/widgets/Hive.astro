@@ -1,0 +1,17 @@
+---
+import { Icon } from 'astro-icon';
+interface Item {
+  description?: string;
+  icon?: string;
+}
+export interface Props {
+  title?: string;
+  subtitle?:string;
+  items: Array<Item>;
+}
+const {
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  items = [],
+} = Astro.props;
+---
