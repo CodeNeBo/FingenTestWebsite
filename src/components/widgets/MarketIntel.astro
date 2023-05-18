@@ -1,0 +1,59 @@
+---
+import { Icon } from 'astro-icon';
+
+interface Item {
+  name?: string;
+  value?: string;
+  down?: string;
+  up?: string;
+}
+export interface Props {
+  title?: string;
+  items: Array<Array<Item>>;
+}
+const {
+  title = await Astro.slots.render('title'),
+  items = [],
+} = Astro.props;
+---
+
+<section class="mx-auto max-w-6xl lg:px-8 lg:py-3" id="MarketIntel">
+  <div class="max-w-md lg:max-w-lg mx-auto">
+
+    {
+      title && (
+        <h2
+          class="text-2xl mb-6 text-center font-bold"
+          set:html={title}
+        />
+      )
+    }
+
+    <div class="flex flex-col border border-[#1C1C24] rounded-lg h-fit overflow-scroll mb-4 bg-[#0F0F18]">
+        {
+            items.map((subitems) => (
+                <div class="divide-y divide-[#1C1C24]">
+                    {subitems.map(({ name, value, down, up }) => (
+                        <div class="flex flex-row py-2 items-center px-4 ">
+                            <div class="flex flex-row justify-between w-full ">
+                                <p class="text-lg" set:html={name} />
+                                
+                                <div class="text-lg flex flex-row items-center">
+                                    <p set:html={value} />
+                                    {up && (
+                                        <Icon name="ArrowUp" class="ml-2 w-3 h-3"/>
+                                    )}
+                                    {down && (
+                                        <Icon name="ArrowDown" class="ml-2 w-3 h-3"/>
+                                    )}
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+              </div>
+            ))
+        }
+    </div>
+    
+  </div>
+</section>

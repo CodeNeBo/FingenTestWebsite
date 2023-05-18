@@ -2,6 +2,10 @@
 import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Listing from '~/components/widgets/Listing.astro';
+import TradeHistory from '~/components/widgets/TradeHistory.astro';
+import VS from '~/components/widgets/VS.astro';
+import TradeData from '~/components/widgets/TradeData.astro';
+import TradeTabs from '~/components/widgets/TradeTabs.astro';
 import { Icon } from 'astro-icon';
 
 const meta = {
@@ -10,44 +14,32 @@ const meta = {
 ---
 
 <Layout {meta}>
-  <Hero>
-      <Fragment slot="trdButton">
-        Trade
-      </Fragment>
-  </Hero>
+    <TradeTabs>
 
-  <section class="sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-2xl pb-10 -translate-y-24 md:-translate-y-28 lg:-translate-y-48">
+    </TradeTabs>
 
-    <div class="flex flex-row items-center justify-center text-sm gap-2 py-1 px-4 mx-auto mb-4 w-fit bg-white bg-opacity-10 backdrop-blur-md drop-shadow-xl rounded-full">
-      <Icon name="Alert" class="w-5 h-5" />
-      <p>Trade alert 2 secs ago</p>
-    </div>
-    <div class="max-w-md sm:mx-auto lg:max-w-lg bg-secondary rounded-lg p-4 flex flex-col mx-auto mb-1">
-      <div class="w-full flex flex-row justify-between pb-2">
-        <p class="text-primary text-sm uppercase tracking-widest">Edge</p>
-        <p class="text-primary text-sm uppercase tracking-widest">3.1</p>
-      </div>
-      <hr class="w-full border-[#1C1C24]">
-      <div class="w-full flex flex-row justify-between py-2">
-        <p class="text-primary text-sm uppercase tracking-widest">Avg Win %</p>
-        <p class="text-primary text-sm uppercase tracking-widest">2.5%</p>
-      </div>
-      <hr class="w-full border-[#1C1C24]">
-      <div class="w-full flex flex-row justify-between py-2">
-        <p class="text-primary text-sm uppercase tracking-widest">Avg Loss %</p>
-        <p class="text-primary text-sm uppercase tracking-widest">2.7%</p>
-      </div>
-      <hr class="w-full border-[#1C1C24]">
-      <div class="w-full flex flex-row justify-between py-2">
-        <p class="text-primary text-sm uppercase tracking-widest">Avg Win $</p>
-        <p class="text-primary text-sm uppercase tracking-widest">$200</p>
-      </div>
-      <hr class="w-full border-[#1C1C24]">
-      <div class="w-full flex flex-row justify-between pt-2">
-        <p class="text-primary text-sm uppercase tracking-widest">Avg Loss $</p>
-        <p class="text-primary text-sm uppercase tracking-widest">$102</p>
-      </div>
-    </div>
+  <section class="sm:px-6 mx-auto mt-20 lg:px-8 lg:py-20 max-w-2xl pb-10 -translate-y-24  lg:-translate-y-28" id="TradeNow">
+
+    <Hero>
+        <Fragment slot="trdButton">
+          Trade
+        </Fragment>
+    </Hero>
+    <div class="-translate-y-16">
+        <TradeData
+      items={[
+          [
+          {
+              EDGE: '3.1',
+              AvgW: '2.5',
+              AvgL: '2.7',
+              AvgWM: '200',
+              AvgLM: '102',
+          },
+          ],
+      ]}
+      >
+    </TradeData>
 
     <Listing 
         items={[
@@ -67,109 +59,98 @@ const meta = {
         >
     </Listing>
 
-    <button class="w-full max-w-md lg:max-w-lg rounded-lg py-3 bg-[#1C1C24] mx-auto mb-4 flex justify-center items-center px-4 gap-2 text-xl hover:bg-[#31313d]">
+    <button class="w-full max-w-md lg:max-w-lg rounded-lg py-3 bg-[#1C1C24] mx-auto mb-4 flex justify-center items-center px-4 gap-2 text-xl hover:bg-[#31313d] mt-4">
       <Icon name="Ignore" class="w-5 h-5" />
       Ignore
     </button>
-
-    <div class="max-w-md lg:max-w-lg flex flex-row px-7 border-2 border-[#4B4B63] rounded-lg py-3 items-center mx-auto">
-      <div>
-          <h4 class="text-lg font-bold">EURO BREAKOUT AGAINST YEN <span class="bg-[#7346C7] px-3 rounded-full ml-2">TOTAL PIP RUN: 217</span></h4>
-          <p class="text-xs font-semibold pt-2 ">TOKYO MARKET HOURS <span class="text-[#4B4B63]">//</span> FAST MARKET <span class="text-[#4B4B63]">//</span> STABLE VOLATILITY <span class="text-[#4B4B63]">//</span> LOW VOLATILITY</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-2xl pb-10 mb-10">
-    <div class="max-w-md lg:max-w-lg py-3 mx-auto mb-4 flex justify-center items-center grow px-4 gap-2">
-      <Icon name="Clock" class="w-5 h-5" />
-      <p>Last Transaction 20 January 2022</p>
-    </div>
-    <div class="max-w-md lg:max-w-lg border rounded-lg py-3 bg-[#0B0B14] border-[#1C1C24] mx-auto mb-4 flex justify-between items-center grow px-4">
-      <div class="flex flex-row">
-        <Icon name="CanadianDollar" class="w-5 h-5" />
-        <Icon name="Dollar" class="w-5 h-5 ml-[-6px]" />
-        <p class="text-sm">CAD USD</p>
-      </div>
-      <h3 class="bg-[#1C1C24] border border-[#1C1C24] rounded-lg px-2">Jan 6th, 2023</h3>
-    </div>
-    <div class="max-w-md lg:max-w-lg border rounded-lg py-3 bg-[#0B0B14] border-[#1C1C24] mx-auto mb-4 flex justify-between items-center grow px-4">
-      <div class="flex flex-row">
-        <Icon name="CanadianDollar" class="w-5 h-5" />
-        <Icon name="Dollar" class="w-5 h-5 ml-[-6px]" />
-        <p class="text-sm">CAD USD</p>
-      </div>
-      <h3 class="bg-[#1C1C24] border border-[#1C1C24] rounded-lg px-2">Jan 6th, 2023</h3>
-    </div>
-    <div class="max-w-md lg:max-w-lg border rounded-lg py-3 bg-[#0B0B14] border-[#1C1C24] mx-auto mb-4 flex justify-between items-center grow px-4">
-      <div class="flex flex-row">
-        <Icon name="CanadianDollar" class="w-5 h-5" />
-        <Icon name="Dollar" class="w-5 h-5 ml-[-6px]" />
-        <p class="text-sm">CAD USD</p>
-      </div>
-      <h3 class="bg-[#1C1C24] border border-[#1C1C24] rounded-lg px-2">Jan 6th, 2023</h3>
-    </div>
-    <div class="max-w-md lg:max-w-lg border rounded-lg py-3 bg-[#0B0B14] border-[#1C1C24] mx-auto mb-4 flex justify-between items-center grow px-4">
-      <div class="flex flex-row">
-        <Icon name="CanadianDollar" class="w-5 h-5" />
-        <Icon name="Dollar" class="w-5 h-5 ml-[-6px]" />
-        <p class="text-sm">CAD USD</p>
-      </div>
-      <h3 class="bg-[#1C1C24] border border-[#1C1C24] rounded-lg px-2">Jan 6th, 2023</h3>
-    </div>
-    <div class="max-w-md lg:max-w-lg border rounded-lg py-3 bg-[#0B0B14] border-[#1C1C24] mx-auto mb-4 flex justify-between items-center grow px-4">
-      <div class="flex flex-row">
-        <Icon name="CanadianDollar" class="w-5 h-5" />
-        <Icon name="Dollar" class="w-5 h-5 ml-[-6px]" />
-        <p class="text-sm">CAD USD</p>
-      </div>
-      <h3 class="bg-[#1C1C24] border border-[#1C1C24] rounded-lg px-2">Jan 6th, 2023</h3>
-    </div>
-    <div class="max-w-md lg:max-w-lg border rounded-lg py-3 bg-[#0B0B14] border-[#1C1C24] mx-auto mb-4 flex justify-between items-center grow px-4">
-      <div class="flex flex-row">
-        <Icon name="CanadianDollar" class="w-5 h-5" />
-        <Icon name="Dollar" class="w-5 h-5 ml-[-6px]" />
-        <p class="text-sm">CAD USD</p>
-      </div>
-      <h3 class="bg-[#1C1C24] border border-[#1C1C24] rounded-lg px-2">Jan 6th, 2023</h3>
-    </div>
-    <div class="max-w-md lg:max-w-lg border rounded-lg py-3 bg-[#0B0B14] border-[#1C1C24] mx-auto mb-4 flex justify-between items-center grow px-4">
-      <div class="flex flex-row">
-        <Icon name="CanadianDollar" class="w-5 h-5" />
-        <Icon name="Dollar" class="w-5 h-5 ml-[-6px]" />
-        <p class="text-sm">CAD USD</p>
-      </div>
-      <h3 class="bg-[#1C1C24] border border-[#1C1C24] rounded-lg px-2">Jan 6th, 2023</h3>
-    </div>
-    <div class="max-w-md lg:max-w-lg border rounded-lg py-3 bg-[#0B0B14] border-[#1C1C24] mx-auto mb-4 flex justify-between items-center grow px-4">
-      <div class="flex flex-row">
-        <Icon name="CanadianDollar" class="w-5 h-5" />
-        <Icon name="Dollar" class="w-5 h-5 ml-[-6px]" />
-        <p class="text-sm">CAD USD</p>
-      </div>
-      <h3 class="bg-[#1C1C24] border border-[#1C1C24] rounded-lg px-2">Jan 6th, 2023</h3>
-    </div>
-    <div class="max-w-md lg:max-w-lg border rounded-lg py-3 bg-[#0B0B14] border-[#1C1C24] mx-auto mb-4 flex justify-between items-center grow px-4">
-      <div class="flex flex-row">
-        <Icon name="CanadianDollar" class="w-5 h-5" />
-        <Icon name="Dollar" class="w-5 h-5 ml-[-6px]" />
-        <p class="text-sm">CAD USD</p>
-      </div>
-      <h3 class="bg-[#1C1C24] border border-[#1C1C24] rounded-lg px-2">Jan 6th, 2023</h3>
+    <VS
+    items={[
+        [
+        {
+            title: 'EURO BREAKOUT AGAINST YEN',
+            pip: '217',
+            description1: 'TOKYO MARKET HOURS',
+            description2: 'FAST MARKET',
+            description3: 'STABLE VOLATILITY',
+            description4: 'LOW VOLATILITY',
+        },
+        ],
+    ]}
+    >
+    </VS>
     </div>
     
-
-    <div class="max-w-md lg:max-w-lg flex flex-row px-7 border-2 border-[#4B4B63] rounded-lg py-3 items-center mx-auto">
-      <div class="flex flex-row items-center align-middle mr-4">
-          <Icon name="Euro" class="w-8 h-8" />
-          <div class="w-[1px] h-8 bg-textcolor mx-1"></div>
-          <Icon name="Yen" class="w-8 h-8" />
-      </div>
-      <div>
-          <h4 class="text-lg font-bold">EURO BREAKOUT AGAINST YEN <span class="bg-[#7346C7] px-3 rounded-full ml-2">TOTAL PIP RUN: 217</span></h4>
-          <p class="text-xs font-semibold pt-2">TOKYO MARKET HOURS <span class="text-[#4B4B63]">//</span> FAST MARKET <span class="text-[#4B4B63]">//</span> STABLE VOLATILITY <span class="text-[#4B4B63]">//</span> LOW VOLATILITY</p>
-      </div>
-    </div>
   </section>
 
+    <TradeHistory
+    items={[
+        [
+        {
+            currency: 'USD',
+            currency2: 'CAD',
+            date: 'Jan 6th, 2023',
+        },
+        {
+            currency: 'USD',
+            currency2: 'CAD',
+            date: 'Jan 6th, 2023',
+        },
+        {
+            currency: 'USD',
+            currency2: 'CAD',
+            date: 'Jan 6th, 2023',
+        },
+        {
+            currency: 'USD',
+            currency2: 'CAD',
+            date: 'Jan 6th, 2023',
+        },
+        {
+            currency: 'USD',
+            currency2: 'CAD',
+            date: 'Jan 6th, 2023',
+        },
+        {
+            currency: 'USD',
+            currency2: 'CAD',
+            date: 'Jan 6th, 2023',
+        },
+        {
+            currency: 'USD',
+            currency2: 'CAD',
+            date: 'Jan 6th, 2023',
+        },
+        {
+            currency: 'USD',
+            currency2: 'CAD',
+            date: 'Jan 6th, 2023',
+        },
+        {
+            currency: 'USD',
+            currency2: 'CAD',
+            date: 'Jan 6th, 2023',
+        },
+        ],
+    ]}
+    >
+    <Fragment slot="lasttr">
+      Last Transaction 20 January 2022
+    </Fragment>
+
+    <VS
+    items={[
+        [
+        {
+            title: 'EURO BREAKOUT AGAINST YEN',
+            pip: '217',
+            description1: 'TOKYO MARKET HOURS',
+            description2: 'FAST MARKET',
+            description3: 'STABLE VOLATILITY',
+            description4: 'LOW VOLATILITY',
+        },
+        ],
+    ]}
+    >
+    </VS>
+    </TradeHistory>
 </Layout>

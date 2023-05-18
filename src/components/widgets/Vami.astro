@@ -1,0 +1,65 @@
+<div class="mx-auto max-w-6xl lg:px-8 lg:py-3">
+    <h2 class="text-2xl mb-2 text-center font-bold">VAMI</h2>
+    <div class="max-w-md lg:max-w-lg mx-auto bg-[#1C1C24] rounded-lg p-4 mb-4">
+        <p class="text-[#A4A4A7] text-sm tracking-wide mb-2">Value of initial $1,000 investment</p>
+        <canvas id="vami"></canvas>
+    </div>
+</div>
+
+
+
+<script>
+    import Chart from 'chart.js/auto'
+    import gradient from 'chartjs-plugin-gradient';
+
+  (async function() {
+  
+  const labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'];
+  const data = {
+    labels: labels,
+    datasets: [
+      {
+        label: 'Vami',
+        data: [550, 520, 700, 520, 875, 780],
+        borderColor: '#8335DA',
+        cubicInterpolationMode: 'monotone',
+        tension: 0.4,
+        pointBackgroundColor: 'rgba(0,0,0,0)',
+        pointBorderColor: 'rgba(0,0,0,0)',
+        gradient: {
+        backgroundColor: {
+          axis: 'y',
+          colors: {
+            0: 'rgba(131,53,218,1)',
+            100: 'rgba(131,53,218,0)'
+          }
+        },
+      },  
+    }
+    ]
+  };
+  
+  new Chart(
+    document.getElementById('vami'),
+    {
+      type: 'line',
+      data: data,
+      options: {
+          plugins: {
+            gradient,
+              title: {
+                  display: false,
+                  text: 'VAMI'
+              },
+                legend: {
+                display: false
+                },
+          },
+          responsive: true,
+      }
+    }
+  );
+
+  })(); 
+  
+  </script>

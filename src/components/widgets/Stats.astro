@@ -1,0 +1,148 @@
+---
+interface Item {
+  currency1W?: string;
+  currency21W?: string;
+  EDGE1W?: string;
+  AW1W?: string;
+  AL1W?: string;
+  ACC1W?: string;
+  LIKELIHOOD1W?: string;
+  currency1M?: string;
+  currency21M?: string;
+  EDGE1M?: string;
+  AW1M?: string;
+  AL1M?: string;
+  ACC1M?: string;
+  LIKELIHOOD1M?: string;
+  currency3M?: string;
+  currency23M?: string;
+  EDGE3M?: string;
+  AW3M?: string;
+  AL3M?: string;
+  ACC3M?: string;
+  LIKELIHOOD3M?: string;
+  currency6M?: string;
+  currency26M?: string;
+  EDGE6M?: string;
+  AW6M?: string;
+  AL6M?: string;
+  ACC6M?: string;
+  LIKELIHOOD6M?: string;
+  currency1Y?: string;
+  currency21Y?: string;
+  EDGE1Y?: string;
+  AW1Y?: string;
+  AL1Y?: string;
+  ACC1Y?: string;
+  LIKELIHOOD1Y?: string;
+}
+export interface Props {
+  items: Array<Array<Item>>;
+}
+const {
+  items = [],
+} = Astro.props;
+---
+
+<section class="mx-auto max-w-6xl lg:px-8 lg:py-3" id="Stats">
+  <div class="max-w-md lg:max-w-lg mx-auto">
+
+    <h2 class="text-2xl mb-2 text-center font-bold">Stats</h2>
+
+    <slot />
+
+    <div class="flex flex-row justify-between items-center my-2 border border-[#1C1C24] rounded-lg py-1 px-4">
+        <h3 class="font-bold tracking-wide">PAIRS</h3>
+        <button id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover" class="text-white bg-[#0F0F18] uppercase hover:bg-accent focus:outline-none font-bold tracking-wide rounded-lg px-4 py-2 my-1 text-center inline-flex items-center" type="button">EDGE <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+        
+        <div id="dropdownHover" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownHoverButton">
+            <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">EDGE</a>
+            </li>
+            <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">AW%</a>
+            </li>
+            <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">AL%</a>
+            </li>
+            <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">ACC</a>
+            </li>
+            <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">LIKELIHOOD</a>
+            </li>
+            </ul>
+        </div>
+    </div>
+<!-- TODO: Rewrite code from scratch -->
+    <div class="flex flex-col border border-[#1C1C24] rounded-lg h-60 overflow-scroll mb-4 bg-[#0F0F18]">
+        {
+            items.map((subitems) => (
+                <div class="">
+                    {subitems.map(({ currency1W, currency1M, currency3M, currency6M, currency1Y, currency21W, currency21M, currency23M, currency26M, currency21Y, EDGE1W, EDGE1M, EDGE3M, EDGE6M, EDGE1Y, AW1W, AW1M, AW3M, AW6M, AW1Y, AL1W, AL1M, AL3M, AL6M, AL1Y, ACC1W, ACC1M, ACC3M, ACC6M, ACC1Y, LIKELIHOOD1W, LIKELIHOOD1M, LIKELIHOOD3M, LIKELIHOOD6M, LIKELIHOOD1Y }) => (
+                        <div class="flex flex-row py-2 items-center px-4 even:bg-[#26273B]">
+                            <div class="flex flex-row justify-between w-full">
+                                <div class="flex flex-row text-lg">
+                                    <p id="1W" set:html={currency1W} />
+                                    <p id="1M" class="hidden" set:html={currency1M} />
+                                    <p id="3M" class="hidden" set:html={currency3M} />
+                                    <p id="6M" class="hidden" set:html={currency6M} />
+                                    <p id="1Y" class="hidden" set:html={currency1Y} />
+                                    <p class="text-lg mx-2"> / </p>
+                                    <p id="1W" set:html={currency21W} />
+                                    <p id="1M" class="hidden" set:html={currency21M} />
+                                    <p id="3M" class="hidden" set:html={currency23M} />
+                                    <p id="6M" class="hidden" set:html={currency26M} />
+                                    <p id="1Y" class="hidden" set:html={currency21Y} />
+                                </div>
+                                <div class="text-lg flex flex-row">
+                                    <p>$</p>
+                                    <p id="1W" set:html={EDGE1W} />
+                                    <p id="1M" class="hidden" set:html={EDGE1M} />
+                                    <p id="3M" class="hidden" set:html={EDGE3M} />
+                                    <p id="6M" class="hidden" set:html={EDGE6M} />
+                                    <p id="1Y" class="hidden" set:html={EDGE1Y} />
+                                </div>
+                                <div class="hidden text-lg flex-row">
+                                    <p id="1W" set:html={AW1W} />
+                                    <p id="1M" class="hidden" set:html={AW1M} />
+                                    <p id="3M" class="hidden" set:html={AW3M} />
+                                    <p id="6M" class="hidden" set:html={AW6M} />
+                                    <p id="1Y" class="hidden" set:html={AW1Y} />
+                                    <p>%</p>
+                                </div>
+                                <div class="hidden text-lg flex-row">
+                                    <p id="1W" set:html={AL1W} />
+                                    <p id="1M" class="hidden" set:html={AL1M} />
+                                    <p id="3M" class="hidden" set:html={AL3M} />
+                                    <p id="6M" class="hidden" set:html={AL6M} />
+                                    <p id="1Y" class="hidden" set:html={AL1Y} />
+                                    <p>%</p>
+                                </div>
+                                <div class="hidden text-lg flex-row">
+                                    <p id="1W" set:html={ACC1W} />
+                                    <p id="1M" class="hidden" set:html={ACC1M} />
+                                    <p id="3M" class="hidden" set:html={ACC3M} />
+                                    <p id="6M" class="hidden" set:html={ACC6M} />
+                                    <p id="1Y" class="hidden" set:html={ACC1Y} />
+                                    <p>%</p>
+                                </div>
+                                <div class="hidden text-lg flex-row">
+                                    <p id="1W" set:html={LIKELIHOOD1W} />
+                                    <p id="1M" class="hidden" set:html={LIKELIHOOD1M} />
+                                    <p id="3M" class="hidden" set:html={LIKELIHOOD3M} />
+                                    <p id="6M" class="hidden" set:html={LIKELIHOOD6M} />
+                                    <p id="1Y" class="hidden" set:html={LIKELIHOOD1Y} />
+                                    <p>%</p>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+              </div>
+            ))
+        }
+    </div>
+    
+  </div>
+</section>

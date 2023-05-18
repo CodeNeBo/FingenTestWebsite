@@ -1,6 +1,15 @@
 ---
-import Layout from '~/layouts/PageLayout.astro';
 import { Icon } from 'astro-icon';
+import Layout from '~/layouts/PageLayout.astro';
+import Leaderboard from '~/components/widgets/Leaderboard.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import MarketIntel from '~/components/widgets/MarketIntel.astro';
+import Odds from '~/components/widgets/Odds.astro';
+import LeaderboardTabs from '~/components/widgets/LeaderboardTabs.astro';
+import StatsTabs from '~/components/widgets/StatsTabs.astro';
+import ChartReturn from '~/components/widgets/ChartReturn.astro';
+import Vami from '~/components/widgets/Vami.astro';
+import VS from '~/components/widgets/VS.astro';
 
 const meta = {
   title: "Hive",
@@ -9,7 +18,7 @@ const meta = {
 
 <Layout {meta}>
     <!-- grid-cols-3 grid-rows-3 -->
-    <section class="grid  auto-cols-auto grid-rows-auto gap-4 px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 ">
+    <section class="hidden md:grid auto-cols-auto grid-rows-auto gap-4 px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 ">
 
         <div>
             <!-- Leader board -->
@@ -192,7 +201,7 @@ const meta = {
                 </div>
 
                 <!-- VS -->
-                <div class="flex flex-row px-7 border-2 border-[#4B4B63] rounded-lg py-3 w-3/4 items-center">
+                <!-- <div class="flex flex-row px-7 border-2 border-[#4B4B63] rounded-lg py-3 w-3/4 items-center">
                     <div class="flex flex-row items-center align-middle mr-4">
                         <Icon name="Euro" class="w-8 h-8" />
                         <div class="w-[1px] h-8 bg-textcolor mx-1"></div>
@@ -202,7 +211,22 @@ const meta = {
                         <h4 class="text-lg font-bold">EURO BREAKOUT AGAINST YEN <span class="bg-[#7346C7] px-3 rounded-full ml-2">TOTAL PIP RUN: 217</span></h4>
                         <p class="text-xs font-semibold">TOKYO MARKET HOURS <span class="text-[#4B4B63]">//</span> FAST MARKET <span class="text-[#4B4B63]">//</span> STABLE VOLATILITY <span class="text-[#4B4B63]">//</span> LOW VOLATILITY</p>
                     </div>
-                </div>
+                </div> -->
+                <VS
+                    items={[
+                        [
+                        {
+                            title: 'EURO BREAKOUT AGAINST YEN',
+                            pip: '217',
+                            description1: 'TOKYO MARKET HOURS',
+                            description2: 'FAST MARKET',
+                            description3: 'STABLE VOLATILITY',
+                            description4: 'LOW VOLATILITY',
+                        },
+                        ],
+                    ]}
+                    >
+                </VS>
             </div>
                
         </div>
@@ -286,6 +310,214 @@ const meta = {
                 <button class="tracking-normal text-2xl font-semibold">JOIN <span class="tracking-widest">HIVE</span></button>
             </div>
         </div>
+    </section>
+
+    <section class="md:hidden">
+        <Leaderboard
+        items={[
+            [
+            {
+                currency: 'USD',
+                currency2: 'CAD',
+                value: '1.35740',
+            },
+            {
+                currency: 'USD',
+                currency2: 'CAD',
+                value: '1.35740',
+            },
+            {
+                currency: 'USD',
+                currency2: 'CAD',
+                value: '1.35740',
+            },
+            {
+                currency: 'USD',
+                currency2: 'CAD',
+                value: '1.35740',
+            },
+            {
+                currency: 'USD',
+                currency2: 'CAD',
+                value: '1.35740',
+            },
+            ],
+        ]}
+        itemsWorst={[
+            [
+            {
+                currencyWorst: 'USD',
+                currencyWorst2: 'JPY',
+                valueWorst: '0.34020',
+            },
+            {
+                currencyWorst: 'USD',
+                currencyWorst2: 'JPY',
+                valueWorst: '0.34020',
+            },
+            {
+                currencyWorst: 'USD',
+                currencyWorst2: 'JPY',
+                valueWorst: '0.34020',
+            },
+            {
+                currencyWorst: 'USD',
+                currencyWorst2: 'JPY',
+                valueWorst: '0.34020',
+            },
+            {
+                currencyWorst: 'USD',
+                currencyWorst2: 'JPY',
+                valueWorst: '0.34020',
+            },
+            ],
+        ]}
+    >
+        <LeaderboardTabs></LeaderboardTabs>
+    </Leaderboard>
+        <Stats
+        items={[
+            [
+            {
+                currency1W: 'USD',
+                currency21W: 'CAD',
+                EDGE1W: '62',
+                AW1W: '51',
+                AL1W: '49',
+                ACC1W: '80',
+                LIKELIHOOD1W: '90',
+            },
+            {
+                currency1W: 'USD',
+                currency21W: 'CAD',
+                EDGE1W: '62',
+                AW1W: '51',
+                AL1W: '49',
+                ACC1W: '80',
+                LIKELIHOOD1W: '90',
+            },
+            {
+                currency1W: 'USD',
+                currency21W: 'CAD',
+                EDGE1W: '62',
+                AW1W: '51',
+                AL1W: '49',
+                ACC1W: '80',
+                LIKELIHOOD1W: '90',
+            },
+            {
+                currency1W: 'USD',
+                currency21W: 'CAD',
+                EDGE1W: '62',
+                AW1W: '51',
+                AL1W: '49',
+                ACC1W: '80',
+                LIKELIHOOD1W: '90',
+            },
+            {
+                currency1W: 'USD',
+                currency21W: 'CAD',
+                EDGE1W: '62',
+                AW1W: '51',
+                AL1W: '49',
+                ACC1W: '80',
+                LIKELIHOOD1W: '90',
+            },
+            {
+                currency1W: 'USD',
+                currency21W: 'CAD',
+                EDGE1W: '62',
+                AW1W: '51',
+                AL1W: '49',
+                ACC1W: '80',
+                LIKELIHOOD1W: '90',
+            },
+            ],
+        ]}
+    >
+    <StatsTabs></StatsTabs>
+    </Stats>
+        <MarketIntel
+        items={[
+            [
+            {
+                name: 'Sortino',
+                value: '2.65',
+                down: 'ArrowDown',
+            },
+            {
+                name: 'Alpha',
+                value: '1.27',
+                up: 'ArrowUp',
+            },
+            {
+                name: 'Beta',
+                value: '0.37',
+                up: 'ArrowUp',
+            },
+            {
+                name: 'Draw Down',
+                value: '0.02',
+                down: 'ArrowDown',
+            },
+            ],
+        ]}
+    >
+        <Fragment slot="title">
+            Market Intel LIVE
+      </Fragment>
+    </MarketIntel>
+    
+
+    <Odds
+        items={[
+            [
+            {
+                currency: 'USD',
+                currency2: 'CAD',
+                value1: '22',
+                value2: '1',
+            },
+            {
+                currency: 'USD',
+                currency2: 'JPY',
+                value1: '3',
+                value2: '1',
+            },
+            ],
+        ]}
+    >
+    </Odds>
+    
+            <ChartReturn
+            items={[
+            [
+            {
+            value: '10.67',
+            todayValue: '1.7',
+            },
+            ],
+            ]}
+        ></ChartReturn>
+
+            <Vami></Vami>
+    
+
+    <VS
+            items={[
+                [
+                {
+                    title: 'EURO BREAKOUT AGAINST YEN',
+                    pip: '217',
+                    description1: 'TOKYO MARKET HOURS',
+                    description2: 'FAST MARKET',
+                    description3: 'STABLE VOLATILITY',
+                    description4: 'LOW VOLATILITY',
+                },
+                ],
+            ]}
+        >
+        </VS>
     </section>
 
 </Layout>

@@ -1,0 +1,51 @@
+---
+interface Item {
+  currency?: string;
+  currency2?: string;
+  value1?: string;
+  value2?: string;
+}
+export interface Props {
+  items: Array<Array<Item>>;
+}
+const {
+  items = [],
+} = Astro.props;
+---
+
+<section class="mx-auto max-w-6xl lg:px-8 lg:py-3" id="Odds to win">
+  <div class="max-w-md lg:max-w-lg mx-auto">
+
+    <h2 class="text-2xl mb-2 text-center font-bold">Odds to Win</h2>
+
+    <div class="flex flex-row justify-between text-[#A4A4A7] text-reg px-4 pb-2">
+        <p>FX Pair</p>
+        <p>Odds Number</p>
+    </div>
+
+    <div class="h-fit mb-4">
+      {
+        items.map((subitems) => (
+          <div class="">
+            {subitems.map(({ currency, currency2, value1, value2 }) => (
+              <div class="flex flex-row border border-[#1C1C24] rounded-lg py-3 items-center px-4 mb-2 bg-[#0F0F18]">
+                  <div class="flex flex-row justify-between w-full">
+                    <div class="flex flex-row">
+                      <p class="text-lg" set:html={currency} />
+                      <p class="text-lg mx-2"> • </p>
+                      <p class="text-lg" set:html={currency2} />
+                    </div>
+                    <div class="flex flex-row text-lg">
+                        <p set:html={value1} />
+                        <p class="mx-2">-</p>
+                        <p set:html={value2} />
+                    </div>
+                  </div>
+              </div>
+            ))}
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

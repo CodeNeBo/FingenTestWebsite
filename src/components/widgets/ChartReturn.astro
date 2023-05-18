@@ -1,0 +1,127 @@
+---
+import MarketIntel from '~/components/widgets/MarketIntel.astro';
+
+interface Item {
+  value?: string;
+  todayValue?: string;
+}
+export interface Props {
+  items: Array<Array<Item>>;
+}
+const {
+  items = [],
+} = Astro.props;
+---
+
+<h2 class="text-2xl mb-2 text-center font-bold">Last 12-Months Return</h2>
+
+<div class="mx-auto max-w-6xl lg:px-8 lg:py-3">
+  <div class="max-w-md lg:max-w-lg mx-auto h-0 translate-y-10">
+    {
+      items.map((subitems) => (
+        <div>
+          {subitems.map(({ value, todayValue }) => (
+            <div>
+              <div class="text-lg flex flex-col">
+                <div class="inline-flex text-xs font-semibold">
+                  <p>Hive</p>
+                  <p class="ml-1" set:html={todayValue} />
+                  <p>% Today</p>
+                </div>   
+                <div class="inline-flex font-semibold text-lg">
+                  <p set:html={value} />
+                  <p>%</p>
+                </div>    
+              </div>
+            </div>
+          ))}
+        </div>
+      ))
+    }
+  </div>
+    <div class="max-w-md lg:max-w-lg mx-auto">
+        <canvas id="returns"></canvas>
+    </div>
+</div>
+
+<MarketIntel
+  items={[
+    [
+    {
+        name: 'Sortino',
+        value: '2.65',
+        down: 'ArrowDown',
+    },
+    ],
+  ]}
+></MarketIntel>
+  
+<script>
+  import Chart from 'chart.js/auto'
+
+(async function() {
+
+const labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const data = {
+  labels: labels,
+  datasets: [
+    {
+      label: 'Hive',
+      data: [28, 43, 34, 70, 76, 82, 83, 70, 115, 36, 30, 45],
+      backgroundColor: '#50E3C2',
+    },
+    {
+      label: 'BCTI',
+      data: [13, 16, 18, 20, 22, 21, 14, 10, 8, 14, 16, 9],
+      backgroundColor: '#0070F3',
+    },
+    {
+      label: 'USD',
+      data: [12, 21, 23, 27, 19, 26, 29, 19, 15, 10, 21, 24],
+      backgroundColor: '#7928CA',
+    },
+    {
+      label: 'GLD',
+      data: [1, 4, 6, 4, 5, 8, 9, 7, 4, 2, 4, 7],
+      backgroundColor: '#FFEB3A',
+    },
+    {
+      label: 'SPX',
+      data: [14, 15, 17, 20, 24, 26, 28, 23, 30, 13, 15, 24],
+      backgroundColor: '#FF0080',
+    },
+    
+  ]
+};
+
+new Chart(
+  document.getElementById('returns'),
+  {
+    type: 'bar',
+    data: data,
+    options: {
+        plugins: {
+            title: {
+                display: false,
+                text: 'Last 12-Months Return'
+            },
+        },
+        responsive: true,
+        scales: {
+            x: {
+                stacked: true,
+            },
+            y: {
+                stacked: true,
+                ticks: {
+                display: false
+            }
+            }
+        }
+    }
+  }
+);
+})(); 
+
+</script>
+  
