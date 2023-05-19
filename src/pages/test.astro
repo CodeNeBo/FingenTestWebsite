@@ -16,6 +16,315 @@ const meta = {
 ---
 
 <Layout {meta}>
+    <div class="flex flex-col md:grid md:grid-cols-4 gap-4 mx-4">
+        <div class="col-span-1 md:h-[800px]">
+            <Leaderboard
+            items={[
+                [
+                {
+                    currency: 'USD',
+                    currency2: 'CAD',
+                    value: '1.35740',
+                },
+                {
+                    currency: 'USD',
+                    currency2: 'CAD',
+                    value: '1.35740',
+                },
+                {
+                    currency: 'USD',
+                    currency2: 'CAD',
+                    value: '1.35740',
+                },
+                {
+                    currency: 'USD',
+                    currency2: 'CAD',
+                    value: '1.35740',
+                },
+                {
+                    currency: 'USD',
+                    currency2: 'CAD',
+                    value: '1.35740',
+                },
+                ],
+            ]}
+            itemsWorst={[
+                [
+                {
+                    currencyWorst: 'USD',
+                    currencyWorst2: 'JPY',
+                    valueWorst: '0.34020',
+                },
+                {
+                    currencyWorst: 'USD',
+                    currencyWorst2: 'JPY',
+                    valueWorst: '0.34020',
+                },
+                {
+                    currencyWorst: 'USD',
+                    currencyWorst2: 'JPY',
+                    valueWorst: '0.34020',
+                },
+                {
+                    currencyWorst: 'USD',
+                    currencyWorst2: 'JPY',
+                    valueWorst: '0.34020',
+                },
+                {
+                    currencyWorst: 'USD',
+                    currencyWorst2: 'JPY',
+                    valueWorst: '0.34020',
+                },
+                ],
+            ]}
+        >
+            <LeaderboardTabs></LeaderboardTabs>
+        </Leaderboard>
+
+        <MarketIntel
+        items={[
+            [
+            {
+                name: 'Sortino',
+                value: '2.65',
+                down: 'ArrowDown',
+            },
+            {
+                name: 'Alpha',
+                value: '1.27',
+                up: 'ArrowUp',
+            },
+            {
+                name: 'Beta',
+                value: '0.37',
+                up: 'ArrowUp',
+            },
+            {
+                name: 'Draw Down',
+                value: '0.02',
+                down: 'ArrowDown',
+            },
+            ],
+        ]}
+    >
+        <Fragment slot="title">
+            Market Intel LIVE
+      </Fragment>
+    </MarketIntel>
+    
+    </div>
+        <div class="col-span-3 md:h-[800px] overflow-hidden">
+            <Stats
+            items={[
+                [
+                {
+                    currency1W: 'USD',
+                    currency21W: 'CAD',
+                    EDGE1W: '62',
+                    AW1W: '51',
+                    AL1W: '49',
+                    ACC1W: '80',
+                    LIKELIHOOD1W: '90',
+                },
+                {
+                    currency1W: 'USD',
+                    currency21W: 'CAD',
+                    EDGE1W: '62',
+                    AW1W: '51',
+                    AL1W: '49',
+                    ACC1W: '80',
+                    LIKELIHOOD1W: '90',
+                },
+                {
+                    currency1W: 'USD',
+                    currency21W: 'CAD',
+                    EDGE1W: '62',
+                    AW1W: '51',
+                    AL1W: '49',
+                    ACC1W: '80',
+                    LIKELIHOOD1W: '90',
+                },
+                {
+                    currency1W: 'USD',
+                    currency21W: 'CAD',
+                    EDGE1W: '62',
+                    AW1W: '51',
+                    AL1W: '49',
+                    ACC1W: '80',
+                    LIKELIHOOD1W: '90',
+                },
+                {
+                    currency1W: 'USD',
+                    currency21W: 'CAD',
+                    EDGE1W: '62',
+                    AW1W: '51',
+                    AL1W: '49',
+                    ACC1W: '80',
+                    LIKELIHOOD1W: '90',
+                },
+                {
+                    currency1W: 'USD',
+                    currency21W: 'CAD',
+                    EDGE1W: '62',
+                    AW1W: '51',
+                    AL1W: '49',
+                    ACC1W: '80',
+                    LIKELIHOOD1W: '90',
+                },
+                {
+                    currency1W: 'USD',
+                    currency21W: 'CAD',
+                    EDGE1W: '62',
+                    AW1W: '51',
+                    AL1W: '49',
+                    ACC1W: '80',
+                    LIKELIHOOD1W: '90',
+                },
+                {
+                    currency1W: 'USD',
+                    currency21W: 'CAD',
+                    EDGE1W: '62',
+                    AW1W: '51',
+                    AL1W: '49',
+                    ACC1W: '80',
+                    LIKELIHOOD1W: '90',
+                },
+                {
+                    currency1W: 'USD',
+                    currency21W: 'CAD',
+                    EDGE1W: '62',
+                    AW1W: '51',
+                    AL1W: '49',
+                    ACC1W: '80',
+                    LIKELIHOOD1W: '90',
+                },
+                {
+                    currency1W: 'USD',
+                    currency21W: 'CAD',
+                    EDGE1W: '62',
+                    AW1W: '51',
+                    AL1W: '49',
+                    ACC1W: '80',
+                    LIKELIHOOD1W: '90',
+                },
+                {
+                    currency1W: 'USD',
+                    currency21W: 'CAD',
+                    EDGE1W: '62',
+                    AW1W: '51',
+                    AL1W: '49',
+                    ACC1W: '80',
+                    LIKELIHOOD1W: '90',
+                },
+                {
+                    currency1W: 'USD',
+                    currency21W: 'CAD',
+                    EDGE1W: '62',
+                    AW1W: '51',
+                    AL1W: '49',
+                    ACC1W: '80',
+                    LIKELIHOOD1W: '90',
+                },
+                ],
+            ]}
+        >
+        <StatsTabs></StatsTabs>
+        </Stats>
+        <div class="inline-flex w-full gap-4">
+            <div class="hidden md:block p-4 border border-[#4B4B63] rounded-lg w-1/4 justify-around">
+                <h4 class="text-sm font-extralight tracking-widest text-center">HIVE <span class="text-sm font-bold tracking-normal">WAGER INTEL</span></h4> 
+                <p class="bg-[#ED374D] rounded-full text-center px-5 mx-auto mt-1 w-fit">LIVE</p>
+            </div>
+            <VS
+                items={[
+                    [
+                    {
+                        title: 'EURO BREAKOUT AGAINST YEN',
+                        pip: '217',
+                        description1: 'TOKYO MARKET HOURS',
+                        description2: 'FAST MARKET',
+                        description3: 'STABLE VOLATILITY',
+                        description4: 'LOW VOLATILITY',
+                    },
+                    ],
+                ]}
+            >
+            </VS>
+        </div>
+        
+    </div>
+    <div class="col-span-4">
+        <Odds
+            items={[
+                [
+                {
+                    currency: 'USD',
+                    currency2: 'CAD',
+                    value1: '22',
+                    value2: '1',
+                },
+                {
+                    currency: 'USD',
+                    currency2: 'JPY',
+                    value1: '3',
+                    value2: '1',
+                },
+                {
+                    currency: 'USD',
+                    currency2: 'JPY',
+                    value1: '3',
+                    value2: '1',
+                },
+                {
+                    currency: 'USD',
+                    currency2: 'JPY',
+                    value1: '3',
+                    value2: '1',
+                },
+                {
+                    currency: 'USD',
+                    currency2: 'JPY',
+                    value1: '3',
+                    value2: '1',
+                },
+                {
+                    currency: 'USD',
+                    currency2: 'JPY',
+                    value1: '3',
+                    value2: '1',
+                },
+                {
+                    currency: 'USD',
+                    currency2: 'JPY',
+                    value1: '3',
+                    value2: '1',
+                },
+                ],
+            ]}
+        >
+        </Odds>
+        <div class="md:inline-flex w-full items-start justify-center gap-4">
+            <div class="md:w-1/2">
+                <ChartReturn
+                    items={[
+                        [
+                        {
+                            value: '10.67',
+                            todayValue: '1.7',
+                        },
+                        ],
+                    ]}
+                ></ChartReturn>
+            </div>
+            <div class="md:w-1/2">
+                <Vami></Vami>
+            </div>
+        </div>
+    </div>
+    </div>
+      
+
+<!-- 
     <Leaderboard
         items={[
             [
@@ -221,5 +530,5 @@ const meta = {
             ]}
         >
         </VS>
-    
+     -->
 </Layout>

@@ -17,19 +17,19 @@ const {
 } = Astro.props;
 ---
 
-<section class="mx-auto max-w-6xl lg:px-8 lg:py-3" id="Leaderboard">
-  <div class="max-w-md lg:max-w-lg mx-auto">
+<section class="mx-auto max-w-6xl md:mb-4" id="Leaderboard">
+  <div class="max-w-md lg:max-w-lg mx-auto md:bg-[#1C1C24] md:rounded-lg md:p-4">
 
-    <h2 class="text-2xl mb-2 text-center font-bold">Leaderboard</h2>
+    <h2 class="text-2xl mb-2 md:-mb-1 text-center font-bold">Leaderboard</h2>
 
     <slot />  
 
-    <div id="top" class="h-60 overflow-scroll mb-4">
+    <div id="top" class="h-60 overflow-scroll mb-4 md:mb-0">
       {
         items.map((subitems) => (
           <div class="">
             {subitems.map(({ currency, currency2, value }) => (
-              <div class="flex flex-row border border-[#1C1C24] rounded-lg py-3 items-center px-4 mb-2 bg-[#0F0F18]">
+              <div class="flex flex-row border border-[#1C1C24] rounded-lg py-3 items-center px-4 mb-2 bg-[#0F0F18] last:mb-0">
                   <div class="flex flex-row justify-between w-full">
                     <div class="flex flex-row">
                       <p class="text-lg" set:html={currency} />
@@ -45,7 +45,7 @@ const {
       }
     </div>
     
-    <div id="worst" class="h-60 overflow-scroll mb-4 hidden">
+    <div id="worst" class="h-60 overflow-scroll mb-4 hidden md:mb-0">
       {
         itemsWorst.map((subitems) => (
           <div class="">

@@ -15,11 +15,11 @@ const {
 } = Astro.props;
 ---
 
-<section class="mx-auto max-w-6xl lg:px-8 py-3" id="VS">
-  <div class="max-w-md lg:max-w-lg mx-auto">
+<section class="mx-auto max-w-6xl md:max-w-full md:w-full py-3 md:py-0" id="VS">
+  <div class="max-w-md md:max-w-full md:w-full mx-auto">
     {
       items.map((subitems) => (
-        <div class="max-w-md lg:max-w-lg px-7 border border-[#4B4B63] rounded-lg py-3 items-center mx-auto bg-[#0F0F18]">
+        <div class="max-w-md md:max-w-full md:w-full px-7 border border-[#4B4B63] rounded-lg py-3 items-center mx-auto bg-[#0F0F18]">
             {subitems.map(({ title, pip, description1, description2, description3, description4 }) => (
                     <div class="flex flex-row items-center justify-between flex-wrap">
                         <h4 class="text-sm font-bold mr-1" set:html={title} />
@@ -29,13 +29,13 @@ const {
                         </div>
                     </div>
                     <div class="flex flex-row flex-wrap items-center pt-2 justify-between">
-                        <p class="font-semibold text-[10px]" set:html={description1} />
-                        <p class="text-[#4B4B63] mx-1 text-[10px]">//</p>
-                        <p class="font-semibold text-[10px]" set:html={description2} />
-                        <p class="text-[#4B4B63] mx-1 text-[10px]">//</p>
-                        <p class="font-semibold text-[10px]" set:html={description3} />
-                        <p class="text-[#4B4B63] mx-1 text-[10px]">//</p>
-                        <p class="font-semibold text-[10px]" set:html={description4} />
+                        <p class="font-semibold text-[10px] md:text-sm" set:html={description1} />
+                        <p class="text-[#4B4B63] mx-1 text-[10px] md:text-sm">//</p>
+                        <p class="font-semibold text-[10px] md:text-sm" set:html={description2} />
+                        <p class="text-[#4B4B63] mx-1 text-[10px] md:text-sm">//</p>
+                        <p class="font-semibold text-[10px] md:text-sm" set:html={description3} />
+                        <p class="text-[#4B4B63] mx-1 text-[10px] md:text-sm">//</p>
+                        <p class="font-semibold text-[10px] md:text-sm" set:html={description4} />
                     </div>
             ))}
         </div>

@@ -12,23 +12,23 @@ const {
   items = [],
 } = Astro.props;
 ---
+<div class="mb-4 bg-[#1C1C24] rounded-lg p-4 h-full">
+  <h2 class="text-2xl mb-2 text-center font-bold">Last 12-Months Return</h2>
 
-<h2 class="text-2xl mb-2 text-center font-bold">Last 12-Months Return</h2>
-
-<div class="mx-auto max-w-6xl lg:px-8 lg:py-3">
-  <div class="max-w-md lg:max-w-lg mx-auto h-0 translate-y-10">
+<div class="mx-auto max-w-6xl  bg-[#1C1C24] rounded-lg">
+  <div class="max-w-md lg:max-w-lg mx-auto h-0 translate-y-10 md:pl-4 md:translate-y-0 md:h-fit">
     {
       items.map((subitems) => (
-        <div>
+        <div class="md:mb-3">
           {subitems.map(({ value, todayValue }) => (
             <div>
-              <div class="text-lg flex flex-col">
-                <div class="inline-flex text-xs font-semibold">
+              <div class="text-lg flex flex-col md:flex-row">
+                <div class="inline-flex text-xs font-semibold md:text-[#A4A4A7] md:text-sm md:tracking-wide md:mb-0 md:font-normal">
                   <p>Hive</p>
                   <p class="ml-1" set:html={todayValue} />
                   <p>% Today</p>
                 </div>   
-                <div class="inline-flex font-semibold text-lg">
+                <div class="inline-flex font-semibold text-lg md:text-[#A4A4A7] md:text-sm md:tracking-wide md:mb-0 md:ml-1 md:font-normal">
                   <p set:html={value} />
                   <p>%</p>
                 </div>    
@@ -39,22 +39,24 @@ const {
       ))
     }
   </div>
-    <div class="max-w-md lg:max-w-lg mx-auto">
+    <div class="max-w-md lg:max-w-lg mx-auto md:h-full">
         <canvas id="returns"></canvas>
     </div>
 </div>
-
-<MarketIntel
-  items={[
-    [
-    {
-        name: 'Sortino',
-        value: '2.65',
-        down: 'ArrowDown',
-    },
-    ],
-  ]}
-></MarketIntel>
+<div class="block md:hidden">
+  <MarketIntel
+    items={[
+      [
+      {
+          name: 'Sortino',
+          value: '2.65',
+          down: 'ArrowDown',
+      },
+      ],
+    ]}
+  ></MarketIntel>
+</div>
+</div>  
   
 <script>
   import Chart from 'chart.js/auto'
