@@ -1,6 +1,6 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import Hero from '~/components/widgets/Hero.astro';
+import TradeButton from '~/components/widgets/TradeButton.astro';
 import Listing from '~/components/widgets/Listing.astro';
 import TradeHistory from '~/components/widgets/TradeHistory.astro';
 import VS from '~/components/widgets/VS.astro';
@@ -20,11 +20,8 @@ const meta = {
 
   <section class="sm:px-6 mx-auto mt-20 lg:px-8 lg:py-20 max-w-2xl pb-10 -translate-y-24  lg:-translate-y-28" id="TradeNow">
 
-    <Hero>
-        <Fragment slot="trdButton">
-          Trade
-        </Fragment>
-    </Hero>
+    <TradeButton>
+    </TradeButton>
     <div class="-translate-y-16">
         <TradeData
       items={[
