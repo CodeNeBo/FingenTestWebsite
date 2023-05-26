@@ -1,6 +1,5 @@
 ---
 import { SITE } from '~/config.mjs';
-import { Icon } from 'astro-icon';
 import { Image } from '@astrojs/image/components'
 
 import Layout from '~/layouts/PageLayout.astro';
@@ -8,6 +7,8 @@ import Hero from '~/components/widgets/Hero.astro';
 import Features from '~/components/widgets/Features.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
+import MarketEdge from '~/components/widgets/MarketEdge.astro';
+import Currency from '~/components/widgets/Currency.astro';
 
 const meta = {
   title: SITE.title,
@@ -37,6 +38,22 @@ const meta = {
       </Fragment>
   </Hero>
 
+  <MarketEdge
+    items={[
+      [
+      {
+          EDGE: '2109',
+          AvgW: '37',
+          AvgL: '27',
+          AvgWM: '553',
+          AvgLM: '153',
+      },
+      ],
+    ]}>
+  </MarketEdge>
+
+  <div data-vl-widget="embedForm"></div>
+
   <Features
     title="What is HIVE?"
     items={[
@@ -44,24 +61,20 @@ const meta = {
         {
           description:
             'Swarms of machine learning agents, collectively sharing intel to rapidly adapt to evolving markets, and predict their futures.',
-          icon: 'NextPurple',
         },
         {
           description:
             "Machine Learning Agents (MLA) independently compute, analyze, and share agent learning with HIVE's collective learning, making all new and known knowledge available to every MLA and HIVE.",
-          icon: 'Hive',
         },
       ],
       [
         {
           description:
             'Winning trades should be predictably consistent in frequency and return. Including extreme highs and lows.',
-          icon: 'Grow',
         },
         {
           description:
             'Losing trades are inevitable. But losing small is critical to your account balance growth potential.',
-          icon: 'Stats',
         },
       ],
     ]}
@@ -75,25 +88,21 @@ const meta = {
         title: 'Deep Reinforcement Learning',
         description:
           'The collective behavior of decentralized, self-organized systems, natural or artificial.',
-        icon: 'PurpleDot',
       },
       {
         title: 'Robot Process Automation',
         description:
           'HIVE consumes market data Sunday at 5PM EST to Friday at 5PM EST.',
-        icon: 'PurpleDot',
       },
       {
         title: 'Risk Reward Management',
         description:
           "Helping investors manage their risk of losing money on trades. Comparing profit to loss, every tick, in real-time, 24x7x252.<br><br>EDGE - Where WP is the asset's percentage of winning trades; LP is the asset's percentage of losing trades; WROl is the asset's average winning return on investment;<br><br>SORTINO - The Sortino Ratio is calculated as, where R is the asset or portfolio average realized return, T is the target or required rate of return for the investment strategy under consideration (originally called the minimum acceptable return MAR), and DD iS the target semi-deviation",
-        icon: 'PurpleDot',
       },
       {
         title: 'Trade Size Management',
         description:
           "Trade position size is critical; more so than trading entry and exit. An optimal strategy will not remain solvent if trade size is too big or too small. Optimize for upside potential, and downside risk every trade.<br><br>KELLY CRITERION - Known as the scientific gambling method, is a formula for bet sizing that leads almost surely to higher wealth compared to any other strategy in the long run approaching the limit as the number of bets goes to infinity.",
-        icon: 'PurpleDot',
       },
     ]}
   />
@@ -190,74 +199,46 @@ const meta = {
       <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2 text-center mx-auto">Trade a portfolio of 70+ currencies in One-Click</h3>
     </Fragment>
 
-    <div class="flex flex-col mx-auto items-center">
+    <div class="flex flex-col mx-auto items-center w-full md:w-4/6">
 
-      <div class="flex flex-wrap w-full md:w-4/6 gap-x-2 mb-4">
-        <div class="mb-2 border rounded py-1 px-2 bg-[#0B0B14] border-[#1C1C24] flex justify-center items-center grow">
-          <Icon name="Yen" class="w-5 h-5" />
-          <Icon name="Dollar" class="w-5 h-5 ml-[-6px]" />
-          <p class="text-sm">USD JPY</p>
-        </div>
-    
-        <div class="mb-2 border rounded py-1 px-2 bg-[#0B0B14] border-[#1C1C24] flex justify-center items-center grow">
-          <Icon name="Euro" class="w-5 h-5" />
-          <Icon name="Dollar" class="w-5 h-5 ml-[-6px]" />
-          <p class="text-sm">EUR USD</p>
-        </div>
-    
-        <div class="basis-full"></div>
-    
-        <div class="mb-2 border rounded py-1 px-2 bg-[#0B0B14] border-[#1C1C24] flex justify-center items-center grow">
-          <Icon name="CanadianDollar" class="w-5 h-5" />
-          <Icon name="Dollar" class="w-5 h-5 ml-[-6px]" />
-          <p class="text-sm">CAD USD</p>
-        </div>
-    
-        <div class="mb-2 border rounded py-1 px-2 bg-[#0B0B14] border-[#1C1C24] flex justify-center items-center grow">
-          <Icon name="CanadianDollar" class="w-5 h-5" />
-          <Icon name="Dollar" class="w-5 h-5 ml-[-6px]" />
-          <p class="text-sm">CAD USD</p>
-        </div>
-      </div>
+      <Currency
+      items={[
+        [
+        {
+            currency1: 'USD',
+            currency2: 'JPY'
+        },
+        {
+            currency1: 'EUR',
+            currency2: 'USD'
+        },
+        {
+            currency1: 'CAD',
+            currency2: 'USD'
+        },
+        {
+            currency1: 'CAD',
+            currency2: 'JPY'
+        },
+        ],
+      ]}
+      >
+      </Currency>
 
-      <div class="p-7 bg-[#0B0B14] border-[#1C1C24] border rounded w-full md:w-4/6"> 
-        <div class="flex justify-between mb-3">
-          <p>Market EDGE Now</p>
-          <div>
-            <div class="bg-[#EC458D] relative inline-block py-1 px-2 rounded">
-              <p class="z-10">Live</p>
-            </div>
-          </div>
-          
-        </div>
-    
-        <div class="flex justify-between mb-2">
-          <p class="text-[#77777B]">EDGE</p>
-          <p>2109</p>
-        </div>
-    
-        <div class="flex justify-between mb-2">
-          <p class="text-[#77777B]">Avg Win %</p>
-          <p>37%</p>
-        </div>
-    
-        <div class="flex justify-between mb-2">
-          <p class="text-[#77777B]">Avg Loss %</p>
-          <p>27%</p>
-        </div>
-    
-        <div class="flex justify-between mb-2">
-          <p class="text-[#77777B]">Avg Win $</p>
-          <p>$553</p>
-        </div>
-    
-        <div class="flex justify-between">
-          <p class="text-[#77777B]">Avg Loss $</p>
-          <p>$153</p>
-        </div>
-      </div>
-  
+      <MarketEdge
+      items={[
+        [
+        {
+            EDGE: '2109',
+            AvgW: '37',
+            AvgL: '27',
+            AvgWM: '553',
+            AvgLM: '153',
+        },
+        ],
+      ]}>
+      </MarketEdge>
     </div>
-
   </Content>
+  <div data-vl-widget="embedForm"></div>
 </Layout>

@@ -20,6 +20,9 @@ module.exports = {
       },
       boxShadow: {
         'purple': '0px 0px 28px 8px rgba(115, 70, 199, 0.3)',
+      },
+      dropShadow: {
+        'white': '0px 0px 28px 8px rgba(0, 0, 0, 0)',
       }
     },
   },

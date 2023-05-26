@@ -3,6 +3,7 @@ import { Image } from '@astrojs/image/components'
 
 import Layout from '~/layouts/PageLayout.astro';
 import About from '~/components/widgets/About.astro';
+import MarketEdge from '~/components/widgets/MarketEdge.astro';
 
 const meta = {
   title: "About",
@@ -12,14 +13,11 @@ const meta = {
 <Layout {meta}>
     <About
     title="About"
-    items={[
-      {
-        description:
-          "FinGEN was founded in 2020 with a view to offer quant hedge fund technology and strategies to the every day investor/trader. Combining strengths in both Deep Learning and Ultra Low Latency Technology. <br><br>Quant trading is a style of automated trading characterized by microsecond execution speeds and portfolios with high turnover.",
-      },
-    ]}
     >
-        <Image class="mt-10" src={import('../assets/images/AboutHero.svg')} alt="Leopard silhouette" />
+      <Fragment slot="headDescription">
+        <p>FinGEN was founded in 2020 with a view to offer quant hedge fund technology and strategies to the every day investor/trader. Combining strengths in both Deep Learning and Ultra Low Latency Technology. <br><br>Quant trading is a style of automated trading characterized by microsecond execution speeds and portfolios with high turnover.</p>
+      </Fragment>
+        <Image class="mt-10 md:scale-125 lg:scale-150" src={import('../assets/images/AboutHero.svg')} alt="Leopard silhouette" />
     </About>
 
     <Image src={import('../assets/images/Hivegrid.svg')} alt="Hive grid" width={1920}/>
@@ -38,10 +36,7 @@ const meta = {
       },
     ]}
   >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">It started with three questions.</h3>
-    </Fragment>
-    <Image class="mt-10" src={import('../assets/images/Graph.svg')} alt="Graph" width={1920}/>
+    
     </About>
 
     <About
@@ -66,7 +61,7 @@ const meta = {
     ]}
     >
         <Fragment slot="content">
-            <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">HIVE <span class="text-[#EC458D]">Predicts & Learns</span></h3>
+            <h3 class="text-2xl text-center font-bold tracking-tight sm:text-3xl mb-2">HIVE <span class="text-[#EC458D]">Predicts & Learns</span></h3>
         </Fragment>
     </About>
     <About
@@ -82,9 +77,23 @@ const meta = {
           ]}
         >
           <Fragment slot="content">
-            <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">HIVE signals.<span class="text-[#EC458D]"> Optimized reward-risk trades</span> in real-time. </h3>
+            <h3 class="text-2xl text-center font-bold tracking-tight sm:text-3xl mb-2">HIVE signals.<span class="text-[#EC458D]"> Optimized reward-risk trades</span> in real-time. </h3>
         </Fragment>
       </About>
+
+    <MarketEdge
+      items={[
+        [
+        {
+            EDGE: '2109',
+            AvgW: '37',
+            AvgL: '27',
+            AvgWM: '553',
+            AvgLM: '153',
+        },
+        ],
+      ]}>
+    </MarketEdge>
 
 </Layout>
 

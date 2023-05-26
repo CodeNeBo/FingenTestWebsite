@@ -9,6 +9,7 @@ import StatsTabs from '~/components/widgets/StatsTabs.astro';
 import ChartReturn from '~/components/widgets/ChartReturn.astro';
 import Vami from '~/components/widgets/Vami.astro';
 import VS from '~/components/widgets/VS.astro';
+import MarketEdge from '~/components/widgets/MarketEdge.astro';
 
 const meta = {
   title: "HIVE",
@@ -17,7 +18,8 @@ const meta = {
 
 <Layout {meta}>
     <div class="flex flex-col md:grid md:grid-cols-4 gap-4 mx-4">
-        <div class="col-span-1 md:h-[800px]">
+        <div class="col-span-1">
+
             <Leaderboard
             items={[
                 [
@@ -113,7 +115,7 @@ const meta = {
     </MarketIntel>
     
     </div>
-        <div class="col-span-3 md:h-[800px] overflow-hidden">
+        <div class="col-span-3 overflow-hidden">
             <Stats
             items={[
                 [
@@ -320,6 +322,19 @@ const meta = {
                 <Vami></Vami>
             </div>
         </div>
+        <MarketEdge 
+            items={[
+                [
+                {
+                    EDGE: '2109',
+                    AvgW: '37',
+                    AvgL: '27',
+                    AvgWM: '553',
+                    AvgLM: '153',
+                },
+                ],
+            ]}>
+        </MarketEdge>
     </div>
     </div>
 </Layout>

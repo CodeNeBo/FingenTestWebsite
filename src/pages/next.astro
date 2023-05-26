@@ -2,6 +2,7 @@
 import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Next from '~/components/widgets/Next.astro';
+import MarketEdge from '~/components/widgets/MarketEdge.astro';
 
 
 const meta = {
@@ -65,17 +66,20 @@ const meta = {
             'Auction winners get access to HIVE signals & One-Click portfolio trading',
         },
       ]}
-
-    title3="What should we build for you next?"
-    items3={[
-        {
-          description3:
-            'Send Wishlist',
-            icon: "Wand",
-        },
-    ]}
     >
-
+        <MarketEdge
+        items={[
+          [
+          {
+              EDGE: '2109',
+              AvgW: '37',
+              AvgL: '27',
+              AvgWM: '553',
+              AvgLM: '153',
+          },
+          ],
+        ]}>
+        </MarketEdge>
     </Next>
     
 </Layout>

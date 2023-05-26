@@ -36,12 +36,12 @@ const {
             {subitems.map(({ description, icon }) => (
               <div class="flex flex-row max-w-md">
                 <div class="mb-4 mr-4">
-                  <div class="flex items-center justify-center w-12 h-12 rounded-full bg-primary dark:bg-blue-700">
-                    {icon && <Icon name={icon} class="w-6 h-6 text-white icon-light" />}
+                  <div class="flex h-6 w-6 items-center justify-center bg-[#EC458D] rounded-full mt-2">
+                    <Icon name={icon ? icon : 'tabler:check'} class="w-4 h-4" />
                   </div>
                 </div>
                 <div>
-                  <p class="text-muted dark:text-slate-400" set:html={description} />
+                  <p class="text-muted text-justify dark:text-slate-400" set:html={description} />
                 </div>
               </div>
             ))}
