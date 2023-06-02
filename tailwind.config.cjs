@@ -23,9 +23,10 @@ module.exports = {
       },
       dropShadow: {
         'white': '0px 0px 28px 8px rgba(0, 0, 0, 0)',
-      }
+      },
     },
   },
   plugins: [require('@tailwindcss/typography')],
   darkMode: 'class',
+  variants: ["active"],
 };

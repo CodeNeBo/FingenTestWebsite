@@ -1,0 +1,62 @@
+---
+import { Icon } from 'astro-icon';
+interface Item {
+  description: string;
+  icon?: string;
+}
+export interface Props {
+  title?: string;
+  content?: string;
+  headDescription?: string;
+  items: Array<Array<Item>>;
+}
+const {
+  title = await Astro.slots.render('title'),
+  content = await Astro.slots.render('content'),
+  headDescription = await Astro.slots.render('headDescription'),
+  items = [],
+} = Astro.props;
+---
+
+<section class="scroll-mt-16" id="features">
+  <div class="px-4 mx-auto max-w-6xl lg:px-8 mb-16">
+    {
+      (title ) && (
+        <div class="mb-10 md:mx-auto text-center md:mb-12 max-w-3xl">
+          {title && (
+            <h2
+              class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading"
+              set:html={title}
+            />
+          )}
+
+        </div>
+      )
+    }
+    <div class="bg-[#0B0B14] border-[#1C1C24] border rounded p-8">
+      {content && <div class="mb-12 text-lg" set:html={content} />}
+      {headDescription && <div class="mt-2 text-muted text-justify" set:html={headDescription} />}
+      <div class="grid mx-auto md:grid-cols-2 md:space-y-0 items-center justify-items-center gap-8">
+        {
+          items.map((subitems) => (
+            <div class="space-y-8 w-full">
+              {subitems.map(({ description, icon }) => (
+                <div class="flex flex-row w-full items-center">
+                  <div class="my-2 mr-4">
+                    <div class="flex h-6 w-6 items-center justify-center bg-[#EC458D] rounded-full ml-2">
+                      <Icon name={icon ? icon : 'tabler:check'} class="w-4 h-4" />
+                    </div>
+                  </div>
+                  <div>
+                    <p class="text-muted text-justify dark:text-slate-400" set:html={description} />
+                  </div>
+                </div>
+              ))}
+            </div>
+          ))
+        }
+      </div>
+    </div>
+    
+  </div>
+</section>

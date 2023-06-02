@@ -3,7 +3,6 @@ import Layout from '~/layouts/PageLayout.astro';
 import TradeButton from '~/components/widgets/TradeButton.astro';
 import Listing from '~/components/widgets/Listing.astro';
 import TradeHistory from '~/components/widgets/TradeHistory.astro';
-import VS from '~/components/widgets/VS.astro';
 import TradeData from '~/components/widgets/TradeData.astro';
 import TradeTabs from '~/components/widgets/TradeTabs.astro';
 import { Icon } from 'astro-icon';
@@ -60,21 +59,6 @@ const meta = {
       <Icon name="Ignore" class="w-5 h-5" />
       Ignore
     </button>
-    <VS
-    items={[
-        [
-        {
-            title: 'EURO BREAKOUT AGAINST YEN',
-            pip: '217',
-            description1: 'TOKYO MARKET HOURS',
-            description2: 'FAST MARKET',
-            description3: 'STABLE VOLATILITY',
-            description4: 'LOW VOLATILITY',
-        },
-        ],
-    ]}
-    >
-    </VS>
     </div>
     
   </section>
@@ -133,21 +117,5 @@ const meta = {
     <Fragment slot="lasttr">
       Last Transaction 20 January 2022
     </Fragment>
-
-    <VS
-    items={[
-        [
-        {
-            title: 'EURO BREAKOUT AGAINST YEN',
-            pip: '217',
-            description1: 'TOKYO MARKET HOURS',
-            description2: 'FAST MARKET',
-            description3: 'STABLE VOLATILITY',
-            description4: 'LOW VOLATILITY',
-        },
-        ],
-    ]}
-    >
-    </VS>
     </TradeHistory>
 </Layout>

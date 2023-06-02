@@ -1,15 +1,13 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import Leaderboard from '~/components/widgets/Leaderboard.astro';
-import Stats from '~/components/widgets/Stats.astro';
 import MarketIntel from '~/components/widgets/MarketIntel.astro';
 import Odds from '~/components/widgets/Odds.astro';
 import LeaderboardTabs from '~/components/widgets/LeaderboardTabs.astro';
-import StatsTabs from '~/components/widgets/StatsTabs.astro';
 import ChartReturn from '~/components/widgets/ChartReturn.astro';
 import Vami from '~/components/widgets/Vami.astro';
-import VS from '~/components/widgets/VSHive.astro';
 import MarketEdge from '~/components/widgets/MarketEdge.astro';
+import StatsTest from '~/components/widgets/StatsTest.astro';
 
 const meta = {
   title: "HIVE",
@@ -116,144 +114,9 @@ const meta = {
     
     </div>
         <div class="col-span-3 overflow-hidden">
-            <Stats
-            items={[
-                [
-                {
-                    currency1W: 'USD',
-                    currency21W: 'CAD',
-                    EDGE1W: '62',
-                    AW1W: '51',
-                    AL1W: '49',
-                    ACC1W: '80',
-                    LIKELIHOOD1W: '90',
-                },
-                {
-                    currency1W: 'USD',
-                    currency21W: 'CAD',
-                    EDGE1W: '62',
-                    AW1W: '51',
-                    AL1W: '49',
-                    ACC1W: '80',
-                    LIKELIHOOD1W: '90',
-                },
-                {
-                    currency1W: 'USD',
-                    currency21W: 'CAD',
-                    EDGE1W: '62',
-                    AW1W: '51',
-                    AL1W: '49',
-                    ACC1W: '80',
-                    LIKELIHOOD1W: '90',
-                },
-                {
-                    currency1W: 'USD',
-                    currency21W: 'CAD',
-                    EDGE1W: '62',
-                    AW1W: '51',
-                    AL1W: '49',
-                    ACC1W: '80',
-                    LIKELIHOOD1W: '90',
-                },
-                {
-                    currency1W: 'USD',
-                    currency21W: 'CAD',
-                    EDGE1W: '62',
-                    AW1W: '51',
-                    AL1W: '49',
-                    ACC1W: '80',
-                    LIKELIHOOD1W: '90',
-                },
-                {
-                    currency1W: 'USD',
-                    currency21W: 'CAD',
-                    EDGE1W: '62',
-                    AW1W: '51',
-                    AL1W: '49',
-                    ACC1W: '80',
-                    LIKELIHOOD1W: '90',
-                },
-                {
-                    currency1W: 'USD',
-                    currency21W: 'CAD',
-                    EDGE1W: '62',
-                    AW1W: '51',
-                    AL1W: '49',
-                    ACC1W: '80',
-                    LIKELIHOOD1W: '90',
-                },
-                {
-                    currency1W: 'USD',
-                    currency21W: 'CAD',
-                    EDGE1W: '62',
-                    AW1W: '51',
-                    AL1W: '49',
-                    ACC1W: '80',
-                    LIKELIHOOD1W: '90',
-                },
-                {
-                    currency1W: 'USD',
-                    currency21W: 'CAD',
-                    EDGE1W: '62',
-                    AW1W: '51',
-                    AL1W: '49',
-                    ACC1W: '80',
-                    LIKELIHOOD1W: '90',
-                },
-                {
-                    currency1W: 'USD',
-                    currency21W: 'CAD',
-                    EDGE1W: '62',
-                    AW1W: '51',
-                    AL1W: '49',
-                    ACC1W: '80',
-                    LIKELIHOOD1W: '90',
-                },
-                {
-                    currency1W: 'USD',
-                    currency21W: 'CAD',
-                    EDGE1W: '62',
-                    AW1W: '51',
-                    AL1W: '49',
-                    ACC1W: '80',
-                    LIKELIHOOD1W: '90',
-                },
-                {
-                    currency1W: 'USD',
-                    currency21W: 'CAD',
-                    EDGE1W: '62',
-                    AW1W: '51',
-                    AL1W: '49',
-                    ACC1W: '80',
-                    LIKELIHOOD1W: '90',
-                },
-                ],
-            ]}
-        >
-        <StatsTabs></StatsTabs>
-        </Stats>
-        <div class="inline-flex w-full gap-4">
-            <div class="hidden md:block p-4 border border-[#4B4B63] rounded-lg w-1/4 justify-around">
-                <h4 class="text-sm font-extralight tracking-widest text-center">HIVE <span class="text-sm font-bold tracking-normal">WAGER INTEL</span></h4> 
-                <p class="bg-[#ED374D] rounded-full text-center px-5 mx-auto mt-1 w-fit">LIVE</p>
-            </div>
-            <VS
-                items={[
-                    [
-                    {
-                        title: 'EURO BREAKOUT AGAINST YEN',
-                        pip: '217',
-                        description1: 'TOKYO MARKET HOURS',
-                        description2: 'FAST MARKET',
-                        description3: 'STABLE VOLATILITY',
-                        description4: 'LOW VOLATILITY',
-                    },
-                    ],
-                ]}
-            >
-            </VS>
-        </div>
-        
+            <StatsTest>
+
+            </StatsTest>
     </div>
     <div class="col-span-4">
         <Odds
@@ -322,19 +185,23 @@ const meta = {
                 <Vami></Vami>
             </div>
         </div>
-        <MarketEdge 
-            items={[
-                [
-                {
-                    EDGE: '2109',
-                    AvgW: '37',
-                    AvgL: '27',
-                    AvgWM: '553',
-                    AvgLM: '153',
-                },
-                ],
-            ]}>
-        </MarketEdge>
+        <div class="grid md:grid-cols-2">
+            <MarketEdge 
+                items={[
+                    [
+                    {
+                        EDGE: '2109',
+                        AvgW: '37',
+                        AvgL: '27',
+                        AvgWM: '553',
+                        AvgLM: '153',
+                    },
+                    ],
+                ]}>
+            </MarketEdge>
+            <form-widget ucid='3ry7DAh0RnnvdpHLXNtxabNpwlU'></form-widget>
+        </div>
+        
     </div>
     </div>
 </Layout>

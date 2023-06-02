@@ -4,6 +4,8 @@ import { Image } from '@astrojs/image/components'
 import Layout from '~/layouts/PageLayout.astro';
 import About from '~/components/widgets/About.astro';
 import MarketEdge from '~/components/widgets/MarketEdge.astro';
+import Questions from '~/components/widgets/Questions.astro';
+import AboutTest from '~/components/widgets/AboutTest.astro';
 
 const meta = {
   title: "About",
@@ -20,26 +22,28 @@ const meta = {
         <Image class="mt-10 md:scale-125 lg:scale-150" src={import('../assets/images/AboutHero.svg')} alt="Leopard silhouette" />
     </About>
 
-    <Image src={import('../assets/images/Hivegrid.svg')} alt="Hive grid" width={1920}/>
-
-    <About
+    <Image src={import('../assets/images/Hivegrid.png')} alt="Hive grid" width={1920}/>
+   
+  <Questions 
     title="The Idea"
     items={[
       {
         description: 'Do capital markets provide data that enable you to derive sentiment, risk-reward, intent or causality?',
+        // icon: "tabler:cloud-question",
       },
       {
         description: 'Can we do all of the above consistently?',
+        // icon: "tabler:calendar-question",
       },
       {
         description: 'Can it do so predictably?',
+        // icon: "tabler:zoom-question",
       },
     ]}
-  >
-    
-    </About>
+  />
 
-    <About
+
+    <!-- <About
     title="Capabilities"
     items={[
       {
@@ -63,8 +67,60 @@ const meta = {
         <Fragment slot="content">
             <h3 class="text-2xl text-center font-bold tracking-tight sm:text-3xl mb-2">HIVE <span class="text-[#EC458D]">Predicts & Learns</span></h3>
         </Fragment>
-    </About>
-    <About
+    </About> -->
+
+    <AboutTest
+      title="Capabilities"
+      items={[
+        [
+          {
+            description:
+              'Market direction, duration & magnitude',
+          },
+          {
+            description:
+              "FX pair relationships",
+          },
+        ],
+        [
+          {
+            description:
+              'Market structure transitions',
+          },
+          {
+            description:
+              'Market structures',
+          },
+        ],
+      ]}
+    >
+      <Fragment slot="content">
+        <h3 class="text-2xl text-center font-bold tracking-tight sm:text-3xl mb-2">HIVE <span class="text-[#EC458D]">Predicts & Learns</span></h3>
+      </Fragment>
+    </AboutTest>
+
+    <AboutTest
+      items={[
+        [
+          {
+            description:
+              'Trading all forex pairs available at our broker partners.',
+          },
+        ],
+        [
+          {
+            description:
+              'Trade size optimized to your account.',
+          },
+        ],
+      ]}
+    >
+      <Fragment slot="content">
+        <h3 class="text-2xl text-center font-bold tracking-tight sm:text-3xl mb-2">HIVE signals.<span class="text-[#EC458D]"> Optimized reward-risk trades</span> in real-time. </h3>
+      </Fragment>
+    </AboutTest>
+
+    <!-- <About
         items={[
             {
               description:
@@ -79,21 +135,23 @@ const meta = {
           <Fragment slot="content">
             <h3 class="text-2xl text-center font-bold tracking-tight sm:text-3xl mb-2">HIVE signals.<span class="text-[#EC458D]"> Optimized reward-risk trades</span> in real-time. </h3>
         </Fragment>
-      </About>
+      </About> -->
 
-    <MarketEdge
-      items={[
-        [
-        {
-            EDGE: '2109',
-            AvgW: '37',
-            AvgL: '27',
-            AvgWM: '553',
-            AvgLM: '153',
-        },
-        ],
-      ]}>
-    </MarketEdge>
-
+      <div class="grid md:grid-cols-2 max-w-6xl mx-auto">
+        <MarketEdge 
+            items={[
+                [
+                {
+                    EDGE: '2109',
+                    AvgW: '37',
+                    AvgL: '27',
+                    AvgWM: '553',
+                    AvgLM: '153',
+                },
+                ],
+            ]}>
+        </MarketEdge>
+        <form-widget ucid='3ry7DAh0RnnvdpHLXNtxabNpwlU'></form-widget>
+    </div>
 </Layout>
 
