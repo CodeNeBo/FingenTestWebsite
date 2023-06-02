@@ -1,11 +1,12 @@
-<section>
+<section class="w-full md:max-w-full mx-auto px-4 md:px-0">
+  <div class="max-w-md md:max-w-full mx-auto">
   <h1 class="text-2xl font-bold text-center">Stats</h1>
   <div class="flex space-x-4 justify-center my-4">
-    <button class="btn inline-block px-3 py-1 rounded-lg ml-2 first:ml-0 text-textcolor w-20 text-center border-0" data-duration="1W">1W</button>
-    <button class="btn inline-block px-3 py-1 rounded-lg ml-2 first:ml-0 text-textcolor w-20 text-center border-0" data-duration="1M">1M</button>
-    <button class="btn inline-block px-3 py-1 rounded-lg ml-2 first:ml-0 text-textcolor w-20 text-center border-0" data-duration="3M">3M</button>
-    <button class="btn inline-block px-3 py-1 rounded-lg ml-2 first:ml-0 text-textcolor w-20 text-center border-0" data-duration="6M">6M</button>
-    <button class="btn inline-block px-3 py-1 rounded-lg ml-2 first:ml-0 text-textcolor w-20 text-center border-0" data-duration="1Y">1Y</button>
+    <button class="btn inline-block px-3 py-1 rounded-lg ml-2 first:ml-0 text-textcolor w-20 text-center border-0 hover:text-primary" data-duration="1W">1W</button>
+    <button class="btn inline-block px-3 py-1 rounded-lg ml-2 first:ml-0 text-textcolor w-20 text-center border-0 hover:text-primary" data-duration="1M">1M</button>
+    <button class="btn inline-block px-3 py-1 rounded-lg ml-2 first:ml-0 text-textcolor w-20 text-center border-0 hover:text-primary" data-duration="3M">3M</button>
+    <button class="btn inline-block px-3 py-1 rounded-lg ml-2 first:ml-0 text-textcolor w-20 text-center border-0 hover:text-primary" data-duration="6M">6M</button>
+    <button class="btn inline-block px-3 py-1 rounded-lg ml-2 first:ml-0 text-textcolor w-20 text-center border-0 hover:text-primary" data-duration="1Y">1Y</button>
   </div>
 
   <div class="flex flex-col place-content-between gap-4 p-4 border-2 border-[#7348BB] shadow-purple rounded-lg">
@@ -24,6 +25,7 @@
         <!-- Data -->
       </div>
     </div>
+  </div>
   </div>
 </section>
 
@@ -348,14 +350,14 @@
   }
 
   function handleButtonClick() {
-    btns.forEach(btn => btn.classList.remove('active'));
-    this.classList.add('active');
+    btns.forEach(btn => btn.classList.remove('active' , 'bg-white' , 'text-black'));
+    this.classList.add('active' , 'bg-white' , 'text-black');
     updateData();
   }
 
   btns.forEach(btn => btn.addEventListener('click', handleButtonClick));
   categorySelect.addEventListener('change', updateData);
 
-  btns[0].classList.add('active');
+  btns[0].classList.add('active', 'bg-white', 'text-black');
   updateData();
 </script>

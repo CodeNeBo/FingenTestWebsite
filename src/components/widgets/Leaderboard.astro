@@ -29,7 +29,7 @@ const {
         items.map((subitems) => (
           <div class="">
             {subitems.map(({ currency, currency2, value }) => (
-              <div class="flex flex-row border border-[#1C1C24] rounded-lg py-3 items-center px-4 mb-2 bg-primary last:mb-0">
+              <div class="flex flex-row border border-[#1C1C24] bg-[#0F0F18] md:bg-primary rounded-lg py-3 items-center px-4 mb-2 last:mb-0">
                   <div class="flex flex-row justify-between w-full">
                     <div class="flex flex-row">
                       <p class="text-lg" set:html={currency} />
@@ -50,7 +50,7 @@ const {
         itemsWorst.map((subitems) => (
           <div class="">
             {subitems.map(({ currencyWorst, currencyWorst2, valueWorst }) => (
-              <div class="flex flex-row border border-[#1C1C24] rounded-lg py-3 items-center px-4 mb-2">
+              <div class="flex flex-row border border-[#1C1C24] rounded-lg py-3 items-center px-4 mb-2 bg-[#0F0F18] md:bg-primary">
                   <div class="flex flex-row justify-between w-full">
                     <div class="flex flex-row">
                       <p class="text-lg" set:html={currencyWorst} />
