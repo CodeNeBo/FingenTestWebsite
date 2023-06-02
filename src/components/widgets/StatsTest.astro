@@ -350,14 +350,14 @@
   }
 
   function handleButtonClick() {
-    btns.forEach(btn => btn.classList.remove('active' , 'bg-white' , 'text-black'));
-    this.classList.add('active' , 'bg-white' , 'text-black');
+    btns.forEach(btn => btn.classList.remove('active' , 'bg-white' , 'text-[#000000]'));
+    this.classList.add('active' , 'bg-white' , 'text-[#000000]');
     updateData();
   }
 
   btns.forEach(btn => btn.addEventListener('click', handleButtonClick));
   categorySelect.addEventListener('change', updateData);
 
-  btns[0].classList.add('active', 'bg-white', 'text-black');
+  btns[0].classList.add('active', 'bg-white', 'text-[#000000]');
   updateData();
 </script>
