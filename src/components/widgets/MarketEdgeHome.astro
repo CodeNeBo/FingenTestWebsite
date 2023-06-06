@@ -1,0 +1,76 @@
+---
+
+interface Item {
+  EDGE?: string;
+  AvgW?: string;
+  AvgL?: string;
+  AvgWM?: string;
+  AvgLM?: string;
+}
+export interface Props {
+  items: Array<Array<Item>>;
+}
+const {
+  items = [],
+} = Astro.props;
+---
+
+<section class="w-full md:max-w-lg mx-auto md:px-0" id="MarketEDGE">
+    <div class="p-7 bg-[#0B0B14] border-[#1C1C24] border rounded w-full md:w-full">
+
+      <div class="flex justify-between mb-3">
+        <p>Market EDGE Now</p>
+        <div>
+          <div class="bg-[#EC458D] relative inline-block py-1 px-2 rounded">
+            <p class="z-10">Live</p>
+          </div>
+        </div>
+      </div>
+
+        {
+        items.map((subitems) => (
+            <div>
+                {subitems.map(({ EDGE, AvgW, AvgL, AvgWM, AvgLM, }) => (
+                    <div class="w-full flex flex-row justify-between pb-2">
+                        <p class="text-[#77777B] ">Edge</p>
+                        <p  set:html={EDGE} />
+                    </div>
+
+                    <div class="w-full flex flex-row justify-between py-2">
+                        <p class="text-[#77777B] ">Avg Win %</p>
+                        <div class="flex flex-row">
+                            <p set:html={AvgW} />
+                            <p>%</p>
+                        </div>
+                    </div>
+
+                    <div class="w-full flex flex-row justify-between py-2">
+                        <p class="text-[#77777B] ">Avg Loss %</p>
+                        <div class="flex flex-row">
+                            <p set:html={AvgL} />
+                            <p>%</p>
+                        </div>
+                    </div>
+
+                    <div class="w-full flex flex-row justify-between py-2">
+                        <p class="text-[#77777B] ">Avg Win $</p>
+                        <div class="flex flex-row">
+                            <p>$</p>
+                            <p set:html={AvgWM} />
+                        </div>
+                    </div>
+
+                    <div class="w-full flex flex-row justify-between pt-2">
+                        <p class="text-[#77777B]">Avg Loss $</p>
+                        <div class="flex flex-row">
+                            <p>$</p>
+                            <p set:html={AvgLM} />
+                        </div>
+                    </div>
+                ))}
+            </div>
+        ))
+        }
+  </div>
+</section>
+
