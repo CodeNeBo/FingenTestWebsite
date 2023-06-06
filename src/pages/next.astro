@@ -1,6 +1,5 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import Hero from '~/components/widgets/Hero.astro';
 import Next from '~/components/widgets/Next.astro';
 import MarketEdge from '~/components/widgets/MarketEdge.astro';
 
@@ -11,11 +10,7 @@ const meta = {
 ---
 <Layout {meta}>
 
-    <Hero>
-      <Fragment slot="title">
-        What’s next
-      </Fragment>
-    </Hero>
+    <h1 class="w-full text-center text-6xl md:text-8xl font-bold py-40 text-transparent bg-clip-text bg-gradient-to-r from-[#4040DC] via-[#7721D6] to-[#EA3382]">What’s next</h1>
 
     <Next 
     title="Q1 2023"
