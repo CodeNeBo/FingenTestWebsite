@@ -21,24 +21,27 @@ const {
     <div class="md:py-4 mb-4 md:mb-0 flex flex-col">
       {title && <h2 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading mx-auto" set:html={title} />}
       {subtitle && <h3 class="mb-4 py-4 text-2xl lg:text-3xl font-bold font-heading mx-auto" set:html={subtitle} />}
-      {
-        items &&
-          items.length &&
-          items.map(({ title, description, icon }, index) => (
-            <div class="flex">
-              <div class="flex flex-col items-center mr-4">
-                <div>
-                  <div class="flex h-6 w-6 items-center justify-center bg-[#EC458D] rounded-full mt-2">
-                    <Icon name={icon ? icon : 'tabler:check'} class="w-4 h-4" />
+      <div class="grid md:grid-cols-2 space-y-6">
+        {
+          items &&
+            items.length &&
+            items.map(({ title, description, icon }, index) => (
+              <div class="flex sm:px-8">
+                <div class="flex flex-col items-center mr-4">
+                  <div>
+                    <div class="flex h-6 w-6 items-center justify-center bg-[#EC458D] rounded-full mt-2">
+                      <Icon name={icon ? icon : 'tabler:check'} class="w-4 h-4" />
+                    </div>
                   </div>
                 </div>
+                <div class={`pt-1 ${index !== items.length - 1 ? 'pb-8' : ''}`}>
+                  {title && <p class="mb-2 text-xl font-bold" set:html={title} />}
+                  {description && <p class="text-muted text-justify" set:html={description} />}
+                </div>
               </div>
-              <div class={`pt-1 ${index !== items.length - 1 ? 'pb-8' : ''}`}>
-                {title && <p class="mb-2 text-xl font-bold" set:html={title} />}
-                {description && <p class="text-muted text-justify" set:html={description} />}
-              </div>
-            </div>
-          ))
-      }
+            ))
+        }
+      </div>
+      
     </div>
 </section>
