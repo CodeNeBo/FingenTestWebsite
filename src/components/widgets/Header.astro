@@ -46,13 +46,16 @@ const currentPath = pathname.slice(1);
   id="header"
 >
 
-<div class="grid grid-cols-2 grid-rows-2 bg-accent items-center px-4 py-2 md:space-around lg:flex lg:justify-between lg:px-36">
-  <div class="col-span-2 row-start-1 flex justify-between md:gap-4">
-    <p class="uppercase text-[8px] lg:text-xs rounded-full p-1 block bg-red-600 px-4">LIVE</p>
-    <h3 class="uppercase text-xs p-1">Euro Breakout Againts Yen</h3>
-    <p class="uppercase text-[8px] lg:text-xs border border-text-color rounded-md w-fit p-1">Total PIP Run : 201</p>
+<div class="bg-accent items-center px-4 py-1 md:py-2 md:space-around flex justify-between lg:px-36">
+  <div class="flex justify-between align-middle md:gap-4 w-full md:w-fit">
+    <div class="flex flex-row items-center">
+      <div class="h-2 w-2 rounded-full bg-red-500 animate-pulse lg:hidden mr-1"></div>
+      <p class="uppercase text-xs rounded-full p-1 block lg:bg-red-600 lg:px-4 border border-accent lg:border-red-500">LIVE</p>
+    </div>
+    <p class="uppercase text-xs py-1 border border-accent">Euro Breakout Againts Yen</p>
+    <p class="uppercase text-xs border border-text-color rounded-md w-fit p-1">Total PIP Run: 201</p>
   </div>
-  <div class="col-span-2 row-start-2 text-[8px] lg:text-[10px] text-center flex justify-between gap-1 md:text-xs">
+  <div class="col-span-2 row-start-2 text-center justify-between gap-1 md:text-xs hidden md:flex">
     <p>TOKYO MARKET HOURS</p>
     <p>//</p>
     <p>FAST MARKET</p>
