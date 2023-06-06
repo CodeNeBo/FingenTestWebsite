@@ -8,7 +8,6 @@ import Features from '~/components/widgets/Features.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
 import MarketEdge from '~/components/widgets/MarketEdge.astro';
-import Currency from '~/components/widgets/Currency.astro';
 
 const meta = {
   title: SITE.title,
@@ -199,31 +198,6 @@ const meta = {
     </Fragment>
 
     <div class="flex flex-col mx-auto items-center w-full md:w-4/6">
-
-      <Currency
-      items={[
-        [
-        {
-            currency1: 'USD',
-            currency2: 'JPY'
-        },
-        {
-            currency1: 'EUR',
-            currency2: 'USD'
-        },
-        {
-            currency1: 'CAD',
-            currency2: 'USD'
-        },
-        {
-            currency1: 'CAD',
-            currency2: 'JPY'
-        },
-        ],
-      ]}
-      >
-      </Currency>
-
       <MarketEdge
       items={[
         [

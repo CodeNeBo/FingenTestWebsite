@@ -1,5 +1,5 @@
 ---
-import { Image } from '@astrojs/image/components'
+import { Picture } from '@astrojs/image/components'
 ---
 
-<Image src={import('../assets/images/FinGenLogo.svg')} height={65} alt="FinGen logo" />
+<Picture src={import('../assets/images/FinGenLogo.svg')} widths={[50, 75, 100]} sizes="(max-width: 800px) 50px, (min-width: 801px) 100px" alt="FinGen logo" />
