@@ -18,8 +18,8 @@ const meta = {
 
 
 <Layout {meta}>
-
-  <Hero>
+  <div class="opacity-0 transition-all duration-1000 ease-out obsSection">
+    <Hero>
       <Fragment slot="title">
         Trading is Evolving
       </Fragment>
@@ -35,27 +35,30 @@ const meta = {
       <Fragment slot="subtitle">
         We recognize machines are better at trade decision making than humans - there's no fear or greed.
       </Fragment>
-  </Hero>
-
-  <MarketEdge
-    items={[
-      [
-      {
-          EDGE: '2109',
-          AvgW: '37',
-          AvgL: '27',
-          AvgWM: '553',
-          AvgLM: '153',
-      },
-      ],
-    ]}>
-  </MarketEdge>
-  <div class="mt-[14px] lg:mt-[30px] ">
-    <form-widget ucid='3ry7DAh0RnnvdpHLXNtxabNpwlU'></form-widget>
+    </Hero>
   </div>
-  
 
-  <Features
+  <div class="opacity-0 transition-all duration-1000 ease-out obsSection translate-y-20">
+    <MarketEdge
+    items={[
+        [
+        {
+            EDGE: '2109',
+            AvgW: '37',
+            AvgL: '27',
+            AvgWM: '553',
+            AvgLM: '153',
+        },
+        ],
+      ]}>
+    </MarketEdge>
+    <div class="mt-[14px] lg:mt-[30px] ">
+      <form-widget ucid='3ry7DAh0RnnvdpHLXNtxabNpwlU'></form-widget>
+    </div>
+  </div>
+
+  <div class="opacity-0 transition-all duration-1000 ease-out obsSection translate-y-20">
+    <Features
     title="What is HIVE?"
     items={[
       [
@@ -80,7 +83,9 @@ const meta = {
       ],
     ]}
   />
-
+  </div>
+  
+<div class="opacity-0 transition-all duration-1000 ease-out obsSection translate-y-20">
   <Features
     title="Features"
     title2='HIVE Runs All Trading'
@@ -111,8 +116,11 @@ const meta = {
       ],     
     ]}
   />
-  
-  <Content
+</div>
+
+
+  <div class="opacity-0 transition-all duration-1000 ease-out obsSection translate-y-20">
+    <Content
     title="Benefits"
     items={[
       {
@@ -139,8 +147,11 @@ const meta = {
     
 
   </Content>
+  </div>
 
-  <Content
+
+  <div class="opacity-0 transition-all duration-1000 ease-out obsSection translate-y-20">
+    <Content
     isReversed
     isAfterContent
     items={[
@@ -186,8 +197,11 @@ const meta = {
     </div>
 
   </Content>
+  </div>
 
-  <Content
+
+  <div class="opacity-0 transition-all duration-1000 ease-out obsSection translate-y-20">
+    <Content
     items={[
       {
         description: 'Superior Decision Making',
@@ -226,5 +240,22 @@ const meta = {
   <div class="mb-[39px] lg:mb-[55px]">
     <form-widget ucid='3ry7DAh0RnnvdpHLXNtxabNpwlU'></form-widget>
   </div>
+  </div>
+  
   
 </Layout>
+
+<script>
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove('opacity-0');
+        entry.target.classList.remove('translate-y-20');
+      } 
+    });
+  });
+
+  const hiddenSections = document.querySelectorAll('.obsSection');
+  hiddenSections.forEach((el) => observer.observe(el));
+</script>
