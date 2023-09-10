@@ -8,6 +8,8 @@ module.exports = {
         primary: 'var(--aw-color-primary)',
         secondary: 'var(--aw-color-secondary)',
         accent: 'var(--aw-color-accent)',
+        gradient: 'var(--aw-color-gradient)',
+        bluegradient: 'var(--aw-color-bluegradient)',
         textcolor: '#e6e6e7'
       },
       fontFamily: {

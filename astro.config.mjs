@@ -2,8 +2,8 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
-import sitemap from '@astrojs/sitemap';
-import image from '@astrojs/image';
+// import sitemap from '@astrojs/sitemap';
+// import image from '@astrojs/image';
 import mdx from '@astrojs/mdx';
 import partytown from '@astrojs/partytown';
 import compress from 'astro-compress';
@@ -26,9 +26,11 @@ export default defineConfig({
     config: {
       applyBaseStyles: false
     }
-  }), sitemap(), image({
-    serviceEntryPoint: '@astrojs/image/sharp'
-  }), mdx(), ...whenExternalScripts(() => partytown({
+  }), 
+  // sitemap(), image({
+  //   serviceEntryPoint: '@astrojs/image/sharp'
+  // }), 
+  mdx(), ...whenExternalScripts(() => partytown({
     config: {
       forward: ['dataLayer.push']
     }
