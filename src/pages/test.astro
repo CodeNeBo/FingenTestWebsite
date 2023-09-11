@@ -3,7 +3,7 @@ import Layout from '~/layouts/PageLayout.astro';
 import TotalObs from '~/components/widgets/TotalObs.jsx';
 import DataTable from '~/components/widgets/DataTable.jsx';
 import ExchangeGraph from '~/components/widgets/Exchange.jsx';
-import Vami from '~/components/widgets/Vami.astro';
+// import TrendChart from '~/components/widgets/TrendChart.jsx';
 import PieChart from '~/components/widgets/PieChart.jsx';
 
 const meta = {
@@ -24,5 +24,5 @@ const meta = {
     <ExchangeGraph></ExchangeGraph>
 
     <!-- TODO Rebuild in React -->
-    <Vami></Vami>
+    <!-- <TrendChart client:load></TrendChart> -->
 </Layout>
