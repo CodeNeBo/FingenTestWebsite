@@ -1,7 +1,7 @@
 import React from 'react';
-import { Pie } from 'react-chartjs-2';
+import { Doughnut } from 'react-chartjs-2';
 
-const PieChart = () => {
+const DoughnutChart = () => {
   const data1 = {
     labels: [],
     datasets: [
@@ -29,22 +29,28 @@ const PieChart = () => {
         display: false,
     },
     responsive: true,
+    cutout: '93%',
   };
 
   return (
-    <div className="flex flex-row mx-4 items-center justify-evenly mb-4">
-      <div className="w-1/3 relative">
-        <Pie data={data1} options={options} />
-        {/* <div className='w-3/5 h-3/5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black rounded-full grid place-content-center'><p className='text-lg'>27%</p></div> */}
+    <div className="grid grid-rows-1 grid-cols-2 place-content-center mb-4 mx-4 gap-4">
+      <div className="flex flex-col justify-center items-center">
+        <div className="relative w-24 h-24">
+            <Doughnut data={data1} options={options} />
+            <p className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/3 text-2xl font-bold tracking-wide'>27%</p>
+        </div>
         <h2 className="mt-2 text-lg font-bold text-center">Losing Trades</h2>
       </div>
-      <div className="w-1/3 relative grid place-content-center">
-        <Pie data={data2} options={options} />
-        {/* <div className='w-3/5 h-3/5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black rounded-full grid place-content-center'><p className='text-lg'>27%</p></div> */}
+
+      <div className="flex flex-col justify-center items-center">
+        <div className="relative w-24 h-24">
+            <Doughnut data={data2} options={options}/>
+            <p className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/3 text-2xl font-bold tracking-wide'>27%</p>
+        </div>
         <h2 className="mt-2 text-lg font-bold text-center">Winning Trades</h2>
       </div>
     </div>
   );
 };
 
-export default PieChart;
+export default DoughnutChart;
