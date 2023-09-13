@@ -3,8 +3,9 @@ import Layout from '~/layouts/PageLayout.astro';
 import TotalObs from '~/components/widgets/TotalObs.jsx';
 import DataTable from '~/components/widgets/DataTable.jsx';
 import ExchangeGraph from '~/components/widgets/Exchange.jsx';
-// import TrendChart from '~/components/widgets/TrendChart.jsx';
+import TrendChart from '~/components/widgets/TrendChart.jsx';
 import PieChart from '~/components/widgets/PieChart.jsx';
+import Vami from '~/components/widgets/Vami.astro';
 
 const meta = {
   title: "Test",
@@ -19,10 +20,14 @@ const meta = {
         <div class="w-56 h-56 rounded-full bg-gradient-to-r from-accent to-gradient"></div>
     </div>
     
+    <!-- TODO redo without chartjs -->
     <PieChart client:load></PieChart>
     <DataTable></DataTable>
     <ExchangeGraph></ExchangeGraph>
 
-    <!-- TODO Rebuild in React -->
-    <!-- <TrendChart client:load></TrendChart> -->
+    <TrendChart client:load></TrendChart>
+    <div class="hidden">
+      <Vami></Vami>
+    </div>
+
 </Layout>
