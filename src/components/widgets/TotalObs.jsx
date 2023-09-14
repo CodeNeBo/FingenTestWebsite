@@ -1,3 +1,5 @@
+import Icon from "astro-icon";
+
 const number = {
     value: '7,541,390',
   };

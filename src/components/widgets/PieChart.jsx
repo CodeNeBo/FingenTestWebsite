@@ -50,12 +50,12 @@ const PieCharts = () => {
 
     const resizeCanvas = () => {
       const containerWidth = containerRef.current.clientWidth;
-      setCanvasWidth(containerWidth / 3);
-      setCanvasHeight(containerWidth / 3);
-      canvas1.width = containerWidth / 3;
-      canvas1.height = containerWidth / 3;
-      canvas2.width = containerWidth / 3;
-      canvas2.height = containerWidth / 3;
+      setCanvasWidth(containerWidth / 3.5);
+      setCanvasHeight(containerWidth / 3.5);
+      canvas1.width = containerWidth / 3.5;
+      canvas1.height = containerWidth / 3.5;
+      canvas2.width = containerWidth / 3.5;
+      canvas2.height = containerWidth / 3.5;
 
       const dataPlaceholder1 = document.querySelector('#dataPlaceholder1');
       const dataPlaceholder2 = document.querySelector('#dataPlaceholder2');
@@ -77,8 +77,8 @@ const PieCharts = () => {
   }, [canvasWidth, canvasHeight, data1, data2, colors1, colors2]);
 
   return (
-    <div className='flex flex-col text-center mx-4 gap-4 mb-8' ref={containerRef} style={{ textAlign: 'center' }}>
-        <div className='grid grid-cols-2 place-content-center gap-4 w-full'>
+    <div className='flex flex-col text-center gap-4 mb-8 w-screen overflow-hidden' ref={containerRef} style={{ textAlign: 'center' }}>
+        <div className='grid grid-cols-2 place-content-center gap-4 w-full px-4'>
           <div className='relative'>
             <canvas ref={canvasRef1} className='mx-auto'></canvas>
             <span id='dataPlaceholder1' className='text-2xl tracking-wide font-bold absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>0%</span>
@@ -89,7 +89,7 @@ const PieCharts = () => {
           </div>
         </div>
         
-        <div className='flex flex-auto gap-4'>
+        <div className='flex flex-auto gap-4 px-4'>
           <h3 className='text-xl tracking-wide text-center col-start-1 col-end-1 row-start-2 row-end-2 w-full'>Winning Trades</h3>
           <h3 className='text-xl tracking-wide text-center col-start-2 col-end-2 row-start-2 row-end-2 w-full'>Losing Trades</h3>
         </div>
