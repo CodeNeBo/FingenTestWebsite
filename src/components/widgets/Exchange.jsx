@@ -84,7 +84,7 @@ function ExchangeLine() {
 
 export default function Graph() {
     return (
-      <div className="my-8">
+      <div className="mb-6">
         <ExchangeLine></ExchangeLine>
       </div>
     );

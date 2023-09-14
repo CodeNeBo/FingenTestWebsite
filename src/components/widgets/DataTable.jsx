@@ -16,7 +16,7 @@ const month2 = {
 
 export default function DynamicTable() {
     return (
-        <div className="mx-4">
+        <div className="mx-4 mb-8">
             <table className="tracking-wide w-full">
                 <tbody>
                     <tr className="text-left font-normal">

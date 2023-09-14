@@ -77,7 +77,7 @@ const PieCharts = () => {
   }, [canvasWidth, canvasHeight, data1, data2, colors1, colors2]);
 
   return (
-    <div className='flex flex-col text-center gap-4 mb-8 w-screen overflow-hidden' ref={containerRef} style={{ textAlign: 'center' }}>
+    <div className='flex flex-col text-center gap-4 mb-6 w-screen overflow-hidden' ref={containerRef} style={{ textAlign: 'center' }}>
         <div className='grid grid-cols-2 place-content-center gap-4 w-full px-4'>
           <div className='relative'>
             <canvas ref={canvasRef1} className='mx-auto'></canvas>
@@ -90,8 +90,8 @@ const PieCharts = () => {
         </div>
         
         <div className='flex flex-auto gap-4 px-4'>
-          <h3 className='text-xl tracking-wide text-center col-start-1 col-end-1 row-start-2 row-end-2 w-full'>Winning Trades</h3>
-          <h3 className='text-xl tracking-wide text-center col-start-2 col-end-2 row-start-2 row-end-2 w-full'>Losing Trades</h3>
+          <h3 className='text-xl tracking-wider text-center col-start-1 col-end-1 row-start-2 row-end-2 w-full'>Winning Trades</h3>
+          <h3 className='text-xl tracking-wider text-center col-start-2 col-end-2 row-start-2 row-end-2 w-full'>Losing Trades</h3>
         </div>
 
       

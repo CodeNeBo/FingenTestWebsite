@@ -75,8 +75,8 @@ const LineChart = () => {
   }, [canvasWidth, canvasHeight]);
 
   return (
-    <div className='bg-[#1E1E2F] rounded-xl m-4 p-4 gap-2'>
-      <div className='flex flex-row justify-between items-center mb-2'>
+    <div className='bg-[#1E1E2F] rounded-xl mx-4 mb-8 p-4'>
+      <div className='flex flex-row justify-between items-center mb-4'>
         <div className='flex flex-col'>
           <p className='tracking-wide font-bold'>Trend</p>
           <p className='text-xs opacity-60 tracking-wide'>Compared to 12% last year</p>
