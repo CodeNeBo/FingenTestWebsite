@@ -5,7 +5,6 @@ import DataTable from '~/components/widgets/DataTable.jsx';
 import ExchangeGraph from '~/components/widgets/Exchange.jsx';
 import TrendChart from '~/components/widgets/TrendChart.jsx';
 import PieChart from '~/components/widgets/PieChart.jsx';
-import Vami from '~/components/widgets/Vami.astro';
 
 const meta = {
   title: "Test",
@@ -26,8 +25,5 @@ const meta = {
     <ExchangeGraph></ExchangeGraph>
 
     <TrendChart client:load></TrendChart>
-    <div class="hidden">
-      <Vami></Vami>
-    </div>
 
 </Layout>

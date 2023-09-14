@@ -1,55 +1,90 @@
-import { Doughnut } from 'react-chartjs-2';
+import React, { useEffect, useRef, useState } from 'react';
 
-const DoughnutChart = () => {
-  const data1 = {
-    labels: [],
-    datasets: [
-      {
-        data: [68, 32],
-        backgroundColor: ['#EA3382', '#322E4C'], 
-        borderWidth: 0,
-      },
-    ],
-  };
+const PieCharts = () => {
+  const canvasRef1 = useRef(null);
+  const canvasRef2 = useRef(null);
+  const containerRef = useRef(null);
+  const [canvasWidth, setCanvasWidth] = useState(400);
+  const [canvasHeight, setCanvasHeight] = useState(200);
+  const data1 = [68, 32];
+  const data2 = [27, 73];
+  const colors1 = ['#EA3382' , '#322E4C'];
+  const colors2 = ['#7721D6' , '#322E4C'];
 
-  const data2 = {
-    labels: [],
-    datasets: [
-      {
-        data: [27, 73],
-        backgroundColor: ['#7721D6', '#322E4C'],
-        borderWidth: 0,
-      },
-    ],
-  };
+  useEffect(() => {
+    const canvas1 = canvasRef1.current;
+    const ctx1 = canvas1.getContext('2d');
 
-  const options = {
-    legend: {
-        display: false,
-    },
-    responsive: true,
-    cutout: '93%',
-  };
+    const canvas2 = canvasRef2.current;
+    const ctx2 = canvas2.getContext('2d');
+
+    const drawPieChart = (canvas, ctx, data, colors) => {
+      const total = data.reduce((acc, value) => acc + value, 0);
+      const centerX = canvas.width / 2;
+      const centerY = canvas.height / 2;
+      const radius = Math.min(canvas.width, canvas.height) / 2;
+
+      let startAngle = -Math.PI / 2;
+
+      data.forEach((value, index) => {
+        const sliceAngle = (2 * Math.PI * value) / total;
+        ctx.fillStyle = colors[index];
+
+        ctx.beginPath();
+        ctx.moveTo(centerX, centerY);
+        ctx.arc(centerX, centerY, radius, startAngle, startAngle + sliceAngle);
+        ctx.lineTo(centerX, centerY);
+        ctx.fill();
+
+        startAngle += sliceAngle;
+      });
+    };
+
+    const resizeCanvas = () => {
+      const containerWidth = containerRef.current.clientWidth;
+      setCanvasWidth(containerWidth / 3.5);
+      setCanvasHeight(containerWidth / 3.5);
+      canvas1.width = containerWidth / 3.5;
+      canvas1.height = containerWidth / 3.5;
+      canvas2.width = containerWidth / 3.5;
+      canvas2.height = containerWidth / 3.5;
+
+      const dataPlaceholder1 = document.querySelector('#dataPlaceholder1');
+      const dataPlaceholder2 = document.querySelector('#dataPlaceholder2');
+      if (dataPlaceholder1 && dataPlaceholder2) {
+        dataPlaceholder1.textContent = data1[0] + '%';
+        dataPlaceholder2.textContent = data2[0] + '%';
+      }
+
+      drawPieChart(canvas1, ctx1, data1, colors1);
+      drawPieChart(canvas2, ctx2, data2, colors2);
+    };
+
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    return () => {
+      window.removeEventListener('resize', resizeCanvas);
+    };
+  }, [canvasWidth, canvasHeight, data1, data2, colors1, colors2]);
 
   return (
-    <div className="grid grid-rows-1 grid-cols-2 place-content-center mb-4 mx-4 gap-4">
-      <div className="flex flex-col justify-center items-center">
-        <div className="relative w-24 h-24">
-            <Doughnut data={data1} options={options} />
-            <p className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/3 text-2xl font-bold tracking-wide'>68%</p>
+    <div className='flex flex-row justify-evenly text-center mx-4 gap-4 mb-8' ref={containerRef} style={{ textAlign: 'center' }}>
+      <div className='relative'>
+        <canvas ref={canvasRef1} width={canvasWidth} height={canvasHeight}></canvas>
+        <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-5/6 h-5/6 rounded-full bg-primary flex justify-center items-center'>
+          <span id='dataPlaceholder1' className='text-2xl tracking-wide font-bold'>0%</span>
         </div>
-        <h2 className="mt-2 text-lg font-bold text-center">Losing Trades</h2>
       </div>
-
-      <div className="flex flex-col justify-center items-center">
-        <div className="relative w-24 h-24">
-            <Doughnut data={data2} options={options}/>
-            <p className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/3 text-2xl font-bold tracking-wide'>27%</p>
+      
+      <div className='relative'>
+        <canvas ref={canvasRef2} width={canvasWidth} height={canvasHeight}></canvas>
+        <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-5/6 h-5/6 rounded-full bg-primary flex justify-center items-center'>
+          <span id='dataPlaceholder2' className='text-2xl tracking-wide font-bold'>0%</span>
         </div>
-        <h2 className="mt-2 text-lg font-bold text-center">Winning Trades</h2>
       </div>
     </div>
   );
 };
 
-export default DoughnutChart;
+export default PieCharts;
