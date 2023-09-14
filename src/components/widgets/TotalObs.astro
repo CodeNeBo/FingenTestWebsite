@@ -1,0 +1,16 @@
+---
+import DynamicNum from '~/components/widgets/DynamicNum.jsx'
+import { Icon } from 'astro-icon';
+---
+
+<section class="flex flex-col text-center font-bold gap-2 my-4">
+    <h2 class="text-2xl">Total Observations</h2>
+    <DynamicNum client:load />
+    <div class="flex justify-center items-end gap-4 mt-1">
+        <p>FX & Crypto</p>
+        <div class="flex flex-row items-center">
+            <button class="text-xs font-light tracking-widest pb-0.5">DETAILS</button>
+            <Icon name='tabler:chevron-right'  class="w-5 h-5 pb-1" />
+        </div>
+    </div>
+</section>

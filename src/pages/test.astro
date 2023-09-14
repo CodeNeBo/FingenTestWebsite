@@ -1,6 +1,6 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import TotalObs from '~/components/widgets/TotalObs.jsx';
+import TotalObs from '~/components/widgets/TotalObs.astro';
 import DataTable from '~/components/widgets/DataTable.jsx';
 import ExchangeGraph from '~/components/widgets/Exchange.jsx';
 import TrendChart from '~/components/widgets/TrendChart.jsx';
@@ -20,9 +20,8 @@ const meta = {
     </div>
 
     <PieChart client:load></PieChart>
-    <DataTable></DataTable>
-    <ExchangeGraph></ExchangeGraph>
-
+    <DataTable client:load></DataTable>
+    <ExchangeGraph client:load></ExchangeGraph>
     <TrendChart client:load></TrendChart>
 
 </Layout>
