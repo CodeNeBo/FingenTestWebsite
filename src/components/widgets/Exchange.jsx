@@ -33,7 +33,7 @@ const pair5 = {
 function ExchangeLine() {
     return (
         <>
-            <div className="flex items-center p-0 mx-4 my-2">
+            <div className="flex items-center p-0 mx-4 my-2 md:mx-0 md:mt-0">
                 <div className="bg-gradient-to-r from-accent to-gradient h-10 w-full font-bold rounded-full flex items-center">
                     <p className="pl-4">{pair1.name1} / {pair1.name2}</p>
                 </div>
@@ -42,7 +42,7 @@ function ExchangeLine() {
                     <p className="text-xs opacity-50">{pair1.difference}</p>
                 </div>
             </div>
-            <div className="flex items-center p-0 mx-4 my-2">
+            <div className="flex items-center p-0 mx-4 my-2 md:mx-0">
                 <div className="bg-gradient-to-r from-accent to-gradient h-10 w-[75%] font-bold rounded-full flex items-center">
                     <p className="pl-4">{pair2.name1} / {pair2.name2}</p>
                 </div>
@@ -51,7 +51,7 @@ function ExchangeLine() {
                     <p className="text-xs opacity-50">{pair2.difference}</p>
                 </div>
             </div>
-            <div className="flex items-center p-0 mx-4 my-2">
+            <div className="flex items-center p-0 mx-4 my-2 md:mx-0">
                 <div className="bg-gradient-to-r from-bluegradient to-accent h-10 w-[70%] font-bold rounded-full flex items-center">
                     <p className="pl-4">{pair3.name1} / {pair3.name2}</p>
                 </div>
@@ -60,7 +60,7 @@ function ExchangeLine() {
                     <p className="text-xs opacity-50">{pair3.difference}</p>
                 </div>
             </div>
-            <div className="flex items-center p-0 mx-4 my-2">
+            <div className="flex items-center p-0 mx-4 my-2 md:mx-0">
                 <div className="bg-gradient-to-r from-bluegradient to-accent h-10 w-[50%] font-bold rounded-full flex items-center">
                     <p className="pl-4">{pair4.name1} / {pair4.name2}</p>
                 </div>
@@ -69,7 +69,7 @@ function ExchangeLine() {
                     <p className="text-xs opacity-50">{pair4.difference}</p>
                 </div>
             </div>
-            <div className="flex items-center p-0 mx-4 my-2">
+            <div className="flex items-center p-0 mx-4 my-2 md:mx-0 md:mb-0">
                 <div className="bg-gradient-to-r from-gradient to-secondary h-10 w-[35%] font-bold rounded-full flex items-center">
                     <p className="pl-4">{pair5.name1} / {pair5.name2}</p>
                 </div>
@@ -84,7 +84,7 @@ function ExchangeLine() {
 
 export default function Graph() {
     return (
-      <div className="mb-6">
+      <div className="mb-6 md:mb-0">
         <ExchangeLine></ExchangeLine>
       </div>
     );

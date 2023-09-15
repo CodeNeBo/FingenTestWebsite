@@ -4,7 +4,7 @@ const number = {
 
 function DynamicNumber() {
     return (
-        <h1 className="text-4xl">
+        <h1 className="text-4xl md:text-4xl">
             {number.value}
         </h1>
     )

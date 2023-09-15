@@ -75,22 +75,23 @@ const LineChart = () => {
   }, [canvasWidth, canvasHeight]);
 
   return (
-    <div className='bg-[#1E1E2F] rounded-xl mx-4 mb-8 p-4'>
-      <div className='flex flex-row justify-between items-center mb-4'>
-        <div className='flex flex-col'>
-          <p className='tracking-wide font-bold'>Trend</p>
-          <p className='text-xs opacity-60 tracking-wide'>Compared to 12% last year</p>
+    <>
+      <div className='bg-[#1E1E2F] rounded-xl mx-4 mb-8 p-4 md:mb-0 md:mx-0 md:p-6'>
+        <div className='flex flex-row justify-between items-center mb-4'>
+          <div className='flex flex-col'>
+            <p className='tracking-wide font-bold'>Trend</p>
+            <p className='text-xs opacity-60 tracking-wide'>Compared to 12% last year</p>
+          </div>
+          <h4 className='text-lg tracking-wide font-bold md:text-xl'>
+            92,080
+          </h4>
         </div>
-        <h4 className='text-lg tracking-wide font-bold'>
-          92,080
-        </h4>
+        
+        <div ref={containerRef} className="md:grid md:place-content-center md:h-32">
+        <canvas ref={canvasRef} width={canvasWidth} height={canvasHeight}></canvas>
+        </div>
       </div>
-      
-      <div ref={containerRef}>
-      <canvas ref={canvasRef} width={canvasWidth} height={canvasHeight}></canvas>
-      </div>
-    </div>
-    
+    </>
   );
 };
 
