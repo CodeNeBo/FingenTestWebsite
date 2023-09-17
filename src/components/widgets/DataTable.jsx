@@ -1,20 +1,23 @@
 const month1 = {
     name: 'January',
-    trades: '8430',
-    avgwin: '3210',
-    avgloss: '10',
-    edge: '21320',
+    trades: 8430,
+    avgwin: 78,
+    avgloss: 10,
+    edge: 21320,
 };
 
 const month2 = {
     name: 'February',
-    trades: '12543',
-    avgwin: '1879',
-    avgloss: '23',
-    edge: '44313',
+    trades: 12543,
+    avgwin: 56,
+    avgloss: 23,
+    edge: 44313,
 };
 
 export default function DynamicTable() {
+    const formatNum = (number) => {
+        return number.toLocaleString('en-US');
+      };
     return (
         <div className="mx-4 mb-8 md:ml-16 md:mr-0 md:mb-16 md:w-fit">
             <table className="tracking-wide w-full md:hidden">
@@ -27,23 +30,23 @@ export default function DynamicTable() {
                     <tr><td colSpan={3}><hr className="w-full border-[#322E4C] my-1"></hr></td></tr>
                     <tr>
                         <td className='uppercase text-xs opacity-50 font-bold'>total trades</td>
-                        <td>{month1.trades}</td>
-                        <td>{month2.trades}</td>
+                        <td>{formatNum(month1.trades)}</td>
+                        <td>{formatNum(month2.trades)}</td>
                     </tr>
                     <tr>
                         <td className='uppercase text-xs opacity-50 font-bold'>avg win amt</td>
-                        <td>{month1.avgwin}</td>
-                        <td>{month2.avgwin}</td>
+                        <td>{month1.avgwin+"%"}</td>
+                        <td>{month2.avgwin+"%"}</td>
                     </tr>
                     <tr>
                         <td className='uppercase text-xs opacity-50 font-bold'>avg loss amt</td>
-                        <td>{month1.avgloss}</td>
-                        <td>{month2.avgloss}</td>
+                        <td>{month1.avgloss+"%"}</td>
+                        <td>{month2.avgloss+"%"}</td>
                     </tr>
                     <tr>
                         <td className='uppercase text-xs opacity-50 font-bold'>edge</td>
-                        <td>{month1.edge}</td>
-                        <td>{month2.edge}</td>
+                        <td>{formatNum(month1.edge)}</td>
+                        <td>{formatNum(month2.edge)}</td>
                     </tr>
                 </tbody>
             </table>
@@ -58,10 +61,10 @@ export default function DynamicTable() {
                     </tr>
                     <tr className="h-7 my-2 tracking-wide text-sm">
                         <td>{month1.name}</td>
-                        <td>{month1.trades}</td>
-                        <td>{month1.avgwin}</td>
-                        <td>{month1.avgloss}</td>
-                        <td>{month1.edge}</td>
+                        <td>{formatNum(month1.trades)}</td>
+                        <td>{month1.avgwin+'%'}</td>
+                        <td>{month1.avgloss+'%'}</td>
+                        <td>{formatNum(month1.edge)}</td>
                     </tr>
                     <tr>
                         <td colSpan={5} className="h-2"><hr className="w-full border-[#322E4C]"></hr></td>
@@ -69,10 +72,10 @@ export default function DynamicTable() {
                         
                     <tr className="h-7 my-2 tracking-wide text-sm">
                         <td>{month2.name}</td>
-                        <td>{month2.trades}</td>
-                        <td>{month2.avgwin}</td>
-                        <td>{month2.avgloss}</td>
-                        <td>{month2.edge}</td>
+                        <td>{formatNum(month2.trades)}</td>
+                        <td>{month2.avgwin+'%'}</td>
+                        <td>{month2.avgloss+'%'}</td>
+                        <td>{formatNum(month2.edge)}</td>
                     </tr>
                 </tbody>
             </table>
