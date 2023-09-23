@@ -17,14 +17,9 @@ const meta = {
   <section class="md:relative overflow-hidden">
     <TotalObs></TotalObs>
 
-    <!-- Globe placeholder -->
     <div class="w-56 h-56 rounded-full mx-auto my-16 flex items-center justify-center md:absolute md:right-0">
       <Globe client:only></Globe>
     </div>
-    
-    <!-- <div class="w-56 h-56 rounded-full mx-auto my-16 flex items-center justify-center md:absolute md:right-0 md:scale-[300%]">
-        <Globe client:only></Globe>
-    </div> -->
 
     <PieChart client:load></PieChart>
     <DataTable client:load></DataTable>
