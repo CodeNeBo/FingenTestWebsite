@@ -20,14 +20,14 @@ const {
         {
           title && (
             <h1
-              class="text-4xl md:text-4xl font-black leading-snug tracking-tighter mb-2 font-heading text-textcolor"
+              class="text-4xl md:text-4xl font-black leading-snug tracking-tighter mb-6 font-heading text-textcolor"
               set:html={title}
             />
           )
         }
 
         <div class="max-w-3xl mx-auto">
-          {subtitle && <p class="text-lg text-muted mx-6 md:mx-12 my-2 text-textcolor" set:html={subtitle} />}
+          {subtitle && <p class="text-lg text-muted mx-6 tracking-wide leading-snug md:mx-12 my-2 text-textcolor" set:html={subtitle} />}
           <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4">
           </div>
         </div>
