@@ -11,6 +11,7 @@ import MarketEdgeHome from '~/components/widgets/MarketEdgeHome.astro';
 import TotalObs from '~/components/widgets/TotalObs.astro';
 import DataTable from '~/components/widgets/DataTable.jsx';
 import PieChart from '~/components/widgets/PieChart.jsx';
+import EdgeCarousel from '~/components/widgets/EdgeCarousel.jsx';
 
 const meta = {
   title: SITE.title,
@@ -47,6 +48,8 @@ const meta = {
     <div class="absolute top-[360px] -z-50 md:top-28 lg:top-0">
       <Image class='scale-[250%] md:scale-100' src={Earth} alt="An image of planet Earth"/>
     </div>
+
+    <EdgeCarousel client:load></EdgeCarousel>
   </div>  
 
   <div class="opacity-0 transition-all duration-1000 ease-out obsSection translate-y-20">
