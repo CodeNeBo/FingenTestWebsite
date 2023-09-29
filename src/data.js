@@ -12,21 +12,6 @@ export const headerData = {
       href: getPermalink('/about'),
       icon: 'About',
     },
-    {
-      text: 'Next',
-      href: getPermalink('/next'),
-      icon: 'Next',
-    },
-    {
-      text: 'Trade',
-      href: getPermalink('/trade'),
-      icon: 'Trade',
-    },
-    {
-      text: 'Hive',
-      href: getPermalink('/hive'),
-      icon: 'Hive',
-    },
   ],
   
   socialLinks: [
