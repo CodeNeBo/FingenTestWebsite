@@ -77,7 +77,7 @@ const PieCharts = () => {
   }, [canvasWidth, canvasHeight, data1, data2, colors1, colors2]);
 
   return (
-    <div className='flex flex-col text-center gap-4 my-9 w-full mx-auto overflow-hidden justify-center items-center md:my-9' ref={containerRef} style={{ textAlign: 'center' }}>
+    <div className='flex flex-col text-center gap-4 my-12 w-full mx-auto overflow-hidden justify-center items-center md:my-9' ref={containerRef} style={{ textAlign: 'center' }}>
         <div className='flex justify-evenly w-full px-4 md:w-fit'>
           <div className='md:flex md:flex-row md:justify-center md:items-center w-full'>
             <div className='relative'>

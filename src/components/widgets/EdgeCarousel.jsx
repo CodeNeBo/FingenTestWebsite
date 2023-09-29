@@ -11,7 +11,7 @@ const ParentComponent = () => {
   ];
 
   return (
-    <div className='bg-primary'>
+    <div className='bg-primary mb-16'>
       <EdgeCard data={data} />
     </div>
   );

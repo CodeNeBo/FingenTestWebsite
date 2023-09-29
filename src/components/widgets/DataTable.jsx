@@ -19,7 +19,7 @@ export default function DynamicTable() {
         return number.toLocaleString('en-US');
       };
     return (
-        <div className="mx-4 mb-8 md:mx-auto md:w-fit">
+        <div className="mx-4 mb-12 md:mx-auto md:w-fit">
             <table className="tracking-wide w-full md:hidden">
                 <tbody>
                     <tr className="text-left font-normal">
