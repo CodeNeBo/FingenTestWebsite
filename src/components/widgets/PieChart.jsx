@@ -77,16 +77,16 @@ const PieCharts = () => {
   }, [canvasWidth, canvasHeight, data1, data2, colors1, colors2]);
 
   return (
-    <div className='flex flex-col text-center gap-4 mb-6 w-screen overflow-hidden md:ml-16 md:mb-8 md:w-fit' ref={containerRef} style={{ textAlign: 'center' }}>
-        <div className='grid grid-cols-2 place-content-center gap-4 w-full px-4 md:px-0 md:w-fit'>
-          <div className='md:flex md:flex-row md:justify-center md:items-center'>
+    <div className='flex flex-col text-center gap-4 my-9 w-full mx-auto overflow-hidden justify-center items-center md:my-9' ref={containerRef} style={{ textAlign: 'center' }}>
+        <div className='flex justify-evenly w-full px-4 md:w-fit'>
+          <div className='md:flex md:flex-row md:justify-center md:items-center w-full'>
             <div className='relative'>
               <canvas ref={canvasRef1} className='mx-auto md:w-20 md:h-20'></canvas>
               <span id='dataPlaceholder1' className='text-2xl md:text-xl tracking-wide font-bold absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>0%</span>
             </div>
             <h3 className='hidden md:block text-lg tracking-wider ml-4'>Winning Trades</h3>
           </div>
-          <div className='md:flex md:flex-row md:justify-center md:items-center md:ml-6'>
+          <div className='md:flex md:flex-row md:justify-center md:items-center md:ml-6 w-full'>
             <div className='relative'>
               <canvas ref={canvasRef2} className='mx-auto md:w-20 md:h-20'></canvas>
               <span id='dataPlaceholder2' className='text-2xl md:text-xl tracking-wide font-bold absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>0%</span>
@@ -95,7 +95,7 @@ const PieCharts = () => {
           </div>
         </div>
         
-        <div className='flex flex-auto gap-4 px-4 md:hidden'>
+        <div className='flex justify-evenly w-full px-4 md:hidden'>
           <h3 className='text-xl tracking-wider text-center col-start-1 col-end-1 row-start-2 row-end-2 w-full'>Winning Trades</h3>
           <h3 className='text-xl tracking-wider text-center col-start-2 col-end-2 row-start-2 row-end-2 w-full'>Losing Trades</h3>
         </div>

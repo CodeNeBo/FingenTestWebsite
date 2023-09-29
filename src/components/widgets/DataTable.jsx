@@ -19,7 +19,7 @@ export default function DynamicTable() {
         return number.toLocaleString('en-US');
       };
     return (
-        <div className="mx-4 mb-8 md:ml-16 md:mr-0 md:mb-16 md:w-fit">
+        <div className="mx-4 mb-8 md:mx-auto md:w-fit">
             <table className="tracking-wide w-full md:hidden">
                 <tbody>
                     <tr className="text-left font-normal">
@@ -50,7 +50,7 @@ export default function DynamicTable() {
                     </tr>
                 </tbody>
             </table>
-            <table className="hidden md:block">
+            <table className="hidden md:block mx-auto">
                 <tbody>
                     <tr className="text-left font-normal uppercase text-xs opacity-50">
                         <th className="w-28">MONTH</th>

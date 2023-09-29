@@ -1,6 +1,4 @@
 ---
-import TradeButton from '~/components/widgets/TradeButton.astro';
-
 export interface Props {
   title?: string;
   title2?: string;
@@ -26,27 +24,23 @@ const {
         {
           title && (
             <h1
-              class="text-4xl md:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading text-textcolor"
+              class="text-4xl md:text-4xl font-black leading-tighter tracking-tighter mb-4 font-heading text-textcolor"
               set:html={title}
             />
           )
         }
 
-        <!-- Trade Button -->
-        <TradeButton>
-        </TradeButton>
-
         {
           title2 && (
             <h1
-              class="text-4xl md:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading text-textcolor"
+              class="text-4xl md:text-4xl font-black leading-tighter tracking-tighter mb-4 font-heading text-textcolor"
               set:html={title2}
             />
           )
         }
 
         <div class="max-w-3xl mx-auto">
-          {subtitle && <p class="text-xl text-muted mx-6 md:mx-12 my-7 text-textcolor" set:html={subtitle} />}
+          {subtitle && <p class="text-lg text-muted mx-6 md:mx-12 my-7 text-textcolor" set:html={subtitle} />}
           <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4">
           </div>
         </div>
