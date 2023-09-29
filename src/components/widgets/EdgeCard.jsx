@@ -19,7 +19,7 @@ const EdgeCard = ({ data }) => {
             }`}
           >
             <div className='bg-primary opacity-75 w-[95%] h-[95%] rounded-[20px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'></div>
-            <div className='z-50'>
+            <div className='z-20'>
                 <div className='flex flex-col items-center gap-0'>
                     <h1 className="text-2xl font-semibold tracking-wide">{formatNum(item.number)}</h1>
                     <p className='uppercase text-[10px] tracking-wider -translate-y-0.5'>edge</p>
