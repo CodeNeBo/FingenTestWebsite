@@ -1,7 +1,6 @@
 ---
 export interface Props {
   title?: string;
-  title2?: string;
   content?: string;
   subtitle?: string;
   image?: string | any; // TODO: find HTMLElementProps
@@ -9,38 +8,26 @@ export interface Props {
 
 const {
   title = await Astro.slots.render('title'),
-  title2 = await Astro.slots.render('title2'),
   subtitle = await Astro.slots.render('subtitle'),
   content = await Astro.slots.render('content'),
 } = Astro.props;
 ---
 
-<section class="relative md:-mt-[76px] h-fit">
-  <div class="absolute inset-0 pointer-events-none" aria-hidden="true"></div>
+<section class="relative h-fit">
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
-    <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
-    <div class="pt-9 mb-16 lg:mb-20">
+    <div class="pt-9 mb-4 lg:mb-20">
       <div class="text-center max-w-screen-lg mx-auto">
         {
           title && (
             <h1
-              class="text-4xl md:text-4xl font-black leading-tighter tracking-tighter mb-4 font-heading text-textcolor"
+              class="text-4xl md:text-4xl font-black leading-snug tracking-tighter mb-2 font-heading text-textcolor"
               set:html={title}
             />
           )
         }
 
-        {
-          title2 && (
-            <h1
-              class="text-4xl md:text-4xl font-black leading-tighter tracking-tighter mb-4 font-heading text-textcolor"
-              set:html={title2}
-            />
-          )
-        }
-
         <div class="max-w-3xl mx-auto">
-          {subtitle && <p class="text-lg text-muted mx-6 md:mx-12 my-7 text-textcolor" set:html={subtitle} />}
+          {subtitle && <p class="text-lg text-muted mx-6 md:mx-12 my-2 text-textcolor" set:html={subtitle} />}
           <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4">
           </div>
         </div>
