@@ -6,7 +6,6 @@ import BasicScripts from '~/components/common/BasicScripts.astro';
 
 import { MetaSEO } from '~/types';
 import { SITE } from '~/config.mjs';
-import { ViewTransitions } from 'astro:transitions';
 
 export interface Props {
   meta?: MetaSEO;
@@ -20,7 +19,6 @@ const { language = 'en', textDirection = 'ltr' } = SITE;
 <html lang={language} dir={textDirection} class="2xl:text-[20px]">
   <head>
     <MetaTags {...meta} />
-    <script type="text/javascript" src="https://app.viral-loops.com/widgetsV2/core/loader.js"></script>
   </head>
 
   <body class="antialiased text-page bg-primary tracking-tight">
