@@ -1,5 +1,3 @@
-import React from 'react';
-
 const EdgeCard = ({ data }) => {
   const sortedData = data.slice().sort((a, b) => b.number - a.number);
 

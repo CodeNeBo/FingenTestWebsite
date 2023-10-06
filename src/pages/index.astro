@@ -23,7 +23,7 @@ const meta = {
 
 <Layout {meta}>
   <div class="relative overflow-hidden mt-12">
-    <div class="opacity-0 transition-all duration-1000 ease-out obsSection mb-44">
+    <div class="opacity-0 transition-all duration-1000 ease-out obsSection mb-44 md:mb-72">
       <Hero>
         <Fragment slot="title">
           Trading is Evolving<br>And the Machines are Winning
@@ -34,16 +34,15 @@ const meta = {
       </Hero>
     </div>
     
-    <!-- <div class="bg-gradient-to-t from-primary via-primary to-transparent relative overflow-hidden md:bg-gradient-to-t md:from-transparent md:via-transparent md:to-transparent">
-      <div class="absolute rounded-full bg-gradient-to-t from-primary via-primary to-transparent w-80 h-80 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -z-40 scale-150 blur-2xl md:bg-gradient-to-t md:from-transparent md:via-transparent md:to-transparent"></div>
+    <div class="relative overflow-hidden">
       <TotalObs></TotalObs>
       <PieChart client:load></PieChart>
       <DataTable client:load></DataTable>
     </div>
 
-    <Image class="absolute top-72 scale-[200%] -z-50" src={import('../assets/images/Earth.jpg')} alt="Planet earth" />
+    <Image class="absolute top-72 scale-150 -z-50 md:top-0 md:scale-100" src={import('../assets/images/Earth.jpg')} alt="Planet earth" />
 
-    <EdgeCarousel client:load></EdgeCarousel> -->
+    <EdgeCarousel client:load></EdgeCarousel>
   </div>  
 
   <div class="opacity-0 transition-all duration-1000 ease-out obsSection ttranslate-y-10">

@@ -1,4 +1,3 @@
-import React from 'react';
 import EdgeCard from '~/components/widgets/EdgeCard.jsx';
 
 const ParentComponent = () => {
@@ -11,7 +10,7 @@ const ParentComponent = () => {
   ];
 
   return (
-    <div className='bg-primary mb-16'>
+    <div className='bg-primary mb-16 md: w-fit mx-auto'>
       <EdgeCard data={data} />
     </div>
   );
