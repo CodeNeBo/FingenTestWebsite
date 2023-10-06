@@ -2,12 +2,10 @@
 import { SITE } from '~/config.mjs';
 import { Image } from 'astro:assets';
 
-import Earth from '~/assets/images/Earth.jpg';
 import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Features from '~/components/widgets/Features.astro';
 import Content from '~/components/widgets/Content.astro';
-import MarketEdgeHome from '~/components/widgets/MarketEdgeHome.astro';
 import TotalObs from '~/components/widgets/TotalObs.astro';
 import DataTable from '~/components/widgets/DataTable.jsx';
 import PieChart from '~/components/widgets/PieChart.jsx';
@@ -18,6 +16,8 @@ const meta = {
   description: SITE.description,
   dontUseTitleTemplate: true,
 };
+
+
 ---
 
 
@@ -40,9 +40,8 @@ const meta = {
       <PieChart client:load></PieChart>
       <DataTable client:load></DataTable>
     </div>
-    <div class="absolute top-[360px] -z-50 md:top-28 lg:top-0">
-      <Image class='scale-[250%] md:scale-100' src={Earth} alt="An image of planet Earth"/>
-    </div>
+
+    <Image class="absolute top-72 scale-[200%] -z-50" src={import('../assets/images/Earth.jpg')} alt="Planet earth" />
 
     <EdgeCarousel client:load></EdgeCarousel>
   </div>  
@@ -211,39 +210,8 @@ const meta = {
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2 text-center mx-auto">Trade a portfolio of 70+ currencies in One-Click</h3>
     </Fragment>
-
-    <div class="flex flex-col mt-6 lg:mt-10 mx-auto items-center w-full md:w-4/6">
-      <MarketEdgeHome
-      items={[
-        [
-        {
-            EDGE: '2109',
-            AvgW: '37',
-            AvgL: '27',
-            AvgWM: '553',
-            AvgLM: '153',
-        },
-        ],
-      ]}>
-      </MarketEdgeHome>
-    </div>
   </Content>
   </div>
   
   
 </Layout>
-
-<script>
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.remove('opacity-0');
-        entry.target.classList.remove('translate-y-20');
-      } 
-    });
-  });
-
-  const hiddenSections = document.querySelectorAll('.obsSection');
-  hiddenSections.forEach((el) => observer.observe(el));
-</script>
