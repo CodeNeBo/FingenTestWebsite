@@ -1,16 +1,18 @@
-import { getHomePermalink, getPermalink } from './utils/permalinks';
+import { getPermalink } from './utils/permalinks';
 
 export const headerData = {
   links: [
     {
-      text: 'Home',
-      href: getHomePermalink(),
-      icon: 'Home',
+      text: 'Features',
+      href: getPermalink('/#features'),
+    },
+    {
+      text: 'Benefits',
+      href: getPermalink('/#benefits'),
     },
     {
       text: 'About',
       href: getPermalink('/about'),
-      icon: 'About',
     },
   ],
   
