@@ -16,7 +16,7 @@ const EdgeCard = ({ data }) => {
                 : 'bg-gradient-to-tr from-accent to-bluegradient'
             }`}
           >
-            <div className='bg-primary opacity-75 w-[95%] h-[95%] rounded-[20px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'></div>
+            <div className='bg-primary opacity-75 w-[7.5rem] h-[7.5rem] rounded-[22px] lg:rounded-[26px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'></div>
             <div className='z-20'>
                 <div className='flex flex-col items-center gap-0'>
                     <h1 className="text-2xl font-semibold tracking-wide">{formatNum(item.number)}</h1>

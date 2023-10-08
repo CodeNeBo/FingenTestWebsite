@@ -10,6 +10,7 @@ import TotalObs from '~/components/widgets/TotalObs.astro';
 import DataTable from '~/components/widgets/DataTable.jsx';
 import PieChart from '~/components/widgets/PieChart.jsx';
 import EdgeCarousel from '~/components/widgets/EdgeCarousel.jsx';
+import FAQ from '~/components/widgets/Faq.astro';
 
 const meta = {
   title: SITE.title,
@@ -40,7 +41,7 @@ const meta = {
       <DataTable client:load></DataTable>
     </div>
 
-    <Image class="absolute top-72 scale-150 -z-50 md:top-0 md:scale-100" src={import('../assets/images/Earth.jpg')} alt="Planet earth" />
+    <Image class="absolute top-72 scale-150 -z-50 md:top-0 md:scale-100 lg:scale-75" src={import('../assets/images/Earth.jpg')} alt="Planet earth" />
 
     <EdgeCarousel client:load></EdgeCarousel>
   </div>  
@@ -211,4 +212,27 @@ const meta = {
     </Fragment>
   </Content>
   </div>
+
+  <FAQ
+  title="FAQ"
+  items={[
+    {
+      name: 'Question 1',
+      description: 'Test 1'
+    },
+    {
+      name: 'Question 2',
+      description: 'Test 2'
+    },
+    {
+      name: 'Question 3',
+      description: 'Test 3'
+    },
+    {
+      name: 'Question 4',
+      description: 'Test 4'
+    },
+  ]}
+/>
+
 </Layout>
