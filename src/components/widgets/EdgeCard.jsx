@@ -8,7 +8,7 @@ const EdgeCard = ({ data }) => {
       };
 
   return (
-    <div className="flex justify-start gap-3 ml-4 pr-4 overflow-x-scroll no-scrollbar">
+    <div className="flex justify-start gap-3 ml-4 pr-4 overflow-x-scroll no-scrollbar md:justify-center">
       {sortedData.map((item, index) => (
         <div key={index} className="text-center">
           <div
