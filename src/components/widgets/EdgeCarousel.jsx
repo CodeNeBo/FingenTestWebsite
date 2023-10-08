@@ -10,7 +10,7 @@ const ParentComponent = () => {
   ];
 
   return (
-    <div className='bg-primary mb-16 md: w-fit mx-auto'>
+    <div className='bg-primary mb-16'>
       <EdgeCard data={data} />
     </div>
   );
