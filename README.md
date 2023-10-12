@@ -1,4 +1,4 @@
-# FINGEN
+# 🔥FINGEN🔥
 
 ## Getting started
 
