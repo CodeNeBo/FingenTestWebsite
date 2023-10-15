@@ -11,13 +11,18 @@ export const headerData = {
       href: getPermalink('/#benefits'),
     },
     {
+      text: 'FAQ',
+      href: getPermalink('/#faq'),
+    },
+    {
       text: 'About',
       href: getPermalink('/about'),
     },
     {
-      text: 'FAQ',
-      href: getPermalink('/#faq'),
+      text: 'Blog',
+      href: getPermalink('/blog'),
     },
+    
   ],
   
   socialLinks: [
