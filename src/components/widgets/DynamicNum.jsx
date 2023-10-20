@@ -1,17 +1,20 @@
-const number = {
-    value: '7,541,390',
-  };
+import React, { useEffect, useState } from 'react';
 
-function DynamicNumber() {
-    return (
-        <h1 className="text-4xl md:text-4xl">
-            {number.value}
-        </h1>
-    )
-}
+const DynamicNumber = () => {
+  const [number, setNumber] = useState('');
 
-  export default function TotalObservations() {
-    return (
-        <DynamicNumber />
-    );
-  }
+  useEffect(() => {
+    fetch('./src/data/dynamicnum/dynamicnum.json')
+      .then((response) => response.json())
+      .then((data) => {
+        setNumber(data.value);
+      })
+      .catch((error) => console.error('Error fetching data:', error));
+  }, []);
+
+  return (
+    <h1 className="text-4xl md:text-4xl">{number}</h1>
+  );
+};
+
+export default DynamicNumber;
