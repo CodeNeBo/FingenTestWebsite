@@ -9,6 +9,7 @@ import Content from '~/components/widgets/Content.astro';
 import TotalObs from '~/components/widgets/TotalObs.astro';
 import DataTable from '~/components/widgets/DataTable.jsx';
 import PieChart from '~/components/widgets/PieChart.jsx';
+import Pipschart from '~/components/widgets/Pips.jsx';
 import EdgeCarousel from '~/components/widgets/EdgeCarousel.jsx';
 import FAQ from '~/components/widgets/Faq.astro';
 
@@ -45,6 +46,8 @@ const meta = {
 
     <EdgeCarousel client:load></EdgeCarousel>
   </div>  
+
+  <Pipschart client:load></Pipschart>
 
   <div class="opacity-0 transition-all duration-1000 ease-out obsSection translate-y-10">
 

@@ -68,6 +68,11 @@ const DynamicTable = () => {
             <th className="w-28">avg loss amt</th>
             <th className="w-28">edge</th>
           </tr>
+          <tr>
+            <td colSpan={5} className="h-2">
+              <hr className="w-full border-[#322E4C]"></hr>
+            </td>
+          </tr>
           {months.map((month, index) => (
             <tr key={index} className="h-7 my-2 tracking-wide text-sm">
               <td>{month.name}</td>
@@ -77,11 +82,7 @@ const DynamicTable = () => {
               <td>{formatNum(month.edge)}</td>
             </tr>
           ))}
-          <tr>
-            <td colSpan={5} className="h-2">
-              <hr className="w-full border-[#322E4C]"></hr>
-            </td>
-          </tr>
+          
         </tbody>
       </table>
     </div>

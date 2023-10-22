@@ -7,7 +7,6 @@ const EdgeCard = () => {
     fetch('./src/data/edgecards/edgedata.json')
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         setData(data);
       })
       .catch((error) => console.error('Error fetching data:', error));

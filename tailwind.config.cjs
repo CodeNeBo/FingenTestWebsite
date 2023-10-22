@@ -10,7 +10,8 @@ module.exports = {
         accent: 'var(--aw-color-accent)',
         gradient: 'var(--aw-color-gradient)',
         bluegradient: 'var(--aw-color-bluegradient)',
-        textcolor: '#e6e6e7'
+        textcolor: '#e6e6e7',
+        textdark: '#1C1C24'
       },
       fontFamily: {
         sans: ['var(--aw-font-sans)', ...defaultTheme.fontFamily.sans],

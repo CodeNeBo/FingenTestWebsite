@@ -34,7 +34,7 @@ const {
 
   <div class="mx-auto max-w-7xl">
     {items.map(({ name, description, icon }, index) => (
-      <details class="self-center w-full flex items-middle bg-[#0B0B14] border-[#1C1C24] border rounded-xl h-fit mb-4" key={index}>
+      <details class="self-center w-full flex items-middle bg-[#0B0B14] border-textdark border rounded-xl h-fit mb-4" key={index}>
         <summary class="cursor-pointer list-none px-8 py-6">
           <div class="flex justify-between items-center">
             {name && <p class="text-justify text-xl font-bold" set:html={name} />}
@@ -47,7 +47,7 @@ const {
           (description) && (
             <div>
               {title && (
-                <hr class="border-[#1C1C24]" />
+                <hr class="border-textdark" />
               )}
               <p
                 class="px-8 py-6 text-muted"
