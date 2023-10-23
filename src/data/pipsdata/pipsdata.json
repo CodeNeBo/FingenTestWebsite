@@ -14,11 +14,31 @@
       },
       {
         "name": "BTC/USD",
-        "number": 32
+        "number": 32321
       },
       {
         "name": "ETH/USD",
         "number": 7232
+      },
+      {
+        "name": "DOGE/USD",
+        "number": 4321
+      },
+      {
+        "name": "BCH/USD",
+        "number": 7690
+      },
+      {
+        "name": "LOOM/USD",
+        "number": 1232
+      },
+      {
+        "name": "BTC/DOGE",
+        "number": 534
+      },
+      {
+        "name": "LOOM/ETC",
+        "number": 678
       }
     ]
   }
