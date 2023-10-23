@@ -8,7 +8,7 @@ function CurrencyList() {
   const [currencyPairs, setCurrencyPairs] = useState([]);
 
   useEffect(() => {
-    fetch('./src/data/pipsdata/pipsdata.json')
+    fetch('https://legendary-pastelito-0e5038.netlify.app//src/data/pipsdata/pipsdata.json')
       .then((response) => response.json())
       .then((data) => {
         setCurrencyPairs(data.currencyPairs);
