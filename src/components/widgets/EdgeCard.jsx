@@ -4,7 +4,7 @@ const EdgeCard = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch('./src/data/edgecards/edgedata.json')
+    fetch('./data/edgedata.json')
       .then((response) => response.json())
       .then((data) => {
         setData(data);

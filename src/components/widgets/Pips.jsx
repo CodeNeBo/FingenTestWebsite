@@ -8,7 +8,7 @@ function CurrencyList() {
   const [currencyPairs, setCurrencyPairs] = useState([]);
 
   useEffect(() => {
-    fetch('./src/data/pipsdata/pipsdata.json')
+    fetch('./data/pipsdata.json')
       .then((response) => response.json())
       .then((data) => {
         setCurrencyPairs(data.currencyPairs);

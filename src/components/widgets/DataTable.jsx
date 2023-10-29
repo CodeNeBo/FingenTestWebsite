@@ -8,7 +8,7 @@ const DynamicTable = () => {
   const [months, setMonths] = useState([]);
 
   useEffect(() => {
-    fetch('./src/data/datatable/datatable.json')
+    fetch('./data/datatable.json')
       .then((response) => response.json())
       .then((data) => {
         setMonths(data.months);
