@@ -50,5 +50,9 @@ export default defineConfig({
         '~': path.resolve(__dirname, './src')
       }
     }
+  },
+  routes: {
+    '/': 'src/pages/index.astro',
+    '/blog/[...slug]': 'src/pages/blog/[...slug].astro',
   }
 });

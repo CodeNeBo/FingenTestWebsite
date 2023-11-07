@@ -1,12 +1,13 @@
 ---
+layout: ~/layouts/BlogPostLayout.astro
 title: 'AI breakthrough allows dogs to trade crypto through telepathy'
-pubDate: 2023-01-10
+pubDate: October 1, 2023
 description: 'AI breakthrough allows dogs to trade crypto through telepathy'
 author: 'Fingen AI'
-image:
-    url: './src/assets/images/blog.png'
-    alt: 'The full Astro logo.'
-tags: ["AI", "Investing"]
+img:
+    url: '../assets/images/blog.png'
+    alt: 'alt'
+tags: ["AI"]
 ---
   In a story that seems straight out of science fiction, a group of audacious AI developers have embarked on a quest to revolutionize the world of cryptocurrency trading by tapping into a most unexpected resource: our four-legged companions. They call it the "Barkchain" project, and it aims to allow dogs to actively trade cryptocurrencies through telepathy, prompting both fascination and skepticism within the tech and pet-owner communities.
   <br><br>

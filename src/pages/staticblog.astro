@@ -1,0 +1,174 @@
+---
+import { Image } from 'astro:assets'
+
+import Layout from '~/layouts/PageLayout.astro';
+
+const meta = {
+  title: "Blog",
+};
+---
+
+<Layout {meta}>
+    <div class="overflow-hidden">
+
+    
+    <section class="py-10 px-6 mx-auto max-w-6xl lg:px-8 lg:py-20 flex flex-col gap-y-6 relative md:flex-row md:gap-x-20 md:items-center">
+        <Image class="w-full aspect-video rounded-2xl object-cover md:aspect-auto md:h-96" src={import('../assets/images/blog.png')} alt="Abstact image" />
+        <div class="md:py-6">
+            <div class="flex justify-between pb-1 md:pb-0.5">
+                <p class="text-sm font-semibold tracking-wide text-transparent bg-clip-text bg-gradient-to-t from-purple-900 to-accent">Investing</p>
+                <p class="text-sm text-muted tracking-wide leading-relaxed md:hidden">October 1, 2023</p>
+            </div>
+            <h2 class="font-black text-muted md:text-white text-3xl md:text-4xl leading-tight pb-3 md:pb-4">AI breakthrough allows dogs to trade crypto through telepathy</h2>
+            <p class="text-muted">The team behind this canine crypto craze insists that dogs have an innate sense for market trends and can make split-second decisions based on their instincts, making them ideal crypto traders.</p>
+            <div class="hidden md:flex flex-row items-center md:pt-4">
+                <p class="text-sm text-muted tracking-wide leading-relaxed w-fit whitespace-nowrap pr-8">October 1, 2023</p>
+                <hr class="w-full border-textdark translate-y-1">
+            </div>
+        </div>
+        <div class="w-64 h-64 md:w-96 md:h-96 md:-left-60 md:-bottom-20 rounded-full bg-accent blur-3xl opacity-20 absolute -bottom-10 -left-20 scale-150 -z-10"></div>
+    </section>
+    <section class="px-6 mx-auto max-w-6xl lg:px-8 lg:py-20">
+        <div class="flex flex-row items-center">
+            <h2 class="w-fit text-2xl whitespace-nowrap text-muted pr-4 font-black">Latest posts</h2>
+            <hr class="w-full border-textdark">
+        </div>
+        <div class="flex flex-row flex-wrap gap-4 pt-4 pb-12">
+            <div class="p-px bg-gradient-to-tr from-purple-400 to-accent rounded-lg"><button class="py-1 px-3 bg-accent rounded-lg text-sm">All</button></div>
+            <div class="p-px bg-gradient-to-tr from-purple-400 to-accent rounded-lg"><button class="py-1 px-3 rounded-lg bg-primary text-sm">AI</button></div>
+            <div class="p-px bg-gradient-to-tr from-purple-400 to-accent rounded-lg"><button class="py-1 px-3 rounded-lg bg-primary text-sm">Investing</button></div>
+            <div class="p-px bg-gradient-to-tr from-purple-400 to-accent rounded-lg"><button class="py-1 px-3 rounded-lg bg-primary text-sm">Economy</button></div>
+            <div class="p-px bg-gradient-to-tr from-purple-400 to-accent rounded-lg"><button class="py-1 px-3 rounded-lg bg-primary text-sm">Finance</button></div>
+            <div class="p-px bg-gradient-to-tr from-purple-400 to-accent rounded-lg"><button class="py-1 px-3 rounded-lg bg-primary text-sm">Crypto</button></div>
+        </div>
+        <div class="relative md:grid md:grid-cols-3 md:grid-rows-3 md:gap-12">
+            <div class="w-96 h-96 rounded-full bg-gradient blur-3xl opacity-20 absolute top-1/2 -translate-y-1/2 -right-40 scale-150 -z-10 md:-right-80"></div>
+            <div class="w-96 h-96 rounded-full bg-bluegradient blur-3xl opacity-20 absolute left-1/2 -translate-x-1/2 -bottom-60 scale-125 md:scale-150 md:-bottom-80 -z-10"></div>
+            <div class="mt-6 pb-2 border-b border-textdark last:border-b-0 md:border-b-0 md:mt-0">
+                <Image class="w-full h-40 rounded-2xl object-cover md:aspect-video md:h-48" src={import('../assets/images/blog.png')} alt="Abstact image" />
+                <div class="flex justify-between py-4 pb-2">
+                    <p class="text-sm font-semibold tracking-wide text-transparent bg-clip-text bg-gradient-to-t from-purple-900 to-accent">Investing</p>
+                    <p class="text-sm text-muted tracking-wide leading-relaxed md:hidden">October 1, 2023</p>
+                </div>
+                <h2 class="font-black text-muted text-2xl leading-tight pb-3">AI breakthrough allows dogs to trade crypto through telepathy</h2>
+                <div class="hidden md:flex flex-row items-center">
+                    <p class="text-sm text-muted tracking-wide leading-relaxed whitespace-nowrap w-fit pr-8">October 1, 2023</p>
+                    <hr class="w-full border-textdark">
+                </div>
+            </div>
+            <div class="mt-6 pb-2 border-b border-textdark last:border-b-0 md:border-b-0 md:mt-0">
+                <Image class="w-full h-40 rounded-2xl object-cover md:aspect-video md:h-48" src={import('../assets/images/blog.png')} alt="Abstact image" />
+                <div class="flex justify-between py-4 pb-2">
+                    <p class="text-sm font-semibold tracking-wide text-transparent bg-clip-text bg-gradient-to-t from-purple-900 to-accent">Investing</p>
+                    <p class="text-sm text-muted tracking-wide leading-relaxed md:hidden">October 1, 2023</p>
+                </div>
+                <h2 class="font-black text-muted text-2xl leading-tight pb-3">AI breakthrough allows dogs to trade crypto through telepathy</h2>
+                <div class="hidden md:flex flex-row items-center">
+                    <p class="text-sm text-muted tracking-wide leading-relaxed whitespace-nowrap w-fit pr-8">October 1, 2023</p>
+                    <hr class="w-full border-textdark">
+                </div>
+            </div>
+            <div class="mt-6 pb-2 border-b border-textdark last:border-b-0 md:border-b-0 md:mt-0">
+                <Image class="w-full h-40 rounded-2xl object-cover md:aspect-video md:h-48" src={import('../assets/images/blog.png')} alt="Abstact image" />
+                <div class="flex justify-between py-4 pb-2">
+                    <p class="text-sm font-semibold tracking-wide text-transparent bg-clip-text bg-gradient-to-t from-purple-900 to-accent">Investing</p>
+                    <p class="text-sm text-muted tracking-wide leading-relaxed md:hidden">October 1, 2023</p>
+                </div>
+                <h2 class="font-black text-muted text-2xl leading-tight pb-3">AI breakthrough allows dogs to trade crypto through telepathy</h2>
+                <div class="hidden md:flex flex-row items-center">
+                    <p class="text-sm text-muted tracking-wide leading-relaxed whitespace-nowrap w-fit pr-8">October 1, 2023</p>
+                    <hr class="w-full border-textdark">
+                </div>
+            </div>
+
+            <div class="mt-6 pb-2 border-b border-textdark last:border-b-0 md:border-b-0 md:mt-0 col-start-1 col-span-2">
+                <Image class="w-full h-40 rounded-2xl object-cover md:aspect-video md:h-48" src={import('../assets/images/blog.png')} alt="Abstact image" />
+                <div class="flex justify-between py-4 pb-2">
+                    <p class="text-sm font-semibold tracking-wide text-transparent bg-clip-text bg-gradient-to-t from-purple-900 to-accent">Investing</p>
+                    <p class="text-sm text-muted tracking-wide leading-relaxed md:hidden">October 1, 2023</p>
+                </div>
+                <h2 class="font-black text-muted text-2xl leading-tight pb-3">AI breakthrough allows dogs to trade crypto through telepathy</h2>
+                <p class="hidden md:block text-muted pb-3">The team behind this canine crypto craze insists that dogs have an innate sense for market trends and can make split-second decisions based on their instincts, making them ideal crypto traders.</p>
+                <div class="hidden md:flex flex-row items-center">
+                    <p class="text-sm text-muted tracking-wide leading-relaxed whitespace-nowrap w-fit pr-8">October 1, 2023</p>
+                    <hr class="w-full border-textdark">
+                </div>
+            </div>
+            <div class="mt-6 pb-2 border-b border-textdark last:border-b-0 md:border-b-0 md:mt-0">
+                <Image class="w-full h-40 rounded-2xl object-cover md:aspect-video md:h-48" src={import('../assets/images/blog.png')} alt="Abstact image" />
+                <div class="flex justify-between py-4 pb-2">
+                    <p class="text-sm font-semibold tracking-wide text-transparent bg-clip-text bg-gradient-to-t from-purple-900 to-accent">Investing</p>
+                    <p class="text-sm text-muted tracking-wide leading-relaxed md:hidden">October 1, 2023</p>
+                </div>
+                <h2 class="font-black text-muted text-2xl leading-tight pb-3">AI breakthrough allows dogs to trade crypto through telepathy</h2>
+                <div class="hidden md:flex flex-row items-center">
+                    <p class="text-sm text-muted tracking-wide leading-relaxed whitespace-nowrap w-fit pr-8">October 1, 2023</p>
+                    <hr class="w-full border-textdark">
+                </div>
+            </div>
+
+            <div class="mt-6 pb-2 border-b border-textdark last:border-b-0 md:border-b-0 md:mt-0">
+                <Image class="w-full h-40 rounded-2xl object-cover md:aspect-video md:h-48" src={import('../assets/images/blog.png')} alt="Abstact image" />
+                <div class="flex justify-between py-4 pb-2">
+                    <p class="text-sm font-semibold tracking-wide text-transparent bg-clip-text bg-gradient-to-t from-purple-900 to-accent">Investing</p>
+                    <p class="text-sm text-muted tracking-wide leading-relaxed md:hidden">October 1, 2023</p>
+                </div>
+                <h2 class="font-black text-muted text-2xl leading-tight pb-3">AI breakthrough allows dogs to trade crypto through telepathy</h2>
+                <div class="hidden md:flex flex-row items-center">
+                    <p class="text-sm text-muted tracking-wide leading-relaxed whitespace-nowrap w-fit pr-8">October 1, 2023</p>
+                    <hr class="w-full border-textdark">
+                </div>
+            </div>
+            <div class="mt-6 pb-2 border-b border-textdark last:border-b-0 md:border-b-0 md:mt-0">
+                <Image class="w-full h-40 rounded-2xl object-cover md:aspect-video md:h-48" src={import('../assets/images/blog.png')} alt="Abstact image" />
+                <div class="flex justify-between py-4 pb-2">
+                    <p class="text-sm font-semibold tracking-wide text-transparent bg-clip-text bg-gradient-to-t from-purple-900 to-accent">Investing</p>
+                    <p class="text-sm text-muted tracking-wide leading-relaxed md:hidden">October 1, 2023</p>
+                </div>
+                <h2 class="font-black text-muted text-2xl leading-tight pb-3">AI breakthrough allows dogs to trade crypto through telepathy</h2>
+                <div class="hidden md:flex flex-row items-center">
+                    <p class="text-sm text-muted tracking-wide leading-relaxed whitespace-nowrap w-fit pr-8">October 1, 2023</p>
+                    <hr class="w-full border-textdark">
+                </div>
+            </div>
+            <div class="mt-6 pb-2 border-b border-textdark last:border-b-0 md:border-b-0 md:mt-0">
+                <Image class="w-full h-40 rounded-2xl object-cover md:aspect-video md:h-48" src={import('../assets/images/blog.png')} alt="Abstact image" />
+                <div class="flex justify-between py-4 pb-2">
+                    <p class="text-sm font-semibold tracking-wide text-transparent bg-clip-text bg-gradient-to-t from-purple-900 to-accent">Investing</p>
+                    <p class="text-sm text-muted tracking-wide leading-relaxed md:hidden">October 1, 2023</p>
+                </div>
+                <h2 class="font-black text-muted text-2xl leading-tight pb-3">AI breakthrough allows dogs to trade crypto through telepathy</h2>
+                <div class="hidden md:flex flex-row items-center">
+                    <p class="text-sm text-muted tracking-wide leading-relaxed whitespace-nowrap w-fit pr-8">October 1, 2023</p>
+                    <hr class="w-full border-textdark">
+                </div>
+            </div>
+            
+        </div>
+        <div class="mx-auto flex flex-row items-center justify-center gap-6 mt-3 mb-6">
+            <div class=" bg-gradient-to-tr from-bluegradient via-gradient to-accent p-px rounded-[9px] w-fit h-fit backdrop-opacity-60">
+                <div class="bg-textdark w-fit h-fit rounded-lg backdrop-opacity-60">
+                    <p class="font-semibold py-1.5 px-3 w-fit h-fit">1</p>
+                </div>
+            </div>
+            <div class="py-1.5 px-3 w-fit h-fit">
+                3
+            </div>
+            <div class="py-1.5 px-3 w-fit h-fit">
+                4
+            </div>
+            <div class="py-1.5 px-3 w-fit h-fit">
+                5
+            </div>
+            <div class="py-1.5 px-3 w-fit h-fit">
+                ...
+            </div>
+            <div class="py-1.5 px-3 w-fit h-fit">
+                10
+            </div>
+        </div>
+        
+    </section>
+</div>
+</Layout>
+

@@ -1,0 +1,50 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import { Image } from 'astro:assets'
+import { Icon } from 'astro-icon';
+export interface Props {
+  image?: string | any;
+}
+
+import type { MetaData } from '~/types';
+
+export interface Props {
+  frontmatter: {
+    title?: string
+  }
+}
+
+const { frontmatter } = Astro.props;
+
+const metadata: MetaData = {
+  title: frontmatter?.title,
+};
+---
+
+<Layout metadata={metadata}>
+  <div class="w-screen h-[30vh] md:h-[50vh] overflow-hidden grid place-content-center">
+    <img class="w-screen h-screen object-cover" src={frontmatter.image} alt={frontmatter?.alt || ''} ></img>
+  </div>
+
+<article class="flex flex-col md:flex-row px-6 py-6 mx-auto max-w-6xl lg:px-8 lg:py-20 gap-x-20">
+    <div class="md:w-1/3 flex flex-col gap-y-3 md:gap-y-4 mb-6">
+        <div class="flex justify-between">
+            <p class="text-sm font-semibold tracking-wide text-transparent bg-clip-text bg-gradient-to-t from-purple-900 to-accent">{frontmatter.tags}</p>
+            <p class="text-sm text-muted tracking-wide leading-relaxed md:hidden">{frontmatter.pubDate}</p>
+        </div>
+        <h2 class="font-black text-muted md:text-white text-3xl md:text-4xl leading-tight">{frontmatter.title}</h2>
+        <hr class="border-textdark hidden md:block">
+        <p class="hidden md:block text-sm text-muted font-semibold tracking-wide leading-relaxed">{frontmatter.pubDate}</p>
+        <div class="flex gap-5 pt-1">
+            <a href=""><Icon name='Instagram' class="w-6 h-6" /></a>
+            <a href=""><Icon name='Twitter' class="w-6 h-6" /></a>
+            <a href=""><Icon name='LinkedIn' class="w-6 h-6" /></a>
+            <a href=""><Icon name='Facebook' class="w-6 h-6 text-textdark" /></a>
+        </div>
+    </div>
+    <div class="md:w-2/3">
+        <div class="text-muted font-medium text-base leading-relaxed"><slot /></div>
+    </div>
+</article>
+
+</Layout>

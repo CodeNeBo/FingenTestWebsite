@@ -1,0 +1,12 @@
+---
+import blogPosts from './public/data/blog/blogposts.json';
+---
+<!-- Data fetched at build can be rendered in HTML -->
+<h1>Blog Posts</h1>
+  <ul>
+    {blogPosts.map((post) => (
+      <li>
+        <a href={`blog/${post.slug}`}>{post.title}</a>
+      </li>
+    ))}
+  </ul>
