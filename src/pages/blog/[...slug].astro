@@ -28,8 +28,8 @@ let matchingTitle = matchingSlug ? blogPosts[matchingIndex].title : null;
 let matchingTag = matchingSlug ? blogPosts[matchingIndex].tag : null;
 let matchingContent = matchingSlug ? blogPosts[matchingIndex].content : null;
 let matchingDate = matchingSlug ? blogPosts[matchingIndex].date : null;
-
 let matchingMeta = matchingTitle
+let relatedPosts = blogPosts.filter((post) => post.tag === matchingTag && post.slug !== matchingSlug).slice(0, 4);
 
 const meta = {
   title: matchingMeta,
@@ -60,4 +60,23 @@ const meta = {
                 {matchingContent}</p>
         </div>
     </article>
+
+    <div class="px-4 py-6 md:py-20 mx-auto max-w-6xl lg:px-8">
+      <div class="flex pb-8 w-full items-center">
+          <h2 class="text-3xl text-muted md:text-white md:text-4xl font-black w-fit whitespace-nowrap pr-8">Related posts</h2>
+          <hr class="border-textdark w-full translate-y-1">
+      </div>
+
+      <div class="md:grid md:grid-cols-4 md:gap-x-20">
+        {relatedPosts.map((post, index) => (
+            <a href={post.slug} class="flex flex-row md:flex-col gap-4 md:gap-3 pb-4 pt-4 border-b border-textdark md:border-b-0 first:pt-0 md:py-0 last:border-b-0 h-fit">
+                <div class="w-32 h-32 flex-shrink-0 md:w-full md:h-36 overflow-hidden object-cover rounded-2xl"><img class="rounded-2xl" src={post.image} alt={post.title} /></div>
+                <p class="hidden md:block text-sm font-semibold tracking-wide text-transparent bg-clip-text bg-gradient-to-t from-purple-900 to-accent">{post.tag}</p>
+                <h4 class="h-fit text-2xl text-muted font-black md:leading-tight">{post.title}</h4>
+                <p class="hidden md:block text-xs text-muted font-semibold tracking-wide leading-relaxed">{post.date}</p>
+            </a>
+        ))}
+    </div>
+
+  </div>
 </Layout>
