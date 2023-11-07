@@ -53,6 +53,6 @@ export default defineConfig({
   },
   routes: {
     '/': 'src/pages/index.astro',
-    '[...slug]': 'src/pages/blog/[...slug].astro',
+    '[...slug]': 'src/pages/[...slug].astro',
   }
 });
