@@ -12,11 +12,11 @@ const PieCharts = () => {
   const colors2 = ['#3644DF', '#322E4C'];
 
   useEffect(() => {
-    fetch('./data/piedata.json')
+    fetch('./data/landingdata.json')
       .then((response) => response.json())
       .then((data) => {
-        setData1(data.data1);
-        setData2(data.data2);
+        setData1(data.piedata.piedata1);
+        setData2(data.piedata.piedata2);
       })
       .catch((error) => console.error('Error fetching data:', error));
   }, []);

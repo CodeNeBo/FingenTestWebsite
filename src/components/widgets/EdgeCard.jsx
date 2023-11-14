@@ -4,10 +4,10 @@ const EdgeCard = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch('./data/edgedata.json')
+    fetch('./data/landingdata.json')
       .then((response) => response.json())
       .then((data) => {
-        setData(data);
+        setData(data.edgedata);
       })
       .catch((error) => console.error('Error fetching data:', error));
   }, []);
@@ -25,7 +25,7 @@ const EdgeCard = () => {
         <div key={index} className="text-center">
           <div
             className={`rounded-3xl aspect-square w-32 h-32 flex justify-center items-center relative ${
-              item.number > 0
+              item.edgenumber > 0
                 ? 'bg-gradient-to-tr from-accent to-gradient'
                 : 'bg-gradient-to-tr from-accent to-bluegradient'
             }`}
@@ -33,10 +33,10 @@ const EdgeCard = () => {
             <div className='bg-primary opacity-75 w-[95%] h-[95%] rounded-[20px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'></div>
             <div className='z-20'>
               <div className='flex flex-col items-center gap-0'>
-                <h1 className="text-2xl font-semibold tracking-wide">{formatNum(item.number)}</h1>
+                <h1 className="text-2xl font-semibold tracking-wide">{formatNum(item.edgenumber)}</h1>
                 <p className='uppercase text-[10px] tracking-wider -translate-y-0.5'>edge</p>
               </div>
-              <h4 className="text-sm mt-2 tracking-wider uppercase translate-y-4">{item.name}</h4>
+              <h4 className="text-sm mt-2 tracking-wider uppercase translate-y-4">{item.edgename}</h4>
             </div>
           </div>
         </div>

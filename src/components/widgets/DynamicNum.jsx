@@ -4,10 +4,10 @@ const DynamicNumber = () => {
   const [number, setNumber] = useState('');
 
   useEffect(() => {
-    fetch('./data/dynamicnum.json')
+    fetch('./data/landingdata.json')
       .then((response) => response.json())
       .then((data) => {
-        setNumber(data.value);
+        setNumber(data.dynamicnum.dynamicnum);
       })
       .catch((error) => console.error('Error fetching data:', error));
   }, []);

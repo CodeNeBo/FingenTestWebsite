@@ -4,6 +4,13 @@ const meta = {
   title: "Blog",
 };
 
+export async function getStaticPaths() {
+  const paths = blogPosts.map((post) => ({
+    params: { slug: post.slug },
+  }));
+  return paths;
+}
+
 const articlesPerPage = 9;
 let currentPage = 1;
 
@@ -42,7 +49,7 @@ let selectedTag = '';
       
       <div class="flex flex-row flex-wrap gap-4 pt-4 pb-12">
           <div class="p-px bg-gradient-to-tr from-purple-400 to-accent rounded-lg">
-              <button class={`py-1 px-3 rounded-lg text-sm cursor-pointer ${selectedTag === '' ? 'bg-accent' : 'bg-primary'}`} on:click={() => selectedTag = ''}>All</button>
+              <button class={`py-1 px-3 rounded-lg text-sm ${selectedTag === '' ? 'bg-accent' : 'bg-primary'}`} on:click={() => selectedTag = ''}>All</button>
           </div>
           {uniqueTags.map((tag) => (
               <div class="p-px bg-gradient-to-tr from-purple-400 to-accent rounded-lg">
@@ -81,10 +88,10 @@ let selectedTag = '';
         <div class="mx-auto flex flex-row items-center justify-center gap-6 mt-8 mb-6">
             {Array.from({ length: Math.ceil(blogPosts.length / articlesPerPage) }, (_, index) => (
                 <div
-                class={`border bg-[#0B0B14] w-fit h-fit rounded-lg backdrop-opacity-60 border-textdark cursor-pointer ${
+                class={`border bg-[#0B0B14] w-fit h-fit rounded-lg backdrop-opacity-60 border-textdark ${
                     currentPage === index + 1 ? 'bg-accent' : ''
                 }`}
-                onclick={() => (currentPage = index + 1)}
+                on:click={() => (currentPage = index + 1)}
                 >
                 <p class="font-semibold py-1.5 px-3 w-fit h-fit">{index + 1}</p>
                 </div>

@@ -8,10 +8,10 @@ const DynamicTable = () => {
   const [months, setMonths] = useState([]);
 
   useEffect(() => {
-    fetch('./data/datatable.json')
+    fetch('./data/landingdata.json')
       .then((response) => response.json())
       .then((data) => {
-        setMonths(data.months);
+        setMonths(data.datatable.tablemonths);
       })
       .catch((error) => console.error('Error fetching data:', error));
   }, []);
@@ -22,9 +22,9 @@ const DynamicTable = () => {
         <tbody>
           <tr className="text-left font-normal">
             <th className="uppercase text-xs opacity-50">MONTH</th>
-            {months.map((month, index) => (
+            {months.map((tablemonth, index) => (
               <th key={index} className="font-normal">
-                {month.name}
+                {tablemonth.tablename}
               </th>
             ))}
           </tr>
@@ -35,26 +35,26 @@ const DynamicTable = () => {
           </tr>
           <tr>
             <td className="uppercase text-xs opacity-50 font-bold">total trades</td>
-            {months.map((month, index) => (
-              <td key={index}>{formatNum(month.trades)}</td>
+            {months.map((tablemonth, index) => (
+              <td key={index}>{formatNum(tablemonth.tabletrades)}</td>
             ))}
           </tr>
           <tr>
             <td className="uppercase text-xs opacity-50 font-bold">avg win amt</td>
-            {months.map((month, index) => (
-              <td key={index}>{month.avgwin + '%'}</td>
+            {months.map((tablemonth, index) => (
+              <td key={index}>{tablemonth.tableavgwin + '%'}</td>
             ))}
           </tr>
           <tr>
             <td className="uppercase text-xs opacity-50 font-bold">avg loss amt</td>
-            {months.map((month, index) => (
-              <td key={index}>{month.avgloss + '%'}</td>
+            {months.map((tablemonth, index) => (
+              <td key={index}>{tablemonth.tableavgloss + '%'}</td>
             ))}
           </tr>
           <tr>
             <td className="uppercase text-xs opacity-50 font-bold">edge</td>
-            {months.map((month, index) => (
-              <td key={index}>{formatNum(month.edge)}</td>
+            {months.map((tablemonth, index) => (
+              <td key={index}>{formatNum(tablemonth.tableedge)}</td>
             ))}
           </tr>
         </tbody>
@@ -73,13 +73,13 @@ const DynamicTable = () => {
               <hr className="w-full border-[#322E4C]"></hr>
             </td>
           </tr>
-          {months.map((month, index) => (
+          {months.map((tablemonth, index) => (
             <tr key={index} className="h-7 my-2 tracking-wide text-sm">
-              <td>{month.name}</td>
-              <td>{formatNum(month.trades)}</td>
-              <td>{month.avgwin + '%'}</td>
-              <td>{month.avgloss + '%'}</td>
-              <td>{formatNum(month.edge)}</td>
+              <td>{tablemonth.tablename}</td>
+              <td>{formatNum(tablemonth.tabletrades)}</td>
+              <td>{tablemonth.tableavgwin + '%'}</td>
+              <td>{tablemonth.tableavgloss + '%'}</td>
+              <td>{formatNum(tablemonth.tableedge)}</td>
             </tr>
           ))}
           

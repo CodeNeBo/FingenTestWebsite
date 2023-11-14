@@ -1,0 +1,47 @@
+{
+    "piedata": {
+      "piedata1": [68, 32],
+      "piedata2": [27, 73]
+    },
+    "pipsdata": {
+      "currencyPairs": [
+        { "pipsname": "EUR/USD", "pipsnumber": 1421 },
+        { "pipsname": "GBP/USD", "pipsnumber": 10012 },
+        { "pipsname": "USD/JPY", "pipsnumber": 5590 },
+        { "pipsname": "BTC/USD", "pipsnumber": 32321 },
+        { "pipsname": "ETH/USD", "pipsnumber": 7232 },
+        { "pipsname": "DOGE/USD", "pipsnumber": 4321 },
+        { "pipsname": "BCH/USD", "pipsnumber": 7690 },
+        { "pipsname": "LOOM/USD", "pipsnumber": 1232 },
+        { "pipsname": "BTC/DOGE", "pipsnumber": 534 },
+        { "pipsname": "LOOM/ETC", "pipsnumber": 678 }
+      ]
+    },
+    "edgedata": [
+      { "edgenumber": 1421, "edgename": "EUR / USD" },
+      { "edgenumber": -32, "edgename": "BTC / USD" },
+      { "edgenumber": 5590, "edgename": "USD / YEN" },
+      { "edgenumber": -7232, "edgename": "ETH / USD" },
+      { "edgenumber": 10012, "edgename": "GBP / USD" }
+    ],
+    "dynamicnum": { "dynamicnum": "7,541,390" },
+    "datatable": {
+      "tablemonths": [
+        {
+          "tablename": "January",
+          "tabletrades": 8430,
+          "tableavgwin": 78,
+          "tableavgloss": 10,
+          "tableedge": 21320
+        },
+        {
+          "tablename": "February",
+          "tabletrades": 12543,
+          "tableavgwin": 56,
+          "tableavgloss": 23,
+          "tableedge": 44313
+        }
+      ]
+    }
+  }
+  
