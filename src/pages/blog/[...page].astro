@@ -20,7 +20,7 @@ const { page } = Astro.props;
 
 
 {page.currentPage === 1 && (
-<a class="py-10 px-6 mx-auto max-w-6xl lg:px-8 lg:py-20 flex flex-col gap-y-6 relative md:flex-row md:gap-x-20 md:items-center" href={blogPosts[0].slug}>
+<a class="py-10 px-6 mx-auto max-w-6xl lg:px-8 lg:py-20 flex flex-col gap-y-6 relative md:flex-row md:gap-x-20 md:items-center" href={`/blog/${blogPosts[0].slug}`}>
   <img class="w-full aspect-video rounded-2xl object-cover md:aspect-auto md:h-96" src={blogPosts[0].image} alt={blogPosts[0].title}>
   <div class="md:py-6">
       <div class="flex justify-between pb-1 md:pb-0.5">
@@ -56,7 +56,7 @@ const { page } = Astro.props;
               date={post.date}
               tag={post.tag}
               image={post.image}
-              url={post.slug}
+              url={`/blog/${post.slug}`}
             />
           ))}
     </div>
