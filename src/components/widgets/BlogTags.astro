@@ -1,0 +1,16 @@
+---
+import blogPosts from '~/blogdata/blogposts.json';
+
+const blogTags = Array.from(new Set(blogPosts.map((post) => post.tag)));
+const allTags = blogTags
+  .map((blogTags) => blogTags.toLowerCase()).flat();
+---
+<nav>
+    
+    <ul class="inline-flex gap-4 pb-8 w-full flex-wrap">
+        <a class="p-px rounded-[7px] bg-gradient-to-br from-purple-400 to-accent" href={`/blog`}><li class="capitalize text-sm 2xl:text-xs py-1 px-3 text-muted font-medium rounded-md bg-accent text-textcolor transition-colors ">All</li></a>
+        {allTags.map((tag, index) => (
+          <a class="p-px rounded-[7px] bg-gradient-to-br from-purple-400 to-accent" href={`/tag/${tag}`} ><li class="capitalize text-sm 2xl:text-xs py-1 px-3 bg-primary text-muted font-medium rounded-md hover:bg-accent hover:text-textcolor transition-colors" key={index}>{tag}</li></a> 
+        ))}
+    </ul>
+</nav>
