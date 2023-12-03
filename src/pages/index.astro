@@ -7,13 +7,14 @@ import TotalObs from '~/components/widgets/TotalObs.astro';
 import Pipschart from '~/components/widgets/Pips.jsx';
 import EdgeCarousel from '~/components/widgets/EdgeCarousel.jsx';
 import VideoSection from '~/components/widgets/VideoSection.astro';
+import PostCard from '~/components/widgets/PostCard.astro';
+import blogPosts from '~/blogdata/blogposts.json'
 
 const meta = {
   title: SITE.title,
   description: SITE.description,
   dontUseTitleTemplate: true,
 };
-
 
 ---
 
@@ -41,5 +42,25 @@ const meta = {
     link="dQw4w9WgXcQ";
   ></VideoSection>
  
+
+
+  <section class="px-6 mx-auto max-w-6xl lg:px-8 lg:py-20 ">
+    <div class="pb-8 inline-flex justify-between w-full items-center">
+      <h2 class="text-justify text-3xl md:text-4xl font-bold tracking-tight">Latest articles</h2>
+      <a class="text-muted hover:text-textcolor" href="/blog">See All</a>
+    </div>
+    
+    <div class="grid grid-cols-3 gap-8">
+      {blogPosts.slice(0,3).map((post) => (
+        <PostCard
+          title={post.title}
+          date={post.date}
+          tag={post.tag}
+          image={post.image}
+          url={`/blog/${post.slug}`}
+        />
+      ))}
+      </div>
+  </section>
   <EdgeCarousel client:load></EdgeCarousel>
 </Layout>
