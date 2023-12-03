@@ -1,17 +1,12 @@
 ---
 import { SITE } from '~/config.mjs';
-import { Image } from 'astro:assets';
 
 import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
-import Features from '~/components/widgets/Features.astro';
-import Content from '~/components/widgets/Content.astro';
 import TotalObs from '~/components/widgets/TotalObs.astro';
-import DataTable from '~/components/widgets/DataTable.jsx';
-import PieChart from '~/components/widgets/PieChart.jsx';
 import Pipschart from '~/components/widgets/Pips.jsx';
 import EdgeCarousel from '~/components/widgets/EdgeCarousel.jsx';
-import FAQ from '~/components/widgets/Faq.astro';
+import VideoSection from '~/components/widgets/VideoSection.astro';
 
 const meta = {
   title: SITE.title,
@@ -24,218 +19,27 @@ const meta = {
 
 
 <Layout {meta}>
-  <div class="relative overflow-hidden mt-12">
-    <div class="opacity-0 transition-all duration-1000 ease-out obsSection mb-44 md:mb-72">
+  <div class="relative mt-12">
+    <div class="mb-24 md:mb-36">
       <Hero>
         <Fragment slot="title">
           Trading is Evolving<br>And the Machines are Winning
         </Fragment>
         <Fragment slot="subtitle">
-          We recognize machines are better at trade decision making than humans - there's no fear or greed.
+          We recognize machines are better at trade decision making than humans
         </Fragment>
       </Hero>
     </div>
-    
-    <div class="relative overflow-hidden">
-      <TotalObs></TotalObs>
-      <PieChart client:load></PieChart>
-      <DataTable client:load></DataTable>
-    </div>
-
-    <Image class="absolute top-72 scale-150 -z-50 md:top-0 md:scale-100 lg:scale-75" src={import('../assets/images/Earth.jpg')} alt="Planet earth" />
-
-    <EdgeCarousel client:load></EdgeCarousel>
+    <TotalObs></TotalObs>
+    <Pipschart client:only></Pipschart>
   </div>  
 
-  <Pipschart client:load></Pipschart>
-
-  <div class="opacity-0 transition-all duration-1000 ease-out obsSection translate-y-10">
-
-    <Features
-    title="What is HIVE?"
-    items={[
-      [
-        {
-          description:
-            'Swarms of machine learning agents, collectively sharing intel to rapidly adapt to evolving markets, and predict their futures.',
-        },
-        {
-          description:
-            "Machine Learning Agents (MLA) independently compute, analyze, and share agent learning with HIVE's collective learning, making all new and known knowledge available to every MLA and HIVE.",
-        },
-      ],
-      [
-        {
-          description:
-            'Winning trades should be predictably consistent in frequency and return. Including extreme highs and lows.',
-        },
-        {
-          description:
-            'Losing trades are inevitable. But losing small is critical to your account balance growth potential.',
-        },
-      ],
-    ]}
-  />
-  </div>
-  
-<div class="opacity-0 transition-all duration-1000 ease-out obsSection translate-y-10">
-  <Features
-    title="Features"
-    title2='HIVE Runs All Trading'
-    items={[
-      [
-        {
-          subtitle: 'Deep Reinforcement Learning',
-          description:
-            'The collective behavior of decentralized, self-organized systems, natural or artificial.',
-        },
-        {
-          subtitle: 'Risk Reward Management',
-          description:
-            "Helping investors manage their risk of losing money on trades. Comparing profit to loss, every tick, in real-time, 24x7x252.<br><br>EDGE - Where WP is the asset's percentage of winning trades; LP is the asset's percentage of losing trades; WROl is the asset's average winning return on investment;<br><br>SORTINO - The Sortino Ratio is calculated as, where R is the asset or portfolio average realized return, T is the target or required rate of return for the investment strategy under consideration (originally called the minimum acceptable return MAR), and DD iS the target semi-deviation",
-        },
-      ],
-      [
-        {
-          subtitle: 'Robot Process Automation',
-          description:
-          'HIVE consumes market data Sunday at 5PM EST to Friday at 5PM EST.',
-        },
-        {
-          subtitle: 'Trade Size Management',
-          description:
-          "Trade position size is critical; more so than trading entry and exit. An optimal strategy will not remain solvent if trade size is too big or too small. Optimize for upside potential, and downside risk every trade.<br><br>KELLY CRITERION - Known as the scientific gambling method, is a formula for bet sizing that leads almost surely to higher wealth compared to any other strategy in the long run approaching the limit as the number of bets goes to infinity.",
-        },
-      ],     
-    ]}
-  />
-</div>
-
-
-  <div class="opacity-0 transition-all duration-1000 ease-out obsSection translate-y-10">
-    <Content
-    title="Benefits"
-    items={[
-      {
-        description:
-          'Know your likelihood of gain and loss. And how by how much, BEFORE you trade',
-      },
-      {
-        description:
-          'Click "Trade" and execute all pairs involved in a Portfolio Trade.',
-      },
-      {
-        description:
-          'OR click "Ignore" to ignore the signal',
-      },
-    ]}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2 text-center mx-auto">We've reduced human involvement to a One-Click Portfolio Trade</h3>
-    </Fragment>
-
-    <div class="p-8">
-      <Image src={import('../assets/images/Vr.png')} alt="Human silhouette in VR headset" />
-    </div>
-    
-
-  </Content>
-  </div>
-
-
-  <div class="opacity-0 transition-all duration-1000 ease-out obsSection translate-y-10">
-    <Content
-    isReversed
-    isAfterContent
-    items={[
-      {
-        description: 'We are electronically connected to numerous global banks to access the most accurate foreign exchange and CFD rates for our clients. Trade over 70 forex pairs.',
-      },
-    ]}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2 text-center mx-auto">Follow The Money</h3>
-    </Fragment>
-
-    <div class="grid gap-2 grid-cols-3 w-[400px] h-[300px]">
-      <div class="block mt-auto">
-        <div class="relative mb-3">
-          <div class="block w-[6px] h-[105px] bg-textcolor mx-auto"></div>
-          <div class="block w-[24px] h-[57px] bg-[#4855E2] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
-        </div>
-        <h3 class="text-3xl font-bold tracking-tight mb-1">$200B</h3>
-        <p class="text-xs font-normal tracking-widest mb-[-6px]">PER DAY</p>
-        <h4 class="text-base font-bold tracking-tight">Stock Market</h4>
-      </div>
-      
-      <div class="block my-auto">
-        <div class="relative mb-3">
-          <div class="block w-[6px] h-[105px] bg-textcolor mx-auto"></div>
-          <div class="block w-[24px] h-[57px] bg-[#EA3382] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
-        </div>
-        <h3 class="text-3xl font-bold tracking-tight mb-1">$700B</h3>
-        <p class="text-xs font-normal tracking-widest mb-[-6px]">PER DAY</p>
-        <h4 class="text-base font-bold tracking-tight">Bond Market</h4>
-      </div>
-  
-      <div>
-        <div class="relative mb-3">
-          <div class="block w-[6px] h-[105px] bg-textcolor mx-auto"></div>
-          <div class="block w-[24px] h-[57px] bg-[#8335DA] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
-        </div>
-        <h3 class="text-3xl font-bold tracking-tight mb-1">$6T</h3>
-        <p class="text-xs font-normal tracking-widest mb-[-6px]">PER DAY</p>
-        <h4 class="text-base font-bold tracking-tight">Forex Market</h4>
-      </div>
-    </div>
-
-  </Content>
-  </div>
-
-
-  <div class="opacity-0 transition-all duration-1000 ease-out obsSection translate-y-10">
-    <Content
-    items={[
-      {
-        description: 'Superior Decision Making',
-      },
-      {
-        description: 'Optimal Reward-Risk Ratios',
-      },
-      {
-        description: 'No Emotional Bias',
-      },
-      {
-        description: 'AI Precision',
-      },
-    ]}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2 text-center mx-auto">Trade a portfolio of 70+ currencies in One-Click</h3>
-    </Fragment>
-  </Content>
-  </div>
-
-  <FAQ
-  title="FAQ"
-  items={[
-    {
-      name: 'Question 1',
-      description: 'Test 1'
-    },
-    {
-      name: 'Question 2',
-      description: 'Test 2'
-    },
-    {
-      name: 'Question 3',
-      description: 'Test 3'
-    },
-    {
-      name: 'Question 4',
-      description: 'Test 4'
-    },
-  ]}
-/>
-
+  <EdgeCarousel client:load></EdgeCarousel>
+  <VideoSection
+    title="Get to know FinGen";
+    content="Fingen, a pioneering platform, revolutionizes the landscape of crypto trading by harnessing cutting-edge Artificial Intelligence (AI). Catering to both seasoned traders and newcomers, Fingen empowers users to make informed decisions in the volatile crypto market. <br><br>By amalgamating intricate data analytics and AI-driven forecasting, Fingen enables investors to strategize effectively, minimize risks, and optimize their crypto trading experiences. With up-to-date information and predictive analytics at their disposal, users can make timely and well-informed decisions, enhancing their chances of success in the dynamic world of cryptocurrency trading.";
+    link="dQw4w9WgXcQ";
+  ></VideoSection>
+ 
+  <EdgeCarousel client:load></EdgeCarousel>
 </Layout>

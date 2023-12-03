@@ -16,33 +16,28 @@ function CurrencyList() {
       .catch((error) => console.error('Error fetching data:', error));
   }, []);
 
-  const sortedCurrencyPairs = currencyPairs.sort((a, b) => b.pipsnumber - a.pipsnumber);
+  const sortedCurrencyPairs = currencyPairs.slice().sort((a, b) => b.pipsnumber - a.pipsnumber);
+  const topFivePairs = sortedCurrencyPairs.slice(0, 5);
+
+  const largestPipsNumber = topFivePairs.length > 0 ? topFivePairs[0].pipsnumber : 0;
 
   return (
-    <div className="py-10 px-6 mx-auto max-w-6xl lg:px-8 lg:py-20">
-      <h1 className='hidden md:block font-black text-3xl mb-8 text-center'>Race to the top</h1>
-      <div className='rounded-xl border border-textdark overflow-hidden'>
-        <div className="flex items-center font-bold bg-primary py-4 px-4 justify-between border-b border-textdark">
-          <h4 className='w-fit'>Position</h4>     
-            <h4 className='text-center w-20'>PIPS</h4>
-          
-        </div>
-        {sortedCurrencyPairs.map((pair, index) => (
-          <div key={index} className="flex items-center w-full py-3 px-4 odd:bg-textdark">
-            <div className="flex flex-row justify-between w-full">
-              <div className='inline-flex w-full items-center'>
-                <p className='mr-4 w-6 h-6 font-black text-2xl -translate-y-1.5 text-right'>{index + 1}</p>
-                <div className='w-1 h-full bg-accent rounded-full mr-4'></div>
-                <p>{pair.pipsname}</p>
-              </div>
-              <div className='inline-flex'>
-                <p className='w-20 text-center'>{formatNum(pair.pipsnumber)}</p>
+    <div className="py-10 px-6 mx-auto max-w-6xl lg:px-8 lg:py-16">
+      <div className='max-w-xl mx-auto'>
+        {topFivePairs.map((pair, index) => (
+          <div key={index} className="flex items-center mb-4 w-full">
+            <div className="w-5/6 relative mr-4">
+              <div
+                className="bg-gradient-to-r from-gradient to-accent h-12 rounded-full flex items-center"
+                style={{ width: `${(pair.pipsnumber / largestPipsNumber) * 100}%` }}
+              >
+                <p className='ml-4 w-full font-bold text-lg truncate'>{pair.pipsname}</p>
               </div>
             </div>
+            <p className="">{formatNum(pair.pipsnumber)}</p>
           </div>
         ))}
       </div>
-      
     </div>
   );
 }

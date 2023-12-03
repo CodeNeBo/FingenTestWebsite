@@ -13,7 +13,7 @@ const DynamicNumber = () => {
   }, []);
   
   return (
-    <h1 className="text-4xl md:text-4xl">{number}</h1>
+    <h1 className="text-4xl md:text-5xl font-black">{number}</h1>
   );
 };
 

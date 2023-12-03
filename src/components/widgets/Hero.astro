@@ -1,4 +1,7 @@
 ---
+import { Image } from 'astro:assets';
+import Earth from '~/assets/images/Earth.png';
+
 export interface Props {
   title?: string;
   content?: string;
@@ -15,7 +18,7 @@ const {
 
 <section class="relative h-fit">
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
-    <div class="pt-9 mb-4 lg:mb-20">
+    <div class="pt-9 mb-4 lg:mb-20 relative">
       <div class="text-center max-w-screen-lg mx-auto">
         {
           title && (
@@ -33,6 +36,8 @@ const {
         </div>
         {content && <Fragment set:html={content} />}
       </div>
+      <Image class="absolute top-72 scale-150 -z-50 md:top-0 md:scale-100 left-1/2 transform -translate-x-1/2" src={Earth} alt="Planet earth" />
+      
     </div>
   </div>
 </section>
