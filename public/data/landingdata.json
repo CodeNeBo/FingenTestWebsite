@@ -5,29 +5,29 @@
     },
     "pipsdata": {
       "currencyPairs": [
-        { "pipsname": "EUR/USD", "pipsnumber": 1421 },
-        { "pipsname": "GBP/USD", "pipsnumber": 24195 },
-        { "pipsname": "USD/JPY", "pipsnumber": 5590 },
-        { "pipsname": "BTC/USD", "pipsnumber": 32321 },
-        { "pipsname": "ETH/USD", "pipsnumber": 7232 },
-        { "pipsname": "DOGE/USD", "pipsnumber": 4321 },
-        { "pipsname": "BCH/USD", "pipsnumber": 7690 },
-        { "pipsname": "LOOM/USD", "pipsnumber": 1232 },
-        { "pipsname": "BTC/DOGE", "pipsnumber": 45200 },
-        { "pipsname": "LOOM/ETC", "pipsnumber": 14500 }
+        { "pipsname": "EUR/USD", "pipsnumber": 1421, "probabilityOfWin": 0.3 },
+        { "pipsname": "GBP/USD", "pipsnumber": 24195, "probabilityOfWin": 0.01 },
+        { "pipsname": "USD/JPY", "pipsnumber": 5590, "probabilityOfWin": 0.6 },
+        { "pipsname": "BTC/USD", "pipsnumber": 32321, "probabilityOfWin": 0.75 },
+        { "pipsname": "ETH/USD", "pipsnumber": 7232, "probabilityOfWin": 0.8 },
+        { "pipsname": "DOGE/USD", "pipsnumber": 4321, "probabilityOfWin": 0.55 },
+        { "pipsname": "BCH/USD", "pipsnumber": 7690, "probabilityOfWin": 0.7 },
+        { "pipsname": "LOOM/USD", "pipsnumber": 1232, "probabilityOfWin": 0.3 },
+        { "pipsname": "BTC/DOGE", "pipsnumber": 45200, "probabilityOfWin": 0.85 },
+        { "pipsname": "LOOM/ETC", "pipsnumber": 14500, "probabilityOfWin": 0.7 }
       ]
     },
     "edgedata": [
-      { "edgenumber": 1421, "edgename": "EUR / USD" },
-      { "edgenumber": -32, "edgename": "BTC / USD" },
-      { "edgenumber": 1421, "edgename": "EUR / USD" },
-      { "edgenumber": -32, "edgename": "BTC / USD" },
-      { "edgenumber": 5590, "edgename": "USD / YEN" },
-      { "edgenumber": -7232, "edgename": "ETH / USD" },
-      { "edgenumber": 5590, "edgename": "USD / YEN" },
-      { "edgenumber": -7232, "edgename": "ETH / USD" },
-      { "edgenumber": 5590, "edgename": "USD / YEN" },
-      { "edgenumber": 10012, "edgename": "GBP / USD" }
+      { "edgenumber": 1421, "edgename": "EUR / USD", "history1": 1160, "history2": 1331, "history3": 1276, "history4": 1323, "history5": 934 },
+      { "edgenumber": -32, "edgename": "BTC / USD", "history1": 2000, "history2": 1500, "history3": 1800, "history4": 2200, "history5": 1900 },
+      { "edgenumber": 1421, "edgename": "EUR / USD", "history1": 1100, "history2": 1200, "history3": 1300, "history4": 1400, "history5": 1500 },
+      { "edgenumber": -32, "edgename": "BTC / USD", "history1": 2500, "history2": 2300, "history3": 2400, "history4": 2100, "history5": 2600 },
+      { "edgenumber": 5590, "edgename": "USD / YEN", "history1": 5000, "history2": 5500, "history3": 5200, "history4": 4800, "history5": 5300 },
+      { "edgenumber": -7232, "edgename": "ETH / USD", "history1": 7000, "history2": 7500, "history3": 7800, "history4": 7200, "history5": 7600 },
+      { "edgenumber": 5590, "edgename": "USD / YEN", "history1": 5300, "history2": 5800, "history3": 5600, "history4": 5400, "history5": 5900 },
+      { "edgenumber": -7232, "edgename": "ETH / USD", "history1": 7700, "history2": 7400, "history3": 7100, "history4": 7300, "history5": 7900 },
+      { "edgenumber": 5590, "edgename": "USD / YEN", "history1": 5100, "history2": 5700, "history3": 5900, "history4": 5200, "history5": 5800 },
+      { "edgenumber": 10012, "edgename": "GBP / USD", "history1": 9800, "history2": 10200, "history3": 9500, "history4": 10500, "history5": 9700 }
     ],
     "dynamicnum": { "dynamicnum": "7,541,390" },
     "datatable": {

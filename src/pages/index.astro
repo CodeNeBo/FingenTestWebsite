@@ -1,14 +1,19 @@
 ---
 import { SITE } from '~/config.mjs';
+import { Image } from 'astro:assets';
 
 import Layout from '~/layouts/PageLayout.astro';
+import Earth from '~/assets/images/Earth.png';
 import Hero from '~/components/widgets/Hero.astro';
 import TotalObs from '~/components/widgets/TotalObs.astro';
 import Pipschart from '~/components/widgets/Pips.jsx';
-import EdgeCarousel from '~/components/widgets/EdgeCarousel.jsx';
+import TopGain from '~/components/widgets/TopGain.jsx';
+import TopLosers from '~/components/widgets/TopLosers.jsx';
 import VideoSection from '~/components/widgets/VideoSection.astro';
 import PostCard from '~/components/widgets/PostCard.astro';
 import blogPosts from '~/blogdata/blogposts.json'
+import SignUpForm from '~/components/widgets/SignUpForm.astro';
+import ComingSoon from '~/components/widgets/ComingSoon.astro';
 
 const meta = {
   title: SITE.title,
@@ -20,37 +25,42 @@ const meta = {
 
 
 <Layout {meta}>
-  <div class="relative mt-12">
-    <div class="mb-24 md:mb-36">
-      <Hero>
-        <Fragment slot="title">
-          Trading is Evolving<br>And the Machines are Winning
-        </Fragment>
-        <Fragment slot="subtitle">
-          We recognize machines are better at trade decision making than humans
-        </Fragment>
-      </Hero>
+  <div class="relative">
+    <Hero>
+      <Fragment slot="title">
+        Trading is Evolving<br>And the Machines are Winning
+      </Fragment>
+      <Fragment slot="subtitle">
+        We recognize machines are better at trade decision making than humans
+      </Fragment>
+    </Hero>
+    <div class="mt-24 md:mt-36">
+      <TotalObs></TotalObs>
+      <Pipschart client:only></Pipschart>
     </div>
-    <TotalObs></TotalObs>
-    <Pipschart client:only></Pipschart>
-  </div>  
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -z-50 w-screen overflow-x-hidden">
+      <Image class="scale-150 md:scale-100 -z-50 opacity-80 md:mt-96" src={Earth} alt="Planet earth" />
+    </div>
+    <div class="scale-150 md:scale-100 w-4/6 md:mt-80 opacity-95 rounded-full aspect-square bg-primary blur-3xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -z-40"></div>
+  </div>
 
-  <EdgeCarousel client:load></EdgeCarousel>
+  <TopGain client:load></TopGain>
   <VideoSection
     title="Get to know FinGen";
     content="Fingen, a pioneering platform, revolutionizes the landscape of crypto trading by harnessing cutting-edge Artificial Intelligence (AI). Catering to both seasoned traders and newcomers, Fingen empowers users to make informed decisions in the volatile crypto market. <br><br>By amalgamating intricate data analytics and AI-driven forecasting, Fingen enables investors to strategize effectively, minimize risks, and optimize their crypto trading experiences. With up-to-date information and predictive analytics at their disposal, users can make timely and well-informed decisions, enhancing their chances of success in the dynamic world of cryptocurrency trading.";
     link="dQw4w9WgXcQ";
   ></VideoSection>
  
-
-
-  <section class="px-6 mx-auto max-w-6xl lg:px-8 lg:py-20 ">
+  <SignUpForm />
+  <ComingSoon />
+<div class="w-full bg-primary">
+  <section class="px-6 mx-auto max-w-6xl lg:px-8 py-20">
     <div class="pb-8 inline-flex justify-between w-full items-center">
       <h2 class="text-justify text-3xl md:text-4xl font-bold tracking-tight">Latest articles</h2>
       <a class="text-muted hover:text-textcolor" href="/blog">See All</a>
     </div>
     
-    <div class="grid grid-cols-3 gap-8">
+    <div class="flex flex-col md:grid md:grid-cols-3 gap-4 md:gap-8">
       {blogPosts.slice(0,3).map((post) => (
         <PostCard
           title={post.title}
@@ -60,7 +70,33 @@ const meta = {
           url={`/blog/${post.slug}`}
         />
       ))}
-      </div>
+    </div>
   </section>
-  <EdgeCarousel client:load></EdgeCarousel>
+</div>
+
+  <section class="px-6 mx-auto max-w-6xl lg:px-8 py-20">
+    <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-center pb-16">Designed for professionals<br>Accessible for everyone</h2>
+    <div class="grid grid-rows-2 grid-cols-2 md:grid-rows-1 md:grid-cols-4 gap-2 md:gap-4">
+      <div class="bg-gradient-to-br from-textdark to-[#0B0B14] w-full aspect-square rounded-lg border-2 border-textdark flex justify-center items-end p-2 opacity-80 backdrop-blur-xl">
+        <!-- <Image src={} alt="What to buy"></Image> -->
+        <p class="text-muted uppercase">What to buy</p>
+      </div>
+      <div class="bg-gradient-to-br from-textdark to-[#0B0B14] w-full aspect-square rounded-lg border-2 border-textdark flex justify-center items-end p-2 opacity-80 backdrop-blur-xl">
+        <!-- <Image src={} alt="What to buy"></Image> -->
+        <p class="text-muted uppercase">What to sell</p>
+      </div>
+      <div class="bg-gradient-to-br from-textdark to-[#0B0B14] w-full aspect-square rounded-lg border-2 border-textdark flex justify-center items-end p-2 opacity-80 backdrop-blur-xl">
+        <!-- <Image src={} alt="What to buy"></Image> -->
+        <p class="text-muted uppercase">When to buy</p>
+      </div>
+      <div class="bg-gradient-to-br from-textdark to-[#0B0B14] w-full aspect-square rounded-lg border-2 border-textdark flex justify-center items-end p-2 opacity-80 backdrop-blur-xl">
+        <!-- <Image src={} alt="What to buy"></Image> -->
+        <p class="text-muted uppercase">When to sell</p>
+      </div>
+    </div>
+  </section>
+
+  <TopLosers client:load></TopLosers>
+  <SignUpForm />
+
 </Layout>

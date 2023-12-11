@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
-const EdgeCard = () => {
+const EdgeCard = ({ sortOrder }) => {
   const [data, setData] = useState([]);
   const [startIndex, setStartIndex] = useState(0);
-  const cardsPerPage = 5;
+  const cardsPerPage = 4;
 
   useEffect(() => {
     fetch('./data/landingdata.json')
@@ -14,7 +14,13 @@ const EdgeCard = () => {
       .catch((error) => console.error('Error fetching data:', error));
   }, []);
 
-  const sortedData = data.slice().sort((a, b) => b.edgenumber - a.edgenumber);
+  const sortedData = data.slice().sort((a, b) => {
+    if (sortOrder === 'asc') {
+      return a.edgenumber - b.edgenumber; // Sort ascending for gainers
+    } else {
+      return b.edgenumber - a.edgenumber; // Sort descending for losers
+    }
+  });
 
   const formatNum = (number) => {
     return number.toLocaleString('en-US');
@@ -51,16 +57,16 @@ const EdgeCard = () => {
         </div>
       </div>
 
-    <div className="flex justify-start gap-8 ml-4 pr-4 overflow-x-scroll no-scrollbar md:justify-center relative">
+    <div className="w-full grid grid-cols-2 grid-rows-2 md:grid-rows-1 md:grid-cols-4 gap-4 md:gap-8 relative">
       
       
       {visibleData.map((item, index) => (
         <div key={index} className="text-center">
           <div
-            className={`rounded-3xl aspect-square w-40 h-40 flex justify-center items-center relative ${
+            className={`rounded-lg py-6 md:py-16 w-full flex justify-center items-center relative ${
               item.edgenumber > 0
-                ? 'bg-gradient-to-tr from-accent to-gradient'
-                : 'bg-gradient-to-tr from-accent to-bluegradient'
+                ? 'bg-gradient-to-tr from-accent to-bluegradient'
+                : 'bg-gradient-to-tr from-accent to-gradient'
             }`}
           >
             {/* <div className='bg-primary opacity-50 w-[95%] h-[95%] rounded-[20px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'></div> */}

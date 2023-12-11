@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 
-const formatNum = (number) => {
+const formatNum = (number, isPercentage = false) => {
+  if (isPercentage) {
+    return `${(number * 100).toFixed(0)}%`;
+  }
   return number.toLocaleString('en-US');
 };
 
@@ -24,19 +27,41 @@ function CurrencyList() {
   return (
     <div className="py-10 px-6 mx-auto max-w-6xl lg:px-8 lg:py-16">
       <div className='max-w-xl mx-auto'>
-        {topFivePairs.map((pair, index) => (
-          <div key={index} className="flex items-center mb-4 w-full">
-            <div className="w-5/6 relative mr-4">
-              <div
-                className="bg-gradient-to-r from-gradient to-accent h-12 rounded-full flex items-center"
-                style={{ width: `${(pair.pipsnumber / largestPipsNumber) * 100}%` }}
-              >
-                <p className='ml-4 w-full font-bold text-lg truncate'>{pair.pipsname}</p>
+        {topFivePairs.map((pair, index) => {
+          const percentage = (pair.pipsnumber / largestPipsNumber) * 100;
+          const isHigherThan50Percent = pair.probabilityOfWin > 0.5;
+
+          let gradientStyle;
+
+          if (isHigherThan50Percent) {
+            gradientStyle = {
+              background: `linear-gradient(to right, #3644DF, #7721D6)`,
+              width: `${percentage}%`,
+            };
+          } else {
+            gradientStyle = {
+              background: `linear-gradient(to right, #7721D6, #EA3382)`,
+              width: `${percentage}%`,
+            };
+          }
+
+          return (
+            <div key={index} className="flex items-center mb-4 w-full">
+              <div className="w-full gap-3 relative mr-4 inline-flex">
+                <div
+                  className="h-12 rounded-full flex items-center"
+                  style={gradientStyle}
+                >
+                  <p className='ml-4 w-full font-bold text-lg truncate'>{pair.pipsname}</p>
+                </div>
+                <div className='flex flex-col my-auto'>
+                  <p className="">{formatNum(pair.pipsnumber)}</p>
+                  <p className='text-muted text-xs'>{formatNum(pair.probabilityOfWin, true)}</p>
+                </div>
               </div>
             </div>
-            <p className="">{formatNum(pair.pipsnumber)}</p>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );

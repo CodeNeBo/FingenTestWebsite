@@ -1,0 +1,27 @@
+---
+import { Image } from "astro:assets";
+import gemini from "~/assets/images/gemini.svg"
+import binance from "~/assets/images/binance.svg"
+import coinbase from "~/assets/images/coinbase-1.svg"
+import kraken from "~/assets/images/kraken-2.svg"
+import kucoin from "~/assets/images/KUCOIN.svg"
+import okx from "~/assets/images/okx-logo.svg"
+import bitfinex from "~/assets/images/Bitfinex-Logo.wine.svg"
+---
+<div class="w-full bg-primary">
+    <section class="px-4 py-32 sm:px-6 mx-auto lg:px-8 max-w-6xl">
+        <h1 class="text-4xl md:text-4xl font-black leading-snug tracking-tighter mb-6 font-heading text-textcolor text-center">Coming soon on best trading platforms</h1>
+        <p class="text-lg text-muted mx-6 tracking-wide leading-snug md:mx-12 my-2 text-center">Sample text</p>
+        <div class="flex flex-row gap-16 justify-center flex-wrap">
+            <Image src={gemini} alt="Gemini logo" class="h-8 w-fit"></Image>
+            <Image src={binance} alt="Binance logo" class="h-8 w-fit"></Image>
+            <Image src={coinbase} alt="Coinbase logo" class="h-8 w-fit" ></Image>
+            <Image src={kraken} alt="Kraken logo" class="h-8 w-fit"></Image>
+            <Image src={kucoin} alt="Kucoin logo" class="h-8 w-fit"></Image>
+            <Image src={okx} alt="OKX logo" class="h-8 w-fit"></Image>
+            <Image src={bitfinex} alt="Bitfinex logo" class="h-8 w-fit"></Image>
+        </div>
+    </section>
+</div>
+
+
