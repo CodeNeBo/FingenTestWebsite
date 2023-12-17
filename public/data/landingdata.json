@@ -5,16 +5,16 @@
     },
     "pipsdata": {
       "currencyPairs": [
-        { "pipsname": "EUR/USD", "pipsnumber": 1421, "probabilityOfWin": 0.3 },
-        { "pipsname": "GBP/USD", "pipsnumber": 24195, "probabilityOfWin": 0.01 },
-        { "pipsname": "USD/JPY", "pipsnumber": 5590, "probabilityOfWin": 0.6 },
-        { "pipsname": "BTC/USD", "pipsnumber": 32321, "probabilityOfWin": 0.75 },
-        { "pipsname": "ETH/USD", "pipsnumber": 7232, "probabilityOfWin": 0.8 },
-        { "pipsname": "DOGE/USD", "pipsnumber": 4321, "probabilityOfWin": 0.55 },
-        { "pipsname": "BCH/USD", "pipsnumber": 7690, "probabilityOfWin": 0.7 },
-        { "pipsname": "LOOM/USD", "pipsnumber": 1232, "probabilityOfWin": 0.3 },
-        { "pipsname": "BTC/DOGE", "pipsnumber": 45200, "probabilityOfWin": 0.85 },
-        { "pipsname": "LOOM/ETC", "pipsnumber": 14500, "probabilityOfWin": 0.7 }
+        { "pipsname": "EUR/USD", "pipsnumber": 1421, "probabilityOfWin": 0.3, "tooltip": "Tooltip example" },
+        { "pipsname": "GBP/USD", "pipsnumber": 24195, "probabilityOfWin": 0.01, "tooltip": "Tooltip example" },
+        { "pipsname": "USD/JPY", "pipsnumber": 5590, "probabilityOfWin": 0.6, "tooltip": "Tooltip example" },
+        { "pipsname": "BTC/USD", "pipsnumber": 32321, "probabilityOfWin": 0.75, "tooltip": "Tooltip example" },
+        { "pipsname": "ETH/USD", "pipsnumber": 7232, "probabilityOfWin": 0.8, "tooltip": "Tooltip example" },
+        { "pipsname": "DOGE/USD", "pipsnumber": 4321, "probabilityOfWin": 0.55, "tooltip": "Tooltip example" },
+        { "pipsname": "BCH/USD", "pipsnumber": 7690, "probabilityOfWin": 0.7, "tooltip": "Tooltip example" },
+        { "pipsname": "LOOM/USD", "pipsnumber": 1232, "probabilityOfWin": 0.3, "tooltip": "Tooltip example" },
+        { "pipsname": "BTC/DOGE", "pipsnumber": 45200, "probabilityOfWin": 0.85, "tooltip": "Tooltip example" },
+        { "pipsname": "LOOM/ETC", "pipsnumber": 14500, "probabilityOfWin": 0.7, "tooltip": "Tooltip example" }
       ]
     },
     "edgedata": [

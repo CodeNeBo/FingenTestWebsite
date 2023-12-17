@@ -49,10 +49,11 @@ function CurrencyList() {
             <div key={index} className="flex items-center mb-4 w-full">
               <div className="w-full gap-3 relative mr-4 inline-flex">
                 <div
-                  className="h-12 rounded-full flex items-center"
+                  className="group h-12 rounded-full flex items-center"
                   style={gradientStyle}
                 >
                   <p className='ml-4 w-full font-bold text-lg truncate'>{pair.pipsname}</p>
+                  <span class="pointer-events-none absolute -top-10 left-0 w-max rounded bg-gray-900 px-2 py-1 text-sm text-textcolor opacity-0 transition-opacity group-hover:opacity-100">{pair.tooltip}</span>
                 </div>
                 <div className='flex flex-col my-auto'>
                   <p className="">{formatNum(pair.pipsnumber)}</p>

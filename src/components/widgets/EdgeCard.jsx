@@ -16,9 +16,9 @@ const EdgeCard = ({ sortOrder }) => {
 
   const sortedData = data.slice().sort((a, b) => {
     if (sortOrder === 'asc') {
-      return a.edgenumber - b.edgenumber; // Sort ascending for gainers
+      return a.edgenumber - b.edgenumber;
     } else {
-      return b.edgenumber - a.edgenumber; // Sort descending for losers
+      return b.edgenumber - a.edgenumber;
     }
   });
 

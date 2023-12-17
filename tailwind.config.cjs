@@ -22,7 +22,8 @@ module.exports = {
         '7': 'repeat(7, minmax(0, 1fr))',
       },
       boxShadow: {
-        'purple': '0px 0px 28px 8px rgba(115, 70, 199, 0.3)',
+        'pink': '0px 0px 32px 8px rgba(234, 51, 130, 0.2)',
+        'blue': '0px 0px 32px 8px rgba(72, 85, 226, 0.2)',
       },
       dropShadow: {
         'white': '0px 0px 28px 8px rgba(0, 0, 0, 0)',

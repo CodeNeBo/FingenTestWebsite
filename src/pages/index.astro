@@ -14,6 +14,8 @@ import PostCard from '~/components/widgets/PostCard.astro';
 import blogPosts from '~/blogdata/blogposts.json'
 import SignUpForm from '~/components/widgets/SignUpForm.astro';
 import ComingSoon from '~/components/widgets/ComingSoon.astro';
+import TopCard from '~/components/widgets/TopCard.jsx'
+import LowCard from '~/components/widgets/LowCard.jsx'
 
 const meta = {
   title: SITE.title,
@@ -25,6 +27,7 @@ const meta = {
 
 
 <Layout {meta}>
+
   <div class="relative">
     <Hero>
       <Fragment slot="title">
@@ -44,7 +47,12 @@ const meta = {
     <div class="scale-150 md:scale-100 w-4/6 md:mt-80 opacity-95 rounded-full aspect-square bg-primary blur-3xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -z-40"></div>
   </div>
 
-  <TopGain client:load></TopGain>
+  
+  <section class="px-6 mx-auto max-w-6xl lg:px-8 py-20">
+    <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-left pb-16">Top 10 Growing Currencies</h2>
+    <TopCard client:load></TopCard>
+  </section>
+
   <VideoSection
     title="Get to know FinGen";
     content="Fingen, a pioneering platform, revolutionizes the landscape of crypto trading by harnessing cutting-edge Artificial Intelligence (AI). Catering to both seasoned traders and newcomers, Fingen empowers users to make informed decisions in the volatile crypto market. <br><br>By amalgamating intricate data analytics and AI-driven forecasting, Fingen enables investors to strategize effectively, minimize risks, and optimize their crypto trading experiences. With up-to-date information and predictive analytics at their disposal, users can make timely and well-informed decisions, enhancing their chances of success in the dynamic world of cryptocurrency trading.";
@@ -57,7 +65,7 @@ const meta = {
   <section class="px-6 mx-auto max-w-6xl lg:px-8 py-20">
     <div class="pb-8 inline-flex justify-between w-full items-center">
       <h2 class="text-justify text-3xl md:text-4xl font-bold tracking-tight">Latest articles</h2>
-      <a class="text-muted hover:text-textcolor" href="/blog">See All</a>
+      <a class="bg-gradient-to-br from-gradient to-accent px-px py-px rounded-md" href="/blog"><div class="px-4 py-1.5 bg-black/80 rounded-[6px] hover:bg-black/50 transition-all">See All</div></a>
     </div>
     
     <div class="flex flex-col md:grid md:grid-cols-3 gap-4 md:gap-8">
@@ -95,8 +103,12 @@ const meta = {
       </div>
     </div>
   </section>
-
-  <TopLosers client:load></TopLosers>
+  
+  <section class="px-6 mx-auto max-w-6xl lg:px-8 py-20">
+    <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-left pb-16">Top 10 Declining Currencies</h2>
+    <LowCard client:load></LowCard>
+  </section>
+  
   <SignUpForm />
 
 </Layout>
