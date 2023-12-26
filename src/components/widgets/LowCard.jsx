@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import TestChart from './TestChart.jsx'
+import CardChart from './CardChart.jsx'
 
 const MyCarousel = () => {
   const [data, setData] = useState([]);
@@ -87,7 +87,7 @@ const MyCarousel = () => {
             <div className={`absolute ${colorPair.bgAccent4} opacity-60 rounded-full blur-xl w-40 h-10 -right-0 -bottom-4`}></div>
             <div className={`absolute ${colorPair.bgAccent4} opacity-60 rounded-full blur-xl w-10 h-40 -right-4 -bottom-5`}></div>
             <div className='opacity-50 absolute top-1/2 right-0 transform -translate-y-1/5 w-full h-24 flex justify-end'>
-            <TestChart historyData={historyValues} />
+            <CardChart historyData={historyValues} />
             </div>
           </div>
         );
