@@ -1,0 +1,16 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import TestChart from '~/components/widgets/TestChart.jsx'
+
+const meta = {
+  title: "Test",
+};
+---
+
+<Layout {meta}>
+    <div class="h-40 w-full">
+        <TestChart client:load />
+    </div>
+    
+</Layout>
+

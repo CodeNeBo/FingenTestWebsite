@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import TestChart from './TestChart.jsx'
 
 const MyCarousel = () => {
   const [data, setData] = useState([]);
@@ -52,6 +53,14 @@ const MyCarousel = () => {
         const count = 10 - index;
         const percentage = (((item.edgenumber - item.history1) / item.history1) * 100).toFixed(0);
         const colorPair = getColorPair(percentage);
+        const historyValues = [
+          { name: 'History 5', value: item.history5 },
+          { name: 'History 4', value: item.history4 },
+          { name: 'History 3', value: item.history3 },
+          { name: 'History 2', value: item.history2 },
+          { name: 'History 1', value: item.history1 },
+          { name: 'History', value: item.edgenumber }
+        ];
 
         return (
           <div
@@ -77,6 +86,9 @@ const MyCarousel = () => {
             <div className={`absolute ${colorPair.bgAccent3} opacity-60 rounded-full blur-xl w-10 h-40 left-0 top-2`}></div>
             <div className={`absolute ${colorPair.bgAccent4} opacity-60 rounded-full blur-xl w-40 h-10 -right-0 -bottom-4`}></div>
             <div className={`absolute ${colorPair.bgAccent4} opacity-60 rounded-full blur-xl w-10 h-40 -right-4 -bottom-5`}></div>
+            <div className='opacity-50 absolute top-1/2 right-0 transform -translate-y-1/5 w-full h-24 flex justify-end'>
+            <TestChart historyData={historyValues} />
+            </div>
           </div>
         );
       })}
