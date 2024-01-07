@@ -56,7 +56,7 @@ function CurrencyList() {
                   <span class="pointer-events-none absolute -top-10 left-0 w-max rounded bg-gray-900 px-2 py-1 text-sm text-textcolor opacity-0 transition-opacity group-hover:opacity-100">{pair.tooltip}</span>
                 </div>
                 <div className='flex flex-col my-auto'>
-                  <p className="">{formatNum(pair.pipsnumber)}</p>
+                  <p className="inline-flex align-middle">{formatNum(pair.pipsnumber)}</p>
                   <p className='text-muted text-xs'>{formatNum(pair.probabilityOfWin, true)}</p>
                 </div>
               </div>
