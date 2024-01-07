@@ -65,10 +65,10 @@ const MyCarousel = () => {
         return (
           <div
             key={item.edgenumber}
-            className={`rounded-2xl aspect-square p-6 flex flex-col justify-between relative overflow-hidden max-h-56 ${colorPair.bgPrimary} ${colorPair.shadow}`}
+            className={`rounded-2xl aspect-square p-6 flex flex-col justify-between relative overflow-hidden mr-3 max-h-56 ${colorPair.bgPrimary}`}
           >
-            <div className="inline-flex gap-3 items-center">
-              <h2 className="font-semibold text-4xl text-textcolor z-20">{item.edgenumber}</h2>
+            <div className="inline-flex gap-2 md:gap-3 items-center">
+              <h2 className="font-semibold text-3xl md:text-4xl text-textcolor z-20">{item.edgenumber}</h2>
               <p
                 className={`text-textcolor text-sm font-normal px-2 py-1 rounded-full border border-textcolor z-20 ${
                   percentage >= 0 }`}
@@ -77,8 +77,8 @@ const MyCarousel = () => {
               </p>
             </div>
             <div className={`w-full text-xl font-semibold z-20 inline-flex justify-between items-end`}>
-              <p className='text-left w-fit text-3xl'>{count}.</p>
-              <p className='text-right w-fit'>{item.edgename}</p>
+              <p className='text-left w-fit text-2xl md:text-3xl'>{count}.</p>
+              <p className='text-right w-fit text-lg md:text-xl'>{item.edgename}</p>
             </div>
             <div className={`absolute ${colorPair.bgAccent1} rounded-full blur-2xl w-28 h-28 left-6 top-12`}></div>
             <div className={`absolute ${colorPair.bgAccent2} rounded-full blur-2xl w-48 h-20 -right-6 bottom-10 rotate-12`}></div>
