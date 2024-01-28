@@ -1,19 +1,16 @@
 ---
 import { SITE } from '~/config.mjs';
-import { Image } from 'astro:assets';
 
 import Layout from '~/layouts/PageLayout.astro';
-import Earth from '~/assets/images/Earth.png';
 import Hero from '~/components/widgets/Hero.astro';
-import TotalObs from '~/components/widgets/TotalObs.astro';
-import Pipschart from '~/components/widgets/Pips.jsx';
 import VideoSection from '~/components/widgets/VideoSection.astro';
 import PostCard from '~/components/widgets/PostCard.astro';
-import blogPosts from '~/blogdata/blogposts.json'
+import blogPosts from '~/blogdata/blogposts.json';
 import SignUpForm from '~/components/widgets/SignUpForm.astro';
 import ComingSoon from '~/components/widgets/ComingSoon.astro';
-import TopCard from '~/components/widgets/TopCard.jsx'
-import LowCard from '~/components/widgets/LowCard.jsx'
+import TopCard from '~/components/widgets/TopCard.jsx';
+import LowCard from '~/components/widgets/LowCard.jsx';
+import Cards from '~/components/widgets/Cards.jsx';
 
 const meta = {
   title: SITE.title,
@@ -35,15 +32,9 @@ const meta = {
         We recognize machines are better at trade decision making than humans
       </Fragment>
     </Hero>
-    <div class="mt-24 md:mt-36">
-      <TotalObs></TotalObs>
-      <Pipschart client:only></Pipschart>
-    </div>
-    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -z-50 w-screen overflow-x-hidden">
-      <Image class="scale-150 md:scale-100 -z-50 opacity-80 md:mt-96" src={Earth} alt="Planet earth" />
-    </div>
-    <div class="scale-150 md:scale-100 w-4/6 md:mt-80 opacity-95 rounded-full aspect-square bg-primary blur-3xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -z-40"></div>
   </div>
+
+  <Cards />
 
   
   <section class="px-6 mx-auto max-w-6xl lg:px-8 py-20">
