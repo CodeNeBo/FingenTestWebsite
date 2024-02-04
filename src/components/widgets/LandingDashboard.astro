@@ -4,11 +4,11 @@ import LandingChart from '~/components/widgets/LandingChart.jsx'
 import History from '~/components/widgets/History.jsx'
 ---
 
-<div class="px-6 mx-auto max-w-6xl lg:px-8 pt-20 flex flex-wrap gap-4">
+<div class="px-6 mx-auto max-w-6xl lg:px-8 my-12 flex flex-wrap gap-4">
     <Cards client:load />
     <div class="w-full flex flex-row gap-4">
         <div class="w-3/5 bg-white rounded-lg text-textdark p-6 border border-textdark shadow-xl">
-            <h2 class="text-sm tracking-wide pb-4">Overview</h2>
+            <h2 class="text-sm tracking-wide pb-4">Recent Trades</h2>
             <LandingChart client:load />
         </div>
         <History client:load />
