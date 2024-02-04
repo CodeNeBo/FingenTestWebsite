@@ -5,7 +5,6 @@ const ChartWithTradeCurrencies = () => {
   const [tradeData, setTradeData] = useState([]);
 
   useEffect(() => {
-    // Fetch data from local JSON file
     fetch('./data/landingdata.json')
       .then(response => response.json())
       .then(data => setTradeData(data.recentTrades.recentTradesData))

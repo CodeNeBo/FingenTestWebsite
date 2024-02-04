@@ -1,53 +1,33 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const RecentSales = () => {
-  const salesData = [
-    {
-      product: 'Product A',
-      date: '2024-02-01',
-      amount: 150.99,
-    },
-    {
-      product: 'Product B',
-      date: '2024-01-28',
-      amount: 89.95,
-    },
-    {
-      product: 'Product C',
-      date: '2024-01-25',
-      amount: 120.50,
-    },
-    {
-      product: 'Product D',
-      date: '2024-02-01',
-      amount: 150.99,
-    },
-    {
-      product: 'Product E',
-      date: '2024-01-28',
-      amount: 89.95,
-    },
-    {
-      product: 'Product F',
-      date: '2024-01-25',
-      amount: 120.50,
-    }
-  ];
+  const [salesData, setSalesData] = useState([]);
+
+  useEffect(() => {
+    fetch('./data/landingdata.json')
+      .then(response => response.json())
+      .then(data => setSalesData(data.recentTrades.recentTradesData))
+      .catch(error => console.error('Error fetching data:', error));
+  }, []);
 
   return (
     <div className='bg-white rounded-lg text-textdark p-6 border border-textdark shadow-xl flex-grow'>
-      <h2 className="text-sm tracking-wide pb-4">Recent Trades Gain/Loss</h2>
+      <h2 className="text-sm tracking-wide pb-4">Recent Gain/Loss</h2>
       <div className='h-64 overflow-y-scroll'>
         <ul className="divide-y divide-gray-300">
-            {salesData.map((sale, index) => (
+          {salesData.map((trade, index) => (
             <li key={index} className="py-4 flex items-center justify-between">
-                <div>
-                <p className="text-sm font-semibold text-textdark">{sale.product}</p>
-                <p className="text-textdark text-xs">{sale.date}</p>
-                </div>
-                <p className="text-textdark">${sale.amount}</p>
+              <div>
+                <p className="text-sm text-textdark">
+                  {`${trade.tradeCurrency1}/${trade.tradeCurrency2}`}
+                </p>
+                <p className="text-textdark text-xs text-muted">{`Placed: $${trade.placedBet}`}</p>
+              </div>
+              <p className="text-textdark font-semibold">
+                {`${trade.wonBet >= 0 ? '+' : '-'}$${Math.abs(trade.wonBet)}`}
+              </p>
             </li>
-            ))}
+          ))}
         </ul>
       </div>
     </div>
