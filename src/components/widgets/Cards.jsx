@@ -5,29 +5,29 @@ const CardRow = () => {
     const cardData = [
       {
         title: 'Win %',
-        currentNumber: 1000,
-        lastMonthNumber: 800,
+        currentNumber: 93,
+        lastMonthNumber: 87,
       },
       {
         title: 'Loss %',
-        currentNumber: 5000,
-        lastMonthNumber: 4500,
+        currentNumber: 7,
+        lastMonthNumber: 13,
       },
       {
         title: 'Edge',
-        currentNumber: 1000,
-        lastMonthNumber: 800,
+        currentNumber: 13231123,
+        lastMonthNumber: 998932,
       },
       {
         title: 'Open Trades',
-        currentNumber: 5000,
-        lastMonthNumber: 4500,
+        currentNumber: 120932,
+        lastMonthNumber: 112985,
       }
       
     ];
   
     return (
-      <div className="px-6 mx-auto max-w-6xl lg:px-8 py-20 flex flex-row gap-4">
+      <div className="w-full flex flex-row gap-4">
         {cardData.map((data, index) => (
           <Card
             key={index}
