@@ -14,7 +14,7 @@ const CardRow = () => {
   }, []);
 
   return (
-    <div className="w-full flex flex-row gap-4">
+    <div className="w-full grid grid-cols-2 md:flex md:flex-row gap-4">
       {data.map((cardData, index) => (
         <Card
           key={index}
