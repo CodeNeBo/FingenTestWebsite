@@ -16,14 +16,14 @@ const {
 } = Astro.props;
 ---
 
-<section id="faq" class:list={['px-4 pb-16 sm:px-6 mx-auto lg:px-8 lg:pb-20 max-w-6xl opacity-0 transition-all duration-1000 ease-out obsSection translate-y-10 snap-start']}>
-  <div class="max-w-xl sm:mx-auto lg:max-w-2xl">
+<section id="faq" class:list={['mt-12 px-4 pb-16 sm:px-6 mx-auto lg:px-8 lg:pb-20 max-w-6xl']}>
+  <div class="max-w-7xl sm:mx-auto">
     {
       (title) && (
-        <div class="mb-10 md:mx-auto text-center md:mb-12 max-w-3xl">
+        <div class=" md:mx-auto text-left md:mb-6">
           {title && (
             <h2
-              class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading"
+              class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading text-textcolor"
               set:html={title}
             />
           )}
@@ -32,12 +32,12 @@ const {
     }
   </div>
 
-  <div class="mx-auto max-w-7xl">
+  <div class="mx-auto max-w-7xl divide-y divide-solid divide-slate-500">
     {items.map(({ name, description, icon }, index) => (
-      <details class="self-center w-full flex items-middle bg-[#0B0B14] border-textdark border rounded-xl h-fit mb-4" key={index}>
-        <summary class="cursor-pointer list-none px-8 py-6">
+      <details class="self-center w-full flex items-middle h-fit py-2" key={index}>
+        <summary class="cursor-pointer list-none py-2">
           <div class="flex justify-between items-center">
-            {name && <p class="text-justify text-xl font-bold" set:html={name} />}
+            {name && <p class="text-justify text-xl font-bold text-textcolor" set:html={name} />}
             <div class="flex-shrink-0">
               <Icon name={icon ? icon : 'tabler:chevron-down'} class="w-8 h-8" />
             </div>
@@ -46,11 +46,8 @@ const {
         {
           (description) && (
             <div>
-              {title && (
-                <hr class="border-textdark" />
-              )}
               <p
-                class="px-8 py-6 text-muted"
+                class="py-2 text-muted"
                 set:html={description}
               />
             </div>

@@ -45,81 +45,86 @@ const currentPath = pathname.slice(1);
   ]}
   id="header"
 >
-
-<a href="" class="bg-accent items-center px-4 py-0.5 md:py-1 md:space-around flex justify-between lg:px-36">
-  <div class="flex justify-between align-middle md:gap-4 w-full md:w-fit">
-    <div class="flex flex-row items-center">
-      <div class="h-2 w-2 rounded-full bg-red-500 animate-pulse lg:hidden mr-1"></div>
-      <p class="uppercase text-xs rounded-full p-1 block lg:bg-red-600 lg:px-4 border border-accent lg:border-red-500">LIVE</p>
-    </div>
-    <p class="uppercase text-xs py-1 border border-accent">Euro Breakout Againts Yen</p>
-    <p class="uppercase text-xs border border-text-color rounded-md w-fit p-1">Total PIP Run: 201</p>
-  </div>
-  <div class="col-span-2 row-start-2 text-center justify-between gap-1 md:text-xs hidden md:flex">
-    <p>TOKYO MARKET HOURS</p>
-    <p>//</p>
-    <p>FAST MARKET</p>
-    <p>//</p>
-    <p>STABLE VOLATILITY</p>
-    <p>//</p>
-    <p>LOW VOLATILITY</p>
-  </div>
-</a>
-
-  <div class="mx-auto w-full bg-slate-900 bg-opacity-20 backdrop-blur-lg md:flex md:justify-between md:px-36">
-
-    <div class="px-6 py-2 flex justify-between items-center">
-      <a class="mx-auto pl-6 flex justify-self-center items-center h-10" href={getHomePermalink()}>
-        <Logo />
-      </a>
-      <div class="flex items-center justify-center md:hidden">
-        <ToggleMenu />
+<div class="w-full">
+  <div class="bg-accent">
+    <a href="" class="items-center px-4 py-0.5 md:py-1 md:space-around flex justify-between max-w-6xl mx-auto">
+      <div class="flex justify-between align-middle md:gap-4 w-full md:w-fit">
+        <div class="flex flex-row items-center">
+          <div class="h-2 w-2 rounded-full bg-red-500 animate-pulse lg:hidden mr-1"></div>
+          <p class="uppercase text-xs rounded-full p-1 block lg:bg-red-600 lg:px-4 border border-accent lg:border-red-500">LIVE</p>
+        </div>
+        <p class="uppercase text-xs py-1 border border-accent">Euro Breakout Againts Yen</p>
+        <p class="uppercase text-xs border border-text-color rounded-md w-fit p-1">Total PIP Run: 201</p>
       </div>
-    </div>
-
-    <nav
-      class="items-center w-full md:w-auto hidden md:flex h-[calc(100vh-72px)] md:h-auto overflow-y-auto md:overflow-visible md:px-5 relative"
-      aria-label="Main navigation"
-    >
-      <ul class="flex flex-col mx-4 md:mx-0 mt-8 md:mt-0 md:flex-row md:self-center md:w-auto text-2xl font-black md:font-bold md:text-lg rounded-xl bg-[#0E0E17] md:bg-transparent border-2 border-textdark md:border-transparent w-auto">
-        {
-          links.map(({ text, href, icon }) => (
-            <li>
-                <a
-                  class={`text-xl md:text-base text-muted hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out target:text-white ${currentPath === href.slice(1) ? "text-white" : ""}`}
-                  href={href}
-                >
-                  {icon && <Icon name={icon} class="w-5 h-5 mr-4 md:mr-2" />}
-                  {text}
-                </a>
-            </li>
-          ))
-        }
-      </ul>
-
-      <div class="flex items-center justify-center flex-col md:hidden absolute bottom-40 inset-x-0">
-        <h2 class="text-xl font-bold tracking-tight sm:text-2xl">Follow Us</h2>
-        {
-          socialLinks?.length ? (
-            <ul class="flex mb-4 md:order-1">
-              {socialLinks.map(({ ariaLabel, href, text, icon }) => (
-                <li>
+      <div class="col-span-2 row-start-2 text-center justify-between gap-1 md:text-xs hidden md:flex">
+        <p>TOKYO MARKET HOURS</p>
+        <p>//</p>
+        <p>FAST MARKET</p>
+        <p>//</p>
+        <p>STABLE VOLATILITY</p>
+        <p>//</p>
+        <p>LOW VOLATILITY</p>
+      </div>
+    </a>
+  </div>
+  
+  <div class="w-full bg-slate-900 bg-opacity-20 backdrop-blur-lg">
+    <div class="mx-auto  md:flex md:justify-between max-w-6xl">
+      <div class="px-6 py-2 flex justify-between items-center">
+        <a class="mx-auto pl-6 flex justify-self-center items-center h-10" href={getHomePermalink()}>
+          <Logo />
+        </a>
+        <div class="flex items-center justify-center md:hidden">
+          <ToggleMenu />
+        </div>
+      </div>
+  
+      <nav
+        class="items-center w-full md:w-auto hidden md:flex h-[calc(100vh-72px)] md:h-auto overflow-y-auto md:overflow-visible md:px-5 relative"
+        aria-label="Main navigation"
+      >
+        <ul class="flex flex-col mx-4 md:mx-0 mt-8 md:mt-0 md:flex-row md:self-center md:w-auto text-2xl font-black md:font-bold md:text-lg rounded-xl bg-[#0E0E17] md:bg-transparent border-2 border-textdark md:border-transparent w-auto">
+          {
+            links.map(({ text, href, icon }) => (
+              <li>
                   <a
-                    class="text-muted rounded-lg text-sm p-2.5 inline-flex items-center"
-                    aria-label={ariaLabel}
+                    class={`text-xl md:text-base text-muted hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out target:text-white ${currentPath === href.slice(1) ? "text-white" : ""}`}
                     href={href}
                   >
-                    {icon && <Icon name={icon} class="w-5 h-5" />}
-                    <Fragment set:html={text} />
+                    {icon && <Icon name={icon} class="w-5 h-5 mr-4 md:mr-2" />}
+                    {text}
                   </a>
-                </li>
-              ))}
-            </ul>
-          ) : (
-            ''
-          )
-        }
-      </div>
-    </nav>
+              </li>
+            ))
+          }
+        </ul>
+  
+        <div class="flex items-center justify-center flex-col md:hidden absolute bottom-40 inset-x-0">
+          <h2 class="text-xl font-bold tracking-tight sm:text-2xl">Follow Us</h2>
+          {
+            socialLinks?.length ? (
+              <ul class="flex mb-4 md:order-1">
+                {socialLinks.map(({ ariaLabel, href, text, icon }) => (
+                  <li>
+                    <a
+                      class="text-muted rounded-lg text-sm p-2.5 inline-flex items-center"
+                      aria-label={ariaLabel}
+                      href={href}
+                    >
+                      {icon && <Icon name={icon} class="w-5 h-5" />}
+                      <Fragment set:html={text} />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              ''
+            )
+          }
+        </div>
+      </nav>
+    </div>
   </div>
+</div>
+
 </header>

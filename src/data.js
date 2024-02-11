@@ -10,6 +10,14 @@ export const headerData = {
       text: 'Blog',
       href: getPermalink('/blog'),
     },
+    {
+      text: 'FAQ',
+      href: getPermalink('/faq'),
+    },
+    {
+      text: 'Contact Us',
+      href: getPermalink('/contact'),
+    },
     
   ],
   
