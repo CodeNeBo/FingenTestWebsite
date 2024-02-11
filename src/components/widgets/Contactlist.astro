@@ -1,0 +1,52 @@
+---
+interface Item {
+  name?: string;
+  description?: string;
+  description2?: string;
+  description3?: string;
+  description4?: string;
+  description5?: string;
+  description6?: string;
+}
+export interface Props {
+  title?: string;
+  items?: Array<Item>;
+}
+const {
+  title = await Astro.slots.render('title'),
+  items = [],
+} = Astro.props;
+---
+<section class="max-w-6xl mx-auto">
+    <div class="max-w-6xl sm:mx-auto">
+        {
+        (title) && (
+            <div class=" md:mx-auto text-left md:mb-6">
+            {title && (
+                <h2
+                class="text-2xl md:text-3xl font-bold leading-tighter tracking-tighter mb-16 font-heading text-textcolor border-b"
+                set:html={title}
+                />
+            )}
+            </div>
+        )
+        }
+    </div>
+
+    <div class="mx-auto">
+        {items.map(({ name, description, description2, description3, description4, description5, description6 }, index) => (
+            <div class="flex">
+                <h3 class="w-1/2 text-xl" set:html={name} />
+                <div class="flex flex-col gap-4">
+                    <a href={description} class="w-1/2 text-muted" set:html={description} />
+                    <a href={description2} class="w-1/2 text-muted" set:html={description2} />
+                    <a href={description3} class="w-1/2 text-muted" set:html={description3} />
+                    <a href={description4} class="w-1/2 text-muted" set:html={description4} />
+                    <a href={description5} class="w-1/2 text-muted" set:html={description5} />
+                    <a href={description6} class="w-1/2 text-muted" set:html={description6} />
+                </div>
+            </div>
+        ))}
+    </div>
+</section>
+    

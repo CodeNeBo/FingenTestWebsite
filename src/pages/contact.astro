@@ -1,5 +1,10 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Contactlist from '~/components/widgets/Contactlist.astro';
+import Map from '~/components/widgets/Map.astro';
+import SignUpForm from '~/components/widgets/SignUpForm.astro';
 
 const meta = {
   title: "Contact Us",
@@ -7,6 +12,34 @@ const meta = {
 ---
 
 <Layout {meta}>
+  <Hero>
+    <Fragment slot="title">
+      Let's Work<br>Toghether
+    </Fragment>
+  </Hero>
 
+  <Map />
+
+  <Contactlist 
+    title="Contact"
+    items={[
+      {
+        name: 'Investor Relations / Fund Enquiries:',
+        description: 'invest@fingen.com'
+      },
+      {
+        name: 'Press Enquiries:',
+        description: 'contact@fingen.com'
+      },
+      {
+        name: 'Social:',
+        description: 'instagram.com',
+        description2: 'x.com',
+        description3: 'linkedin.com',
+        description4: 'facebook.com'
+      },
+    ]}
+  />
+  <SignUpForm />
 </Layout>
 
