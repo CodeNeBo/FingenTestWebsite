@@ -1,8 +1,11 @@
 ---
 import { Image } from "astro:assets";
+import map from "./src/assets/images/Map.png";
 ---
-    <div class="max-w-6xl mx-auto h-full my-80">
-        <div class="h-full"></div>
-        <h1 class="text-2xl md:text-3xl font-bold w-1/3 mb-6">24/7 Global Support Model for a 24/7 Market </h1>
-        <p class="w-1/3">FinGen utilizes our global footprint across 8 regional hubs to ensure portfolio trading, risk management, and operations are effective and accessible irrespective of time zone, 24/7, 365 days per year, in line with the global capital markets. Inflation never sleeps. Neither does FinGen.</p>
+    <div class="max-w-6xl mx-auto h-screen relative flex align-bottom mb-32">
+        <Image class={"absolute top-0 opacity-30 -z-10"} src={map} alt="World map"/>
+        <div class="mt-auto mb-20">
+            <h1 class="text-2xl md:text-3xl font-bold w-1/3 mb-6">24/7 Global Support Model for a 24/7 Market </h1>
+            <p class="w-1/3">FinGen utilizes our global footprint across 8 regional hubs to ensure portfolio trading, risk management, and operations are effective and accessible irrespective of time zone, 24/7, 365 days per year, in line with the global capital markets. Inflation never sleeps. Neither does FinGen.</p>    
+        </div>
     </div>
