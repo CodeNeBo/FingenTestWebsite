@@ -1,0 +1,33 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import FAQ from '~/components/widgets/FAQcomponent.astro';
+
+const meta = {
+  title: "FAQ",
+};
+---
+
+<Layout {meta}>
+    <FAQ
+    title="FAQ"
+    items={[
+      {
+        name: 'Question 1',
+        description: 'Test 1'
+      },
+      {
+        name: 'Question 2',
+        description: 'Test 2'
+      },
+      {
+        name: 'Question 3',
+        description: 'Test 3'
+      },
+      {
+        name: 'Question 4',
+        description: 'Test 4'
+      },
+    ]}
+  />
+</Layout>
+

@@ -1,5 +1,7 @@
 ---
 import { SITE } from '~/config.mjs';
+import { Image } from 'astro:assets';
+import { YouTube } from '@astro-community/astro-embed-youtube';
 
 import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
@@ -23,7 +25,7 @@ const meta = {
 
 <Layout {meta}>
 
-  <div class="relative">
+  <section class="relative">
     <Hero>
       <Fragment slot="title">
         Trading is Evolving<br>And the Machines are Winning
@@ -32,9 +34,9 @@ const meta = {
         We recognize machines are better at trade decision making than humans
       </Fragment>
     </Hero>
-  </div>
-
-  <LandingDashboard />
+    <LandingDashboard />
+  </section>
+    
 
   
   <section class="px-6 mx-auto max-w-6xl lg:px-8 py-20">

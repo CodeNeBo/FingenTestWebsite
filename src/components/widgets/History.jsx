@@ -13,7 +13,7 @@ const RecentSales = () => {
   return (
     <div className='bg-white rounded-lg text-textdark p-6 border border-textdark shadow-xl flex-grow'>
       <h2 className="text-sm tracking-wide pb-4">Recent Gain/Loss</h2>
-      <div className='h-64 overflow-y-scroll'>
+      <div className='h-64 overflow-y-scroll no-scrollbar'>
         <ul className="divide-y divide-gray-300">
           {salesData.map((trade, index) => (
             <li key={index} className="py-4 flex items-center justify-between">
