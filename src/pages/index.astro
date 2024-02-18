@@ -13,6 +13,7 @@ import ComingSoon from '~/components/widgets/ComingSoon.astro';
 import TopCard from '~/components/widgets/TopCard.jsx';
 import LowCard from '~/components/widgets/LowCard.jsx';
 import LandingDashboard from '~/components/widgets/LandingDashboard.astro';
+import BgVideo from '~/components/widgets/BgVideo.jsx';
 
 const meta = {
   title: SITE.title,
@@ -24,8 +25,10 @@ const meta = {
 
 
 <Layout {meta}>
-
   <section class="relative">
+    <div class="absolute top-0 mx-auto -z-50 w-full opacity-65">
+      <BgVideo client:load />
+    </div>
     <Hero>
       <Fragment slot="title">
         Trading is Evolving<br>And the Machines are Winning
@@ -36,6 +39,8 @@ const meta = {
     </Hero>
     <LandingDashboard />
   </section>
+
+
     
 
   
