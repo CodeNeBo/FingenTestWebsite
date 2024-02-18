@@ -88,7 +88,7 @@ const currentPath = pathname.slice(1);
             links.map(({ text, href, icon }) => (
               <li>
                   <a
-                    class={`text-xl md:text-base text-muted hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out target:text-white ${currentPath === href.slice(1) ? "text-white" : ""}`}
+                    class={`text-xl md:text-sm text-muted hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out target:text-white ${currentPath === href.slice(1) ? "text-white" : ""}`}
                     href={href}
                   >
                     {icon && <Icon name={icon} class="w-5 h-5 mr-4 md:mr-2" />}
@@ -97,6 +97,7 @@ const currentPath = pathname.slice(1);
               </li>
             ))
           }
+          <button class="bg-secondary rounded-md h-fit py-2 px-4 mx-auto font-semibold text-textdark text-sm my-auto">Step Inside</button>
         </ul>
   
         <div class="flex items-center justify-center flex-col md:hidden absolute bottom-40 inset-x-0">

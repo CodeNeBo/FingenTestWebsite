@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BarChart, Bar, ResponsiveContainer, XAxis, YAxis, Tooltip } from 'recharts';
+import { BarChart, Bar, ResponsiveContainer, XAxis, YAxis, Tooltip, Cell } from 'recharts';
 
 const ChartWithTradeCurrencies = () => {
   const [tradeData, setTradeData] = useState([]);
@@ -25,6 +25,10 @@ const ChartWithTradeCurrencies = () => {
     return null;
   };
 
+  const getBarGradient = (value) => {
+    return `url(#colorUv${value >= 0 ? 'Positive' : 'Negative'})`;
+  };
+
   return (
     <ResponsiveContainer width="100%" height={300}>
       <BarChart
@@ -37,15 +41,25 @@ const ChartWithTradeCurrencies = () => {
         }}
       >
         <defs>
-          <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#FFFFFF" stopOpacity={0.2}/>
-            <stop offset="100%" stopColor="#FFFFFF" stopOpacity={0} />
+          <linearGradient id="colorUvPositive" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#4855E2" stopOpacity={1} />
+            <stop offset="100%" stopColor="#4855E2" stopOpacity={0.1} />
+          </linearGradient>
+          <linearGradient id="colorUvNegative" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#EA3382" stopOpacity={0.1} />
+            <stop offset="100%" stopColor="#EA3382" stopOpacity={1} />
           </linearGradient>
         </defs>
         <XAxis dataKey={combineCurrencies} axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: '#FFFFFF' }}/>
         <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: '#FFFFFF' }}/>
-        <Tooltip  content={<CustomTooltip />} cursor={{fill: 'rgba(255, 255, 255, 0.05)'}} />
-        <Bar dataKey="wonBet" fill="url(#colorUv)" radius={[12, 12, 0, 0]} />
+        <Tooltip content={<CustomTooltip />} cursor={{fill: 'rgba(255, 255, 255, 0.05)'}} />
+        <Bar dataKey="wonBet" radius={[6, 6, 6, 6]}>
+          {
+            tradeData.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={getBarGradient(entry.wonBet)} />
+            ))
+          }
+        </Bar>
       </BarChart>
     </ResponsiveContainer>
   );
