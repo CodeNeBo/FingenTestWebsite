@@ -27,7 +27,7 @@ const ChartWithTradeCurrencies = () => {
         <XAxis dataKey={combineCurrencies} axisLine={false} tickLine={false} tick={{ fontSize: 12 }}/>
         <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 12}}/>
         <Tooltip label="Trade Pair" formatter={(value, name) => [value, name === 'wonBet' ? 'Earned' : name]}/>
-        <Bar dataKey="wonBet" fill="#000000" radius={[12, 12, 0, 0]} />
+        <Bar dataKey="wonBet" fill="#ffffff" radius={[12, 12, 0, 0]} />
       </BarChart>
     </ResponsiveContainer>
   );
