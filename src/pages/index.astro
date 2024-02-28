@@ -15,6 +15,11 @@ import LowCard from '~/components/widgets/LowCard.jsx';
 import LandingDashboard from '~/components/widgets/LandingDashboard.astro';
 import BgVideo from '~/components/widgets/BgVideo.jsx';
 
+import clock from './src/assets/images/clock.svg'
+import bell from './src/assets/images/bell.svg'
+import safe from './src/assets/images/safe.svg'
+import chart from './src/assets/images/chart.svg'
+
 const meta = {
   title: SITE.title,
   description: SITE.description,
@@ -85,25 +90,26 @@ const meta = {
   </section>
 </div>
 
-  <section class="px-6 mx-auto max-w-6xl lg:px-8 py-20">
+  <section class="px-6 mx-auto max-w-6xl lg:px-8 py-20 relative">
     <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-center pb-16 text-transparent bg-clip-text bg-gradient-to-b from-[#e4e5e7] to-[#7b7b7e]">Designed for professionals<br>Accessible for everyone</h2>
     <div class="grid grid-rows-2 grid-cols-2 md:grid-rows-1 md:grid-cols-4 gap-2 md:gap-4">
-      <div class="bg-gradient-to-br from-textdark to-[#0B0B14] w-full aspect-square rounded-lg border-2 border-textdark flex justify-center items-end p-2 opacity-80 backdrop-blur-xl">
-        <!-- <Image src={} alt="What to buy"></Image> -->
+      <div class="overflow-hidden relative bg-gradient-to-b from-white/5 to-white/0 rounded-lg w-full aspect-square flex justify-center items-end p-2 opacity-80 backdrop-blur-xl">
+        <Image class="absolute right-5 scale-125 bottom-10"  src={chart} alt="What to buy"></Image>
         <p class="text-muted uppercase">What to buy</p>
       </div>
-      <div class="bg-gradient-to-br from-textdark to-[#0B0B14] w-full aspect-square rounded-lg border-2 border-textdark flex justify-center items-end p-2 opacity-80 backdrop-blur-xl">
-        <!-- <Image src={} alt="What to buy"></Image> -->
+      <div class="overflow-hidden relative bg-gradient-to-b from-white/5 to-white/0 rounded-lg w-full aspect-square flex justify-center items-end p-2 opacity-80 backdrop-blur-xl">
+        <Image class="absolute -right-8 scale-125 -bottom-8"  src={safe} alt="What to buy"></Image>
         <p class="text-muted uppercase">What to sell</p>
       </div>
-      <div class="bg-gradient-to-br from-textdark to-[#0B0B14] w-full aspect-square rounded-lg border-2 border-textdark flex justify-center items-end p-2 opacity-80 backdrop-blur-xl">
-        <!-- <Image src={} alt="What to buy"></Image> -->
+      <div class="overflow-hidden relative bg-gradient-to-b from-white/5 to-white/0 rounded-lg w-full aspect-square flex justify-center items-end p-2 opacity-80 backdrop-blur-xl">
+        <Image class="absolute -right-10 scale-125 -bottom-10"  src={clock} alt="What to buy"></Image>
         <p class="text-muted uppercase">When to buy</p>
       </div>
-      <div class="bg-gradient-to-br from-textdark to-[#0B0B14] w-full aspect-square rounded-lg border-2 border-textdark flex justify-center items-end p-2 opacity-80 backdrop-blur-xl">
-        <!-- <Image src={} alt="What to buy"></Image> -->
+      <div class="overflow-hidden relative bg-gradient-to-b from-white/5 to-white/0 rounded-lg w-full aspect-square flex justify-center items-end p-2 opacity-80 backdrop-blur-xl">
+        <Image class="absolute -right-0 scale-100 -bottom-0"  src={bell} alt="What to buy"></Image>
         <p class="text-muted uppercase">When to sell</p>
       </div>
+      
     </div>
   </section>
   
