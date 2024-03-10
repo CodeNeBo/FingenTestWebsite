@@ -39,7 +39,7 @@ module.exports = {
       },
     },
   },
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [require('@tailwindcss/typography', 'tailwindcss-3d')],
   darkMode: 'class',
   variants: ["active"],
 };

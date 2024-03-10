@@ -13,7 +13,6 @@ import ComingSoon from '~/components/widgets/ComingSoon.astro';
 import TopCard from '~/components/widgets/TopCard.jsx';
 import LowCard from '~/components/widgets/LowCard.jsx';
 import LandingDashboard from '~/components/widgets/LandingDashboard.astro';
-import BgVideo from '~/components/widgets/BgVideo.jsx';
 
 import clock from '~/assets/images/clock.svg'
 import bell from '~/assets/images/bell.svg'
@@ -30,10 +29,7 @@ const meta = {
 
 
 <Layout {meta}>
-  <section class="relative">
-    <!-- <div class="absolute top-0 mx-auto -z-50 w-full opacity-20 hidden md:block">
-      <BgVideo client:load />
-    </div> -->
+  <section class="relative duration-300 ease-out obsSection opacity-0 translate-y-10">
     <Hero>
       <Fragment slot="title">
         Trading is Evolving<br>And the <span class="text-transparent bg-clip-text bg-gradient-to-r from-gradient via-bluegradient to-gradient animate-linear bg-[length:200%_auto]">Machines are Winning</span>
@@ -43,13 +39,11 @@ const meta = {
       </Fragment>
     </Hero>
     <LandingDashboard />
+    <div class="absolute -top-72 rounded-full left-1/2 transform -translate-x-1/2 w-96 h-96 bg-accent blur-3xl opacity-10 scale-150"></div>
   </section>
 
 
-    
-
-  
-  <section class="px-6 mx-auto max-w-6xl lg:px-8 py-20">
+  <section class="px-6 mx-auto max-w-6xl lg:px-8 py-20 duration-300 ease-out obsSection opacity-0 translate-y-10">
     <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-left pb-16 text-transparent bg-clip-text bg-gradient-to-b from-[#e4e5e7] to-[#7b7b7e]">Top 10 Growing Currencies</h2>
     <TopCard client:only></TopCard>
   </section>
@@ -63,7 +57,7 @@ const meta = {
   <SignUpForm />
   
   <ComingSoon />
-<div class="w-full overflow-x-clip">
+<div class="w-full overflow-x-clip duration-300 ease-out obsSection opacity-0 translate-y-10">
   <section class="px-6 mx-auto max-w-6xl lg:px-8 py-20 relative">
     <div class="pb-8 inline-flex justify-between w-full items-center">
       <h2 class="text-justify text-3xl md:text-4xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-[#e4e5e7] to-[#7b7b7e]">Latest articles</h2>
@@ -87,7 +81,7 @@ const meta = {
   </section>
 </div>
 
-  <section class="px-6 mx-auto max-w-6xl lg:px-8 py-20 relative">
+  <section class="px-6 mx-auto max-w-6xl lg:px-8 py-20 relative duration-300 ease-out obsSection opacity-0 translate-y-10">
     <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-center pb-16 text-transparent bg-clip-text bg-gradient-to-b from-[#e4e5e7] to-[#7b7b7e]">Designed for professionals<br>Accessible for everyone</h2>
     <div class="grid grid-rows-2 grid-cols-2 md:grid-rows-1 md:grid-cols-4 gap-2 md:gap-4">
 
@@ -114,7 +108,7 @@ const meta = {
     </div>
   </section>
   
-  <section class="px-6 mx-auto max-w-6xl lg:px-8 py-20">
+  <section class="px-6 mx-auto max-w-6xl lg:px-8 py-20 duration-300 ease-out obsSection opacity-0 translate-y-10">
     <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-left pb-16 text-transparent bg-clip-text bg-gradient-to-b from-[#e4e5e7] to-[#7b7b7e]">Top 10 Declining Currencies</h2>
     <LowCard client:only></LowCard>
   </section>
