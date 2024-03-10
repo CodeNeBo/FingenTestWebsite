@@ -1,6 +1,5 @@
 ---
-import { Image } from 'astro:assets';
-import Earth from '~/assets/images/Earth.png';
+import { Icon } from 'astro-icon';
 
 export interface Props {
   title?: string;
@@ -18,7 +17,7 @@ const {
 
 <section class="relative h-fit overflow-x-hidden">
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
-    <div class="pt-9 mt-8 lg:mt-12 relative">
+    <div class="pt-9 my-28 lg:my-36 relative">
       <div class="text-center max-w-screen-lg mx-auto">
         {
           title && (
@@ -36,7 +35,9 @@ const {
         </div>
         {content && <Fragment set:html={content} />}
       </div>
-     
+      <div class="w-full grid place-content-center mt-4 lg:mt-6">
+        <button class="backdrop-blur-xl border text-textcolor border-secondary rounded-full py-2.5 pl-7 pr-4 mx-auto font-semibold inline-flex gap-4 hover:bg-secondary hover:text-textdark ease-out duration-300">Step Inside<Icon name={'tabler:chevron-right'} class="w-6 h-6 my-auto"/></button>
+      </div>
       
 
       

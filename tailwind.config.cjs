@@ -13,10 +13,19 @@ module.exports = {
         textcolor: '#e6e6e7',
         textdark: '#1C1C24'
       },
+      animation: {
+        linear: 'backgroundLinear 3s linear infinite',
+      },
       fontFamily: {
         sans: ['var(--aw-font-sans)', ...defaultTheme.fontFamily.sans],
         serif: ['var(--aw-font-serif)', ...defaultTheme.fontFamily.serif],
         heading: ['var(--aw-font-heading)', ...defaultTheme.fontFamily.sans],
+      },
+      keyframes: {
+        backgroundLinear: {
+          '0%': { backgroundPosition: '0% 50%' },
+          '100%': { backgroundPosition: '200% 50%' },
+        },
       },
       gridTemplateRows: {
         '7': 'repeat(7, minmax(0, 1fr))',
