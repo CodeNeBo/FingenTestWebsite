@@ -6,12 +6,12 @@ import History from '~/components/widgets/History.jsx'
 <div class="mx-4">
     <div
       id="content"
-      class="mx-auto max-w-6xl p-4 my-12 flex flex-wrap gap-4 border-4 border-white/5 rounded-xl bg-slate-900/5 backdrop-blur-xl shadow-2xl shadow-[#8a14f6]/20"
+      class="mx-auto max-w-6xl p-4 my-12 flex flex-wrap gap-4 border border-white/5 rounded-xl bg-primary backdrop-blur-xl shadow-2xl shadow-[#8a14f6]/20"
       style="transform: rotateX(30deg);"
     >
       <Cards client:load />
       <div class="w-full flex flex-col md:flex-row gap-4">
-        <div class="w-full md:w-3/5 bg-gradient-to-b from-white/5 to-white/0 backdrop-blur-xl rounded-lg text-textcolor p-6">
+        <div class="w-full md:w-3/5 bg-primary border border-white/5 backdrop-blur-xl rounded-lg text-textcolor p-6">
           <h2 class="text-sm tracking-wide pb-4">Recent Trades</h2>
           <div class="my-auto">
             <LandingChart client:load />

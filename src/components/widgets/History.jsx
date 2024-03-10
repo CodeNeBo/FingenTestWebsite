@@ -11,7 +11,7 @@ const RecentSales = () => {
   }, []);
 
   return (
-    <div className='bg-gradient-to-b from-white/5 to-white/0 backdrop-blur-xl rounded-lg text-textcolor p-6 flex-grow'>
+    <div className='bg-primary border border-white/5 backdrop-blur-xl rounded-lg text-textcolor p-6 flex-grow'>
       <h2 className="text-sm tracking-wide pb-4">Recent Gain/Loss</h2>
       <div className='h-64 overflow-y-scroll no-scrollbar'>
         <ul className="divide-y divide-gray-300/5">

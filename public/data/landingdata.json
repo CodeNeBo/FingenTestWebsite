@@ -1,4 +1,12 @@
 {
+    "infCards":{
+      "infCardsData":[
+        {"title": "Text 1", "description": "Text 1"},
+        {"title": "Text 2", "description": "Text 2"},
+        {"title": "Text 3", "description": "Text 3"},
+        {"title": "Text 4", "description": "Text 4"}
+      ]
+    },
     "cards":{
       "cardsData":[
         {"title": "Win %", "currentNum":68, "lastMonthNumber":64},
@@ -7,6 +15,7 @@
         {"title": "Open Trades", "currentNum":1673490, "lastMonthNumber":1324956}
       ]
     },
+
     "recentTrades":{
       "recentTradesData": [
         { "tradeCurrency1": "EUR", "tradeCurrency2": "USD", "placedBet": 1421, "wonBet": 3245 },
