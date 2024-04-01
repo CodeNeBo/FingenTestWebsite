@@ -12,15 +12,15 @@ const {
   link = await Astro.slots.render('title'),
 } = Astro.props;
 ---
-<section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-6xl relative bg-primary/90 backdrop-blur-3xl">
-    <div class="flex flex-col md:grid md:grid-cols-2 gap-16">
-        <div>
-            {title && <p class="mb-8 text-justify text-3xl md:text-4xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-[#e4e5e7] to-[#7b7b7e]" set:html={title} />}
-            {content && <p class="text-justify leading-5 text-muted" set:html={content} />}
+<section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-5xl">
+    <div class="flex flex-col gap-16 align-middle justify-around">
+        <div class="w-full">
+            {title && <p class="mb-8 text-center text-3xl md:text-5xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-[#e4e5e7] to-[#7b7b7e]" set:html={title} />}
+            {content && <p class="text-center text-textcolor text-lg font-main font-medium" set:html={content} />}
         </div>
-        <YouTube id={link} />
+        <div class="w-full h-fit rouded-xl overflow-clip">
+          <iframe class="w-full aspect-video" src="https://www.youtube.com/embed/tPZ7wjiM5yw?si=XEBrdT8a1CnOMbdE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
     </div>
-    <div class="absolute -bottom-20 h-32 w-1/2 left-1/2 transform -translate-x-1/2 rounded-full bg-accent blur-3xl opacity-40 scale-150 -z-50"></div>
-    <div class="absolute -bottom-10 h-16 w-96 left-1/2 transform -translate-x-1/2 rounded-full bg-white blur-xl opacity-20 -z-40"></div>
 </section>
 

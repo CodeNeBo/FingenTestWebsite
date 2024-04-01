@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Card from './Card.jsx'; 
+import Card from './Card.jsx';
 
 const CardRow = () => {
   const [data, setData] = useState([]);
@@ -21,6 +21,17 @@ const CardRow = () => {
           title={cardData.title}
           currentNumber={cardData.currentNum}
           lastMonthNumber={cardData.lastMonthNumber}
+          historyData={[ // Extract relevant history data for the card
+            { value: cardData.lastMonthNumber9 },
+            { value: cardData.lastMonthNumber8 },
+            { value: cardData.lastMonthNumber7 },
+            { value: cardData.lastMonthNumber6 },
+            { value: cardData.lastMonthNumber5 },
+            { value: cardData.lastMonthNumber4 },
+            { value: cardData.lastMonthNumber3 },
+            { value: cardData.lastMonthNumber2 },
+            { value: cardData.lastMonthNumber },
+          ]}
         />
       ))}
     </div>

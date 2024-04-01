@@ -43,10 +43,10 @@ const ChartWithTradeCurrencies = () => {
         <defs>
           <linearGradient id="colorUvPositive" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stopColor="#4855E2" stopOpacity={1} />
-            <stop offset="100%" stopColor="#4855E2" stopOpacity={0.1} />
+            <stop offset="100%" stopColor="#4855E2" stopOpacity={1} />
           </linearGradient>
           <linearGradient id="colorUvNegative" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#EA3382" stopOpacity={0.1} />
+            <stop offset="0%" stopColor="#EA3382" stopOpacity={1} />
             <stop offset="100%" stopColor="#EA3382" stopOpacity={1} />
           </linearGradient>
         </defs>

@@ -9,30 +9,30 @@
     },
     "cards":{
       "cardsData":[
-        {"title": "Win %", "currentNum":68, "lastMonthNumber":64},
-        {"title": "Loss %", "currentNum":32, "lastMonthNumber":36},
-        {"title": "EDGE", "currentNum":97, "lastMonthNumber":87},
-        {"title": "Open Trades", "currentNum":1673490, "lastMonthNumber":1324956}
+        {"title": "Avg Win", "currentNum":68, "lastMonthNumber":64, "lastMonthNumber2":56, "lastMonthNumber3":38, "lastMonthNumber4":72, "lastMonthNumber5":82, "lastMonthNumber6":60, "lastMonthNumber7":64, "lastMonthNumber8":32, "lastMonthNumber9":0},
+        {"title": "Avg Loss", "currentNum":32, "lastMonthNumber":36, "lastMonthNumber2":44, "lastMonthNumber3":62, "lastMonthNumber4":28, "lastMonthNumber5":18, "lastMonthNumber6":40, "lastMonthNumber7":36, "lastMonthNumber8":68, "lastMonthNumber9":0},
+        {"title": "EDGE", "currentNum":97, "lastMonthNumber":87, "lastMonthNumber2":92, "lastMonthNumber3":96, "lastMonthNumber4":82, "lastMonthNumber5":83, "lastMonthNumber6":79, "lastMonthNumber7":96, "lastMonthNumber8":95, "lastMonthNumber9":0},
+        {"title": "Open Trades", "currentNum":1673490, "lastMonthNumber":1324956, "lastMonthNumber2":1224256, "lastMonthNumber3":1124956, "lastMonthNumber4":1104956, "lastMonthNumber5":1054956, "lastMonthNumber6":954956, "lastMonthNumber7":924956, "lastMonthNumber8":834956, "lastMonthNumber9":0}
       ]
     },
 
     "recentTrades":{
       "recentTradesData": [
-        { "tradeCurrency1": "EUR", "tradeCurrency2": "USD", "placedBet": 1421, "wonBet": 3245 },
-        { "tradeCurrency1": "GBP", "tradeCurrency2": "JPY", "placedBet": 893, "wonBet": 2150 },
-        { "tradeCurrency1": "USD", "tradeCurrency2": "CAD", "placedBet": 2075, "wonBet": 4568 },
-        { "tradeCurrency1": "AUD", "tradeCurrency2": "NZD", "placedBet": 1243, "wonBet": 2897 },
-        { "tradeCurrency1": "JPY", "tradeCurrency2": "EUR", "placedBet": 1756, "wonBet": 3980 },
-        { "tradeCurrency1": "CAD", "tradeCurrency2": "AUD", "placedBet": 986, "wonBet": 2354 },
-        { "tradeCurrency1": "USD", "tradeCurrency2": "GBP", "placedBet": 1532, "wonBet": -1270 },
-        { "tradeCurrency1": "NZD", "tradeCurrency2": "USD", "placedBet": 2014, "wonBet": 5123 },
-        { "tradeCurrency1": "EUR", "tradeCurrency2": "GBP", "placedBet": 1345, "wonBet": 3089 },
-        { "tradeCurrency1": "GBP", "tradeCurrency2": "AUD", "placedBet": 1789, "wonBet": -1672 },
-        { "tradeCurrency1": "USD", "tradeCurrency2": "JPY", "placedBet": 1956, "wonBet": 4782 },
-        { "tradeCurrency1": "JPY", "tradeCurrency2": "CAD", "placedBet": 1423, "wonBet": 3210 },
-        { "tradeCurrency1": "AUD", "tradeCurrency2": "NZD", "placedBet": 2078, "wonBet": 4895 },
-        { "tradeCurrency1": "NZD", "tradeCurrency2": "EUR", "placedBet": 1634, "wonBet": 3768 },
-        { "tradeCurrency1": "CAD", "tradeCurrency2": "USD", "placedBet": 1347, "wonBet": 2987 }
+        { "tradeCurrency1": "BTC",  "placedBet": 1421, "wonBet": 3245 },
+        { "tradeCurrency1": "ETH",  "placedBet": 893, "wonBet": 2150 },
+        { "tradeCurrency1": "BTC",  "placedBet": 2075, "wonBet": 4568 },
+        { "tradeCurrency1": "ADA",  "placedBet": 1243, "wonBet": 2897 },
+        { "tradeCurrency1": "DYM",  "placedBet": 1756, "wonBet": 3980 },
+        { "tradeCurrency1": "FLOW",  "placedBet": 986, "wonBet": 2354 },
+        { "tradeCurrency1": "BTC",  "placedBet": 1532, "wonBet": -1270 },
+        { "tradeCurrency1": "ETH",  "placedBet": 2014, "wonBet": 5123 },
+        { "tradeCurrency1": "ETH",  "placedBet": 1345, "wonBet": 3089 },
+        { "tradeCurrency1": "SOL",  "placedBet": 1789, "wonBet": -1672 },
+        { "tradeCurrency1": "SOL",  "placedBet": 1956, "wonBet": 4782 },
+        { "tradeCurrency1": "SOL",  "placedBet": 1423, "wonBet": 3210 },
+        { "tradeCurrency1": "BTC",  "placedBet": 2078, "wonBet": 4895 },
+        { "tradeCurrency1": "ETH",  "placedBet": 1634, "wonBet": 3768 },
+        { "tradeCurrency1": "BTC",  "placedBet": 1347, "wonBet": 2987 }
       ]
     },
     "edgedata": [
