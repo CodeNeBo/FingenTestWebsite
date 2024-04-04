@@ -1,0 +1,47 @@
+---
+
+import { Image } from 'astro:assets'
+
+import AI from '~/assets/images/AI.svg'
+import Shield from '~/assets/images/shield.svg'
+import World from '~/assets/images/World.svg'
+import Trend from '~/assets/images/Trend.svg'
+
+---
+
+<section class="px-4 py-8 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-6xl grid grid-cols-10 grid-rows-2 gap-4">
+    <div class="w-fit h-full p-0.5 bg-gradient-to-br from-secondary to-accent rounded-[32px] col-span-6">
+        <div class="h-full flex flex-col gap-4 px-8 py-8 relative bg-primary rounded-3xl justify-center overflow-clip">
+            <Image alt={"AI icon"} src={AI} class="absolute right-8 top-1/2 transform -translate-y-1/2" />
+            <div class="absolute bg-secondary w-96 aspect-square rounded-full blur-3xl opacity-15 top-1/2 transform -translate-y-1/2 -left-36"></div>
+            <div class="absolute bg-gradient w-96 aspect-square rounded-full blur-3xl opacity-15 -top-56 -right-36"></div>
+            <h3 class="z-10 font-bold text-4xl">Trading is Evolving<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-accent">with FinGen</span></h3>
+            <p class="z-10 font-main text-textcolor w-2/3">As markets evolve and the role of technology in trading becomes more pronounced, FinGen provides a crucial advantage. Our AI-driven solutions, combined with unmatched efficiency and flexibility, ensure you're equipped to navigate the complexities of the modern trading environment.</p>
+        </div>
+    </div>
+    <div class="w-fit h-full p-0.5 bg-gradient-to-br from-gradient to-accent rounded-[32px] col-span-4">
+        <div class="h-full flex flex-col gap-4 px-8 py-8 relative bg-primary rounded-3xl justify-center overflow-clip">
+            <Image alt={"Shield icon"} src={Shield} class="absolute right-0 top-1/2 transform -translate-y-1/2" />
+            <div class="absolute bg-accent w-80 aspect-square rounded-full blur-3xl opacity-15 top-1/2 transform -translate-y-1/2 -right-16"></div>
+            <h3 class="z-10 font-bold text-4xl"><span class="text-transparent bg-clip-text bg-gradient-to-r from-gradient to-accent">Adaptive </span><br>Risk Management</h3>
+            <p class="z-10 font-main text-textcolor w-4/5">Utilizing methodologies akin to elite hedge funds, FinGen offers unparalleled tools for real-time risk management, safeguarding your investments against market volatility.</p>
+        </div>
+    </div>
+    <div class="w-fit h-full p-0.5 bg-gradient-to-r from-secondary via-accent to-bluegradient rounded-[32px] col-span-4">
+        <div class="h-full overflow-clip flex flex-col gap-4 px-8 py-8 relative bg-primary rounded-3xl justify-center">
+            <Image alt={"World Icon"} src={World} class="absolute -right-16 top-1/2 transform -translate-y-1/2" />
+            <div class="absolute bg-bluegradient w-96 aspect-square rounded-full blur-3xl opacity-15 top-1/2 transform -translate-y-1/2 -right-32"></div>
+            <h3 class="z-10 font-bold text-4xl"><span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-bluegradient">Global</span><br>Market Access</h3>
+            <p class="z-10 font-main text-textcolor w-4/5">Access over 150 crypto exchanges worldwide, ensuring you can seize global opportunities as they arise. With our state-of-the-art, low-latency technology, execute trades swiftly, optimizing your strategy in real time.</p>
+        </div>
+    </div>
+    <div class="w-fit h-full p-0.5 bg-gradient-to-r from-gradient to-secondary rounded-[32px] col-span-6">
+        <div class="h-full flex flex-col gap-4 px-8 py-8 relative bg-primary rounded-3xl justify-center overflow-clip">
+            <Image alt={"Trend icon"} src={Trend} class="absolute right-0 top-1/2 transform -translate-y-1/2" />
+            <div class="absolute bg-gradient w-96 aspect-square rounded-full blur-3xl opacity-15 -top-16 transform -translate-y-1/2 -left-16"></div>
+            <div class="absolute bg-secondary w-72 aspect-square rounded-full blur-3xl opacity-15 -bottom-32 -right-32"></div>
+            <h3 class="z-10 font-bold text-4xl"><span class="text-transparent bg-clip-text bg-gradient-to-r from-gradient to-secondary">Optimized</span><br>Position Sizing</h3>
+            <p class="z-10 font-main text-textcolor w-2/3">Apply a scientifically informed approach to position sizing, maximizing potential gains while minimizing risk, adeptly managing your investments through varying market conditions.</p>
+        </div>
+    </div>
+</section>

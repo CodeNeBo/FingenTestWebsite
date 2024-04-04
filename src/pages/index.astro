@@ -1,7 +1,5 @@
 ---
 import { SITE } from '~/config.mjs';
-import { Image } from 'astro:assets';
-import { YouTube } from '@astro-community/astro-embed-youtube';
 
 import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
@@ -10,14 +8,10 @@ import PostCard from '~/components/widgets/PostCard.astro';
 import blogPosts from '~/blogdata/blogposts.json';
 import SignUpForm from '~/components/widgets/SignUpForm.astro';
 import ComingSoon from '~/components/widgets/ComingSoon.astro';
-import TopCard from '~/components/widgets/TopCard.jsx';
-import LowCard from '~/components/widgets/LowCard.jsx';
 import LandingDashboard from '~/components/widgets/LandingDashboard.astro';
-
-import clock from '~/assets/images/clock.svg'
-import bell from '~/assets/images/bell.svg'
-import safe from '~/assets/images/safe.svg'
-import chart from '~/assets/images/chart.svg'
+import HIVEThoughts from '~/components/widgets/HIVEThoughts.astro';
+import GlobalMarket from '~/components/widgets/GlobalMarket.astro';
+import Benefits from '~/components/widgets/Benefits.astro';
 
 const meta = {
   title: SITE.title,
@@ -44,10 +38,15 @@ const meta = {
     </div>
   </section>
 
+  <HIVEThoughts />
+  <GlobalMarket />
+
   <VideoSection
     title="How it works";
     content="As markets evolve and the role of technology in trading becomes more pronounced, FinGen provides a crucial advantage. Our AI-driven solutions, combined with unmatched efficiency and flexibility, ensure you're equipped to navigate the complexities of the modern trading environment.";
   ></VideoSection>
+
+  <Benefits />
   
   <ComingSoon />
 
