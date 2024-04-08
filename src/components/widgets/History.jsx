@@ -60,10 +60,10 @@ const RecentSales = () => {
   );
 
   return (
-    <div className='bg-primary border border-white/5 backdrop-blur-xl rounded-lg text-textcolor p-6 flex-grow relative overflow-clip'>
+    <div className='bg-primary border border-white/5 backdrop-blur-xl rounded-lg text-textcolor p-4 md:p-6 flex-grow relative overflow-clip'>
       <div class="absolute w-96 h-32 bg-accent blur-3xl rounded-full -z-10 opacity-20 -top-20 left-1/2 transform -translate-x-1/2"></div>
       <div class="absolute w-32 h-32 bg-accent blur-3xl rounded-full -z-10 opacity-20 -bottom-20 left-0"></div>
-      <h2 className="text-sm tracking-wide pb-4">Recent Trades</h2>
+      <h2 className="md:text-sm tracking-wide pb-4 font-main">Recent Trades</h2>
       <div className='h-64 overflow-y-scroll no-scrollbar'>
         <ul className="divide-y divide-gray-300/5">
           {salesData.map((trade, index) => (

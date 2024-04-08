@@ -34,9 +34,9 @@ const ChartWithTradeCurrencies = () => {
       <BarChart
         data={tradeData}
         margin={{
-          top: 32,
+          top: 24,
           right: 0,
-          left: 0,
+          left: -24,
           bottom: 0,
         }}
       >
