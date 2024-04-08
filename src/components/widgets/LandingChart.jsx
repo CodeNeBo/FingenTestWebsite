@@ -11,7 +11,7 @@ const ChartWithTradeCurrencies = () => {
       .catch(error => console.error('Error fetching data:', error));
   }, []);
 
-  const combineCurrencies = (entry) => `${entry.tradeCurrency1}/${entry.tradeCurrency2}`;
+  const combineCurrencies = (entry) => `${entry.tradeCurrency1}`;
 
   const CustomTooltip = ({ active, payload, label }) => {
     if (active && payload && payload.length) {

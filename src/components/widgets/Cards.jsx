@@ -14,14 +14,14 @@ const CardRow = () => {
   }, []);
 
   return (
-    <div className="w-full grid grid-cols-2 md:flex md:flex-row gap-4">
+    <div className="w-full grid grid-rows-2 grid-cols-2 md:flex md:flex-row gap-4">
       {data.map((cardData, index) => (
         <Card
           key={index}
           title={cardData.title}
           currentNumber={cardData.currentNum}
           lastMonthNumber={cardData.lastMonthNumber}
-          historyData={[ // Extract relevant history data for the card
+          historyData={[
             { value: cardData.lastMonthNumber9 },
             { value: cardData.lastMonthNumber8 },
             { value: cardData.lastMonthNumber7 },
