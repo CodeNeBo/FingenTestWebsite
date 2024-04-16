@@ -1,54 +1,10 @@
 ---
 import { Icon } from 'astro-icon';
+import MarketCardsContainer from '~/components/widgets/MarketCardsContainer.jsx';
 ---
 
-<section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-6xl flex flex-col md:grid md:grid-cols-2 gap-20">
-    <div class="grid grid-cols-2 grid-rows-2 gap-6">
-        <div class="bg-gradient-to-br from-[#484483] to-primary p-px w-full h-fit rounded-2xl">
-            <div class="bg-primary p-4 pb-3 rounded-2xl w-full flex flex-col gap-16">
-                <div class="inline-flex justify-between w-full">
-                    <h3 class="text-xl font-main font-bold">Bitcoin</h3>
-                    <div class="px-2 py-0.5 rounded-full bg-bluegradient flex justify-center items-center">
-                        <p class="text-xs font-main">+15%</p>
-                    </div>
-                </div>
-                <h2 class="text-2xl font-main font-bold text-right">58,546</h2>
-            </div>
-        </div>
-        <div class="bg-gradient-to-br from-[#484483] to-primary p-px w-full h-fit rounded-2xl">
-            <div class="bg-primary p-4 pb-3 rounded-2xl w-full flex flex-col gap-16">
-                <div class="inline-flex justify-between w-full">
-                    <h3 class="text-xl font-main font-bold">Bitcoin</h3>
-                    <div class="px-2 py-0.5 rounded-full bg-bluegradient flex justify-center items-center">
-                        <p class="text-xs font-main">+15%</p>
-                    </div>
-                </div>
-                <h2 class="text-2xl font-main font-bold text-right">58,546</h2>
-            </div>
-        </div>
-        <div class="bg-gradient-to-br from-[#484483] to-primary p-px w-full h-fit rounded-2xl">
-            <div class="bg-primary p-4 pb-3 rounded-2xl w-full flex flex-col gap-16">
-                <div class="inline-flex justify-between w-full">
-                    <h3 class="text-xl font-main font-bold">Bitcoin</h3>
-                    <div class="px-2 py-0.5 rounded-full bg-bluegradient flex justify-center items-center">
-                        <p class="text-xs font-main">+15%</p>
-                    </div>
-                </div>
-                <h2 class="text-2xl font-main font-bold text-right">58,546</h2>
-            </div>
-        </div>
-        <div class="bg-gradient-to-br from-[#484483] to-primary p-px w-full h-fit rounded-2xl">
-            <div class="bg-primary p-4 pb-3 rounded-2xl w-full flex flex-col gap-16">
-                <div class="inline-flex justify-between w-full">
-                    <h3 class="text-xl font-main font-bold">Bitcoin</h3>
-                    <div class="px-2 py-0.5 rounded-full bg-bluegradient flex justify-center items-center">
-                        <p class="text-xs font-main">+15%</p>
-                    </div>
-                </div>
-                <h2 class="text-2xl font-main font-bold text-right">58,546</h2>
-            </div>
-        </div>
-    </div>
+<section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-6xl flex flex-col md:grid md:grid-cols-2 gap-20 items-center">
+    <MarketCardsContainer client:load />
     <div class="flex flex-col gap-4 items-center md:items-start text-center md:text-left">
         <h2 class="text-5xl font-bold">Global <br><span class="text-transparent bg-clip-text bg-gradient-to-br from-accent via-gradient to-secondary">Market Access</span></h2>
         <p class="font-main text-lg text-textcolor">Access over 150 crypto exchanges worldwide, monitor market trends, and  safeguard your investments, ensuring you can seize global opportunities as they arise.</p>

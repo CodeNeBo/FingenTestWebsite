@@ -36,16 +36,16 @@
       ]
     },
     "edgedata": [
-      { "edgenumber": 1421, "edgename": "EUR / USD", "history1": 1160, "history2": 1331, "history3": 1276, "history4": 1323, "history5": 934 },
-      { "edgenumber": 1984, "edgename": "BTC / USD", "history1": 2000, "history2": 1500, "history3": 1800, "history4": 2200, "history5": 1900 },
-      { "edgenumber": 1521, "edgename": "EUR / USD", "history1": 1100, "history2": 1200, "history3": 1300, "history4": 1400, "history5": 1500 },
-      { "edgenumber": 332, "edgename": "BTC / USD", "history1": 2500, "history2": 2300, "history3": 2400, "history4": 2100, "history5": 2600 },
-      { "edgenumber": 5590, "edgename": "USD / YEN", "history1": 5000, "history2": 5500, "history3": 5200, "history4": 4800, "history5": 5300 },
-      { "edgenumber": 9032, "edgename": "ETH / USD", "history1": 7000, "history2": 7500, "history3": 7800, "history4": 7200, "history5": 7600 },
-      { "edgenumber": 6590, "edgename": "USD / YEN", "history1": 5300, "history2": 5800, "history3": 5600, "history4": 5400, "history5": 5900 },
-      { "edgenumber": 10232, "edgename": "ETH / USD", "history1": 7700, "history2": 7400, "history3": 7100, "history4": 7300, "history5": 7900 },
-      { "edgenumber": 5390, "edgename": "USD / YEN", "history1": 5100, "history2": 5700, "history3": 5900, "history4": 5200, "history5": 5800 },
-      { "edgenumber": 18012, "edgename": "GBP / USD", "history1": 9800, "history2": 10200, "history3": 9500, "history4": 10500, "history5": 9700 }
+      { "edgenumber": 1421, "edgename": "Bitcoin", "history1": 1160, "history2": 1331, "history3": 1276, "history4": 1323, "history5": 934 },
+      { "edgenumber": 1984, "edgename": "Cardano", "history1": 2000, "history2": 1500, "history3": 1800, "history4": 2200, "history5": 1900 },
+      { "edgenumber": 1521, "edgename": "Ethereum", "history1": 1100, "history2": 1200, "history3": 1300, "history4": 1400, "history5": 1500 },
+      { "edgenumber": 332, "edgename": "Solana", "history1": 2500, "history2": 2300, "history3": 2400, "history4": 2100, "history5": 2600 },
+      { "edgenumber": 5590, "edgename": "Binance", "history1": 5000, "history2": 5500, "history3": 5200, "history4": 4800, "history5": 5300 },
+      { "edgenumber": 9032, "edgename": "XRP", "history1": 7000, "history2": 7500, "history3": 7800, "history4": 7200, "history5": 7600 },
+      { "edgenumber": 6590, "edgename": "Doge", "history1": 5300, "history2": 5800, "history3": 5600, "history4": 5400, "history5": 5900 },
+      { "edgenumber": 10232, "edgename": "Tether", "history1": 7700, "history2": 7400, "history3": 7100, "history4": 7300, "history5": 7900 },
+      { "edgenumber": 5390, "edgename": "Avalanche", "history1": 5100, "history2": 5700, "history3": 5900, "history4": 5200, "history5": 5800 },
+      { "edgenumber": 18012, "edgename": "USDC", "history1": 9800, "history2": 10200, "history3": 9500, "history4": 10500, "history5": 9700 }
     ],
     "dynamicnum": { "dynamicnum": "7,541,390" }
   }
