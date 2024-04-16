@@ -52,7 +52,7 @@ function MarketCards() {
     };
 
     return (
-        <div>
+        <div className='w-full'>
             <div className="flex space-x-2 mb-4">
                 <button 
                     className={`px-4 py-2 text-sm rounded-full bg-primary border ${activeTab === 'Top Gainers' ? 'border-accent text-white' : 'border-primary text-muted'}`}
