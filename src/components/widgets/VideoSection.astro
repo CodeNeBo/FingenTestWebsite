@@ -1,11 +1,14 @@
 ---
-import { YouTube } from '@astro-community/astro-embed-youtube';
+import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon';
+import Thumbnail from '~/assets/images/Thumbnail.jpg'
 
 export interface Props {
   title?: string;
   content?: string;
   link?: string;
 }
+
 const {
   title = await Astro.slots.render('title'),
   content = await Astro.slots.render('title'),
@@ -18,9 +21,26 @@ const {
             {title && <p class="mb-8 text-center text-5xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-[#e4e5e7] to-[#7b7b7e]" set:html={title} />}
             {content && <p class="text-center text-textcolor text-lg font-main font-medium" set:html={content} />}
         </div>
-        <div class="w-full h-fit rouded-xl overflow-clip">
-          <iframe class="w-full aspect-video" src="https://www.youtube.com/embed/tPZ7wjiM5yw?si=XEBrdT8a1CnOMbdE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <div class="w-full h-fit overflow-clip rounded-3xl relative">
+          <a id="hide" onclick="{toggleVideo()}" class="w-24 aspect-square rounded-full bg-black/25 z-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+            <Icon name={'tabler:player-play'} class="w-12 h-12 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-50 hover:opacity-100" />
+          </a>
+          <Image id="hideImg" src={Thumbnail} alt={"Thumbnail of a video"} class="opacity-70"></Image>
+          <iframe id="video" class="hidden w-full aspect-video" src="https://www.youtube.com/embed/tPZ7wjiM5yw?si=XEBrdT8a1CnOMbdE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
     </div>
 </section>
 
+<script>
+  let hide = document.getElementById("hide");
+  let hideImg = document.getElementById("hideImg");
+  let video = document.getElementById("video");
+
+  function toggleVideo() {
+    video.classList.toggle('hidden');
+    hide.classList.add('hidden');
+    hideImg.classList.add('hidden');
+  }
+
+  hide.addEventListener('click', toggleVideo);
+</script>

@@ -1,5 +1,5 @@
 ---
-// import InfCards from '~/components/widgets/InfCards.jsx'
+import InfCards from '~/components/widgets/InfCard.jsx'
 import { Icon } from 'astro-icon';
 
 ---
@@ -12,6 +12,6 @@ import { Icon } from 'astro-icon';
             <button class="text-textcolor font-main py-2 px-4 gap-4 bg-primary rounded-full text-lg flex flex-row w-fit text-nowrap">Join our Waiting List <Icon name={'tabler:chevron-right'} class="w-6 h-6 my-auto"/></button>
         </div>
     </div>
-    <!-- <InfCards client:load /> -->
+    
+    <InfCards client:load/>
 </section>
-

@@ -61,11 +61,11 @@ const RecentSales = () => {
 
   return (
     <div className='p-px bg-gradient-to-br from-[#6A6A9B] to-[#100F1D] rounded-lg flex-grow -z-40'>
-      <div className='bg-primary rounded-lg text-textcolor p-4 md:p-6 flex-grow relative overflow-clip -z-20'>
+      <div className='bg-primary rounded-lg text-textcolor p-4 md:p-6 flex-grow relative overflow-clip -z-20 h-full'>
         <div class="absolute w-96 h-32 bg-accent blur-3xl rounded-full -z-10 opacity-20 -top-20 left-1/2 transform -translate-x-1/2"></div>
         <div class="absolute w-32 h-32 bg-accent blur-3xl rounded-full -z-10 opacity-20 -bottom-20 left-0"></div>
         <h2 className="md:text-sm tracking-wide pb-4 font-main">Recent Trades</h2>
-        <div className='h-64 overflow-y-scroll no-scrollbar'>
+        <div className='h-64 overflow-scroll z-50'>
           <ul className="divide-y divide-gray-300/5">
             {salesData.map((trade, index) => (
               <li key={index} className="py-4 flex items-center justify-between">
