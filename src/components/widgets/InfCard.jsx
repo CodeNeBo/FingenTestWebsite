@@ -20,7 +20,7 @@ const growthIcon = (
 
 const MyComponent = () => {
   return (
-    <div className="p-px bg-gradient-to-br from-accent to-primary w-96 h-fit rounded-lg">
+    <div className="p-px bg-gradient-to-br from-accent to-primary w-96 h-fit rounded-lg flex-shrink-0">
         <div className='p-4 flex flex-col gap-2 bg-primary w-full rounded-lg'>
             <div className='inline-flex gap-4'>
                 <div>
