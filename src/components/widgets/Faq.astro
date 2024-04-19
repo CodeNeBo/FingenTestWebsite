@@ -37,8 +37,8 @@ const {
       <details class="self-center w-full flex items-middle h-fit py-2" key={index}>
         <summary class="cursor-pointer list-none py-2">
           <div class="flex justify-between items-center">
-            {name && <p class="text-justify text-xl font-bold text-textcolor" set:html={name} />}
-            <div class="flex-shrink-0">
+            {name && <p class="text-justify text-xl font-bold text-textcolor leading-tight" set:html={name} />}
+            <div class="pl-4 flex-shrink-0">
               <Icon name={icon ? icon : 'tabler:chevron-down'} class="w-8 h-8" />
             </div>
           </div>
@@ -47,7 +47,7 @@ const {
           (description) && (
             <div>
               <p
-                class="py-2 text-muted"
+                class="pt-0 pb-4 text-muted"
                 set:html={description}
               />
             </div>
