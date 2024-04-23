@@ -1,7 +1,7 @@
 ---
 import Cards from '~/components/widgets/Cards.jsx';
 import LandingChart from '~/components/widgets/LandingChart.jsx'
-import History from '~/components/widgets/History.jsx'
+import History from '~/components/widgets/History.astro'
 ---
 <div class="mx-4">
     <div
@@ -10,7 +10,7 @@ import History from '~/components/widgets/History.jsx'
       style="transform: rotateX(30deg);"
     >
       <Cards client:load />
-      <div class="w-full flex flex-col md:flex-row gap-4">
+      <div class="w-full flex flex-col md:flex-row gap-4 -z-50">
         <div class="w-full md:w-3/5 p-px bg-gradient-to-br from-[#6A6A9B] to-[#100F1D] rounded-lg -z-40">
           <div class="backdrop-blur-xl rounded-lg text-textcolor p-4 md:p-6 relative overflow-clip bg-primary -z-20 h-full">
             <h2 class="md:text-sm tracking-wide pb-4 font-main">Recent Trades</h2>
@@ -21,7 +21,7 @@ import History from '~/components/widgets/History.jsx'
             </div>
           </div>
         </div>
-        <History client:load />
+        <History />
       </div>
     </div>
   </div>

@@ -1,34 +1,16 @@
 import React from 'react';
-
-const growthIcon = (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="56"
-      height="56"
-      viewBox="0 0 56 56"
-      fill="none"
-      stroke="#ffffff"
-      stroke-width="1.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    >
-      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-      <path d="M3 17l6 -6l4 4l8 -8" />
-      <path d="M14 7l7 0l0 7" />
-    </svg>
-  );
+import { IconTrendingUp } from '@tabler/icons-react';
 
 const MyComponent = () => {
   return (
     <div className="p-px bg-gradient-to-br from-accent to-primary w-96 h-fit rounded-lg flex-shrink-0">
         <div className='p-4 flex flex-col gap-2 bg-primary w-full rounded-lg'>
-            <div className='inline-flex gap-4'>
-                <div>
+            <div className='inline-flex gap-4 pb-1'>
+                <div className='flex flex-col justify-between'>
                     <div className='w-full aspect-square'>
-                        {growthIcon}
+                        <IconTrendingUp stroke={1} className='w-full h-full aspect-square'/>
                     </div>
-
-                    <div className="px-1 p-0.5 text-xs text-textcolor bg-bluegradient rounded-md w-full">
+                    <div className="px-2 p-0.5 text-xs text-textcolor bg-bluegradient rounded-sm w-full">
                         <p>Growth</p>
                     </div>
                 </div>
@@ -47,7 +29,7 @@ const MyComponent = () => {
                 </div>
             </div>
             
-            <hr className='border-muted' />
+            <hr className='border-textdark' />
 
             <div className="inline-flex justify-between w-full text-xs text-muted font-main">
                 <div>

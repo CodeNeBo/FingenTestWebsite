@@ -1,0 +1,55 @@
+---
+import { Icon } from 'astro-icon';
+import TradeData from './public/data/landingdata.json';
+const { recentTradesData } = TradeData.recentTrades;
+---
+
+<div class='p-px bg-gradient-to-br from-[#6A6A9B] to-[#100F1D] rounded-lg flex-grow -z-40'>
+    <div class='bg-primary rounded-lg text-textcolor p-4 md:p-6 flex-grow relative overflow-clip -z-20 h-full'>
+      <div class="absolute w-96 h-32 bg-accent blur-3xl rounded-full -z-10 opacity-20 -top-20 left-1/2 transform -translate-x-1/2"></div>
+      <div class="absolute w-32 h-32 bg-accent blur-3xl rounded-full -z-10 opacity-20 -bottom-20 left-0"></div>
+      <h2 class="md:text-sm tracking-wide pb-4 font-main">Recent Trades</h2>
+      <div class='h-64 overflow-scroll z-50'>
+        <ul class="divide-y divide-gray-300/5">
+          {recentTradesData.map((trade, index) => (
+            <li key={index} class="py-4 flex items-center justify-between">
+              <div class="flex flex-row gap-2 items-center">
+                <div class="w-fit h-fit bg-white rounded-full">
+                    <Icon name={trade.tradeCurrency1} class="w-8 h-8" />
+                </div>
+                <p class="text-textcolor">
+                  {trade.tradeCurrency1}
+                </p>
+              </div>
+              <div class="flex flex-col">
+                <p class="text-right">
+                  {trade.wonBet >= 0 ? (
+                    <span>+${Math.abs(trade.wonBet)}</span>
+                  ) : (
+                    <span>-${Math.abs(trade.wonBet)}</span>
+                  )}
+                </p>
+                <div
+                  class={`text-white text-xs font-normal px-2 py-0.5 rounded mt-1 flex flex-row gap-1 items-center justify-center ${
+                    trade.wonBet >= 0 ? 'bg-[#3644DF]' : 'bg-[#EA3382]'
+                  }`}
+                >
+                  {trade.wonBet >= 0 ? (
+                    <>
+                      Growth
+                      <Icon name={'tabler:trending-up'} class="w-3 h-3" />
+                    </>
+                  ) : (
+                    <>
+                      Loss
+                      <Icon name={'tabler:trending-down'} class="w-3 h-3" />
+                    </>
+                  )}
+                </div>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+</div>
