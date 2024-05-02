@@ -1,0 +1,140 @@
+---
+import { Icon } from 'astro-icon';
+import getMarketData from './public/data/landingdata.json';
+const { edgedata } = getMarketData;
+import MarketChart from '~/components/widgets/MarketChart.jsx';
+
+const sortedEdgedata = edgedata.sort((a, b) => b.edgenumber - a.edgenumber);
+const topGainers = sortedEdgedata.slice(0, 4);
+const topLosers = sortedEdgedata.slice(-4).reverse();
+
+---
+<section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-6xl flex flex-col md:grid md:grid-cols-2 gap-20 items-center">
+  <div class="w-full">
+    <div class="flex space-x-2 mb-4">
+      <button id="topGainersBtn" class="px-4 py-2 text-sm rounded-full bg-primary border border-accent text-white">Top Gainers</button>
+      <button id="topLosersBtn" class="px-4 py-2 text-sm rounded-full bg-primary border border-primary text-muted">Top Losers</button>
+    </div>
+    <div id="Gainers" class="grid grid-cols-2 grid-rows-2 gap-4 md:gap-6">
+      {topGainers.map((item, index) => {
+        
+        const historyData = [
+          { value: 0 },
+          { value: item.history1 },
+          { value: item.history2 },
+          { value: item.history3 },
+          { value: item.history4 },
+          { value: item.history5 },
+          { value: item.edgenumber }
+        ];
+      
+        return (
+          <div class="bg-gradient-to-br from-[#484483] to-primary p-px w-full h-fit rounded-2xl" key={index}>
+            <div class="bg-primary p-4 pb-3 rounded-2xl w-full flex flex-col gap-16 relative overflow-clip">
+              <div class="inline-flex justify-between w-full">
+                <div class="inline-flex gap-2 items-center justify-center">
+                  <div class="w-fit h-fit bg-white rounded-full">
+                    <Icon name={item.icon} class="w-8 h-8" />
+                  </div>
+                  <h3 class="text-xl font-main font-bold z-40">{item.edgename}</h3>
+                </div>
+                <div class={`px-3 py-0.5 rounded-full flex justify-center items-center ${
+                  ((item.edgenumber - item.history1) / item.history1 * 100).toFixed(0) >= 0 ? 'bg-[#3644DF]' : 'bg-[#EA3382]'
+                }`}>
+                  <p class="text-xs font-main z-40">{((item.edgenumber - item.history1) / item.history1 * 100).toFixed(0)}%</p>
+                </div>
+              </div>
+              <h2 class="text-2xl font-main font-bold text-right z-40">{item.edgenumber}</h2>
+              <div class="absolute bottom-0 w-full h-3/5 z-30">
+              <MarketChart
+                client:load
+                edgenumber={item.edgenumber}
+                percent={(item.edgenumber - item.history1) / item.history1 * 100}
+                historyData={historyData}
+              />
+            </div>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+
+    <div id="Losers" class="grid grid-cols-2 grid-rows-2 gap-4 md:gap-6 hidden">
+      {topLosers.map((item, index) => {
+        
+        const historyData = [
+          { value: 0 },
+          { value: item.history1 },
+          { value: item.history2 },
+          { value: item.history3 },
+          { value: item.history4 },
+          { value: item.history5 },
+          { value: item.edgenumber }
+        ];
+      
+        return (
+          <div class="bg-gradient-to-br from-[#484483] to-primary p-px w-full h-fit rounded-2xl" key={index}>
+            <div class="bg-primary p-4 pb-3 rounded-2xl w-full flex flex-col gap-16 relative overflow-clip">
+              <div class="inline-flex justify-between w-full">
+                <div class="inline-flex gap-2 items-center justify-center">
+                  <div class="w-fit h-fit bg-white rounded-full">
+                    <Icon name={item.icon} class="w-8 h-8" />
+                  </div>
+                  <h3 class="text-xl font-main font-bold z-40">{item.edgename}</h3>
+                </div>
+                <div class={`px-3 py-0.5 rounded-full flex justify-center items-center ${
+                  ((item.edgenumber - item.history1) / item.history1 * 100).toFixed(0) >= 0 ? 'bg-[#3644DF]' : 'bg-[#EA3382]'
+                }`}>
+                  <p class="text-xs font-main z-40">{((item.edgenumber - item.history1) / item.history1 * 100).toFixed(0)}%</p>
+                </div>
+              </div>
+              <h2 class="text-2xl font-main font-bold text-right z-40">{item.edgenumber}</h2>
+              <div class="absolute bottom-0 w-full h-3/5 z-30">
+              <MarketChart
+                client:load
+                edgenumber={item.edgenumber}
+                percent={(item.edgenumber - item.history1) / item.history1 * 100}
+                historyData={historyData}
+              />
+            </div>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+  <div class="flex flex-col gap-4 items-center md:items-start text-center md:text-left">
+    <h2 class="text-5xl font-bold">Global <br><span class="text-transparent bg-clip-text bg-gradient-to-br from-accent via-gradient to-secondary">Market Access</span></h2>
+    <p class="font-main text-lg text-textcolor">Access over 150 crypto exchanges worldwide, monitor market trends, and  safeguard your investments, ensuring you can seize global opportunities as they arise.</p>
+    <div class="w-fit h-fit p-0.5 bg-gradient-to-br from-accent via-gradient to-secondary rounded-full mt-4">
+        <button class="text-textcolor font-main py-2 px-4 gap-4 bg-primary rounded-full text-lg flex flex-row w-fit text-nowrap">Join our Waiting List <Icon name={'tabler:chevron-right'} class="w-6 h-6 my-auto"/></button>
+    </div>
+  </div>
+</section>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const topGainersBtn = document.getElementById('topGainersBtn');
+    const topLosersBtn = document.getElementById('topLosersBtn');
+    const gainerDiv = document.getElementById('Gainers');
+    const loserDiv = document.getElementById('Losers');
+    
+    function toggleButtonClass(activeBtn, inactiveBtn) {
+      activeBtn.classList.remove('text-muted', 'border-primary');
+      activeBtn.classList.add('text-white', 'border-accent');
+      inactiveBtn.classList.remove('text-white', 'border-accent');
+      inactiveBtn.classList.add('text-muted', 'border-primary');
+    }
+    
+    topGainersBtn.addEventListener('click', function() {
+      gainerDiv.classList.remove('hidden');
+      loserDiv.classList.add('hidden');
+      toggleButtonClass(topGainersBtn, topLosersBtn);
+    });
+    
+    topLosersBtn.addEventListener('click', function() {
+      gainerDiv.classList.add('hidden');
+      loserDiv.classList.remove('hidden');
+      toggleButtonClass(topLosersBtn, topGainersBtn);
+    });
+  });
+</script>

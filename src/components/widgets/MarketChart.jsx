@@ -29,27 +29,11 @@ const TestChart = ({ historyData, percent }) => {
   );
 };
 
-const DynamicCard = ({ edgenumber, edgename, percent, historyData }) => {
-    const history1 = historyData[1].value;
-    const difference = edgenumber - history1;
-    
-    const percentColor = percent > 0 ? 'bg-[#3644DF]' : 'bg-[#EA3382]';
-  
+const DynamicCard = ({ percent, historyData }) => { 
     return (
-      <div className="bg-gradient-to-br from-[#484483] to-primary p-px w-full h-fit rounded-2xl">
-        <div className="bg-primary p-4 pb-3 rounded-2xl w-full flex flex-col gap-16 relative overflow-clip">
-          <div className="inline-flex justify-between w-full">
-            <h3 className="text-xl font-main font-bold z-40">{edgename}</h3>
-            <div className={`px-3 py-0.5 rounded-full ${percentColor} flex justify-center items-center`}>
-              <p className={`text-xs font-main z-40`}>{percent}%</p>
-            </div>
-          </div>
-          <h2 className="text-2xl font-main font-bold text-right z-40">{edgenumber}</h2>
-          <div className="absolute bottom-0 w-full right-0">
-            <TestChart historyData={historyData} percent={percent} />
-          </div>
-        </div>
-      </div>
+      <>
+        <TestChart historyData={historyData} percent={percent} />
+      </>
     );
 };
 

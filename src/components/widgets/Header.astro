@@ -55,12 +55,14 @@ const currentPath = pathname.slice(1);
         aria-label="Main navigation"
       >    
         <ul class="flex flex-col mx-4 md:mx-0 mt-8 md:mt-0 md:flex-row md:self-center md:w-auto text-2xl font-black md:font-bold md:text-lg rounded-xl bg-[#0E0E17] md:bg-transparent border-2 border-textdark md:border-transparent w-auto">
-          <li class="sm:inline-flex">
+          <li class="sm:inline-flex mr-4">
               <a class={currentPath === "blog" ? "text-xl md:text-sm text-white px-4 py-3 flex items-center transition duration-150 ease-in-out target:text-white" : "text-xl md:text-sm text-textcolor hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out target:text-white"} href="/blog">Blog</a>
               <a class={currentPath === "faq" ? "text-xl md:text-sm text-white px-4 py-3 flex items-center transition duration-150 ease-in-out target:text-white" : "text-xl md:text-sm text-textcolor hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out target:text-white"} href="/faq">FAQ</a>
               <a class={currentPath === "contact" ? "text-xl md:text-sm text-white px-4 py-3 flex items-center transition duration-150 ease-in-out target:text-white" : "text-xl md:text-sm text-textcolor hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out target:text-white"} href="/contact">Contact Us</a>
           </li>
-          <button class="hidden rounded-full h-fit py-2 pl-4 pr-2 mx-auto font-semibold border border-secondary text-textcolor text-sm my-auto ml-4 hover:text-textdark hover:bg-secondary md:inline-flex gap-1 align-middle ease-out duration-300 text-nowrap">Join our Waiting List<Icon name={'tabler:chevron-right'} class="w-5 h-5 my-auto"/></button>
+          <div class="hidden w-fit h-fit p-px bg-gradient-to-br from-accent via-gradient to-secondary rounded-full mx-auto md:mx-0 md:inline-flex justify-center items-center my-auto">
+            <button class="text-textcolor font-main py-2 pl-4 pr-2 gap-2 bg-primary rounded-full text-sm w-fit text-nowrap my-auto inline-flex justify-center items-center">Join our Waiting List <Icon name={'tabler:chevron-right'} class="w-5 h-5 my-auto"/></button>
+          </div>
         </ul>
   
         <div class="flex items-center justify-center flex-col md:hidden absolute bottom-40 inset-x-0">

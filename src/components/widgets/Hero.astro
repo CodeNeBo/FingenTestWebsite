@@ -18,11 +18,11 @@ const {
 <section class="relative h-fit overflow-x-hidden">
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
     <div class="pt-9 my-24 lg:my-32 relative">
-      <div class="text-center max-w-screen-lg mx-auto">
+      <div class="text-center max-w-screen-lg mx-auto flex flex-col justify-center items-center">
         {
           title && (
             <h1
-              class="text-5xl md:text-6xl font-black leading-[1.15] md:leading-snug tracking-tighter pb-4 text-transparent bg-clip-text bg-gradient-to-b from-[#e4e5e7] to-[#7b7b7e]"
+              class="text-5xl md:text-6xl font-black leading-[1.15] md:leading-snug tracking-tighter pb-4 text-transparent bg-clip-text bg-gradient-to-b from-[#e4e5e7] to-[#7b7b7e] relative w-fit h-fit"
               set:html={title}
             />
           )
@@ -35,9 +35,18 @@ const {
         </div>
         {content && <Fragment set:html={content} />}
       </div>
-      <div class="w-full grid place-content-center mt-4 lg:mt-6">
-        <button class="backdrop-blur-xl border text-textcolor border-secondary rounded-full py-2.5 pl-7 pr-4 mx-auto font-semibold inline-flex gap-4 hover:bg-secondary hover:text-textdark ease-out duration-300 font-main text-nowrap">Join our Waiting List<Icon name={'tabler:chevron-right'} class="w-6 h-6 my-auto"/></button>
+      <div class="w-full grid place-content-center mt-6">
+        <div class=" relative group">
+          <div class="w-fit h-fit p-0.5 bg-gradient-to-br from-accent via-gradient to-secondary rounded-full mx-auto md:mx-0">
+            <button class="text-textcolor font-main py-2 px-4 gap-4 bg-primary rounded-full text-lg flex flex-row w-fit text-nowrap">Join our Waiting List <Icon name={'tabler:chevron-right'} class="w-6 h-6 my-auto"/></button>
+          </div>
+          <div class="-z-50 opacity-25 w-fit h-fit p-0.5 bg-gradient-to-br from-accent via-gradient to-secondary rounded-full mx-auto md:mx-0 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 blur-lg scale-95 group-hover:scale-105 group-hover:motion-safe:animate-pulse duration-500">
+            <button class="text-textcolor font-main py-2 px-4 gap-4 rounded-full text-lg flex flex-row w-fit text-nowrap">Join our Waiting List <Icon name={'tabler:chevron-right'} class="w-6 h-6 my-auto"/></button>
+          </div>
+        </div>
       </div>
+      
+      
       
 
       
