@@ -42,7 +42,7 @@ const DynamicCard = ({ iconPlace, edgenumber, edgename, percent, historyData }) 
           <div className="inline-flex justify-between w-full">
             <div className="inline-flex gap-2 items-center justify-center">
                 <img
-                className='w-8 h-8'
+                className='w-5 h-5 md:w-6 md:h-6'
                     src={iconPlace}
                     alt={iconPlace}
                     onError={(error) => {
@@ -50,10 +50,10 @@ const DynamicCard = ({ iconPlace, edgenumber, edgename, percent, historyData }) 
                     error.target.src = './icons/PurpleDot.svg';
                     }}
                 />
-                <h3 className="text-xl font-main font-bold z-40">{edgename}</h3>
+                <h3 className="md:text-xl font-main font-bold z-40">{edgename}</h3>
             </div>
             
-            <div className={`px-3 py-0.5 rounded-full ${percentColor} flex justify-center items-center`}>
+            <div className={`px-2 md:px-3 py-0.5 rounded-full ${percentColor} flex justify-center items-center`}>
               <p className={`text-xs font-main z-40`}>{percent}%</p>
             </div>
           </div>
