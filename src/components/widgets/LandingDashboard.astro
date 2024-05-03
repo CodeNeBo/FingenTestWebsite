@@ -1,7 +1,7 @@
 ---
 import Cards from '~/components/widgets/Cards.jsx';
 import LandingChart from '~/components/widgets/LandingChart.jsx'
-// import History from '~/components/widgets/History.astro'
+import History from '~/components/widgets/History.jsx'
 ---
 <div class="mx-4">
     <div
@@ -21,7 +21,7 @@ import LandingChart from '~/components/widgets/LandingChart.jsx'
             </div>
           </div>
         </div>
-        <!-- <History /> -->
+        <History client:load />
       </div>
     </div>
   </div>
