@@ -1,5 +1,6 @@
 ---
 import { SITE } from '~/config.mjs';
+import { Image } from 'astro:assets';
 
 import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
@@ -11,7 +12,10 @@ import ComingSoon from '~/components/widgets/ComingSoon.astro';
 import LandingDashboard from '~/components/widgets/LandingDashboard.astro';
 import HIVEThoughts from '~/components/widgets/HIVEThoughts.astro';
 import Benefits from '~/components/widgets/Benefits.astro';
-import MarketCard from '~/components/widgets/MarketCard.astro';
+// import MarketCard from '~/components/widgets/MarketCard.astro';
+import bgGrid from '~/assets/images/bgGrid.webp';
+import GlobalMarket from '~/components/widgets/GlobalMarket.astro';
+
 
 const meta = {
   title: SITE.title,
@@ -24,7 +28,6 @@ const meta = {
 
 <Layout {meta}>
   <section class="relative duration-300 ease-out obsSection opacity-0 translate-y-10">
-    
     <Hero>
       <Fragment slot="title">
         Trading is Evolving<br>And the <span class="text-transparent bg-clip-text bg-gradient-to-r from-gradient via-bluegradient to-gradient animate-linear bg-[length:200%_auto]">Machines are Winning</span>
@@ -38,10 +41,11 @@ const meta = {
     <div class="absolute -top-72 left-1/2 transform -translate-x-1/2">
       <div class="rounded-full w-96 h-96 bg-accent blur-3xl opacity-20 scale-125"></div>
     </div>
+    <Image src={bgGrid} alt={"Background image"} class="absolute top-0 left-1/2 transform -translate-x-1/2 w-full -z-50 opacity-65"></Image>
   </section>
 
   <HIVEThoughts />
-  <MarketCard />
+  <GlobalMarket />
 
   <VideoSection
     title="How it works";

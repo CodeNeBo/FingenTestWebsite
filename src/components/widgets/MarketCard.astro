@@ -1,8 +1,9 @@
 ---
 import { Icon } from 'astro-icon';
-import getMarketData from './public/data/landingdata.json';
-const { edgedata } = getMarketData;
 import MarketChart from '~/components/widgets/MarketChart.jsx';
+
+import getMarketData from 'public/data/landingdata.json';
+const { edgedata } = getMarketData.edge;
 
 const sortedEdgedata = edgedata.sort((a, b) => b.edgenumber - a.edgenumber);
 const topGainers = sortedEdgedata.slice(0, 4);
