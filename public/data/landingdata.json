@@ -1,10 +1,16 @@
 {
     "infCards":{
       "infCardsData":[
-        {"title": "Text 1", "description": "Text 1"},
-        {"title": "Text 2", "description": "Text 2"},
-        {"title": "Text 3", "description": "Text 3"},
-        {"title": "Text 4", "description": "Text 4"}
+        {"topicName": "Bitcoin", "topicHeadline": "Bitcoin - growth projected in the next 3 days.", "prediction": "Growth", "outlookType": "Long term", "outlook": "Increased", "author": "Fingen Research", "date": "Mar 3, 2024"},
+        {"topicName": "Ethereum", "topicHeadline": "Ethereum - volatility expected to continue.", "prediction": "Decline", "outlookType": "Short term", "outlook": "Unchanged", "author": "Crypto Insights", "date": "Apr 15, 2024"},
+        {"topicName": "Dogecoin", "topicHeadline": "Dogecoin - potential for a breakout soon.", "prediction": "Growth", "outlookType": "Long term", "outlook": "Increased", "author": "Crypto Analytics", "date": "Feb 28, 2024"},
+        {"topicName": "Litecoin", "topicHeadline": "Litecoin - market sentiment turning bullish.", "prediction": "Growth", "outlookType": "Mid term", "outlook": "Increased", "author": "CoinWatch", "date": "Mar 10, 2024"},
+        {"topicName": "Ripple", "topicHeadline": "Ripple - regulatory hurdles impacting growth.", "prediction": "Decline", "outlookType": "Long term", "outlook": "Decreased", "author": "Crypto Gazette", "date": "Mar 20, 2024"},
+        {"topicName": "Bitcoin Cash", "topicHeadline": "Bitcoin Cash - community divided on future.", "prediction": "Decline", "outlookType": "Long term", "outlook": "Unchanged", "author": "Digital Currency Times", "date": "Mar 5, 2024"},
+        {"topicName": "Cardano", "topicHeadline": "Cardano - technological developments driving optimism.", "prediction": "Growth", "outlookType": "Mid term", "outlook": "Increased", "author": "Crypto Watchtower", "date": "Mar 17, 2024"},
+        {"topicName": "Polkadot", "topicHeadline": "Polkadot - ecosystem expansion attracting investors.", "prediction": "Growth", "outlookType": "Long term", "outlook": "Increased", "author": "Blockchain Bulletin", "date": "Mar 8, 2024"},
+        {"topicName": "Chainlink", "topicHeadline": "Chainlink - integration with DeFi protocols boosting demand.", "prediction": "Growth", "outlookType": "Mid term", "outlook": "Increased", "author": "DeFi Insights", "date": "Mar 13, 2024"},
+        {"topicName": "Stellar", "topicHeadline": "Stellar - partnerships driving adoption.", "prediction": "Growth", "outlookType": "Long term", "outlook": "Increased", "author": "Stellar Times", "date": "Mar 22, 2024"}
       ]
     },
     "cards":{

@@ -15,6 +15,10 @@ module.exports = {
       },
       animation: {
         linear: 'backgroundLinear 3s linear infinite',
+        infCardsRight: 'scrollRight 90s linear infinite',
+        infCardsRight2: 'scrollRight2 90s linear infinite',
+        infCardsLeft: 'scrollLeft 90s linear infinite',
+        infCardsLeft2: 'scrollLeft2 90s linear infinite',
       },
       fontFamily: {
         sans: ['var(--aw-font-sans)', ...defaultTheme.fontFamily.sans],
@@ -26,6 +30,22 @@ module.exports = {
         backgroundLinear: {
           '0%': { backgroundPosition: '0% 50%' },
           '100%': { backgroundPosition: '200% 50%' },
+        },
+        scrollRight: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
+        scrollRight2: {
+          '0%': { transform: 'translateX(100%)' },
+          '100%': { transform: 'translateX(0%)' },
+        },
+        scrollLeft: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(-0%)' },
+        },
+        scrollLeft2: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(100%)' },
         },
       },
       gridTemplateRows: {
