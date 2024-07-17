@@ -34,7 +34,6 @@ const CardRow = () => {
     });
 
     socket.on('data', (jsonData) => {
-      console.log('Received data:', jsonData);
       setData(jsonData.cards.cardsData);
     });
 

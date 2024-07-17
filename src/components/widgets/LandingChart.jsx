@@ -34,7 +34,6 @@ const ChartWithTradeCurrencies = () => {
     });
 
     socket.on('data', (jsonData) => {
-      console.log('Received data:', jsonData);
       setTradeData(jsonData.recentTrades.recentTradesData);
     });
 

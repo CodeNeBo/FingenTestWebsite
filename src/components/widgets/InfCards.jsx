@@ -40,7 +40,6 @@ const InfCards = () => {
         });
 
         socket.on('data', (jsonData) => {
-            console.log('Received data:', jsonData);
             const newData = jsonData.infCards.infCardsData.map((item, index) => ({
                 ...item,
                 id: index + 1,

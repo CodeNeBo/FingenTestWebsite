@@ -33,7 +33,6 @@ const RecentSales = () => {
     });
 
     socket.on('data', (jsonData) => {
-      console.log('Received data:', jsonData);
       setSalesData(jsonData.recentTrades.recentTradesData);
     });
 
