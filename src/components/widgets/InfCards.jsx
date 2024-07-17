@@ -1,90 +1,81 @@
 import React, { useState, useEffect } from 'react';
+import io from 'socket.io-client';
 import InfCard from './InfCard.jsx';
 
 const InfCards = () => {
     const [data, setData] = useState([]);
+    const [isFetching, setIsFetching] = useState(true);
 
     useEffect(() => {
-        fetch('./data/landingdata.json')
-            .then((response) => response.json())
-            .then((jsonData) => {
-                setData(jsonData.infCards.infCardsData);
-            })
-            .catch((error) => console.error('Error fetching data:', error));
+        const serverUrl = 'https://a925-185-143-147-162.ngrok-free.app/';
+
+        const fetchData = async () => {
+            try {
+                const response = await fetch(`${serverUrl}/data/landingdata.json`, {
+                    headers: {
+                        'ngrok-skip-browser-warning': 'true',
+                    },
+                });
+                const jsonData = await response.json();
+                const newData = jsonData.infCards.infCardsData.map((item, index) => ({
+                    ...item,
+                    id: index + 1,
+                }));
+
+                const updatedData = newData.slice(-1);
+                setData(updatedData);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            } finally {
+                setIsFetching(false);
+            }
+        };
+
+        fetchData();
+
+        const socket = io(serverUrl.replace('https://', 'wss://'), {
+            extraHeaders: {
+                'ngrok-skip-browser-warning': 'true',
+            },
+        });
+
+        socket.on('data', (jsonData) => {
+            console.log('Received data:', jsonData);
+            const newData = jsonData.infCards.infCardsData.map((item, index) => ({
+                ...item,
+                id: index + 1,
+            }));
+            const updatedData = newData.slice(-1);
+            setData(updatedData);
+        });
+
+        socket.on('connect_error', (err) => {
+            console.error('Connection error:', err);
+        });
+
+        socket.on('error', (err) => {
+            console.error('Server error:', err);
+        });
+
+        return () => socket.disconnect();
     }, []);
 
-    const generateItems = (items) => {
-        return [...items, ...items]; 
-    };
-
-    const firstFiveItems = data.slice(0, 5);
-    const nextFiveItems = data.slice(5, 10);
-    const repeatedFirstFiveItems = generateItems(firstFiveItems);
-    const repeatedNextFiveItems = generateItems(nextFiveItems);
-
     return (
-        <div className="flex flex-col align-middle justify-center py-1 gap-6 overflow-x-clip overflow-y-visible relative">
-            <div className='bg-gradient-to-r from-primary to-transparent w-16 absolute left-0 top-0 h-full z-50'></div>
-            <div className='bg-gradient-to-r from-transparent to-primary w-16 absolute right-0 top-0 h-full z-50'></div>
-            <div className='flex flex-row gap-6 relative'>
-                <div className="relative flex flex-row gap-6 animate-infCardsRight">
-                    {repeatedFirstFiveItems.map((infCardData, index) => (
-                        <InfCard
-                            key={index}
-                            topicName={infCardData.topicName}
-                            topicHeadline={infCardData.topicHeadline}
-                            prediction={infCardData.prediction}
-                            outlookType={infCardData.outlookType}
-                            outlook={infCardData.outlook}
-                            author={infCardData.author}
-                            date={infCardData.date}
-                        />
-                    ))}
-                </div>
-                <div className="pl-6 absolute top-0 flex flex-row gap-6 animate-infCardsRight2">
-                    {repeatedFirstFiveItems.map((infCardData, index) => (
-                        <InfCard
-                            key={index}
-                            topicName={infCardData.topicName}
-                            topicHeadline={infCardData.topicHeadline}
-                            prediction={infCardData.prediction}
-                            outlookType={infCardData.outlookType}
-                            outlook={infCardData.outlook}
-                            author={infCardData.author}
-                            date={infCardData.date}
-                        />
-                    ))}
-                </div>
-            </div>
-            <div className='flex flex-row gap-6 relative'>
-                <div className="relative flex flex-row justify-end gap-6 animate-infCardsLeft">
-                    {repeatedNextFiveItems.map((infCardData, index) => (
-                        <InfCard
-                            key={index}
-                            topicName={infCardData.topicName}
-                            topicHeadline={infCardData.topicHeadline}
-                            prediction={infCardData.prediction}
-                            outlookType={infCardData.outlookType}
-                            outlook={infCardData.outlook}
-                            author={infCardData.author}
-                            date={infCardData.date}
-                        />
-                    ))}
-                </div>
-                <div className="pl-6 absolute flex flex-row justify-end gap-6 animate-infCardsLeft2">
-                    {repeatedNextFiveItems.map((infCardData, index) => (
-                        <InfCard
-                            key={index}
-                            topicName={infCardData.topicName}
-                            topicHeadline={infCardData.topicHeadline}
-                            prediction={infCardData.prediction}
-                            outlookType={infCardData.outlookType}
-                            outlook={infCardData.outlook}
-                            author={infCardData.author}
-                            date={infCardData.date}
-                        />
-                    ))}
-                </div>
+        <div className="flex flex-col items-center justify-center py-1 gap-6 overflow-x-clip overflow-y-visible relative">
+            <div className='bg-gradient-to-b from-primary to-transparent w-full absolute top-0 left-0 h-32 z-50'></div>
+            <div className="mx-auto grid place-content-center relative h-96 overflow-clip gap-4">
+                {data.map((infCardData, index) => (
+                    <InfCard
+                        key={index}
+                        topicName={infCardData.topicName}
+                        topicHeadline={infCardData.topicHeadline}
+                        prediction={infCardData.prediction}
+                        outlookType={infCardData.outlookType}
+                        outlook={infCardData.outlook}
+                        author={infCardData.author}
+                        date={infCardData.date}
+                    />
+                ))}
             </div>
         </div>
     );

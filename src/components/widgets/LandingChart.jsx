@@ -1,14 +1,52 @@
 import React, { useState, useEffect } from 'react';
+import io from 'socket.io-client';
 import { BarChart, Bar, ResponsiveContainer, XAxis, YAxis, Tooltip, Cell } from 'recharts';
 
 const ChartWithTradeCurrencies = () => {
   const [tradeData, setTradeData] = useState([]);
 
   useEffect(() => {
-    fetch('./data/landingdata.json')
-      .then(response => response.json())
-      .then(data => setTradeData(data.recentTrades.recentTradesData))
-      .catch(error => console.error('Error fetching data:', error));
+    const serverUrl = 'https://a925-185-143-147-162.ngrok-free.app/';
+
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`${serverUrl}/data/landingdata.json`, {
+          headers: {
+            'ngrok-skip-browser-warning': 'true',
+          },
+        });
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const jsonData = await response.json();
+        setTradeData(jsonData.recentTrades.recentTradesData);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+
+    const socket = io(serverUrl.replace('https://', 'wss://'), {
+      extraHeaders: {
+        'ngrok-skip-browser-warning': 'true',
+      },
+    });
+
+    socket.on('data', (jsonData) => {
+      console.log('Received data:', jsonData);
+      setTradeData(jsonData.recentTrades.recentTradesData);
+    });
+
+    socket.on('connect_error', (err) => {
+      console.error('Connection error:', err);
+    });
+
+    socket.on('error', (err) => {
+      console.error('Server error:', err);
+    });
+
+    return () => socket.disconnect();
   }, []);
 
   const combineCurrencies = (entry) => `${entry.tradeCurrency1}`;
@@ -21,7 +59,7 @@ const ChartWithTradeCurrencies = () => {
         </div>
       );
     }
-  
+
     return null;
   };
 
@@ -52,13 +90,11 @@ const ChartWithTradeCurrencies = () => {
         </defs>
         <XAxis dataKey={combineCurrencies} axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: '#FFFFFF' }}/>
         <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: '#FFFFFF' }}/>
-        <Tooltip content={<CustomTooltip />} cursor={{fill: 'rgba(255, 255, 255, 0.05)'}} />
+        <Tooltip content={<CustomTooltip />} cursor={{ fill: 'rgba(255, 255, 255, 0.05)' }} />
         <Bar dataKey="wonBet" radius={[6, 6, 6, 6]}>
-          {
-            tradeData.map((entry, index) => (
-              <Cell key={`cell-${index}`} fill={getBarGradient(entry.wonBet)} />
-            ))
-          }
+          {tradeData.map((entry, index) => (
+            <Cell key={`cell-${index}`} fill={getBarGradient(entry.wonBet)} />
+          ))}
         </Bar>
       </BarChart>
     </ResponsiveContainer>
