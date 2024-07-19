@@ -5,11 +5,11 @@ const RecentSales = () => {
   const [salesData, setSalesData] = useState([]);
 
   useEffect(() => {
-    const serverUrl = 'https://a925-185-143-147-162.ngrok-free.app/'; 
+    const serverUrl = 'https://6b4b-185-143-146-154.ngrok-free.app';
 
     const fetchData = async () => {
       try {
-        const response = await fetch(`${serverUrl}/data/landingdata.json`, {
+        const response = await fetch(`${serverUrl}/`, {
           headers: {
             'ngrok-skip-browser-warning': 'true',
           },
@@ -43,6 +43,7 @@ const RecentSales = () => {
     socket.on('error', (err) => {
       console.error('Server error:', err);
     });
+
     return () => socket.disconnect();
   }, []);
 

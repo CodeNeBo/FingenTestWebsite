@@ -7,11 +7,11 @@ const InfCards = () => {
     const [isFetching, setIsFetching] = useState(true);
 
     useEffect(() => {
-        const serverUrl = 'https://a925-185-143-147-162.ngrok-free.app/';
+        const serverUrl = 'https://6b4b-185-143-146-154.ngrok-free.app';
 
         const fetchData = async () => {
             try {
-                const response = await fetch(`${serverUrl}/data/landingdata.json`, {
+                const response = await fetch(`${serverUrl}/`, {
                     headers: {
                         'ngrok-skip-browser-warning': 'true',
                     },
@@ -22,8 +22,7 @@ const InfCards = () => {
                     id: index + 1,
                 }));
 
-                const updatedData = newData.slice(-1);
-                setData(updatedData);
+                setData(newData);
             } catch (error) {
                 console.error('Error fetching data:', error);
             } finally {
@@ -44,8 +43,7 @@ const InfCards = () => {
                 ...item,
                 id: index + 1,
             }));
-            const updatedData = newData.slice(-1);
-            setData(updatedData);
+            setData(newData);
         });
 
         socket.on('connect_error', (err) => {
