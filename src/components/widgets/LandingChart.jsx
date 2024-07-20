@@ -6,7 +6,7 @@ const ChartWithTradeCurrencies = () => {
   const [tradeData, setTradeData] = useState([]);
 
   useEffect(() => {
-    const serverUrl = 'https://52e7-75-33-147-14.ngrok-free.app';
+    const serverUrl = 'https://fbf6-75-33-147-14.ngrok-free.app';
 
     const fetchData = async () => {
       try {
