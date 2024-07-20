@@ -5,7 +5,7 @@ const RecentSales = () => {
   const [salesData, setSalesData] = useState([]);
 
   useEffect(() => {
-    const serverUrl = 'https://6b4b-185-143-146-154.ngrok-free.app';
+    const serverUrl = 'https://52e7-75-33-147-14.ngrok-free.app';
 
     const fetchData = async () => {
       try {
