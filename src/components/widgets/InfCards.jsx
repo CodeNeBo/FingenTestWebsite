@@ -7,7 +7,7 @@ const InfCards = () => {
     const [isFetching, setIsFetching] = useState(true);
 
     useEffect(() => {
-        const serverUrl = 'https://fbf6-75-33-147-14.ngrok-free.app';
+        const serverUrl = 'http://localhost:8080/';
 
         const fetchData = async () => {
             try {

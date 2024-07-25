@@ -6,7 +6,7 @@ function MarketCards() {
     const [activeTab, setActiveTab] = useState('Top Gainers');
 
     useEffect(() => {
-        fetch('https://fbf6-75-33-147-14.ngrok-free.app')
+        fetch('http://localhost:8080/')
             .then((response) => response.json())
             .then((data) => {
                 const sortedData = data.edgedata.sort((a, b) => b.edgenumber - a.edgenumber);
