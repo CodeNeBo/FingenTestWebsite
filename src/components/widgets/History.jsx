@@ -1,50 +1,24 @@
 import React, { useState, useEffect } from 'react';
-import io from 'socket.io-client';
 
 const RecentSales = () => {
   const [salesData, setSalesData] = useState([]);
 
   useEffect(() => {
-    const serverUrl = 'http://localhost:8080/';
-
     const fetchData = async () => {
       try {
-        const response = await fetch(`${serverUrl}/`, {
-          headers: {
-            'ngrok-skip-browser-warning': 'true',
-          },
-        });
+        // Fetch the JSON file from the public directory
+        const response = await fetch('/landingData/data.json');
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
         const jsonData = await response.json();
-        setSalesData(jsonData.recentTrades.recentTradesData);
+        setSalesData(jsonData.recentTrades.recentTradesData); // Update state with fetched data
       } catch (error) {
         console.error('Error fetching data:', error);
       }
     };
 
     fetchData();
-
-    const socket = io(serverUrl.replace('https://', 'wss://'), {
-      extraHeaders: {
-        'ngrok-skip-browser-warning': 'true',
-      },
-    });
-
-    socket.on('data', (jsonData) => {
-      setSalesData(jsonData.recentTrades.recentTradesData);
-    });
-
-    socket.on('connect_error', (err) => {
-      console.error('Connection error:', err);
-    });
-
-    socket.on('error', (err) => {
-      console.error('Server error:', err);
-    });
-
-    return () => socket.disconnect();
   }, []);
 
   return (
@@ -60,11 +34,11 @@ const RecentSales = () => {
                 <div className="flex flex-row gap-2 items-center">
                   <img
                     className='w-6 h-6 md:w-8 md:h-8'
-                    src={`./icons/${trade.tradeCurrency1}.svg`}
+                    src={`./icons/${trade.tradeCurrency1}.png`}
                     alt={trade.tradeCurrency1}
                     onError={(error) => {
                       console.error('Error loading image:', trade.tradeCurrency1);
-                      error.target.src = './icons/PurpleDot.svg';
+                      error.target.src = './icons/PurpleDot.png';
                     }}
                   />
                   <p className="text-textcolor">

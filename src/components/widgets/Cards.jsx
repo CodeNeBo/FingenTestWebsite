@@ -1,20 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import io from 'socket.io-client';
 import Card from './Card.jsx';
 
 const CardRow = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    const serverUrl = 'http://localhost:8080/';
-
     const fetchData = async () => {
       try {
-        const response = await fetch(`${serverUrl}/`, {
-          headers: {
-            'ngrok-skip-browser-warning': 'true',
-          },
-        });
+        // Fetch the JSON file from the public directory
+        const response = await fetch('/landingData/data.json');
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
@@ -26,26 +20,6 @@ const CardRow = () => {
     };
 
     fetchData();
-
-    const socket = io(serverUrl.replace('https://', 'wss://'), {
-      extraHeaders: {
-        'ngrok-skip-browser-warning': 'true',
-      },
-    });
-
-    socket.on('data', (jsonData) => {
-      setData(jsonData.cards.cardsData);
-    });
-
-    socket.on('connect_error', (err) => {
-      console.error('Connection error:', err);
-    });
-
-    socket.on('error', (err) => {
-      console.error('Server error:', err);
-    });
-
-    return () => socket.disconnect();
   }, []);
 
   return (

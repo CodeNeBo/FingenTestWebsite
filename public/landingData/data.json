@@ -1,0 +1,48 @@
+{
+    "infCards":{
+      "infCardsData":[
+        {"topicName": "Bitcoin", "topicHeadline": "Bitcoin - growth projected in the next 3 days.", "prediction": "Growth", "outlookType": "Long term", "outlook": "Increased", "author": "Fingen Research", "date": "Mar 3, 2024"},
+        {"topicName": "Ethereum", "topicHeadline": "Ethereum - volatility expected to continue.", "prediction": "Decline", "outlookType": "Short term", "outlook": "Unchanged", "author": "Crypto Insights", "date": "Apr 15, 2024"},
+        {"topicName": "Dogecoin", "topicHeadline": "Dogecoin - potential for a breakout soon.", "prediction": "Growth", "outlookType": "Long term", "outlook": "Increased", "author": "Crypto Analytics", "date": "Feb 28, 2024"}    ]
+    },
+    "cards":{
+      "cardsData":[
+        {"title": "Avg Win", "currentNum":69, "lastMonthNumber":64, "lastMonthNumber2":56, "lastMonthNumber3":38, "lastMonthNumber4":72, "lastMonthNumber5":82, "lastMonthNumber6":60, "lastMonthNumber7":64, "lastMonthNumber8":32, "lastMonthNumber9":0},
+        {"title": "Avg Loss", "currentNum":32, "lastMonthNumber":36, "lastMonthNumber2":44, "lastMonthNumber3":62, "lastMonthNumber4":28, "lastMonthNumber5":18, "lastMonthNumber6":40, "lastMonthNumber7":36, "lastMonthNumber8":68, "lastMonthNumber9":0},
+        {"title": "EDGE", "currentNum":97, "lastMonthNumber":87, "lastMonthNumber2":92, "lastMonthNumber3":96, "lastMonthNumber4":82, "lastMonthNumber5":83, "lastMonthNumber6":79, "lastMonthNumber7":96, "lastMonthNumber8":95, "lastMonthNumber9":0},
+        {"title": "Open Trades", "currentNum":1673490, "lastMonthNumber":1324956, "lastMonthNumber2":1224256, "lastMonthNumber3":1124956, "lastMonthNumber4":1104956, "lastMonthNumber5":1054956, "lastMonthNumber6":954956, "lastMonthNumber7":924956, "lastMonthNumber8":834956, "lastMonthNumber9":0}
+      ]
+    },
+
+    "recentTrades":{
+      "recentTradesData": [
+        { "tradeCurrency1": "BTC",  "placedBet": 1111, "wonBet": 1234 },
+        { "tradeCurrency1": "ETH",  "placedBet": 893, "wonBet": 2150 },
+        { "tradeCurrency1": "BTC",  "placedBet": 2075, "wonBet": 4568 },
+        { "tradeCurrency1": "ADA",  "placedBet": 1243, "wonBet": 2897 },
+        { "tradeCurrency1": "FLOW",  "placedBet": 986, "wonBet": 2354 },
+        { "tradeCurrency1": "BTC",  "placedBet": 1532, "wonBet": -1270 },
+        { "tradeCurrency1": "ETH",  "placedBet": 2014, "wonBet": 5123 },
+        { "tradeCurrency1": "ETH",  "placedBet": 1345, "wonBet": 3089 },
+        { "tradeCurrency1": "SOL",  "placedBet": 1789, "wonBet": -1672 },
+        { "tradeCurrency1": "SOL",  "placedBet": 1956, "wonBet": 4782 },
+        { "tradeCurrency1": "SOL",  "placedBet": 1423, "wonBet": 3210 },
+        { "tradeCurrency1": "BTC",  "placedBet": 2078, "wonBet": 4895 },
+        { "tradeCurrency1": "ETH",  "placedBet": 1634, "wonBet": 3768 },
+        { "tradeCurrency1": "BTC",  "placedBet": 1347, "wonBet": 2987 }
+      ]
+    },
+    "edgedata": [
+      { "edgenumber": 111, "edgename": "Bitcoin", "icon": "BTC", "history1": 1160, "history2": 1331, "history3": 1276, "history4": 1323, "history5": 934 },
+      { "edgenumber": 1984, "edgename": "Cardano", "icon": "ADA", "history1": 2000, "history2": 1500, "history3": 1800, "history4": 2200, "history5": 1900 },
+      { "edgenumber": 1521, "edgename": "Ethereum", "icon": "ETH", "history1": 1100, "history2": 1200, "history3": 1300, "history4": 1400, "history5": 1500 },
+      { "edgenumber": 332, "edgename": "Solana", "icon": "SOL", "history1": 2500, "history2": 2300, "history3": 2400, "history4": 2100, "history5": 2600 },
+      { "edgenumber": 5590, "edgename": "Binance", "icon": "BNB", "history1": 5000, "history2": 5500, "history3": 5200, "history4": 4800, "history5": 5300 },
+      { "edgenumber": 9032, "edgename": "XRP", "icon": "XRP", "history1": 7000, "history2": 7500, "history3": 7800, "history4": 7200, "history5": 7600 },
+      { "edgenumber": 6590, "edgename": "Doge", "icon": "DOGE", "history1": 5300, "history2": 5800, "history3": 5600, "history4": 5400, "history5": 5900 },
+      { "edgenumber": 10232, "edgename": "Tether", "icon": "USDC", "history1": 7700, "history2": 7400, "history3": 7100, "history4": 7300, "history5": 7900 },
+      { "edgenumber": 5390, "edgename": "Avalanche", "icon": "AVAX", "history1": 5100, "history2": 5700, "history3": 5900, "history4": 5200, "history5": 5800 },
+      { "edgenumber": 1, "edgename": "USDC", "icon": "USDC", "history1": 1, "history2": 1, "history3": 1, "history4": 1, "history5": 1 }
+    ]
+  }
+  

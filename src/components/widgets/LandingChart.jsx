@@ -1,51 +1,25 @@
 import React, { useState, useEffect } from 'react';
-import io from 'socket.io-client';
 import { BarChart, Bar, ResponsiveContainer, XAxis, YAxis, Tooltip, Cell } from 'recharts';
 
 const ChartWithTradeCurrencies = () => {
   const [tradeData, setTradeData] = useState([]);
 
   useEffect(() => {
-    const serverUrl = 'http://localhost:8080/';
-
     const fetchData = async () => {
       try {
-        const response = await fetch(`${serverUrl}/`, {
-          headers: {
-            'ngrok-skip-browser-warning': 'true',
-          },
-        });
+        // Fetch the JSON file from the public directory
+        const response = await fetch('/landingData/data.json');
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
         const jsonData = await response.json();
-        setTradeData(jsonData.recentTrades.recentTradesData);
+        setTradeData(jsonData.recentTrades.recentTradesData); // Update state with fetched data
       } catch (error) {
         console.error('Error fetching data:', error);
       }
     };
 
     fetchData();
-
-    const socket = io(serverUrl.replace('https://', 'wss://'), {
-      extraHeaders: {
-        'ngrok-skip-browser-warning': 'true',
-      },
-    });
-
-    socket.on('data', (jsonData) => {
-      setTradeData(jsonData.recentTrades.recentTradesData);
-    });
-
-    socket.on('connect_error', (err) => {
-      console.error('Connection error:', err);
-    });
-
-    socket.on('error', (err) => {
-      console.error('Server error:', err);
-    });
-
-    return () => socket.disconnect();
   }, []);
 
   const combineCurrencies = (entry) => `${entry.tradeCurrency1}`;
@@ -87,8 +61,8 @@ const ChartWithTradeCurrencies = () => {
             <stop offset="100%" stopColor="#EA3382" stopOpacity={1} />
           </linearGradient>
         </defs>
-        <XAxis dataKey={combineCurrencies} axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: '#FFFFFF' }}/>
-        <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: '#FFFFFF' }}/>
+        <XAxis dataKey={combineCurrencies} axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: '#FFFFFF' }} />
+        <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: '#FFFFFF' }} />
         <Tooltip content={<CustomTooltip />} cursor={{ fill: 'rgba(255, 255, 255, 0.05)' }} />
         <Bar dataKey="wonBet" radius={[6, 6, 6, 6]}>
           {tradeData.map((entry, index) => (
