@@ -33,6 +33,7 @@ const InfCards = () => {
     return (
         <div className="flex flex-col items-center justify-center py-1 gap-6 overflow-x-clip overflow-y-visible relative">
             <div className='bg-gradient-to-b from-primary to-transparent w-full absolute top-0 left-0 h-32 z-50'></div>
+            <div className='bg-gradient-to-t from-primary to-transparent w-full absolute bottom-0 left-0 h-32 z-50'></div>
             <div className="mx-auto grid place-content-center relative h-96 overflow-clip gap-4">
                 {isFetching ? (
                     <p>Loading...</p>
