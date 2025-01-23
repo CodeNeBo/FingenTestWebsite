@@ -18,18 +18,16 @@ export const headerData = {
   // ],
   
   socialLinks: [
-    { ariaLabel: 'Instagram', icon: 'Instagram', href: '#' },
-    { ariaLabel: 'Twitter', icon: 'Twitter', href: '#' },
-    { ariaLabel: 'LinkedIn', icon: 'LinkedIn', href: '#' },   
-    { ariaLabel: 'Facebook', icon: 'Facebook', href: '#' },
+    { ariaLabel: 'Instagram', icon: 'Instagram', href: 'https://www.instagram.com/fingen.ai/profilecard/?igsh=bWtqNTBmaHE4aGJy' },
+    { ariaLabel: 'X', icon: 'X', href: 'https://x.com/fingen_ai' },
+    { ariaLabel: 'LinkedIn', icon: 'LinkedIn', href: 'https://www.linkedin.com/company/fingen-ai/' },   
   ]
 };
   
 export const footerData = {
   socialLinks: [
-    { ariaLabel: 'Instagram', icon: 'Instagram', href: '#' },
-    { ariaLabel: 'Twitter', icon: 'Twitter', href: '#' },
-    { ariaLabel: 'LinkedIn', icon: 'LinkedIn', href: '#' },   
-    { ariaLabel: 'Facebook', icon: 'Facebook', href: '#' },
+    { ariaLabel: 'Instagram', icon: 'Instagram', href: 'https://www.instagram.com/fingen.ai/profilecard/?igsh=bWtqNTBmaHE4aGJy' },
+    { ariaLabel: 'X', icon: 'X', href: 'https://x.com/fingen_ai' },
+    { ariaLabel: 'LinkedIn', icon: 'LinkedIn', href: 'https://www.linkedin.com/company/fingen-ai/' },   
   ]
 };
