@@ -1,0 +1,104 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from 'astro-icon';
+import SignUpLines from "~/assets/images/SignUpLines.png"
+---
+<div class="w-full grid place-content-center mt-6">
+  <div class="relative group">
+    <div class="w-fit h-fit p-0.5 bg-gradient-to-br from-accent via-gradient to-secondary rounded-full mx-auto md:mx-0">
+      <button id="openModal" class="text-textcolor font-main py-2 px-4 gap-4 bg-primary rounded-full text-lg flex flex-row w-fit text-nowrap">
+        Join our Waiting List <Icon name="tabler:chevron-right" class="w-6 h-6 my-auto" />
+      </button>
+    </div>
+    <div class="-z-50 opacity-25 w-fit h-fit p-0.5 bg-gradient-to-br from-accent via-gradient to-secondary rounded-full mx-auto md:mx-0 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 blur-lg scale-95 group-hover:scale-105 group-hover:motion-safe:animate-pulse duration-500">
+      <button id="openModalDuplicate" class="text-textcolor font-main py-2 px-4 gap-4 rounded-full text-lg flex flex-row w-fit text-nowrap">
+        Join our Waiting List <Icon name="tabler:chevron-right" class="w-6 h-6 my-auto" />
+      </button>
+    </div>
+  </div>
+</div>
+
+<div id="modalOverlay" class="fixed inset-0 flex items-center justify-center hidden z-[999] p-6">
+  <div id="bgModal" class="absolute inset-0 bg-black opacity-70"></div>
+  <div class="rounded-[12px] md:rounded-[16px] bg-gradient-to-br from-bluegradient to-gradient p-0.5 w-full md:w-3/5 max-w-lg">
+    <div class="bg-primary p-8 relative w-full z-10 mx-auto rounded-[11.5px] md:rounded-[15.5px] overflow-hidden">
+      <Image alt="Abstruct lines" src={SignUpLines} class="absolute w-full h-full top-0 left-0 scale-125 -z-10 opacity-20" />
+      <div class="absolute bg-accent w-48 aspect-square rounded-full blur-3xl opacity-10 -left-32 top-1/2 -translate-y-1/2 -z-20"></div>
+      <div class="absolute bg-gradient w-56 aspect-square rounded-full blur-3xl opacity-5 -top-2 -right-16 -z-20"></div>
+      <h2 class="text-2xl font-bold text-center text-textcolor mb-8">Join our Waiting List</h2>
+      <form id="emailForm">
+        <div>
+          <label for="email" class="block text-muted text-sm font-bold mb-2">Email Address</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="border border-muted rounded w-full py-2 px-3 text-textdark leading-tight focus:border-bluegradient bg-textcolor"
+            placeholder="example@email.com"
+            required
+          />
+          <div class="flex flex-row gap-4 w-full mt-8 justify-center md:justify-end">
+            <button id="closeModal" class="bg-primary border border-textcolor px-4 py-1.5 rounded text-textcolor w-full md:w-fit hover:text-textcolor hover:border-gradient hover:bg-gradient">
+              Close
+            </button>
+            <button type="submit" class="bg-secondary text-textdark px-4 py-1.5 rounded w-full md:w-fit hover:bg-[#fcdc6b]">
+              Submit
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+  const modalOverlay = document.getElementById('modalOverlay');
+  const openModalButtons = document.querySelectorAll('#openModal, #openModalDuplicate');
+  const closeModalButton = document.getElementById('closeModal');
+  const bgModal = document.getElementById('bgModal');
+
+  openModalButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      modalOverlay.classList.remove('hidden');
+    });
+  });
+
+  bgModal.addEventListener('click', () => {
+    modalOverlay.classList.add('hidden');
+  });
+  
+  closeModalButton.addEventListener('click', () => {
+    modalOverlay.classList.add('hidden');
+  });
+
+  modalOverlay.addEventListener('click', (event) => {
+    if (event.target === modalOverlay) {
+      modalOverlay.classList.add('hidden');
+    }
+  });
+
+  const emailForm = document.getElementById('emailForm');
+  emailForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const email = document.getElementById('email').value;
+
+    try {
+      const response = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email })
+      });
+
+      if (response.ok) {
+        alert("Thank you for subscribing!");
+        modalOverlay.classList.add("hidden");
+      } else {
+        const data = await response.json();
+        alert(data.error || "Subscription failed. Please try again.");
+      }
+    } catch (error) {
+      console.error("Subscription error:", error);
+      alert("An error occurred. Please try again later.");
+    }
+  });
+</script>

@@ -1,5 +1,6 @@
 ---
 import { Icon } from 'astro-icon';
+import EmailModal from '~/components/widgets/EmailModal.astro';
 
 export interface Props {
   title?: string;
@@ -35,7 +36,8 @@ const {
         </div>
         {content && <Fragment set:html={content} />}
       </div>
-      <div class="w-full grid place-content-center mt-6">
+      <EmailModal />
+      <!-- <div class="w-full grid place-content-center mt-6">
         <div class=" relative group">
           <div class="w-fit h-fit p-0.5 bg-gradient-to-br from-accent via-gradient to-secondary rounded-full mx-auto md:mx-0">
             <button class="text-textcolor font-main py-2 px-4 gap-4 bg-primary rounded-full text-lg flex flex-row w-fit text-nowrap">Join our Waiting List <Icon name={'tabler:chevron-right'} class="w-6 h-6 my-auto"/></button>
@@ -44,7 +46,7 @@ const {
             <button class="text-textcolor font-main py-2 px-4 gap-4 rounded-full text-lg flex flex-row w-fit text-nowrap">Join our Waiting List <Icon name={'tabler:chevron-right'} class="w-6 h-6 my-auto"/></button>
           </div>
         </div>
-      </div>
+      </div> -->
       
       
       

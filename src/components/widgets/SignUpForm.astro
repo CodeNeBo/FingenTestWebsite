@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import { Icon } from 'astro-icon';
 import SignUpLines from "~/assets/images/SignUpLines.png"
+import EmailModal from '~/components/widgets/EmailModal.astro';
 ---
 
 <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-6xl">
@@ -10,14 +11,7 @@ import SignUpLines from "~/assets/images/SignUpLines.png"
             <h1 class="text-5xl md:text-6xl font-bold text-center pb-6 z-40">Unlock the power <br>of FinGen</h1>
             <p class="font-main font-normal text-xl text-center mx-8 md:mx-32 z-40">Signup for free daily crypto market research & predictions.<br>We’ll help you trade & invest better from the get-go.</p>
             <div class="w-full grid place-content-center z-40 pt-8 md:pt-12">                
-                <div class="relative group">
-                    <div class="w-fit h-fit p-0.5 bg-gradient-to-br from-accent via-gradient to-secondary rounded-full mx-auto md:mx-0">
-                        <button class="text-textcolor font-main py-2 px-4 gap-4 bg-primary rounded-full text-lg flex flex-row w-fit text-nowrap">Join our Waiting List <Icon name={'tabler:chevron-right'} class="w-6 h-6 my-auto"/></button>
-                    </div>
-                    <div class="-z-50 opacity-25 w-fit h-fit p-0.5 bg-gradient-to-br from-accent via-gradient to-secondary rounded-full mx-auto md:mx-0 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 blur-lg scale-95 group-hover:scale-105 group-hover:motion-safe:animate-pulse duration-500">
-                        <button class="text-textcolor font-main py-2 px-4 gap-4 rounded-full text-lg flex flex-row w-fit text-nowrap">Join our Waiting List <Icon name={'tabler:chevron-right'} class="w-6 h-6 my-auto"/></button>
-                    </div>
-                </div>
+                <EmailModal />
             </div>
             <Image alt={"Abstruct lines"} src={SignUpLines} class="absolute w-full h-full top-0 left-0 scale-125 -z-10" />
             <div class="absolute bg-accent w-96 aspect-square rounded-full blur-3xl opacity-20 -bottom-16 -left-36 -z-20"></div>
